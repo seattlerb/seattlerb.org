@@ -1,0 +1,33 @@
+<h3>People</h3>
+<dl id="dudes">
+  <% @dudes.each do |dude| %>
+    <dt class="name">
+      <%= link_to_unless(dude.website.nil?, dude.name, dude.website) %>
+    </dt>
+    <dd class="description"><%= dude.bio %></dd>
+    <dd class="dude_projects">
+      <ul>
+        <% dude.projects.each do |project| %>
+          <li class="dude_projects"><%= link_to project.name, project.url %></li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
+</dl>
+
+<h3>Projects</h3>
+<dl id="projects">
+  <% @projects.each do |project| %>
+    <dt class="name">
+      <%= link_to project.name, project.url %>
+    </dt>
+    <dd class="description"><%= project.description %></dd>
+    <dd class="project_dudes">
+      <ul>
+        <% project.dudes.each do |dude| %>
+          <li class="project_dude"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
+        <% end %>
+      </ul>
+    </dd>
+  <% end %>
+</dl>
