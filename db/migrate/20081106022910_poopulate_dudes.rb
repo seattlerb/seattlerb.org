@@ -28,7 +28,7 @@ class PoopulateDudes < ActiveRecord::Migration
 
   def self.down
     Dude.all.each do |dude|
-      dude.destroy!
+      dude.destroy
     end
   end
 end

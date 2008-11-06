@@ -148,7 +148,7 @@ class PoopulateProjects < ActiveRecord::Migration
 
   def self.down
     Project.all.each do |project|
-      project.destroy!
+      project.destroy
     end
   end
 end

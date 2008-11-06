@@ -175,7 +175,7 @@ class PoopulateAffiliations < ActiveRecord::Migration
 
   def self.down
     Affiliation.all.each do |affiliation|
-      affiliation.destroy!
+      affiliation.destroy
     end
   end
 end

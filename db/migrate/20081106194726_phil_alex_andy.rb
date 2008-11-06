@@ -74,9 +74,7 @@ class PhilAlexAndy < ActiveRecord::Migration
       ["Phil Hagelberg", "RPlanet"],
       ["Phil Hagelberg", "Watcher in the Water"]
     ].each do |a|
-      dude    = Dude.find_by_name(a.first)
-      project = Project.find_by_name(a.last)
-      Affiliation.find_by_dude_id_and_project_id(dude.id, project.id)
+      Affiliation.find_by_dude_id_and_project_id(Dude.find_by_name(a.first), Project.find_by_name(a.last))
     end
   end
 end
