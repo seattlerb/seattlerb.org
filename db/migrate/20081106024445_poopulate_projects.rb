@@ -44,7 +44,7 @@ class PoopulateProjects < ActiveRecord::Migration
       ["basis", "http://rubyforge.org/projects/basis", %q(Basis is shared, smart project skeletons.)],
       ["betabrite", "http://rubyforge.org/projects/betabrite", %q(A Ruby library for controlling BetaBrite LED signs)],
       ["bfts", "http://rubyforge.org/projects/bfts", %q(Big "Formal" Test Suite is a combination of formal specification and tests for ruby implementations. It plans on being _the_ test suite and English formal reference for ruby.)],
-      ["box_layout", "Allows you to lay out HTML using ASCII art. Stolen from psykotic‘s code posted to reddit: programming.reddit.com/info/k9dx/comments", %q(Allows you to lay out HTML using ASCII art. Stolen from psykotic‘s code posted to reddit: programming.reddit.com/info/k9dx/comments)],
+      ["box_layout", "http://seattlerb.rubyforge.org/", %q(Allows you to lay out HTML using ASCII art. Stolen from psykotic‘s code posted to reddit: programming.reddit.com/info/k9dx/comments)],
       ["cached_model", "http://rubyforge.org/projects/rctools", %q(These projects help make The Robot Co-op's websites go.)],
       ["charnames", "http://rubyforge.org/projects/charnames", %q(Dictionary of Unicode Character names.)],
       ["chirp", "http://rubyforge.org/projects/chirp", %q(Chirp is a Ruby based text processing DSL akin to awk. Although initially written as a teaching aid it has turned out to be a suprisingly useful tool.)],

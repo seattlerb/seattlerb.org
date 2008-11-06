@@ -21,6 +21,7 @@ class PoopulateAffiliations < ActiveRecord::Migration
       ["Chad Fowler", "gitjour"],
       ["Chad Fowler", "rubygems-update"],
       ["Damon Danieli", "is_it_iphone"],
+      ["Dave Myron", "blackbook"],
       ["Dave Myron", "is_it_mobile"],
       ["Dave Myron", "quartermaster"],
       ["Dave Thomas", "rdoc"],
