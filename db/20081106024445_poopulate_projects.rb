@@ -31,6 +31,7 @@ class PoopulateProjects < ActiveRecord::Migration
       ["simple_memoize", "http://github.com/JackDanger/simple_memoize/", %q(Provides in-memory caching of any Ruby method.  It's dead simple and won't get in the way of any of your code. For something more robust that offers persistence try http://github.com/JackDanger/cached_values/)],
       ["SQLDependencyGrapher", "", %q()],
       ["sql_dep_graph", "", %q()],
+      ["change_class", "http://rubyforge.org/projects/seattlerb", %q(Lets you set the class of an object. Use at your own risk.)],
       ["StreetAddress", "http://streetaddress.rubyforge.org", %q(Parses one line street addresses and returns a normalized address object. This is a near direct port of the of the perl module Geo::StreetAddress::US originally written by Schuyler D. Erle. For more information see http://search.cpan.org/~sderle/Geo-StreetAddress-US-0.99/)],
       ["yummy", "http://smartic.us", %q(Yummy is a ruby implementation of the del.icio.us API)],
       ["action_profiler", "http://rails-analyzer.rubyforge.org/action_profiler/", %q(Action Profiler allows you to profile a single Rails action to determine what to optimize. You can use the Production Log Analyzer and action_grep to determine which actions you should profile and what arguments to use.)],

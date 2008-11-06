@@ -103,6 +103,7 @@ class PoopulateAffiliations < ActiveRecord::Migration
       ["Ryan Davis", "box_layout"],
       ["Ryan Davis", "CachedSupermodel"],
       ["Ryan Davis", "captools"],
+      ["Ryan Davis", "change_class"],
       ["Ryan Davis", "charnames"],
       ["Ryan Davis", "chirp"],
       ["Ryan Davis", "chronic"],
