@@ -9,6 +9,7 @@ body {
 }
 
 abbr.amp {
+  font-weight: normal;
   font-style: italic;
   font-size: 120%;
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
@@ -28,6 +29,10 @@ h1 {
 
 h2 {
   text-align: center;
+  font-weight: bold;
+  font-size: 300%;
+  margin: 0;
+  padding: 0;
 }
 
 h2 img,
@@ -75,6 +80,11 @@ h2 a:hover {
 #meeting .street-address {
   font-size: 125%;
   display: block;
+}
+
+#projects,
+#people {
+  margin-top: 3em;
 }
 
 table, tr, th, td {
@@ -150,7 +160,7 @@ caption {
   padding: 0;
 }
 
-/*LINKS...*/
+/*links...*/
 a:link, a:active, a:visited {
   color: #b00800;
   text-decoration: none;
@@ -162,4 +172,4 @@ a:hover {
   background: #b00800;
   text-decoration: none;
 }
-/*...LINKS*/
+/*...links*/
