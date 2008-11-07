@@ -11,6 +11,7 @@
     <link href='http://seattlerb.org' rel='start' title='Seattle.rb | Seattle Ruby Brigade' />
     <%= stylesheet_link_tag "blueprint/print", :media => "print" %>
     <%= stylesheet_link_tag "blueprint/screen", :media => "screen" %>
+    <%= stylesheet_link_tag "application", :media => "screen" %>
     <!--[if lte IE 6]><%= stylesheet_link_tag "blueprint/ie", :media => "print" %><![endif]-->
   </head>
 
@@ -18,49 +19,51 @@
     <div class="container">
       <h1>Seattle.rb</h1>
       <!-- <h2>We will light you on fire</h2> -->
-      <div class="span-24">
-        <div class="span-12">
-          <h3>People</h3>
-          <dl id="dudes">
-            <% @dudes.each do |dude| %>
-              <dt class="name">
-                <%= link_to_unless(dude.website.nil?, dude.name, dude.website) %>
-              </dt>
-              <% if dude.bio %>
-                <dd class="bio"><%= dude.bio %></dd>
-              <% end %>
-              <dd class="dude_projects">
+      <div id="people" class="span-22 prepend-1 append-1">
+
+        <table>
+          <caption>People</caption>
+          <% @dudes.each_with_index do |dude, index| %>
+            <tr class="vcard person <%= cycle("alt", "") %>">
+              <th>
+                <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %></span>
+                <% if dude.website %><span class="url"><%= link_to(dude.website, dude.website) %></span><% end %>
+                <% if dude.bio %><p class="note bio"><%= dude.bio %></p><% end %>
+              </th>
+              <td class="person_projects">
                 <ul>
                   <% dude.projects.each do |project| %>
-                    <li class="dude_projects"><%= link_to_unless(project.url.blank?, project.name, project.url) %></li>
+                    <li><%= link_to_unless(project.url.blank?, project.name, project.url) %></li>
                   <% end %>
                 </ul>
-              </dd>
-            <% end %>
-          </dl>
-        </div>
+              </td>
+            </tr>
+          <% end %>
+          
+        </table>
+      </div><!-- #people -->
 
-        <div class="span-12 last">
-          <h3>Projects</h3>
-          <dl id="projects">
-            <% @projects.each do |project| %>
-              <dt class="name">
-                <%= link_to_unless(project.url.blank?, project.name, project.url) %>
-              </dt>
-              <% unless project.description.blank? %>
-                <dd class="description"><%= h project.description %></dd>
-              <% end %>
-              <dd class="project_dudes">
-                <ul>
-                  <% project.dudes.each do |dude| %>
-                    <li class="project_dude"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
-                  <% end %>
-                </ul>
-              </dd>
+      <div id="projects" class="span-24">
+        <h2>Projects</h2>
+        <dl>
+          <% @projects.each do |project| %>
+            <dt class="name">
+              <%= link_to_unless(project.url.blank?, project.name, project.url) %>
+            </dt>
+            <% unless project.description.blank? %>
+              <dd class="description"><%= h project.description %></dd>
             <% end %>
-          </dl>
-        </div>
+            <dd class="project_dudes">
+              <ul>
+                <% project.dudes.each do |dude| %>
+                  <li class="project_dude"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
+                <% end %>
+              </ul>
+            </dd>
+          <% end %>
+        </dl>
       </div>
     </div>
+
   </body>
 </html>
