@@ -8,6 +8,13 @@ body {
   background-color: #FFF;
 }
 
+abbr.amp {
+  font-style: italic;
+  font-size: 120%;
+  font-family: Baskerville, Palatino, "Book Antiqua", serif;
+  border: none;
+}
+
 h1 {
   background: url(/images/seattle_rb_logo_no_text.png) no-repeat left top;
   color: #c70000;
@@ -19,7 +26,55 @@ h1 {
   padding: 30px 0 0 220px;
 }
 
-#people {
+h2 {
+  text-align: center;
+}
+
+h2 img,
+h2 a {
+  margin: 0;
+  padding: 0 !important;
+}
+
+h2 a:hover {
+  border: none;
+  background: none;
+}
+
+#map {
+  text-align: right;
+}
+
+#map a {
+  background: none;
+}
+
+#map img {
+  border: 1px solid #999;
+}
+
+#meeting .org {
+  font-size: 200%;
+  font-weight: bold;
+}
+
+#meeting .location {
+  display: none;
+}
+
+#meeting .vevent {
+  font-size: 150%;
+}
+
+#meeting .dtstart,
+#meeting .dtend {
+  font-weight: bold;
+}
+
+#meeting .standout,
+#meeting .street-address {
+  font-size: 125%;
+  display: block;
 }
 
 table, tr, th, td {
@@ -60,7 +115,6 @@ caption {
 
 .person_projects li {
   display: inline;
-/*  padding: .5em .2em;*/
   line-height: 1.75em;
 }
 
@@ -77,8 +131,6 @@ caption {
   padding: 0;
   font-weight: normal;
 }
-
-
 
 .project span.name,
 .project span.url {
@@ -101,7 +153,4 @@ a:hover {
   background: #b00800;
   text-decoration: none;
 }
-
-a img { border: none; }
 /*...LINKS*/
-

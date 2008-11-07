@@ -18,9 +18,45 @@
   <body>
     <div class="container">
       <h1>Seattle.rb</h1>
-      <!-- <h2>We will light you on fire</h2> -->
-      <div id="people" class="span-22 prepend-1 append-1">
 
+      <div id='meetings' class="span-22 prepend-1 append-1">
+        <h2>
+          Location <abbr class="amp">&amp;</abbr> Schedule
+          <a href="#"><img alt="download this hCard" class="download" src="/images/icon_hcard_download.png" /></a>
+          <!-- 
+          <a href="webcal://feeds.technorati.com/events/http%3A%2F%2Frubyholic.com%2Fgroups%2Fshow%2F1">
+            <img alt="download this hCalendar" class="download" src="/images/icon_hcalendar.png" />
+          </a>
+          -->
+        </h2>
+        <div id='map' class="span-11">
+          <a href='http://maps.google.com/maps?q=550+Broadway+E,+Seattle'>
+            <img alt='Vivace Cafe on Google Maps' class='map' src='/images/vivace_on_google_map.png' />
+          </a>
+        </div><!-- #map -->
+        <div id='meeting' class="span-11 last">
+          <div class='vcard'>
+            <div class='org'>Vivace Cafe</div>
+            <div class='adr'>
+              <span class='street-address'>550 East Denny Way</span>
+              <span class='locality'>Seattle</span>,
+              <span class='region'>WA</span>,
+              <span class='postal-code'>98102</span>
+            </div>
+          </div>
+          <div class='vcalendar' id='events'>
+            <div class='vevent'>
+              <span class='dtstart' title='20070102T190000'>Every Tuesday at 7:00p</span> -
+              <span class='dtend' title='20070102T210000'>9:00p</span>
+              <span class='location'>Vivace Cafe</span>
+              <span class='standout summary'>Hack Night. Everyone is welcome!</span>
+            </div>
+          </div>
+        </div><!-- #meeting -->
+      </div><!-- #meetings -->
+
+
+      <div id="people" class="span-22 prepend-1 append-1">
         <table>
           <caption>People</caption>
           <% @dudes.each_with_index do |dude, index| %>
@@ -39,11 +75,10 @@
               </td>
             </tr>
           <% end %>
-
         </table>
       </div><!-- #people -->
 
-      <div id="projects" class="span-24">
+      <div id="projects" class="span-22 prepend-1 append-1">
         <table>
           <caption>Projects</caption>
           <% @projects.each do |project| %>
@@ -64,7 +99,11 @@
           <% end %>
         </table>
       </div><!-- #projects -->
-    </div><!-- .container -->
+    
+      <div id="footer" class="span-24">
+        <p>We will light you on fire</p>
+      </div><!-- #footer -->
 
+    </div><!-- .container -->
   </body>
 </html>
