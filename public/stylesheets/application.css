@@ -24,8 +24,6 @@ h1 {
 
 table, tr, th, td {
   vertical-align: top;
-/*  margin: 0;*/
-/*  padding: 0;*/
   background: none;
 }
 
@@ -44,6 +42,10 @@ caption {
   font-weight: bold;
   font-size: 300%;
   letter-spacing: -.04em;
+}
+
+.vcard span.url {
+  font-size: 50%;
 }
 
 .person_projects {
