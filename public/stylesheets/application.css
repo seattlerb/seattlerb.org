@@ -46,6 +46,13 @@ h2 a:hover {
   background: none;
 }
 
+h3 {
+  text-align: center;
+  margin: -40px 0 2em 0;
+  padding: 0;
+  color: #666;
+}
+
 #map {
   text-align: right;
 }

@@ -18,11 +18,15 @@
   <body>
     <div class="container">
       <h1>Seattle.rb</h1>
+      <h3>
+        <strong><%= @dudes.length %></strong> people,
+        <strong><%= @projects.length %></strong> projects
+      </h3>
 
       <div id='meetings' class="span-22 prepend-1 append-1">
         <h2>
           Location <abbr class="amp">&amp;</abbr> Schedule
-          <a href="#"><img alt="download this hCard" class="download" src="/images/icon_hcard_download.png" /></a>
+          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org"><img alt="download this hCard" class="download" src="/images/icon_hcard_download.png" /></a>
           <!--
           <a href="webcal://feeds.technorati.com/events/http%3A%2F%2Frubyholic.com%2Fgroups%2Fshow%2F1">
             <img alt="download this hCalendar" class="download" src="/images/icon_hcalendar.png" />
@@ -46,7 +50,7 @@
           </div>
           <div class='vcalendar' id='events'>
             <div class='vevent'>
-              <span class='dtstart' title='20070102T190000'>Every Tuesday at 7:00p</span> -
+              <span class='dtstart' title='20070102T190000'>Every Tuesday from 7:00p to</span>
               <span class='dtend' title='20070102T210000'>9:00p</span>
               <span class='location'>Vivace Cafe</span>
               <span class='standout summary'>Hack Night. Everyone is welcome!</span>
