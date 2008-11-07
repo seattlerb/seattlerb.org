@@ -173,3 +173,7 @@ a:hover {
   text-decoration: none;
 }
 /*...links*/
+
+#heroku_toolbar {
+  display: none;
+}
