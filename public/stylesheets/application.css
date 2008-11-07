@@ -44,8 +44,14 @@ caption {
   letter-spacing: -.04em;
 }
 
+.vcard span.fn {
+  display: block;
+}
+
+.project span.url,
 .vcard span.url {
   font-size: 50%;
+  display: block;
 }
 
 .person_projects {
@@ -54,29 +60,46 @@ caption {
 
 .person_projects li {
   display: inline;
-  padding: .5em .2em;
+/*  padding: .5em .2em;*/
   line-height: 1.75em;
 }
 
-.person_projects li a:hover {
-  padding: .5em 0;
-  background: red;
-  color: white;
+#projects .project_people {
+  margin: 0;
+  padding: 0;
+}
+
+#projects .project_people li {
+  display: inline;
+  font-size: 50%;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
 }
 
 
-#projects {
+
+.project span.name,
+.project span.url {
+  display: block;
+}
+
+.description {
+  vertical-align: middle;
 }
 
 /*LINKS...*/
 a:link, a:active, a:visited {
-color: #B00800;
-text-decoration: none;
+  color: #b00800;
+  text-decoration: none;
+  padding: .5em .25em .5em .25em;
 }
 
 a:hover {
-color: #F00;
-text-decoration: none;
+  color: white;
+  background: #b00800;
+  text-decoration: none;
 }
 
 a img { border: none; }

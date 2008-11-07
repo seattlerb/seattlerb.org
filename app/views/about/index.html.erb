@@ -27,43 +27,44 @@
             <tr class="vcard person <%= cycle("alt", "") %>">
               <th>
                 <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %></span>
-                <% if dude.website %><span class="url"><%= link_to(dude.website, dude.website) %></span><% end %>
+                <% if dude.website %><span class="url"><%= link_to(dude.website.sub(/http:\/\//, ""), dude.website) %></span><% end %>
                 <% if dude.bio %><p class="note bio"><%= dude.bio %></p><% end %>
               </th>
               <td class="person_projects">
                 <ul>
-                  <% dude.projects.each do |project| %>
+                  <% dude.projects.sort_by{|p| p.name.downcase}.each do |project| %>
                     <li><%= link_to_unless(project.url.blank?, project.name, project.url) %></li>
                   <% end %>
                 </ul>
               </td>
             </tr>
           <% end %>
-          
+
         </table>
       </div><!-- #people -->
 
       <div id="projects" class="span-24">
-        <h2>Projects</h2>
-        <dl>
+        <table>
+          <caption>Projects</caption>
           <% @projects.each do |project| %>
-            <dt class="name">
-              <%= link_to_unless(project.url.blank?, project.name, project.url) %>
-            </dt>
-            <% unless project.description.blank? %>
-              <dd class="description"><%= h project.description %></dd>
-            <% end %>
-            <dd class="project_dudes">
-              <ul>
-                <% project.dudes.each do |dude| %>
-                  <li class="project_dude"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
-                <% end %>
-              </ul>
-            </dd>
+            <tr class="project <%= cycle("alt", "") %>">
+              <th>
+                <span class="name"><%= project.name %></span>
+                <% unless project.url.blank? %><span class="url"><%= link_to(project.url.gsub(/http:\/\/|www.|\/$/, ""), project.url) %></span><% end %>
+                <ul class="project_people">
+                  <% project.dudes.each do |dude| %>
+                    <li class="project_person"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
+                  <% end %>
+                </ul>
+              </th>
+              <td class="description">
+                <%= project.description.gsub(/&/, "") %>
+              </td>
+            </tr>
           <% end %>
-        </dl>
-      </div>
-    </div>
+        </table>
+      </div><!-- #projects -->
+    </div><!-- .container -->
 
   </body>
 </html>
