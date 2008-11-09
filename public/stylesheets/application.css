@@ -116,6 +116,13 @@ caption {
   letter-spacing: -.04em;
 }
 
+.email,
+p.bio {
+  font-weight: normal;
+  font-size: 10px;
+  color: #666;
+}
+
 .vcard span.fn {
   display: block;
 }

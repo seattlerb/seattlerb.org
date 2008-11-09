@@ -68,6 +68,7 @@
               <th>
                 <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %></span>
                 <% if dude.website %><span class="url"><%= link_to(dude.website.sub(/http:\/\//, ""), dude.website) %></span><% end %>
+                <% if dude.email %><p class="email"><%= mail_to(dude.email, dude.email, :encode => "javascript") %></p><% end %>
                 <% if dude.bio %><p class="note bio"><%= dude.bio %></p><% end %>
               </th>
               <td class="person_projects">
