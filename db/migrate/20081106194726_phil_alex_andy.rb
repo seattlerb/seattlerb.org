@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class PhilAlexAndy < ActiveRecord::Migration
   def self.up
     ["Alex Vollmer", "Andy Smith"].each do |dude|
