@@ -1,4 +1,5 @@
-class CreateProjects < ActiveRecord::Migration
+# -*- coding: utf-8 -*
+-class CreateProjects < ActiveRecord::Migration
   def self.up
     create_table :projects do |t|
       t.string :name, :url
