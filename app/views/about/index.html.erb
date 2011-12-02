@@ -17,7 +17,7 @@
 
   <body>
     <div class="container">
-      <h1>Seattle.rb - STAGING</h1>
+      <h1>Seattle.rb</h1>
       <h3>
         <strong><%= @dudes.length %></strong> people,
         <strong><%= @projects.length %></strong> projects
@@ -26,11 +26,14 @@
       <div id='meetings' class="span-22 prepend-1 append-1">
         <h2>
           Location <abbr class="amp">&amp;</abbr> Schedule
-          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org"><img alt="download this hCard" class="download" src="/images/icon_hcard_download.png" /></a>
+          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org">
+            <%= image_tag("icon_hcard_download.png")%>
+            <%# <img alt="download this hCard" class="download" src="/icon_hcard_download.png" /></a> %>
         </h2>
         <div id='map' class="span-11">
           <a href='http://maps.google.com/maps?q=550+Broadway+E,+Seattle'>
-            <img alt='Vivace Cafe on Google Maps' class='map' src='/images/vivace_on_google_map.png' />
+            <%= image_tag("vivace_on_google_map.png") %>
+            <%# <img alt='Vivace Cafe on Google Maps' class='map' src='vivace_on_google_map.png' /> %>
           </a>
         </div><!-- #map -->
         <div id='meeting' class="span-11 last">
