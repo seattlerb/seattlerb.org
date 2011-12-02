@@ -4,9 +4,9 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-require 'rake'
-require 'rake/testtask'
-require 'rake/rdoctask'
+# require 'rake'
+# require 'rake/testtask'
+# require 'rake/rdoctask'
 
-require 'tasks/rails'
+# require 'tasks/rails'
 SeattlerbOrg::Application.load_tasks
