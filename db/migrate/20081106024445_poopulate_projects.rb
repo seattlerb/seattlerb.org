@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class PoopulateProjects < ActiveRecord::Migration
   def self.up
     [
