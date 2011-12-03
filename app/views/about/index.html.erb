@@ -1,21 +1,4 @@
-<!-- I support your decision, I believe in change and hope you find just what it is that you are looking for. -->
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang='en-US' xml:lang='en-US' xmlns='http://www.w3.org/1999/xhtml'>
 
-  <head>
-    <title>Seattle.rb | Seattle Ruby Brigade</title>
-    <meta content='text/html;charset=utf-8' http-equiv='Content-Type' />
-    <meta content='en' http-equiv='content-language' />
-    <link href='http://seattlerb.org' rel='home' />
-    <meta content="" name='description' />
-    <link href='http://seattlerb.org' rel='start' title='Seattle.rb | Seattle Ruby Brigade' />
-    <%# <%= stylesheet_link_tag "blueprint/print", :media => "print" %1> %>
-    <%# <%= stylesheet_link_tag "blueprint/screen", :media => "screen" %1> %>
-    <%# <%= stylesheet_link_tag "application", :media => "screen" %1> %>
-    <%# <!--[if lte IE 6]><%= stylesheet_link_tag "blueprint/ie", :media => "print" %1><![endif]--> %>
-  </head>
-
-  <body>
     <div class="container">
       <h1>Seattle.rb</h1>
       <h3>
@@ -26,9 +9,7 @@
       <div id='meetings' class="span-22 prepend-1 append-1">
         <h2>
           Location <abbr class="amp">&amp;</abbr> Schedule
-          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org">
-            <%= image_tag("icon_hcard_download.png")%>
-            <%# <img alt="download this hCard" class="download" src="/icon_hcard_download.png" /></a> %>
+          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org"><img alt="download this hCard" class="download" src="/assets/icon_hcard_download.png" /></a>
         </h2>
         <div id='map' class="span-11">
           <a href='http://maps.google.com/maps?q=550+Broadway+E,+Seattle'>
@@ -64,7 +45,8 @@
           <% @dudes.each_with_index do |dude, index| %>
             <tr class="vcard person <%= cycle("alt", "") %>">
               <th>
-                <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %></span>
+                <span class="fn"><%= dude.name %></span>
+                <%# <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %1></span> %>
                 <% if dude.website %><span class="url"><%= link_to(dude.website.sub(/http:\/\//, ""), dude.website) %></span><% end %>
                 <% if dude.email %><p class="email"><%= mail_to(dude.email, dude.email, :encode => "javascript") %></p><% end %>
                 <% if dude.bio %><p class="note bio"><%= dude.bio %></p><% end %>
@@ -108,5 +90,3 @@
       </div><!-- #footer -->
 
     </div><!-- .container -->
-  </body>
-</html>
