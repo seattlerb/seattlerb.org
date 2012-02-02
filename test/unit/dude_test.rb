@@ -1,8 +1,9 @@
 require 'test_helper'
 
-class DudeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
-  end
+describe Dude do
+  # it "should have a required rubygemsid" do
+  #   dude = Dude.new
+  #   dude.ruby_gems_id.wont_be_empty
+  # end
 end
+

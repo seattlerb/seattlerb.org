@@ -20,6 +20,9 @@ group :development, :test do
   gem 'heroku'
   gem 'sqlite3'
   gem 'minitest-rails'
+  gem 'ZenTest'
+  gem 'autotest-fsevent'
+  gem 'autotest-rails'
 end
 
 # To use ActiveModel has_secure_password

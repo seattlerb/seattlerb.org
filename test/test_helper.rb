@@ -1,13 +1,20 @@
+require "minitest/autorun"
+require "minitest/rails"
+require "minitest/spec"
+require "minitest/pride"
+
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
-require 'rails/test_help'
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+class MiniTest::Rails::Spec
 
-  # Add more helper methods to be used by all tests here...
+  # Add methods to be used by all specs here...
+
+end
+
+# Uncomment to support fixtures in Model tests...
+# require "active_record/fixtures"
+class MiniTest::Rails::Model
+  # include ActiveRecord::TestFixtures
+  # self.fixture_path = File.join(Rails.root, "test", "fixtures")
 end
