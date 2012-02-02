@@ -1,9 +1,13 @@
 require 'test_helper'
 
 describe Dude do
-  # it "should have a required rubygemsid" do
-  #   dude = Dude.new
-  #   dude.ruby_gems_id.wont_be_empty
-  # end
+
+  before do
+    @dude = Dude.new(:ruby_gems_id  => 'foo')
+  end
+
+  it "should have a required ruby_gems_id" do
+    @dude.ruby_gems_id.wont_be_empty
+  end
 end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090505014932) do
+ActiveRecord::Schema.define(:version => 20120202014847) do
 
   create_table "affiliations", :force => true do |t|
     t.integer  "dude_id"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20090505014932) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ruby_gems_id"
   end
 
   create_table "projects", :force => true do |t|
