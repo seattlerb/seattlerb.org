@@ -73,6 +73,7 @@ GEM
       minitest (~> 2.2)
       railties (~> 3.1.0.rc1)
     multi_json (1.0.4)
+    net-http-persistent (2.5.2)
     pg (0.12.2)
     polyglot (0.3.3)
     rack (1.3.6)
@@ -140,6 +141,7 @@ DEPENDENCIES
   heroku
   jquery-rails
   minitest-rails
+  net-http-persistent
   pg
   rails (= 3.1.3)
   sass-rails (~> 3.1.5)

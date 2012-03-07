@@ -23,6 +23,7 @@ group :development, :test do
   gem 'ZenTest'
   gem 'autotest-fsevent'
   gem 'autotest-rails'
+  gem 'net-http-persistent'
 end
 
 # To use ActiveModel has_secure_password
