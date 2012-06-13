@@ -25,12 +25,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Seattle.rb</a>
+        <%= link_to "Seattle.rb", root_path, class: 'brand' %>
         <div class="nav-collapse">
           <ul class="nav">
-            <li><a href="people.html">People</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="join-us.html">Join Us</a></li>
+            <li><a href="/people">People</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/join-us">Join Us</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -39,12 +39,12 @@
 </header>
 
 <div role="main" class='container'>
-
-
-<%= yield %>
+  <%= yield %>
+</div>
 <footer>
   We will light you on fire
 </footer>
+
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
 <script src="js/libs/modernizr-2.5.3.min.js"></script>
