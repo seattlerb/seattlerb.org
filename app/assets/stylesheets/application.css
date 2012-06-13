@@ -7,6 +7,7 @@ div[role=main] {
 
 input[type=submit] {display: block}
 
+.inline {display: inline-block;}
 .brand {
   background: url(seattle.rb-logo.png) no-repeat left top !important;
   color: #c70000 !important;

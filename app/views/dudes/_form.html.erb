@@ -7,13 +7,27 @@
   <%= f.text_field :email %>
 
   <%= f.label :bio %>
-  <%= f.text_field :bio %>
+  <%= f.text_area :bio, rows: 4 %>
 
   <%= f.label :website %>
   <%= f.text_field :website %>
 
   <%= f.label :ruby_gems_id %>
   <%= f.text_field :ruby_gems_id %>
+
+  <%= f.label :twitter %>
+  @<%= f.text_field :twitter %>
+
+  <%= f.label :github, "Github url" %>
+  <%= f.text_field :github %>
+
+  <%= f.label :image_url %>
+  <%= f.text_field :image_url %>
+  
+  <div>
+    <%= f.check_box :featured %> <%= f.label :featured, class: 'inline' %>
+  </div>
+  
   
   <%= f.submit "Submit", class: 'btn btn-success' %>
 

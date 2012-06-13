@@ -5,10 +5,11 @@ class AboutController < ApplicationController
   end
   
   def people
+    @dudes = Dude.scoped
   end
   
   def projects
-    
+    @projects = Project.scoped
   end
   
   def join_us
