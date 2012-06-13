@@ -1,0 +1,5 @@
+<h1>Admin Dudes</h1>
+<% @dudes.each do |dude| %>
+  <li><%= link_to dude.name, edit_dude_path(dude.id) %></li>
+<% end %>
+

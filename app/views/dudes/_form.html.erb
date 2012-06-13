@@ -1,0 +1,20 @@
+<%= form_for @dude do |f| -%>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :bio %>
+  <%= f.text_field :bio %>
+
+  <%= f.label :website %>
+  <%= f.text_field :website %>
+
+  <%= f.label :ruby_gems_id %>
+  <%= f.text_field :ruby_gems_id %>
+  
+  <%= f.submit "Submit", class: 'btn btn-success' %>
+
+<% end -%>

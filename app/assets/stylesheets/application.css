@@ -5,6 +5,8 @@ div[role=main] {
   margin-top: 60px;
 }
 
+input[type=submit] {display: block}
+
 .brand {
   background: url(seattle.rb-logo.png) no-repeat left top !important;
   color: #c70000 !important;
