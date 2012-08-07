@@ -110,13 +110,13 @@ input[type=checkbox] + label { display: inline-block }
   background-image: linear-gradient(to bottom, #C3D9FF 0%, #A9BBDD 100%);
 }
 
-#join-us #map {
+.join-us #map {
   background: white;
   border: none;
   margin-top: 0;
 }
 
-#join-us #map iframe {
+.join-us #map iframe {
   margin-top: 10px;
 }
 
