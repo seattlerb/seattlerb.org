@@ -5,6 +5,7 @@
 require 'autotest/restart'
 require 'autotest/bundler'
 require 'minitest/pride'
+require 'autotest/fsevent'
 
 Autotest.add_hook :initialize do |at|
   at.testlib = "minitest/autorun"
