@@ -66,6 +66,8 @@ address {margin: 0}
 .view-all {
   text-align: right;
 }
+input[type=checkbox] + label { display: inline-block }
+.inline { display: inline-block}
 /*...LAYOUT*/
 
 /* HOME...*/

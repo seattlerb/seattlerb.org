@@ -3,7 +3,8 @@ class NewsletterController < ApplicationController
   end
   
   def subscribe
-    ZenspiderSubscriber.subscribe!
+    response = ZenspiderSubscriber.subscribe!(params[:subscribe])
+    puts response.inspect
     redirect_to join_us_path
   end
 

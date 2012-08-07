@@ -55,6 +55,9 @@ GEM
       rubyzip
       term-ansicolor (~> 1.0.5)
     hike (1.2.1)
+    httparty (0.8.3)
+      multi_json (~> 1.0)
+      multi_xml
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -81,6 +84,7 @@ GEM
       minitest (~> 2.2)
       railties (~> 3.1.0.rc1)
     multi_json (1.0.4)
+    multi_xml (0.5.1)
     net-http-persistent (2.5.2)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -153,6 +157,7 @@ DEPENDENCIES
   autotest-rails
   coffee-rails (~> 3.1.1)
   heroku
+  httparty
   jquery-rails
   minitest-rails
   net-http-persistent
