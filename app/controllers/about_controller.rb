@@ -9,7 +9,7 @@ class AboutController < ApplicationController
   end
   
   def projects
-    @projects = Project.scoped
+    @projects = Project.order('name')
   end
   
   def join_us

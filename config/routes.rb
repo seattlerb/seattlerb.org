@@ -1,6 +1,6 @@
 SeattlerbOrg::Application.routes.draw do
   
-  resources :dudes, path: '/admin/dudes'
+  resources :dudes, path: '/admin/people'
   
   root :to => "about#index"
   match "/people"   => "about#people"

@@ -13,51 +13,20 @@
   </div>
 <% end %>
 
-<div class='row'>
-  <div class='span6 mini-profile'>
-    <img src='img/ruby.png'>
-    <h2>Alex Vollmer</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    <ul class='links'>
-      <li><i class='icon-envelope '></i><a href="#">Email</a></li>
-      <li><i class='icon-user '></i><a href="#">Github</a></li>
-      <li><i class='icon-leaf '></i><a href="#">@tenderlove</a></li>
-    </ul>
-    
+<% @dudes.in_groups_of(2).each do |group| %>
+  <div class='row'>
+    <% group.compact.each do |dude| %>
+      <div class='span6 mini-profile'>
+        <img src='img/ruby.png'>
+        <h2><%= dude.name %></h2>
+        <%= dude.bio %>
+        <ul class='links'>
+          <% if dude.website %><li><i class='icon-user '></i><a href=<%= dude.website %>>Website</a></li><% end %>
+          <% if dude.ruby_gems_id %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= dude.ruby_gems_id %>">Ruby Gems</a></li><% end %>
+          <% if dude.email %><li><i class='icon-envelope '></i><a href="mailto:<%= dude.email %>">Email</a></li><% end %>
+          <%= raw twitter_link dude.twitter %>
+        </ul>
+      </div>
+    <% end %>
   </div>
-  <div class='span6 mini-profile'>
-    <img src='img/ruby.png'>
-    <h2>Alex Vollmer</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    <ul class='links'>
-      <li><i class='icon-envelope '></i><a href="#">Email</a></li>
-      <li><i class='icon-user '></i><a href="#">Github</a></li>
-      <li><i class='icon-leaf '></i><a href="#">@tenderlove</a></li>
-    </ul>
-    
-  </div>
-</div>
-
-<div class='row'>
-  <div class='span6 mini-profile'>
-    <img src='img/ruby.png'>
-    <h2>Alex Vollmer</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    <ul class='links'>
-      <li><i class='icon-envelope '></i><a href="#">Email</a></li>
-      <li><i class='icon-user '></i><a href="#">Github</a></li>
-      <li><i class='icon-leaf '></i><a href="#">@tenderlove</a></li>
-    </ul>
-  </div>
-  <div class='span6 mini-profile'>
-    <img src='img/ruby.png'>
-    <h2>Alex Vollmer</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-    <ul class='links'>
-      <li><i class='icon-envelope '></i><a href="#">Email</a></li>
-      <li><i class='icon-user '></i><a href="#">Github</a></li>
-      <li><i class='icon-leaf '></i><a href="#">@tenderlove</a></li>
-    </ul>
-    
-  </div>
-</div>
+<% end %>
