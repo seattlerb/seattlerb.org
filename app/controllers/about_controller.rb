@@ -5,7 +5,8 @@ class AboutController < ApplicationController
   end
   
   def people
-    @dudes = Dude.scoped
+    @people = Dude.regular
+    @featured = Dude.featured
   end
   
   def projects

@@ -1,9 +1,9 @@
-<% @dudes.each do |dude| %>
-  <div class='profile row'>
+<% @featured.each do |dude| %>
+  <div class='featured profile row'>
     <img class='span2' src=<%= dude.image_url %>>
     <div class="span10 description">
       <h1><%= dude.name %></h1>
-      <p><%= dude.bio %></p>
+      <p class='bio'><%= dude.bio %></p>
       <ul class='links'>
         <%= raw twitter_link dude.twitter %>
         <li><i class='icon-envelope '></i><a href="#">Email</a></li>
@@ -13,13 +13,12 @@
   </div>
 <% end %>
 
-<% @dudes.in_groups_of(2).each do |group| %>
+<% @people.in_groups_of(2).each do |group| %>
   <div class='row'>
     <% group.compact.each do |dude| %>
       <div class='span6 mini-profile'>
-        <img src='img/ruby.png'>
         <h2><%= dude.name %></h2>
-        <%= dude.bio %>
+        <p><%= dude.bio %></p>
         <ul class='links'>
           <% if dude.website %><li><i class='icon-user '></i><a href=<%= dude.website %>>Website</a></li><% end %>
           <% if dude.ruby_gems_id %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= dude.ruby_gems_id %>">Ruby Gems</a></li><% end %>
