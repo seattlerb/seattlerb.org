@@ -19,10 +19,6 @@ gem 'jquery-rails'
 group :development, :test do
   gem 'heroku'
   gem 'sqlite3'
-  gem 'minitest-rails'
-  gem 'ZenTest'
-  gem 'autotest-fsevent'
-  gem 'autotest-rails'
   gem 'net-http-persistent'
 end
 
