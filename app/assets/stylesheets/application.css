@@ -228,3 +228,10 @@ abbr.amp {
   border-top: 1px dotted #ddd;
   padding-top: 5px;
 }
+/* ...PROJECTS */
+
+/* JOIN US...*/
+
+#newsletter input[type=text] {
+  margin-top: 5px;
+}

@@ -22,7 +22,7 @@
       <iframe width="100%" height="420" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?ie=UTF8&amp;cid=1796984254826196308&amp;q=Vivace+Espresso+Bar+at+Brix&amp;gl=US&amp;hl=en&amp;ll=47.625952,-122.320737&amp;spn=0.006295,0.006295&amp;t=m&amp;iwloc=A&amp;output=embed"></iframe>
     </div>
   </div>
-  <div class='span4'>
+  <div id='newsletter' class='span4'>
     <h2>Join the Mailing Lists</h2>
     
     <%= form_tag subscribe_path do %>
@@ -32,10 +32,10 @@
       </div>
       <div class="control-group">
         <%= check_box_tag "subscribe[subscribe_to_discussion]", 1, true %>
-        <%= label_tag "subscribe[subscribe_to_discussion]", "Subsribe to Ruby Discussion" %>
+        <%= label_tag "subscribe[subscribe_to_discussion]", "Subscribe to Ruby Discussion" %>
         <br />
         <%= check_box_tag "subscribe[subscribe_to_jobs]", 1, true %>
-        <%= label_tag "subscribe[subscribe_to_jobs]", "Subsribe to Ruby Jobs" %>
+        <%= label_tag "subscribe[subscribe_to_jobs]", "Subscribe to Ruby Jobs" %>
       </div>
       <%= submit_tag "Subscribe", class: 'btn' %>
     <% end %>

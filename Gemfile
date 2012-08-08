@@ -15,9 +15,5 @@ end
 group :development, :test do
   gem 'heroku'
   gem 'sqlite3'
-  gem 'minitest-rails'
-  gem 'ZenTest'
-  gem 'autotest-fsevent', '0.2.8'
-  gem 'autotest-rails'
-  gem 'net-http-persistent'
+  gem 'rspec-rails'
 end
