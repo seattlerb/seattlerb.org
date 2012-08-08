@@ -1,92 +1,59 @@
+<div class="row hero-unit">
+  <%= image_tag 'seattle_rb_logo_big.png', class: "span2" %>
+  <div id='hero-text' class='span9'>
+    <h1>Seattle.rb</h1>
+    <h2>We Will Light You on Fire</h2>
+    <p>
+      Brigading for over a decade, we’re the first and the biggest Ruby user group in North America. We meet every Tuesday night – same time, same place. But don’t let that fool you into thinking anything that we do is mundane, we will light you on fire.
+    </p>
+  </div>
+</div>
 
-    <div class="container">
-      <h1>Seattle.rb</h1>
-      <h3>
-        <strong><%= @dudes.length %></strong> people,
-        <strong><%= @projects.length %></strong> projects
-      </h3>
+<div class="row">
+  <div class="span4">
+    <h2>Why Did We Start Seattle.rb?</h2>
+     <p>
+       It comes down to strength in numbers – independence that contributes to an interdependent whole. We benefit by collaborating to solve problems and providing support as we take on new challenges in Ruby. It’s also a lot of fun and we enjoy the community that we build. Check out <a href='http://www.youtube.com/watch?v=ICVdf4WidkY'>this video</a> about our humble beginnings.
+     </p>
+  </div>
+  <div class="span4">
+    <h2>How Can You Get Involved?</h2>
+    <p>
+      We’re informal so drop in and code with us as you please. Seattle.rb also offers plenty of resources: check out our <a href='projects.html'>projects</a>, join our <a href='join-us.html'>mailing list</a>, follow us on <a href='http://twitter.com/seattlerb'>twitter</a>, and peruse or submit to our <a href='http://lists.zenspider.com/pipermail/rubyjobs/'>Seattle jobs board</a>. Also, check out <a href="/people">People</a> to see individual projects and contact information.
+    </p>
+ </div>
+  <div class="span4">
+    <h2>Start a Ruby Brigade</h2>
+    <p>
+      We get a lot of people asking about the secret to making a lasting Ruby community. It’s pretty simple – we began with a core collection of dedicated coders, have welcomed others to hack with us, and are consistent in our meetings. Other Ruby groups coordinate sponsors and speakers – do what works for you.
+    </p>
+  </div>
+</div>
 
-      <div id='meetings' class="span-22 prepend-1 append-1">
-        <h2>
-          Location <abbr class="amp">&amp;</abbr> Schedule
-          <a href="http://suda.co.uk/projects/X2V/get-vcard.php?uri=http://seattlerb.org"><img alt="download this hCard" class="download" src="/assets/icon_hcard_download.png" /></a>
-        </h2>
-        <div id='map' class="span-11">
-          <a href='http://maps.google.com/maps?q=550+Broadway+E,+Seattle'>
-            <%= image_tag("vivace_on_google_map.png") %>
-            <%# <img alt='Vivace Cafe on Google Maps' class='map' src='vivace_on_google_map.png' /> %>
-          </a>
-        </div><!-- #map -->
-        <div id='meeting' class="span-11 last">
-          <div class='vcard'>
-            <div class='org'>Vivace Cafe</div>
-            <div class='adr'>
-              <span class='street-address'>550 East Broadway</span>
-              <span class='locality'>Seattle</span>,
-              <span class='region'>WA</span>,
-              <span class='postal-code'>98102</span>
-            </div>
-          </div>
-          <div class='vcalendar' id='events'>
-            <div class='vevent'>
-              <span class='dtstart' title='20070102T190000'>Every Tuesday from 7:00p to</span>
-              <span class='dtend' title='20070102T210000'>9:00p</span>
-              <span class='location'>Vivace Cafe</span>
-              <span class='standout summary'>Hack Night. Everyone is welcome!</span>
-            </div>
-          </div>
-        </div><!-- #meeting -->
-      </div><!-- #meetings -->
-
-
-      <div id="people" class="span-22 prepend-1 append-1">
-        <table>
-          <caption>People</caption>
-          <% @dudes.each_with_index do |dude, index| %>
-            <tr class="vcard person <%= cycle("alt", "") %>">
-              <th>
-                <span class="fn"><%= dude.name %></span>
-                <%# <span class="fn"><%= dude.name.gsub(/\s/, "&nbsp;") %1></span> %>
-                <% if dude.website %><span class="url"><%= link_to(dude.website.sub(/http:\/\//, ""), dude.website) %></span><% end %>
-                <% if dude.email %><p class="email"><%= mail_to(dude.email, dude.email, :encode => "javascript") %></p><% end %>
-                <% if dude.bio %><p class="note bio"><%= dude.bio %></p><% end %>
-              </th>
-              <td class="person_projects">
-                <ul>
-                  <% dude.projects.sort_by{|p| p.name.downcase}.each do |project| %>
-                    <li><%= link_to_unless(project.url.blank?, project.name, project.url) %></li>
-                  <% end %>
-                </ul>
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      </div><!-- #people -->
-
-      <div id="projects" class="span-22 prepend-1 append-1">
-        <table>
-          <caption>Projects</caption>
-          <% @projects.each do |project| %>
-            <tr class="project <%= cycle("alt", "") %>">
-              <th>
-                <span class="name"><%= project.name %></span>
-                <% unless project.url.blank? %><span class="url"><%= link_to(project.url.gsub(/http:\/\/|www.|\/$/, ""), project.url) %></span><% end %>
-                <ul class="project_people">
-                  <% project.dudes.each do |dude| %>
-                    <li class="project_person"><%= link_to_unless(dude.website.nil?, dude.name, dude.website) %></li>
-                  <% end %>
-                </ul>
-              </th>
-              <td class="description">
-                <%= project.description.gsub(/&/, "") %>
-              </td>
-            </tr>
-          <% end %>
-        </table>
-      </div><!-- #projects -->
-
-      <div id="footer" class="span-24">
-        <p>We will light you on fire</p>
-      </div><!-- #footer -->
-
-    </div><!-- .container -->
+<div class='row'>
+  <div id="map" class='span12'>
+    <div id="address" class='span4'>
+      <h1>Join Seattle.rb</h1>
+      Come hack with us! We’re at Vivace Café every Tuesday from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome!
+      <table>
+        <tr>
+          <td><i class='icon-time'></i></td>
+          <td><h3><time>7:00p</time> to <time>9:00p</time> Every Tuesday</h3></td>
+        </tr>
+        <tr>
+          <td><i class='icon-map-marker'></i></td>
+          <td>
+            <address>
+              <h3>Vivace Cafe</h3>
+              532 Broadway Ave E<br />
+              Seattle, WA 98102
+            </address>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class='span8'>
+      <iframe height="200" frameborder="" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;aq=&amp;sll=37.0635,-95.677068&amp;sspn=37.683309,86.220703&amp;ie=UTF8&amp;&amp;t=m&amp;cid=2732031702180546416&amp;ll=47.62381,-122.320662&amp;spn=0.012727,0.080509&amp;z=14&amp;iwloc=near&addr&amp;output=embed"></iframe>
+    </div>
+  </div>
+</div>
