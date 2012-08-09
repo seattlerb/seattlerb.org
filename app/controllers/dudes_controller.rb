@@ -1,4 +1,5 @@
 class DudesController < ApplicationController
+  before_filter :basic_auth
   def index
     @dudes = Dude.scoped
   end
