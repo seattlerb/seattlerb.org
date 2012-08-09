@@ -1,31 +1,19 @@
-<% @featured.each do |dude| %>
+<% @people.each do |person| %>
   <div class='featured profile row'>
-    <img class='span2' src=<%= dude.image_url %>>
+    <div class='span1'>
+      <%= image_tag person.image_url %>
+    </div>
     <div class="span10 description">
-      <h1><%= dude.name %></h1>
-      <p class='bio'><%= dude.bio %></p>
+      <h1><%= person.name %></h1>
+      <p class='bio'><%= person.bio %></p>
       <ul class='links'>
-        <%= raw twitter_link dude.twitter %>
-        <li><i class='icon-envelope '></i><a href="#">Email</a></li>
-        <li><i class='icon-user '></i><a href=<%= dude.github %>>Github</a></li>
+        <% if person.website %><li><i class='icon-user '></i><a href=<%= person.website %>>Website</a></li><% end %>
+        <% if person.ruby_gems_id %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= person.ruby_gems_id %>">Ruby Gems</a></li><% end %>
+        <% if person.email %><li><i class='icon-envelope '></i><a href="mailto:<%= person.email %>">Email</a></li><% end %>
+        <% if person.github %><li><i class='icon-user '></i><a href=<%= person.github %>>Github</a></li><% end %>
+        
+        <%= raw twitter_link person.twitter %>
       </ul>
     </div>
-  </div>
-<% end %>
-
-<% @people.in_groups_of(2).each do |group| %>
-  <div class='row'>
-    <% group.compact.each do |dude| %>
-      <div class='span6 mini-profile'>
-        <h2><%= dude.name %></h2>
-        <p><%= dude.bio %></p>
-        <ul class='links'>
-          <% if dude.website %><li><i class='icon-user '></i><a href=<%= dude.website %>>Website</a></li><% end %>
-          <% if dude.ruby_gems_id %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= dude.ruby_gems_id %>">Ruby Gems</a></li><% end %>
-          <% if dude.email %><li><i class='icon-envelope '></i><a href="mailto:<%= dude.email %>">Email</a></li><% end %>
-          <%= raw twitter_link dude.twitter %>
-        </ul>
-      </div>
-    <% end %>
   </div>
 <% end %>

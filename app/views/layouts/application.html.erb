@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Seattle.rb | Home</title>
+  <title>Seattle.rb | <%= @title ||= params[:action].humanize %></title>
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
@@ -24,12 +24,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Seattle.rb</a>
+      <%= link_to "Seattle.rb", root_path, class: 'brand' %>
       <div class="nav-collapse">
         <ul class="nav">
-          <li><a href="http://bookis.github.com/seattlerb/people.html">People</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="join-us.html">Join Us</a></li>
+          <li><%= link_to "People", people_path %></li>
+          <li><%= link_to "Projects", projects_path %></li>
+          <li><%= link_to "Join Us", join_us_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>

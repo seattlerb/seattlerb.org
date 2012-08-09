@@ -10,12 +10,25 @@ class Dude < ActiveRecord::Base
     super.blank? ? "..." : super
   end
   
-  photo_options = {:styles => { :medium => "300x300>", :thumb => "100x100>" }}
-  photo_options.merge!(storage: :s3,
-    bucket: "seattlerb-org-#{Rails.env}",
-    s3_credentials: {access_key_id: ENV["AWS_ACCESS_KEY_ID"], secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]}
-  ) unless Rails.env.test?
+  def update_avatar!
+    twitter_response = get_twitter_info if twitter
+    image_url = if twitter_response
+      twitter_response["profile_image_url"].gsub(/normal/i, "bigger")
+    else
+      "missing_image.png"
+    end
+    self.update_attributes(image_url: image_url)
+  end
   
-  has_attached_file :photo, photo_options
+  private
+  
+  def get_twitter_info
+    response = HTTParty.get("https://api.twitter.com/1/users/show.json?screen_name=#{self.twitter}")
+    if response.code == 200
+      response.parsed_response
+    else
+      false
+    end
+  end
   
 end

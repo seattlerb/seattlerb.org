@@ -1,12 +1,10 @@
 class AboutController < ApplicationController
   def index
-    @dudes    = Dude.all.sort_by{|d| d.projects.length}.reverse
-    @projects = Project.all.sort_by{|d| d.name.downcase}
+    @title = "Home"
   end
   
   def people
-    @people = Dude.regular
-    @featured = Dude.featured
+    @people = Dude.order('featured desc, name asc')
   end
   
   def projects
@@ -14,6 +12,5 @@ class AboutController < ApplicationController
   end
   
   def join_us
-    
   end
 end
