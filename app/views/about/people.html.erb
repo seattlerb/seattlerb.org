@@ -4,13 +4,13 @@
       <%= image_tag person.image_url %>
     </div>
     <div class="span10 description">
-      <h1><%= person.name %></h1>
+      <h1 id="<%= person.name.parameterize %>"><%= person.name %></h1>
       <p class='bio'><%= person.bio %></p>
       <ul class='links'>
-        <% if person.website %><li><i class='icon-user '></i><a href=<%= person.website %>>Website</a></li><% end %>
-        <% if person.ruby_gems_id %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= person.ruby_gems_id %>">Ruby Gems</a></li><% end %>
-        <% if person.email %><li><i class='icon-envelope '></i><a href="mailto:<%= person.email %>">Email</a></li><% end %>
-        <% if person.github %><li><i class='icon-user '></i><a href=<%= person.github %>>Github</a></li><% end %>
+        <% if person.website? %><li><i class='icon-user '></i><a href=<%= person.website %>>Website</a></li><% end %>
+        <% if person.ruby_gems_id? %><li><i class='icon-user '></i><a href="http://rubygems.org/profiles/<%= person.ruby_gems_id %>">Ruby Gems</a></li><% end %>
+        <% if person.email? %><li><i class='icon-envelope '></i><a href="mailto:<%= person.email %>">Email</a></li><% end %>
+        <% if person.github? %><li><i class='icon-user '></i><a href=<%= person.github %>>Github</a></li><% end %>
         
         <%= raw twitter_link person.twitter %>
       </ul>
