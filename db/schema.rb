@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20120613212608) do
 
   create_table "affiliations", :force => true do |t|
-    t.integer  "dude_id"
-    t.integer  "project_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "dude_id"
+    t.integer   "project_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "dudes", :force => true do |t|
@@ -35,11 +35,11 @@ ActiveRecord::Schema.define(:version => 20120613212608) do
   end
 
   create_table "projects", :force => true do |t|
-    t.string   "name"
-    t.string   "url"
-    t.text     "description"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.string    "url"
+    t.text      "description"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end
