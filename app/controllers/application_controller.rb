@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def basic_auth
     authenticate_or_request_with_http_basic do |username, password|
-      (username.downcase == "admin") && (password == "RubyisFun:)")
+      (username.downcase == "admin") && (password == ENV["SEATTLERB_ADMIN_PASSWORD"])
     end
   end
 end
