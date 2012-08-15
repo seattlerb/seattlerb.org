@@ -5,11 +5,11 @@ class Dude < ActiveRecord::Base
   has_many :projects, :through => :affiliations
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
-  
+
   def bio
     super.blank? ? "..." : super
   end
-  
+
   def update_avatar!
     twitter_response = get_twitter_info if twitter
     image_url = if twitter_response
@@ -19,9 +19,9 @@ class Dude < ActiveRecord::Base
     end
     self.update_attributes(image_url: image_url)
   end
-  
+
   private
-  
+
   def get_twitter_info
     response = HTTParty.get("https://api.twitter.com/1/users/show.json?screen_name=#{self.twitter}")
     if response.code == 200
@@ -30,5 +30,4 @@ class Dude < ActiveRecord::Base
       false
     end
   end
-  
 end
