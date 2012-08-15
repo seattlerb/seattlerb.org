@@ -1,13 +1,26 @@
 class DudesController < ApplicationController
-  before_filter :basic_auth
+  before_filter :basic_auth if Rails.env.production?
   def index
     @dudes = Dude.scoped
   end
-  
+
+  def new
+    @dude = Dude.new
+  end
+
+  def create
+    @dude = Dude.create(params[:dude])
+    if @dude.save
+      redirect_to dudes_path
+    else
+      render :new
+    end
+  end
+
   def edit
     @dude = Dude.find(params[:id])
   end
-  
+
   def update
     @dude = Dude.find(params[:id])
     if @dude.update_attributes(params[:dude])
