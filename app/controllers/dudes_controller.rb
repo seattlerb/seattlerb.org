@@ -16,5 +16,11 @@ class DudesController < ApplicationController
       render :edit
     end
   end
+  
+  def destroy
+    @dude = Dude.find(params[:id])
+    @dude.destroy
+    redirect_to dudes_path
+  end
 
 end
