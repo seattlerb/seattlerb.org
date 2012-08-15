@@ -1,7 +1,7 @@
 <% @people.each do |person| %>
   <div class='featured profile row'>
     <div class='span1'>
-      <%= image_tag person.image_url %>
+      <%= image_tag(person.image_url || "missing_image.png") %>
     </div>
     <div class="span10 description">
       <h1 id="<%= person.name.parameterize %>"><%= person.name %></h1>
