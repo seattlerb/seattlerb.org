@@ -1,7 +1,7 @@
 class DudesController < ApplicationController
   before_filter :basic_auth if Rails.env.production?
   def index
-    @dudes = Dude.scoped
+    @dudes = Dude.order('name asc')
   end
 
   def new
