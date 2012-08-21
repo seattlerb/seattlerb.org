@@ -11,16 +11,22 @@ class Dude < ActiveRecord::Base
   end
   
   def update_avatar!
-    twitter_response = get_twitter_info if twitter
-    image_url = if twitter_response
-      twitter_response["profile_image_url"].gsub(/normal/i, "bigger")
-    else
-      "missing_image.png"
+    if missing_image?
+      twitter_response = get_twitter_info if twitter
+      image_url = if twitter_response
+        twitter_response["profile_image_url"].gsub(/normal/i, "bigger")
+      else
+        "missing_image.png"
+      end
+      self.update_attributes(image_url: image_url)
     end
-    self.update_attributes(image_url: image_url)
   end
   
   private
+  
+  def missing_image?
+    image_url.blank? || image_url == "missing_image.png"
+  end
   
   def get_twitter_info
     response = HTTParty.get("https://api.twitter.com/1/users/show.json?screen_name=#{self.twitter}")
