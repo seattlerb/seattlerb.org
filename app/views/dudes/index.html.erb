@@ -1,4 +1,8 @@
-<h1>Admin :: People</h1>
+<div class="row">
+  <h1 class="span10">Admin :: People</h1>
+  <div class="span2 new"><%= link_to "New Dudette", new_dude_path, class: 'btn' %></div>
+</div>
+
 <table class='table table-striped'>
   <% @dudes.each do |dude| %>
     <tr>

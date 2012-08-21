@@ -43,5 +43,4 @@ class Dude < ActiveRecord::Base
       false
     end
   end
-
 end
