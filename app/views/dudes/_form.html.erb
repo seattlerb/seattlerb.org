@@ -1,3 +1,9 @@
+    <% if flash[:notice] then %>
+      <div class="errors">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
     <div class='well'>
       <%= form_for @dude do |f| -%>
 

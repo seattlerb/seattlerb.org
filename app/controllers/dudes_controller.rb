@@ -13,6 +13,8 @@ class DudesController < ApplicationController
     if @dude.save
       redirect_to dudes_path
     else
+      flash[:notice] = "ERRORS: #{@dude.errors.full_messages.join ". "}"
+
       render :new
     end
   end
