@@ -3,17 +3,35 @@
   <%= image_tag 'chocolate.jpg', id: "chocolate", class: "span2" %>
   <div id='hero-text' class='span9'>
     <h1>Seattle.rb</h1>
-    <h2>Seattle Ruby Brigade
-</h2>
+    <h2>Seattle Ruby Brigade</h2>
     <p>
       Seattle.rb was the first Ruby and Rails user group in North America and has met regularly for over a decade. We convene every Tuesday night to contribute to open source, work on personal projects, and teach and learn from one another. All skill levels are welcome!
     </p>
+
     <a href="https://twitter.com/seattlerb" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @seattlerb</a>
+
     <%= render "twitter" %>
   </div>
 </div>
+<div class="row-fluid">
+  <div id="monthly" class='span12'>
+    <h1>New Monthly User Group!</h1>
+    <p class="explanation">Starting November 6th, Seattle Ruby Brigade will hold monthly user groups on the first Tuesday of each month. We'll have speakers, pizza and beer, and more opportunity to get to know your fellow NW rubyists. Sign up for November on <%= link_to "Eventbrite", "http://www.eventbrite.com/event/2836870155" %>.</p>
+    <h2> November Speakers </h2>
+    <div id="first" class="span4">
+      <h3> Aja Hammerly</h3>
+      <%= image_tag "https://evbdn.eventbrite.com/s3-s3/eventlogos/9442523/kushali.png" %>
+      <p> 10 things you didn't know about Enumerable (beginner) </p>
+    </div>
+    <div id="second" class="span4">
+      <h3> Mike Mondragon </h3>
+      <%= image_tag "https://evbdn.eventbrite.com/s3-s3/eventlogos/9442523/mondragon-1.png" %>
+      <p> Refactoring for code quality and profit (intermediate) </p>
+    </div>
+  </div>
+</div>
 
-<div class="row">
+<div class="row-fluid">
   <div class="span4">
     <h2>Why Seattle.rb?</h2>
      <p>
@@ -23,13 +41,13 @@
   <div class="span4">
     <h2>How Can I Participate?</h2>
     <p>
-      The Tuesday meet up is informal - drop in and code with us as you please. We also host larger, formal events on a semi-regular basis. We encourage everyone, from Ruby novice to expert, to join us to learn and contribute. We're excited to grow and support the Ruby and Rails communities!
+      The Tuesday meet up is informal - drop in and code with us as you please. We also host larger, formal events on a semi-regular basis. We encourage everyone, from Ruby novice to expert, to join us to learn and contribute. We're excited to grow and support the Ruby and Rails communities.
     </p>
  </div>
   <div class="span4">
     <h2>Where Can I Get Help?</h2>
     <p>
-      The nicest thing about our amazing members is the number of projects and resources we've helped grow! View our <%= link_to "projects", projects_path %>, join our <%= link_to "mailing list", join_us_path %>, follow us on <a href='http://twitter.com/seattlerb'>twitter</a>, and peruse or submit to our <%= link_to "Seattle jobs board", join_us_path %>.
+      The nicest thing about our members is the number of projects and resources we've helped grow. View our <%= link_to "projects", projects_path %>, join our <%= link_to "mailing list", join_us_path %>, follow us on <a href='http://twitter.com/seattlerb'>twitter</a>, and peruse or submit to our <%= link_to "Seattle jobs board", join_us_path %>.
     </p>
   </div>
 </div>
@@ -37,8 +55,8 @@
 <div class='row'>
   <div id="map" class='span12'>
     <div id="address" class='span4'>
-      <h1>Join Seattle.rb</h1>
-      Come hack with us! We’re at Vivace Café every Tuesday from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome!
+      <h1>Weekly Meet Up</h1>
+      Come hack with us! We’re at Vivace Café every Tuesday from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome.
       <table>
         <tr>
           <td><i class='icon-time'></i></td>

@@ -49,6 +49,39 @@ h2 {
   background-color: #c70000;
 }
 
+.row {
+  padding-right: 0;
+}
+
+#monthly {
+  background-color: #C3D9FF;
+  background-image: -ms-linear-gradient(top, #C3D9FF 0%, #A9BBDD 100%);
+  background-image: -moz-linear-gradient(top, #C3D9FF 0%, #A9BBDD 100%);
+  background-image: -o-linear-gradient(top, #C3D9FF 0%, #A9BBDD 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #C3D9FF), color-stop(1, #A9BBDD));
+  background-image: -webkit-linear-gradient(top, #C3D9FF 0%, #A9BBDD 100%);
+  background-image: linear-gradient(to bottom, #C3D9FF 0%, #A9BBDD 100%);
+  border: 1px solid #A9BBDD;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  min-height: 100px;
+  margin-bottom: 20px;
+  h1, h2 {
+    padding: 10px;
+  }
+  p.explanation{
+    padding-left: 10px;
+  }
+  #first,
+  #second,
+  #third {
+    p {
+      width: 190px;
+    }
+  }
+}
+
 footer {
   background-color: #C3D9FF;
   padding: 7px 30px;
@@ -76,6 +109,7 @@ input[type=checkbox] + label { display: inline-block }
 
 .hero-unit {
   background: #fff;
+  padding-bottom: 10px !important;
   margin-bottom: 10px;
 }
 
@@ -97,8 +131,10 @@ input[type=checkbox] + label { display: inline-block }
 #map {
   color: #333;
   border: 1px solid #A9BBDD;
-  padding: 5px 10px 0 10px;
+  padding: 0px !important;
+  padding-top: 10px !important;
   margin-top: 15px;
+  margin-right: 20px;
   margin-bottom: 25px;
   border-radius: 6px;
   moz-border-radius: 6px;
@@ -110,6 +146,9 @@ input[type=checkbox] + label { display: inline-block }
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #C3D9FF), color-stop(1, #A9BBDD));
   background-image: -webkit-linear-gradient(top, #C3D9FF 0%, #A9BBDD 100%);
   background-image: linear-gradient(to bottom, #C3D9FF 0%, #A9BBDD 100%);
+  .span8 {
+    margin-left: 0px;
+  }
 }
 
 .join-us #map {
@@ -127,7 +166,7 @@ input[type=checkbox] + label { display: inline-block }
   moz-border-radius: 6px;
   webkit-border-radius: 6px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 90%;
 }
 
 #map h3 {
@@ -143,7 +182,8 @@ input[type=checkbox] + label { display: inline-block }
 }
 
 #map #address {
-  margin-left: 0px;
+  margin-left: 10px !important;
+  margin-right: 5px !important;
 }
 
 abbr.amp {
