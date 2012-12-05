@@ -1,9 +1,12 @@
 source 'http://rubygems.org'
 
+gem 'rake'
 gem 'rails', '3.1.3'
 gem 'jquery-rails'
 gem "httparty"
-gem 'pg', group: :production
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
@@ -16,4 +19,10 @@ group :development, :test do
   gem 'heroku'
   gem 'sqlite3'
   gem 'rspec-rails'
+end
+
+group :test, :development do
+  gem 'minitest-rails'
+  gem 'ZenTest'
+  gem 'autotest-fsevent'
 end

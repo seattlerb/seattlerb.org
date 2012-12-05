@@ -9,7 +9,9 @@ class Dude < ActiveRecord::Base
   before_save :set_avatar, if: Proc.new { |user| user.twitter_changed? }
 
   def bio
-    super.blank? ? "..." : super
+    bio = self['bio']
+
+    bio.present? ? "..." : bio
   end
 
   def update_avatar!
@@ -28,8 +30,6 @@ class Dude < ActiveRecord::Base
       self.image_url = image_url
     end
   end
-
-  private
 
   def missing_image?
     image_url.blank? || image_url == "missing_image.png"
