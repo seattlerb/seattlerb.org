@@ -11,7 +11,7 @@ class Dude < ActiveRecord::Base
   def bio
     bio = self['bio']
 
-    bio.present? ? "..." : bio
+    bio.present? ? bio : "..."
   end
 
   def update_avatar!
