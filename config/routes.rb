@@ -1,4 +1,5 @@
 SeattlerbOrg::Application.routes.draw do
+  resources :talks
 
   scope "admin" do
     resources :dudes, path: ''
