@@ -4,6 +4,8 @@ class Talk < ActiveRecord::Base
                 :advanced,
                 :lightning]
 
- validates :kind, :inclusion => { :in => %w(beginner intermediate advanced lightning), :message => "%{value} is not a valid talk type" }
+  validates :kind, :inclusion => { :in => TALK_TYPES,
+    :message => "%{value} is not a valid talk type" }
+  validates :title, :presenter, :presence => true
 
 end
