@@ -2,6 +2,9 @@
 
 <table>
   <tr>
+    <th>Title</th>
+    <th>Presenter</th>
+    <th>Description</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +12,9 @@
 
 <% @talks.each do |talk| %>
   <tr>
+    <td><%= talk.title %></td>
+    <td><%= talk.presenter %></td>
+    <td><%= talk.description %></td>
     <td><%= link_to 'Show', talk %></td>
     <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
     <td><%= link_to 'Destroy', talk, confirm: 'Are you sure?', method: :delete %></td>

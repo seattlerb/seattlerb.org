@@ -17,7 +17,6 @@ class TalksController < ApplicationController
 
   def create
     @talk = Talk.new(params[:talk])
-    @talk.kind = @talk.kind.to_sym
 
     if @talk.save
       redirect_to @talk, notice: 'Talk was successfully created.'
@@ -28,7 +27,6 @@ class TalksController < ApplicationController
 
   def update
     @talk = Talk.find(params[:id])
-    params[:talk][:kind] = params[:talk][:kind].to_sym
 
     if @talk.update_attributes(params[:talk])
       redirect_to @talk, notice: 'Talk was successfully updated.'

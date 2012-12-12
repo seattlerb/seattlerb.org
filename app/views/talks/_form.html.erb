@@ -12,6 +12,18 @@
   <% end %>
 
   <div class="actions">
+    <%= f.label :presenter_name %>
+    <%= f.text_field :presenter %><br />
+
+    <%= f.label :title %>
+    <%= f.text_field :title %><br />
+
+    <%= f.label :description %>
+    <%= f.text_area :description %><br />
+
+    <%= f.label :kind %>
+    <%= f.select :kind, talk_kinds %>
+
     <%= f.submit %>
   </div>
 <% end %>

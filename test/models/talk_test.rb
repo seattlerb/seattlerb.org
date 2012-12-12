@@ -5,22 +5,22 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
     talk = Talk.create!(:title       => "Test Talk",
                         :description => "Test Talk Description",
                         :presenter   => "Dude Number 1",
-                        :kind        => :beginner)
+                        :kind        => "beginner")
 
     refute_nil talk
   end
 
   def test_talks_restricted_to_specific_types
-    beginner     = Talk.new(:kind      => :beginner,
+    beginner     = Talk.new(:kind      => "beginner",
                             :title     => "A",
                             :presenter => "A")
-    intermediate = Talk.new(:kind      => :intermediate,
+    intermediate = Talk.new(:kind      => "intermediate",
                             :title     => "A",
                             :presenter => "A")
-    advanced     = Talk.new(:kind      => :advanced,
+    advanced     = Talk.new(:kind      => "advanced",
                             :title     => "A",
                             :presenter => "A")
-    lightning    = Talk.new(:kind      => :lightning,
+    lightning    = Talk.new(:kind      => "lightning",
                             :title     => "A",
                             :presenter => "A")
 
@@ -36,15 +36,15 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
   end
 
   def test_talks_must_have_title_kind_and_presenter
-    minimum = Talk.new(:kind => :beginner, :title => "My Awesome Talk", :presenter => "Dude")
+    minimum = Talk.new(:kind => "beginner", :title => "My Awesome Talk", :presenter => "Dude")
 
     assert minimum.valid?
 
-    no_title     = Talk.new(:kind      => :beginner,
+    no_title     = Talk.new(:kind      => "beginner",
                             :presenter => "Dude")
     no_kind      = Talk.new(:title     => "My Awesome Talk",
                             :presenter => "Dude")
-    no_presenter = Talk.new(:kind      => :beginner,
+    no_presenter = Talk.new(:kind      => "beginner",
                             :title     => "My Awesome Talk")
 
     refute no_title.valid?

@@ -4,7 +4,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   def setup
     @talk = Talk.create!(:title       => "My Test Talk",
                          :description => "Description",
-                         :kind        => :beginner,
+                         :kind        => "beginner",
                          :presenter   => "Me")
   end
 
@@ -16,43 +16,79 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     get :index
     assert_response :success
 
+    assert_select 'td', :text => @talk.title
+    assert_select 'td', :text => @talk.presenter
+    assert_select 'td', :text => @talk.description
+
     assert assigns[:talks].include?(@talk)
   end
 
   def test_new
     get :new
+
     assert_response :success
+
+    assert_select 'input#talk_presenter'
+    assert_select 'input#talk_title'
+    assert_select 'textarea#talk_description'
+    assert_select 'select#talk_kind'
   end
 
   def test_create
-    talk_attributes = { :title     => "Title",
-                        :presenter => "The Dude",
-                        :kind      => :beginner}
+    talk_attributes = { :title       => "Title",
+                        :presenter   => "The Dude",
+                        :kind        => "beginner",
+                        :description => "My description"}
 
     assert_difference 'Talk.count', 1 do
       post :create, :talk => talk_attributes
     end
+
+    talk = Talk.find_by_title("Title")
+    assert_equal "Title", talk.title
+    assert_equal "My description", talk.description
+    assert_equal "beginner", talk.kind
+    assert_equal "The Dude", talk.presenter
 
     assert_redirected_to talk_path(assigns(:talk))
   end
 
   def test_show
     get :show, id: @talk
+
+    assert_match @talk.title, @response.body
+    assert_match @talk.presenter, @response.body
+    assert_match @talk.description, @response.body
+    assert_match @talk.kind, @response.body
+
     assert_response :success
   end
 
   def test_edit
     get :edit, id: @talk
     assert_response :success
+
+    assert_select 'input#talk_presenter'
+    assert_select 'input#talk_title'
+    assert_select 'textarea#talk_description'
+    assert_select 'select#talk_kind'
   end
 
   def test_update
-    talk_attributes = { :title     => "Title",
-                        :presenter => "The Dude",
-                        :kind      => :beginner}
+    talk_attributes = { :title       => "Title",
+                        :presenter   => "The Dude",
+                        :kind        => "advanced",
+                        :description => "My description"}
 
     put :update, id: @talk, talk: talk_attributes
     assert_redirected_to talk_path(assigns(:talk))
+
+    @talk.reload
+
+    assert_equal "Title", @talk.title
+    assert_equal "The Dude", @talk.presenter
+    assert_equal "advanced", @talk.kind
+    assert_equal "My description", @talk.description
   end
 
   def test_destroy
