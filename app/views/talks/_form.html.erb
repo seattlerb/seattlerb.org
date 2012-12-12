@@ -24,6 +24,8 @@
     <%= f.label :kind %>
     <%= f.select :kind, talk_kinds %>
 
+    <%= hidden_field_tag :secret, @secret %>
+
     <%= f.submit %>
   </div>
 <% end %>

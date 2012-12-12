@@ -35,13 +35,15 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_create
+    assert_equal "gorby", TalksController::SECRET
+
     talk_attributes = { :title       => "Title",
                         :presenter   => "The Dude",
                         :kind        => "beginner",
                         :description => "My description"}
 
     assert_difference 'Talk.count', 1 do
-      post :create, :talk => talk_attributes
+      post :create, :talk => talk_attributes, :secret => TalksController::SECRET
     end
 
     talk = Talk.find_by_title("Title")
@@ -51,6 +53,20 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal "The Dude", talk.presenter
 
     assert_redirected_to talk_path(assigns(:talk))
+  end
+
+  def test_create_fails_without_spam_blocker
+    talk_attributes = { :title       => "Title",
+                        :presenter   => "The Dude",
+                        :kind        => "beginner",
+                        :description => "My description" }
+
+
+    assert_difference 'Talk.count', 0 do
+      post :create, :talk => talk_attributes, :secret => "bad_secret"
+    end
+
+    assert_redirected_to root_path
   end
 
   def test_show
@@ -80,7 +96,10 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                         :kind        => "advanced",
                         :description => "My description"}
 
-    put :update, id: @talk, talk: talk_attributes
+    put :update, {id: @talk,
+                  talk: talk_attributes,
+                  secret: TalksController::SECRET}
+
     assert_redirected_to talk_path(assigns(:talk))
 
     @talk.reload
@@ -89,6 +108,23 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal "The Dude", @talk.presenter
     assert_equal "advanced", @talk.kind
     assert_equal "My description", @talk.description
+  end
+
+  def test_update
+    talk_attributes = { :title       => "Title",
+                        :presenter   => "The Dude",
+                        :kind        => "advanced",
+                        :description => "My description"}
+
+    put :update, id: @talk, talk: talk_attributes
+    assert_redirected_to root_path
+
+    @talk.reload
+
+    assert_equal "My Test Talk", @talk.title
+    assert_equal "Me", @talk.presenter
+    assert_equal "beginner", @talk.kind
+    assert_equal "Description", @talk.description
   end
 
   def test_destroy

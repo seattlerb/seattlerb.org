@@ -1,4 +1,8 @@
 class TalksController < ApplicationController
+  SECRET = "gorby"
+
+  before_filter :verify_secret, :only => [:create, :update]
+
   def index
     @talks = Talk.all
   end
@@ -8,10 +12,12 @@ class TalksController < ApplicationController
   end
 
   def new
+    @secret = SECRET
     @talk = Talk.new
   end
 
   def edit
+    @secret = SECRET
     @talk = Talk.find(params[:id])
   end
 
@@ -40,5 +46,12 @@ class TalksController < ApplicationController
     @talk.destroy
 
     redirect_to talks_url
+  end
+
+  private
+  def verify_secret
+    unless params[:secret] == SECRET then
+      redirect_to root_path
+    end
   end
 end
