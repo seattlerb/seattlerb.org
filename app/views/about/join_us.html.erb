@@ -2,24 +2,17 @@
   <div class='span8'>
     <div id='map'>
       <h2>When & Where?</h2>
-      Come hack with us! We’re at Vivace Café every Tuesday from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome!
-      <table>
-        <tr>
-          <td><i class='icon-time'></i></td>
-          <td><h3><time>7:00p</time> to <time>9:00p</time> Every Tuesday</h3></td>
-        </tr>
-        <tr>
-          <td><i class='icon-map-marker'></i></td>
-          <td>
-            <address>
-              <h3>Vivace Cafe</h3>
-              532 Broadway Ave E<br />
-              Seattle, WA 98102
-            </address>
-          </td>
-        </tr>
-      </table>
-      <iframe width="100%" height="420" frameborder="1" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?ie=UTF8&amp;cid=1796984254826196308&amp;q=Vivace+Espresso+Bar+at+Brix&amp;gl=US&amp;hl=en&amp;ll=47.625952,-122.320737&amp;spn=0.006295,0.006295&amp;t=m&amp;iwloc=A&amp;output=embed"></iframe>
+      <p>Come join us!
+
+      <p>We have a monthly social on the first Tuesday of every month.
+      Food, Beer, and Talks. <%= link_to "Sign up to give a talk", talks_path %>.
+      Contact us if you want to sponsor or help organize a monthly
+      event.
+
+      <p>We have a free-form hack night at Vivace Café every Tuesday
+      (except the first) from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome!
+
+      <%= render :partial => "about/maps" %>
     </div>
   </div>
   <div id='newsletter' class='span4'>
