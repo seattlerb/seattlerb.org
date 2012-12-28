@@ -12,12 +12,13 @@
       <p>We have a free-form hack night at Vivace Café every Tuesday
       (except the first) from 7-9 p.m. Bring whatever you’re working on, grab a cup of coffee, and meet other Rubyists. Everyone is welcome!
 
-      <%= render :partial => "about/maps" %>
     </div>
   </div>
   <div id='newsletter' class='span4'>
     <h2>Join the Mailing Lists</h2>
     
+    <p> These are low-volume and spam-free.</p>
+
     <%= form_tag subscribe_path do %>
       <div class="control-group">
         <%= label_tag 'subscribe[person][email]', "Email", class: "inline" %>
@@ -34,3 +35,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render :partial => "about/maps" %>
