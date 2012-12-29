@@ -5,4 +5,7 @@ class Talk < ActiveRecord::Base
     :message => "%{value} is not a valid talk kind" }
   validates :title, :presenter, :presence => true
 
+  def kind_enum
+    TALK_KINDS
+  end
 end
