@@ -19,7 +19,6 @@ group :assets do
 end
 
 group :development, :test do
-  gem "rspec-rails",             "~> 2.11.0" # TODO: why?!? remove this
   gem "heroku",                  "~> 2.19"
   gem "sqlite3",                 "~> 1.3.0"
   gem "minitest-rails",          "~> 0.3"
