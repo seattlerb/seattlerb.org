@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
+  habtm :dudes, :table_name => :affiliations
+
   validates_presence_of :name
-  has_many :affiliations, :dependent => :destroy
-  has_many :dudes, :through => :affiliations
 end

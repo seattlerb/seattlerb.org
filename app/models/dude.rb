@@ -1,9 +1,10 @@
 class Dude < ActiveRecord::Base
+  habtm :projects, :join_table => :affiliations
+
   validates_presence_of :name
   # our migrations are so stupid. If we nuke the data, this conditional can go
   validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
-  has_many :affiliations, :dependent => :destroy
-  has_many :projects, :through => :affiliations
+
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
 
