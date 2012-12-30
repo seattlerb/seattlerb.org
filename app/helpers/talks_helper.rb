@@ -1,5 +1,9 @@
 module TalksHelper
+  def indefinite_Articlerize word
+    word =~ /[^ai]/ ? "An #{word}" : "A #{word}"
+  end
+
   def talk_kinds
-    Hash[Talk::TALK_KINDS.map { |kind| [kind, kind] }]
+    [["Talk Type", ""]] + Talk::TALK_KINDS.map { |k| [k.capitalize, k] }
   end
 end

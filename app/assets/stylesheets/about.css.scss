@@ -102,6 +102,7 @@ address {margin: 0}
   text-align: right;
 }
 input[type=checkbox] + label { display: inline-block }
+input[type=text], textarea, .uneditable-input { width:100% !important }
 .inline { display: inline-block}
 /*...LAYOUT*/
 
@@ -128,6 +129,14 @@ input[type=checkbox] + label { display: inline-block }
   color: black;
   line-height: 0.8;
 }
+.proposed_talk {
+  padding: 1em;
+}
+
+.proposed_talk .description {
+  padding: 0 1em;
+}
+
 #map {
   color: #333;
   border: 1px solid #A9BBDD;
