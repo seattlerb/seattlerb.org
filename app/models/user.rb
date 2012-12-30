@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
   devise(:database_authenticatable,
          :recoverable,
-         # :registerable,
+         :confirmable,
+         # :registerable, # TODO: figure out email on heroku
          :rememberable,
          :trackable,
          :validatable)
