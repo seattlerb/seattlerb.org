@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  habtm :dudes, :table_name => :affiliations
+  habtm :dudes, :join_table => :affiliations
 
   validates_presence_of :name
 end
