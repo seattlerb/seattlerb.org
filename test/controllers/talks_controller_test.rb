@@ -35,15 +35,13 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_create
-    assert_equal "gorby", TalksController::SECRET
-
     talk_attributes = { :title       => "Title",
                         :presenter   => "The Dude",
                         :kind        => "beginner",
                         :description => "My description"}
 
     assert_difference 'Talk.count', 1 do
-      post :create, :talk => talk_attributes, :secret => TalksController::SECRET
+      post :create, :talk => talk_attributes, :password => ""
     end
 
     talk = Talk.find_by_title("Title")
@@ -63,7 +61,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
 
 
     assert_difference 'Talk.count', 0 do
-      post :create, :talk => talk_attributes, :secret => "bad_secret"
+      post :create, :talk => talk_attributes, :password => "spammer"
     end
 
     assert_redirected_to root_path
@@ -96,9 +94,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                         :kind        => "advanced",
                         :description => "My description"}
 
-    put :update, {id: @talk,
-                  talk: talk_attributes,
-                  secret: TalksController::SECRET}
+    put :update, id: @talk, talk: talk_attributes, password: ""
 
     assert_redirected_to talk_path(assigns(:talk))
 

@@ -1,10 +1,9 @@
 class TalksController < ApplicationController
-  SECRET = "gorby"
-
-  before_filter :verify_secret, :only => [:create, :update]
+  before_filter :verify_password, :only => [:create, :update]
 
   def index
     @talks = Talk.all
+    @talk  = Talk.new
   end
 
   def show
@@ -12,12 +11,10 @@ class TalksController < ApplicationController
   end
 
   def new
-    @secret = SECRET
     @talk = Talk.new
   end
 
   def edit
-    @secret = SECRET
     @talk = Talk.find(params[:id])
   end
 
@@ -49,8 +46,9 @@ class TalksController < ApplicationController
   end
 
   private
-  def verify_secret
-    unless params[:secret] == SECRET then
+  def verify_password
+    unless params[:password] == "" then
+      sleep rand(10) unless Rails.env.test?
       redirect_to root_path
     end
   end
