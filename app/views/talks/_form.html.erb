@@ -12,16 +12,10 @@
   <% end %>
 
   <div class="actions">
-    <%= f.label :presenter_name %>
-    <%= f.text_field :presenter %><br />
-
-    <%= f.label :title %>
-    <%= f.text_field :title %><br />
-
-    <%= f.label :description %>
-    <%= f.text_area :description %><br />
-
-    <%= f.label :kind %>
+    <%= f.text_field :presenter,   :placeholder => "Name"                    %><br />
+    <%= f.text_field :email,       :placeholder => "Email (private!)"        %><br />
+    <%= f.text_field :title,       :placeholder => "Title"                   %><br />
+    <%= f.text_area  :description, :placeholder => "Description", :rows => 3 %><br />
     <%= f.select :kind, talk_kinds %>
 
     <%= hidden_field_tag :password, "" %>

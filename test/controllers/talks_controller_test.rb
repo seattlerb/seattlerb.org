@@ -5,6 +5,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     @talk = Talk.create!(:title       => "My Test Talk",
                          :description => "Description",
                          :kind        => "beginner",
+                         :email       => "a@example.com",
                          :presenter   => "Me")
   end
 
@@ -35,10 +36,13 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_create
-    talk_attributes = { :title       => "Title",
-                        :presenter   => "The Dude",
-                        :kind        => "beginner",
-                        :description => "My description"}
+    talk_attributes = {
+                       :title       => "Title",
+                       :presenter   => "The Dude",
+                       :kind        => "beginner",
+                       :email       => "a@example.com",
+                       :description => "My description"
+                      }
 
     assert_difference 'Talk.count', 1 do
       post :create, :talk => talk_attributes, :password => ""
@@ -54,10 +58,13 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_create_fails_without_spam_blocker
-    talk_attributes = { :title       => "Title",
-                        :presenter   => "The Dude",
-                        :kind        => "beginner",
-                        :description => "My description" }
+    talk_attributes = {
+                       :title       => "Title",
+                       :presenter   => "The Dude",
+                       :kind        => "beginner",
+                       :email       => "a@example.com",
+                       :description => "My description",
+                      }
 
 
     assert_difference 'Talk.count', 0 do

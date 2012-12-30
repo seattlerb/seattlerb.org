@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121229120935) do
+ActiveRecord::Schema.define(:version => 20121230084943) do
 
   create_table "affiliations", :force => true do |t|
     t.integer  "dude_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20121229120935) do
     t.text   "description"
     t.string "presenter"
     t.string "kind"
+    t.string "email",       :default => "", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -75,6 +76,9 @@ ActiveRecord::Schema.define(:version => 20121229120935) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

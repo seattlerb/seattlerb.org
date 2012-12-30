@@ -3,7 +3,7 @@ class Talk < ActiveRecord::Base
 
   validates :kind, :inclusion => { :in => TALK_KINDS,
     :message => "%{value} is not a valid talk kind" }
-  validates :title, :presenter, :presence => true
+  validates :title, :presenter, :email, :presence => true
 
   def kind_enum
     TALK_KINDS
