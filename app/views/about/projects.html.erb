@@ -1,3 +1,8 @@
+<p class="lead">
+  <%= @projects.size %> projects from just <%= Dude.count %> people...
+  <%= ["Not bad!", "How prolific!", "I've seen better..."].sample %>
+</p>
+
 <% @projects.each do |project| %>
   <div class='row project'>
     <%= image_tag 'ruby-placeholder.png', class: "span2" %>
