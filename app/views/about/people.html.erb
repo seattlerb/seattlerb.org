@@ -6,14 +6,15 @@
     <div class="span10 description">
       <h1 id="<%= person.name.parameterize %>"><%= person.name %></h1>
       <p class='bio'><%= person.bio %></p>
+
       <ul class='links'>
-        <% if person.ruby_gems_id? %><li><i class='icon-heart'></i><a href="http://rubygems.org/profiles/<%= person.ruby_gems_id %>">Ruby Gems</a></li><% end %>
-        <% if person.github? %><li><i class='icon-glass '></i><a href=<%= person.github %>>Github</a></li><% end %>
-        <%= raw twitter_link person.twitter %>
-        <% if person.website? %><li><i class='icon-user '></i><a href=<%= person.website %>>Website</a></li><% end %>
-        <% if person.email? %><li><i class='icon-envelope '></i><a href="mailto:<%= person.email %>">Email</a></li><% end %>
-        
+        <%= raw rubygems_link person %>
+        <%= raw github_link   person %>
+        <%= raw twitter_link  person %>
+        <%= raw website_link  person %>
+        <%= raw email_link    person %>
       </ul>
+
     </div>
   </div>
 <% end %>
