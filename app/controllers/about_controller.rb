@@ -8,7 +8,7 @@ class AboutController < ApplicationController
   end
 
   def projects
-    @projects = Project.order('name')
+    @projects = Project.find(:all).sort_by { |p| p.name.downcase }
   end
 
   def join_us
