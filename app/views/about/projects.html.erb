@@ -5,7 +5,6 @@
 
 <% @projects.each do |project| %>
   <div class='row project'>
-    <%= image_tag 'ruby-placeholder.png', class: "span2" %>
     <div class='span10'>
       <h2><%= link_to project.name, project.url %></h2>
       <%= project.description %>
