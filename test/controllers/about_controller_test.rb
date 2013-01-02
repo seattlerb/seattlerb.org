@@ -5,6 +5,9 @@ class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
     get :index
     assert_response :success
     assert_equal("Home", assigns(:title))
+
+    assert_template :partial => '_maps'
+    assert_template :partial => '_twitter'
   end
 
   def test_people
@@ -26,5 +29,8 @@ class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
   def test_join_us
     get :join_us
     assert_response :success
+
+    assert_template :partial => '_maps'
+    assert_template :partial => '_twitter'
   end
 end
