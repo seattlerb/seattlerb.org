@@ -17,6 +17,9 @@ class TalksController < ApplicationController
     end
   end
 
+  def checklist
+  end
+
   private
 
   def verify_password
