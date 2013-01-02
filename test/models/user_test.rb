@@ -1,7 +1,10 @@
 require "minitest_helper"
 
 class UserTest < MiniTest::Rails::ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def test_validation
+    user = User.new(:email    => "test@example.com",
+                    :password => "testtest")
+
+    assert user.valid?
+  end
 end
