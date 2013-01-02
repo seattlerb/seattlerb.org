@@ -1,7 +1,4 @@
 class NewsletterController < ApplicationController
-  def index
-  end
-
   def subscribe
     response = ZenspiderSubscriber.subscribe!(params[:subscribe])
     puts response.inspect

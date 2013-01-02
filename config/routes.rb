@@ -5,7 +5,6 @@ SeattlerbOrg::Application.routes.draw do
 
   resources :talks
 
-  get  "/newsletter" => "newsletter#index",     as: :newsletter
   post "/newsletter" => "newsletter#subscribe", as: :subscribe
 
   match "/people"   => "about#people", as: :people
