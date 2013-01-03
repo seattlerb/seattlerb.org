@@ -1,6 +1,6 @@
 module TalksHelper
   def indefinite_Articlerize word
-    word =~ /[^ai]/ ? "An #{word}" : "A #{word}"
+    word =~ /^[ai]/ ? "An #{word}" : "A #{word}"
   end
 
   def talk_kinds
