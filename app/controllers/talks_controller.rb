@@ -2,6 +2,7 @@ class TalksController < ApplicationController
   before_filter :verify_password, :only => [:create, :update]
 
   def index
+    @title = "Talks"
     @talks = Talk.all
     @talk  = Talk.new
   end
