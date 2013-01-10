@@ -56,4 +56,15 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
     refute no_presenter.valid?
     refute no_email.valid?
   end
+
+  def test_completed_talks_not_in_default_scope
+    talk = Talk.create!(:title       => "Test Talk",
+                        :presenter   => "Dude Number 1",
+                        :email       => "a@example.com",
+                        :kind        => "beginner",
+                        :completed   => true)
+
+    assert talk.completed?
+    refute_include talk Talk.all
+  end
 end
