@@ -65,6 +65,6 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
                         :completed   => true)
 
     assert talk.completed?
-    refute_include talk Talk.all
+    refute_includes Talk.available, talk
   end
 end
