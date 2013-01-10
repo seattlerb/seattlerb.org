@@ -25,6 +25,32 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_match @talk.kind,        @response.body
   end
 
+  def test_talks_sorted_on_index
+    int_one = Talk.create!(:title     => "Int 1",
+                           :kind      => "intermediate",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    int_two = Talk.create!(:title     => "Int 2",
+                           :kind      => "intermediate",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    beg_one = Talk.create!(:title     => "Beg 1",
+                           :kind      => "beginner",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    beg_two = Talk.create!(:title     => "Beg 2",
+                           :kind      => "beginner",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+
+
+    get :index
+
+    expected = [beg_one, beg_two, @talk, int_one, int_two]
+
+    assert_equal expected, assigns[:talks]
+  end
+
   def test_create
     talk_attributes = {
                        :title       => "Title",
