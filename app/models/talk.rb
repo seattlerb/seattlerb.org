@@ -10,8 +10,6 @@ class Talk < ActiveRecord::Base
                              END,
                              title"
 
-  default_scope by_kind
-
   scope :available, by_kind.where(:completed => false)
 
   validates(:kind,
