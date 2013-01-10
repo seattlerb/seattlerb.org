@@ -56,7 +56,26 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_match @talk.kind,        @response.body
   end
 
-  def test_talks_sorted_on_index
+  def test_talks_sorted_on_scheduled_date_kind_and_title
+    setup_talks
+
+    @beg_two.scheduled_date = 1.month.from_now
+    @int_two.scheduled_date = 1.month.from_now
+    @beg_two.save
+    @int_two.save
+
+    get :index
+
+    expected = [@beg_two, @int_two,
+                @beg_one, @talk,
+                @int_one,
+                @adv_one, @adv_two,
+                @lit_one, @lit_two].map(&:title)
+
+    assert_equal expected, assigns[:talks].map(&:title)
+  end
+
+  def test_talks_sorted_on_index_and_date
     setup_talks
 
     get :index
