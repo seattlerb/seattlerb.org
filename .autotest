@@ -1,12 +1,15 @@
-# # Autotest.add_hook :initialize do |at|
-# #   at.testlib = ".minitest"
-# # end
+# -*- ruby -*-
 
-require 'autotest/restart'
-require 'autotest/bundler'
-require 'minitest/pride'
-require 'autotest/fsevent'
+require "autotest/restart"
+require "autotest/bundler"
+require "minitest/pride"
+require "autotest/rails"
 
 Autotest.add_hook :initialize do |at|
   at.testlib = "minitest/autorun"
+
+  at.add_exception ".git"
+  at.add_exception "public"
+  at.add_exception "db"
+  at.add_exception "log"
 end

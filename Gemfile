@@ -25,5 +25,5 @@ group :development, :test do
   gem "sqlite3",                 "~> 1.3.0"
   gem "minitest-rails",          "~> 0.3"
   gem "ZenTest",                 "~> 4.8"
-  gem "autotest-fsevent",        "~> 0.2.0"
+  gem "autotest-rails",          "~> 4.1.2"
 end
