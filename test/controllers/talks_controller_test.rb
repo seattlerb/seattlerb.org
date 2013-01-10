@@ -69,6 +69,22 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal expected, assigns[:talks].map(&:title)
   end
 
+  def test_talks_only_completed
+    setup_talks
+
+    @adv_two.completed = true
+    @beg_two.completed = true
+    @int_two.completed = true
+    @lit_two.completed = true
+    @talk.completed    = true
+
+    get :index
+
+    expected = [@beg_one, @int_one, @adv_one, @lit_one].map(&:title)
+
+    assert_equal expected, assigns[:talks].map(&:title)
+  end
+
   def test_create
     talk_attributes = {
                        :title       => "Title",
