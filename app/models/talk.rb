@@ -1,6 +1,8 @@
 class Talk < ActiveRecord::Base
   TALK_KINDS = %w(beginner intermediate advanced lightning)
 
+  default_scope :order => "kind, title"
+
   validates(:kind,
             :inclusion => {
                            :in => TALK_KINDS,
