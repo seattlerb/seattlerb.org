@@ -59,8 +59,8 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   def test_talks_sorted_on_scheduled_date_kind_and_title
     setup_talks
 
-    @beg_two.scheduled_date = 1.month.from_now
-    @int_two.scheduled_date = 2.months.from_now
+    @beg_two.scheduled_date = 2.month.from_now
+    @int_two.scheduled_date = 1.months.from_now
     @beg_two.save
     @int_two.save
 
