@@ -3,7 +3,7 @@ class TalksController < ApplicationController
 
   def index
     @title = "Talks"
-    @talks = Talk.all
+    @talks = Talk.available
     @talk  = Talk.new
   end
 

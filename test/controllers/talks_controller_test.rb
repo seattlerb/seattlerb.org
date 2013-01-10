@@ -69,7 +69,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal expected, assigns[:talks].map(&:title)
   end
 
-  def test_talks_only_completed
+  def test_talks_only_available
     setup_talks
 
     @adv_two.completed = true
@@ -77,6 +77,8 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     @int_two.completed = true
     @lit_two.completed = true
     @talk.completed    = true
+
+    [@adv_two, @beg_two, @int_two, @lit_two, @talk].map(&:save!)
 
     get :index
 
