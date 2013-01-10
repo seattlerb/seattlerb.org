@@ -1,16 +1,6 @@
 require "minitest_helper"
 
 class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
-  def test_creation
-    talk = Talk.create!(:title       => "Test Talk",
-                        :description => "Test Talk Description",
-                        :presenter   => "Dude Number 1",
-                        :email       => "a@example.com",
-                        :kind        => "beginner")
-
-    refute_nil talk
-  end
-
   def test_talks_restricted_to_specific_types
     beginner     = Talk.new(:kind      => "beginner",
                             :title     => "A",
