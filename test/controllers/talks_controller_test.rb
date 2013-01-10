@@ -42,13 +42,32 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                            :kind      => "beginner",
                            :email     => "a@example.com",
                            :presenter => "Me")
+    adv_one = Talk.create!(:title     => "Adv 1",
+                           :kind      => "advanced",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    adv_two = Talk.create!(:title     => "Adv 2",
+                           :kind      => "advanced",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    lit_one = Talk.create!(:title     => "Lit 1",
+                           :kind      => "lightning",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
+    lit_two = Talk.create!(:title     => "Lit 2",
+                           :kind      => "lightning",
+                           :email     => "a@example.com",
+                           :presenter => "Me")
 
 
     get :index
 
-    expected = [beg_one, beg_two, @talk, int_one, int_two]
+    expected = [beg_one, beg_two, @talk,
+                int_one, int_two,
+                adv_one, adv_two,
+                lit_one, lit_two].map(&:title)
 
-    assert_equal expected, assigns[:talks]
+    assert_equal expected, assigns[:talks].map(&:title)
   end
 
   def test_create
