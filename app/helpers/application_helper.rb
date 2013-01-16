@@ -30,4 +30,12 @@ module ApplicationHelper
     v = person.twitter
     icon_link "icon-leaf", "@#{v}", v, "http://twitter.com/"
   end
+
+  def nav_item_link link_label, link_path
+    content_tag :li, link_to(link_label, link_path), :class => ('active' if title_or_action.downcase == link_label.downcase)
+  end
+
+  def title_or_action
+    @title ||= params[:action].humanize
+  end
 end
