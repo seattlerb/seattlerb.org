@@ -59,17 +59,14 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
   end
 
   def test_nav_item_link
-    params[:action] = 'test_action'
-    assert_equal '<li><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    stub(:current_page?, false) do
+      assert_equal '<li><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    end
   end
 
   def test_nav_item_link_active
-    @title = 'People'
-    assert_equal '<li class="active"><a href="/people">People</a></li>', nav_item_link('People', people_path)
-  end
-
-  def test_nav_item_link_not_active
-    @title = 'Join us'
-    assert_equal '<li><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    stub(:current_page?, true) do
+      assert_equal '<li class="active"><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    end
   end
 end

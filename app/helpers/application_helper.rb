@@ -32,7 +32,7 @@ module ApplicationHelper
   end
 
   def nav_item_link link_label, link_path
-    content_tag :li, link_to(link_label, link_path), :class => ('active' if title_or_action.downcase == link_label.downcase)
+    content_tag :li, link_to(link_label, link_path), :class => ('active' if current_page?(link_path))
   end
 
   def title_or_action
