@@ -46,4 +46,27 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
 
     assert_equal "<li><i class='icon-leaf'></i><a href=\"http://twitter.com/@test\">@@test</a></li>", twitter_link(person)
   end
+
+  def test_title_or_action_without_title
+    params[:action] = 'test_action'
+    assert_equal 'Test action', title_or_action
+  end
+
+  def test_title_or_action_with_title
+    @title = 'Some Title'
+    params[:action] = 'test_action'
+    assert_equal 'Some Title', title_or_action
+  end
+
+  def test_nav_item_link
+    stub(:current_page?, false) do
+      assert_equal '<li><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    end
+  end
+
+  def test_nav_item_link_active
+    stub(:current_page?, true) do
+      assert_equal '<li class="active"><a href="/people">People</a></li>', nav_item_link('People', people_path)
+    end
+  end
 end
