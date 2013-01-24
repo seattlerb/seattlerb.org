@@ -1,0 +1,19 @@
+<h1>Talk Topic Suggestions</h1>
+This is a list of topics and questions that people in Seattle.rb would like to have addressed at our monthly talk meetings.
+<br/>
+<br/>
+<table style="margin-left: 10px;">
+  <tr>
+    <th style="text-align: left; font-size: 16px">Topic</th>
+  </tr>
+
+<% @suggestions.each do |suggestion| %>
+  <tr>
+    <td><%= suggestion.title %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Suggestion', new_suggestion_path, {:style => 'margin-left: 10px'}%> 

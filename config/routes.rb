@@ -1,4 +1,8 @@
 SeattlerbOrg::Application.routes.draw do
+  resources :suggestions, :only => [:index, :new, :create]
+
+  resources :helps
+
   mount RailsAdmin::Engine => '/adminsrb', :as => 'rails_admin'
 
   devise_for :users
