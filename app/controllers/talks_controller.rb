@@ -1,9 +1,9 @@
 class TalksController < ApplicationController
-  before_filter :verify_password, :only => [:create, :update]
+  before_filter :verify_password, :only => :create
+  before_filter :set_title, :only => [:index, :create]
 
   def index
-    @title = "Talks"
-    @talks = Talk.available
+    talks
     @talk  = Talk.new
   end
 
@@ -13,7 +13,7 @@ class TalksController < ApplicationController
     if @talk.save
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
-      @talks = Talk.all
+      talks
       render action: "index"
     end
   end
@@ -22,6 +22,14 @@ class TalksController < ApplicationController
   end
 
   private
+
+  def set_title
+    @title ||= "Talks"
+  end
+
+  def talks
+    @talks ||= Talk.available
+  end
 
   def verify_password
     unless params[:password] == "" then
