@@ -8,6 +8,7 @@ class Talk < ActiveRecord::Base
                                        WHEN 'advanced'     THEN 3
                                        WHEN 'lightning'    THEN 4
                              END,
+                             presenter,
                              title"
 
   scope :available, by_kind.where(:completed => false)
