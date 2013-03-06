@@ -60,13 +60,13 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     setup_talks
 
     @beg_two.scheduled_date = 2.month.from_now
-    @int_two.scheduled_date = 1.months.from_now
+    @int_two.scheduled_date = 27.days.from_now
     @beg_two.save
     @int_two.save
 
     get :index
 
-    expected = [@int_two, @beg_two,
+    expected = [@int_two,
                 @beg_one, @talk,
                 @int_one,
                 @adv_one, @adv_two,

@@ -11,7 +11,11 @@ class Talk < ActiveRecord::Base
                              presenter,
                              title"
 
-  scope :available, by_kind.where(:completed => false)
+  def self.available
+    by_kind.where("completed = ? and (scheduled_date is NULL or scheduled_date < ?)",
+                  false,
+                  28.days.from_now)
+  end
 
   validates(:kind,
             :inclusion => {
