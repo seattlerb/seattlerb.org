@@ -5,5 +5,5 @@
 // the compiled file.
 //
 //= require jquery
-//= require twitter/bootstrap
+//= require bootstrap.min
 //= require_tree .
