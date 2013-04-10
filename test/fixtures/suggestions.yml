@@ -2,7 +2,9 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-
+  title: Suggestion One
+  suggester: Barney Rubble
+  
 two:
-  title: MyString
+  title: Suggestion Two
+  suggester: Fred Flintstone
