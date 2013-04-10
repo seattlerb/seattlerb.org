@@ -6858,7 +6858,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   /* line 189, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
   .carousel-caption {
     position: static; } }
-@media (max-width: 979px) {
+@media (max-width: 767px) {
   /* line 13, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
   body {
     padding-top: 0; }
@@ -7037,7 +7037,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   .navbar-static .navbar-inner {
     padding-left: 10px;
     padding-right: 10px; } }
-@media (min-width: 980px) {
+@media (min-width: 768px) {
   /* line 184, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
   .nav-collapse.collapse {
     height: auto !important;
