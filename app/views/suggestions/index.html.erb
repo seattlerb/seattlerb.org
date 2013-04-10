@@ -5,11 +5,13 @@ This is a list of topics and questions that people in Seattle.rb would like to h
 <table style="margin-left: 10px;">
   <tr>
     <th style="text-align: left; font-size: 16px">Topic</th>
+    <th style="text-align: left; font-size: 16px">Suggested By</th>
   </tr>
 
 <% @suggestions.each do |suggestion| %>
   <tr>
     <td><%= suggestion.title %></td>
+    <td><%= suggestion.suggester %></td>
   </tr>
 <% end %>
 </table>
