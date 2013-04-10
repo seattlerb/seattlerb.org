@@ -1,4 +1,3 @@
-/* partial _variables.scss */
 /*
  * Bootstrap v2.3.1
  *
@@ -205,8 +204,8 @@ textarea {
 body {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 20px;
   color: #333333;
   background-color: white; }
 
@@ -381,7 +380,7 @@ a:focus {
   .row-fluid [class*="span"] {
     display: block;
     width: 100%;
-    min-height: 28px;
+    min-height: 30px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -579,14 +578,14 @@ a:focus {
 
 /* line 9, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 p {
-  margin: 0 0 9px; }
+  margin: 0 0 10px; }
 
 /* line 12, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 .lead {
-  margin-bottom: 18px;
-  font-size: 19.5px;
+  margin-bottom: 20px;
+  font-size: 21px;
   font-weight: 200;
-  line-height: 27px; }
+  line-height: 30px; }
 
 /* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 small {
@@ -663,10 +662,10 @@ a.text-success:focus {
 
 /* line 59, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h1, h2, h3, h4, h5, h6 {
-  margin: 9px 0;
+  margin: 10px 0;
   font-family: inherit;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   color: inherit;
   text-rendering: optimizelegibility; }
   /* line 66, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
@@ -679,58 +678,58 @@ h1, h2, h3, h4, h5, h6 {
 h1,
 h2,
 h3 {
-  line-height: 36px; }
+  line-height: 40px; }
 
 /* line 77, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h1 {
-  font-size: 35.75px; }
+  font-size: 38.5px; }
 
 /* line 78, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h2 {
-  font-size: 29.25px; }
+  font-size: 31.5px; }
 
 /* line 79, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h3 {
-  font-size: 22.75px; }
+  font-size: 24.5px; }
 
 /* line 80, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h4 {
-  font-size: 16.25px; }
+  font-size: 17.5px; }
 
 /* line 81, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h5 {
-  font-size: 13px; }
+  font-size: 14px; }
 
 /* line 82, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h6 {
-  font-size: 11.05px; }
+  font-size: 11.9px; }
 
 /* line 84, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h1 small {
-  font-size: 22.75px; }
+  font-size: 24.5px; }
 
 /* line 85, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h2 small {
-  font-size: 16.25px; }
+  font-size: 17.5px; }
 
 /* line 86, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h3 small {
-  font-size: 13px; }
+  font-size: 14px; }
 
 /* line 87, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 h4 small {
-  font-size: 13px; }
+  font-size: 14px; }
 
 /* line 93, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 .page-header {
-  padding-bottom: 8px;
-  margin: 18px 0 27px;
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
   border-bottom: 1px solid #eeeeee; }
 
 /* line 105, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 ul, ol {
   padding: 0;
-  margin: 0 0 9px 25px; }
+  margin: 0 0 10px 25px; }
 
 /* line 112, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 ul ul,
@@ -741,7 +740,7 @@ ol ul {
 
 /* line 115, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 li {
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 121, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 ul.unstyled,
@@ -766,12 +765,12 @@ ol.inline {
 
 /* line 140, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 dl {
-  margin-bottom: 18px; }
+  margin-bottom: 20px; }
 
 /* line 144, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 dt,
 dd {
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 147, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 dt {
@@ -779,7 +778,7 @@ dt {
 
 /* line 150, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 dd {
-  margin-left: 9px; }
+  margin-left: 10px; }
 
 /* line 154, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 .dl-horizontal {
@@ -807,7 +806,7 @@ dd {
 
 /* line 172, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 hr {
-  margin: 18px 0;
+  margin: 20px 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid white; }
@@ -826,18 +825,18 @@ abbr.initialism {
 /* line 192, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 blockquote {
   padding: 0 0 0 15px;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   border-left: 5px solid #eeeeee; }
   /* line 196, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
   blockquote p {
     margin-bottom: 0;
-    font-size: 16.25px;
+    font-size: 17.5px;
     font-weight: 300;
     line-height: 1.25; }
   /* line 202, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
   blockquote small {
     display: block;
-    line-height: 18px;
+    line-height: 20px;
     color: #999999; }
     /* line 206, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
     blockquote small:before {
@@ -870,16 +869,16 @@ blockquote:after {
 /* line 242, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_type.scss */
 address {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   font-style: normal;
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 8, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_code.scss */
 code,
 pre {
   padding: 0 3px 2px;
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-  font-size: 11px;
+  font-size: 12px;
   color: #333333;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -896,10 +895,10 @@ code {
 /* line 26, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_code.scss */
 pre {
   display: block;
-  padding: 8.5px;
-  margin: 0 0 9px;
-  font-size: 12px;
-  line-height: 18px;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 20px;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
@@ -912,7 +911,7 @@ pre {
   border-radius: 4px; }
   /* line 42, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_code.scss */
   pre.prettyprint {
-    margin-bottom: 18px; }
+    margin-bottom: 20px; }
   /* line 47, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_code.scss */
   pre code {
     padding: 0;
@@ -929,7 +928,7 @@ pre {
 
 /* line 10, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 form {
-  margin: 0 0 18px; }
+  margin: 0 0 20px; }
 
 /* line 14, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 fieldset {
@@ -942,15 +941,15 @@ legend {
   display: block;
   width: 100%;
   padding: 0;
-  margin-bottom: 18px;
-  font-size: 19.5px;
-  line-height: 36px;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5; }
   /* line 33, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
   legend small {
-    font-size: 13.5px;
+    font-size: 15px;
     color: #999999; }
 
 /* line 44, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
@@ -959,9 +958,9 @@ input,
 button,
 select,
 textarea {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: normal;
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 50, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 input,
@@ -994,11 +993,11 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 18px;
+  height: 20px;
   padding: 4px 6px;
-  margin-bottom: 9px;
-  font-size: 13px;
-  line-height: 18px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 20px;
   color: #555555;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -1089,11 +1088,11 @@ input[type="checkbox"] {
 /* line 156, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 select,
 input[type="file"] {
-  height: 28px;
+  height: 30px;
   /* In IE7, the height of the select element cannot be changed by height, only font-size */
   *margin-top: 4px;
   /* For IE7, add top margin to align select with labels */
-  line-height: 28px; }
+  line-height: 30px; }
 
 /* line 163, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 select {
@@ -1152,7 +1151,7 @@ textarea::-webkit-input-placeholder {
 /* line 225, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .radio,
 .checkbox {
-  min-height: 18px;
+  min-height: 20px;
   padding-left: 20px; }
 
 /* line 230, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
@@ -1506,9 +1505,9 @@ select:focus:invalid {
 
 /* line 385, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .form-actions {
-  padding: 17px 20px 18px;
-  margin-top: 18px;
-  margin-bottom: 18px;
+  padding: 19px 20px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   background-color: whitesmoke;
   border-top: 1px solid #e5e5e5;
   *zoom: 1; }
@@ -1529,7 +1528,7 @@ select:focus:invalid {
 /* line 404, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .help-block {
   display: block;
-  margin-bottom: 9px; }
+  margin-bottom: 10px; }
 
 /* line 409, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .help-inline {
@@ -1544,7 +1543,7 @@ select:focus:invalid {
 .input-append,
 .input-prepend {
   display: inline-block;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   vertical-align: middle;
   font-size: 0;
   white-space: nowrap; }
@@ -1559,7 +1558,7 @@ select:focus:invalid {
   .input-prepend .uneditable-input,
   .input-prepend .dropdown-menu,
   .input-prepend .popover {
-    font-size: 13px; }
+    font-size: 14px; }
   /* line 441, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
   .input-append input,
   .input-append select,
@@ -1587,12 +1586,12 @@ select:focus:invalid {
   .input-prepend .add-on {
     display: inline-block;
     width: auto;
-    height: 18px;
+    height: 20px;
     min-width: 16px;
     padding: 4px 5px;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 20px;
     text-align: center;
     text-shadow: 0 1px 0 white;
     background-color: #eeeeee;
@@ -1796,16 +1795,16 @@ input.search-query {
 
 /* line 632, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .control-group {
-  margin-bottom: 9px; }
+  margin-bottom: 10px; }
 
 /* line 637, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 legend + .control-group {
-  margin-top: 18px;
+  margin-top: 20px;
   -webkit-margin-top-collapse: separate; }
 
 /* line 647, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .form-horizontal .control-group {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   *zoom: 1; }
   /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
   .form-horizontal .control-group:before, .form-horizontal .control-group:after {
@@ -1840,7 +1839,7 @@ legend + .control-group {
 .form-horizontal .uneditable-input + .help-block,
 .form-horizontal .input-prepend + .help-block,
 .form-horizontal .input-append + .help-block {
-  margin-top: 9px; }
+  margin-top: 10px; }
 /* line 686, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_forms.scss */
 .form-horizontal .form-actions {
   padding-left: 180px; }
@@ -1855,12 +1854,12 @@ table {
 /* line 19, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_tables.scss */
 .table {
   width: 100%;
-  margin-bottom: 18px; }
+  margin-bottom: 20px; }
   /* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_tables.scss */
   .table th,
   .table td {
     padding: 8px;
-    line-height: 18px;
+    line-height: 20px;
     text-align: left;
     vertical-align: top;
     border-top: 1px solid #dddddd; }
@@ -2100,7 +2099,7 @@ table th[class*="span"],
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url("glyphicons-halflings.png");
+  background-image: url("../img/glyphicons-halflings.png");
   background-position: 14px 14px;
   background-repeat: no-repeat;
   margin-top: 1px; }
@@ -2124,7 +2123,7 @@ table th[class*="span"],
 .dropdown-submenu:focus > a > [class^="icon-"],
 .dropdown-submenu:hover > a > [class*=" icon-"],
 .dropdown-submenu:focus > a > [class*=" icon-"] {
-  background-image: url("glyphicons-halflings-white.png"); }
+  background-image: url("../img/glyphicons-halflings-white.png"); }
 
 /* line 52, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_sprites.scss */
 .icon-glass {
@@ -2753,7 +2752,7 @@ table th[class*="span"],
   .dropdown-menu .divider {
     *width: 100%;
     height: 1px;
-    margin: 8px 1px;
+    margin: 9px 1px;
     *margin: -5px 0 5px;
     overflow: hidden;
     background-color: #e5e5e5;
@@ -2764,7 +2763,7 @@ table th[class*="span"],
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    line-height: 18px;
+    line-height: 20px;
     color: #333333;
     white-space: nowrap; }
 
@@ -2971,7 +2970,7 @@ table th[class*="span"],
   float: right;
   font-size: 20px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   color: black;
   text-shadow: 0 1px 0 white;
   opacity: 0.2;
@@ -3000,8 +2999,8 @@ button.close {
   *zoom: 1;
   padding: 4px 12px;
   margin-bottom: 0;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 20px;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -3075,7 +3074,7 @@ button.close {
 /* line 70, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_buttons.scss */
 .btn-large {
   padding: 11px 19px;
-  font-size: 16.25px;
+  font-size: 17.5px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px; }
@@ -3088,7 +3087,7 @@ button.close {
 /* line 81, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_buttons.scss */
 .btn-small {
   padding: 2px 10px;
-  font-size: 11.05px;
+  font-size: 11.9px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
@@ -3106,7 +3105,7 @@ button.close {
 /* line 96, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_buttons.scss */
 .btn-mini {
   padding: 0px 6px;
-  font-size: 9.75px;
+  font-size: 10.5px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px; }
@@ -3376,8 +3375,8 @@ input[type="submit"].btn {
 /* line 23, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
 .btn-toolbar {
   font-size: 0;
-  margin-top: 9px;
-  margin-bottom: 9px; }
+  margin-top: 10px;
+  margin-bottom: 10px; }
   /* line 29, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
   .btn-toolbar > .btn + .btn,
   .btn-toolbar > .btn-group + .btn,
@@ -3399,19 +3398,19 @@ input[type="submit"].btn {
 .btn-group > .btn,
 .btn-group > .dropdown-menu,
 .btn-group > .popover {
-  font-size: 13px; }
+  font-size: 14px; }
 
 /* line 49, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
 .btn-group > .btn-mini {
-  font-size: 9.75px; }
+  font-size: 10.5px; }
 
 /* line 52, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
 .btn-group > .btn-small {
-  font-size: 11.05px; }
+  font-size: 11.9px; }
 
 /* line 55, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
 .btn-group > .btn-large {
-  font-size: 16.25px; }
+  font-size: 17.5px; }
 
 /* line 60, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_button-groups.scss */
 .btn-group > .btn:first-child {
@@ -3604,7 +3603,7 @@ input[type="submit"].btn {
 /* line 9, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_alerts.scss */
 .alert {
   padding: 8px 35px 8px 14px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   background-color: #fcf8e3;
   border: 1px solid #fbeed5;
@@ -3626,7 +3625,7 @@ input[type="submit"].btn {
   position: relative;
   top: -2px;
   right: -21px;
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 38, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_alerts.scss */
 .alert-success {
@@ -3677,7 +3676,7 @@ input[type="submit"].btn {
 /* line 9, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navs.scss */
 .nav {
   margin-left: 0;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   list-style: none; }
 
 /* line 16, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navs.scss */
@@ -3704,7 +3703,7 @@ input[type="submit"].btn {
   padding: 3px 15px;
   font-size: 11px;
   font-weight: bold;
-  line-height: 18px;
+  line-height: 20px;
   color: #999999;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
   text-transform: uppercase; }
@@ -3747,7 +3746,7 @@ input[type="submit"].btn {
 .nav-list .divider {
   *width: 100%;
   height: 1px;
-  margin: 8px 1px;
+  margin: 9px 1px;
   *margin: -5px 0 5px;
   overflow: hidden;
   background-color: #e5e5e5;
@@ -3794,7 +3793,7 @@ input[type="submit"].btn {
 .nav-tabs > li > a {
   padding-top: 8px;
   padding-bottom: 8px;
-  line-height: 18px;
+  line-height: 20px;
   border: 1px solid transparent;
   -webkit-border-radius: 4px 4px 0 0;
   -moz-border-radius: 4px 4px 0 0;
@@ -4082,7 +4081,7 @@ input[type="submit"].btn {
 /* line 10, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar {
   overflow: visible;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   *position: relative;
   *z-index: 2; }
 
@@ -4091,14 +4090,14 @@ input[type="submit"].btn {
   min-height: 40px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: white;
-  background-image: -moz-linear-gradient(top, white, white);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(white));
-  background-image: -webkit-linear-gradient(top, white, white);
-  background-image: -o-linear-gradient(top, white, white);
-  background-image: linear-gradient(to bottom, white, white);
+  background-color: #f9f9f9;
+  background-image: -moz-linear-gradient(top, white, #f2f2f2);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f2f2f2));
+  background-image: -webkit-linear-gradient(top, white, #f2f2f2);
+  background-image: -o-linear-gradient(top, white, #f2f2f2);
+  background-image: linear-gradient(to bottom, white, #f2f2f2);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFFFFFFF', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#FFF2F2F2', GradientType=0);
   border: 1px solid #d4d4d4;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -4129,11 +4128,11 @@ input[type="submit"].btn {
 .navbar .brand {
   float: left;
   display: block;
-  padding: 11px 20px 11px;
+  padding: 10px 20px 10px;
   margin-left: -20px;
   font-size: 20px;
   font-weight: 200;
-  color: #c70000;
+  color: #777777;
   text-shadow: 0 1px 0 white; }
   /* line 60, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
   .navbar .brand:hover, .navbar .brand:focus {
@@ -4147,16 +4146,16 @@ input[type="submit"].btn {
 
 /* line 75, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar-link {
-  color: #999999; }
+  color: #777777; }
   /* line 78, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
   .navbar-link:hover, .navbar-link:focus {
-    color: white; }
+    color: #333333; }
 
 /* line 85, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .divider-vertical {
   height: 40px;
   margin: 0 9px;
-  border-left: 1px solid white;
+  border-left: 1px solid #f2f2f2;
   border-right: 1px solid white; }
 
 /* line 95, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
@@ -4312,8 +4311,8 @@ input[type="submit"].btn {
 /* line 242, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .nav > li > a {
   float: none;
-  padding: 11px 15px 11px;
-  color: #999999;
+  padding: 10px 15px 10px;
+  color: #777777;
   text-decoration: none;
   text-shadow: 0 1px 0 white; }
 
@@ -4324,8 +4323,8 @@ input[type="submit"].btn {
 /* line 256, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .nav > li > a:focus,
 .navbar .nav > li > a:hover {
-  background-color: #c70000;
-  color: white;
+  background-color: transparent;
+  color: #333333;
   text-decoration: none; }
 
 /* line 265, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
@@ -4348,17 +4347,17 @@ input[type="submit"].btn {
   margin-right: 5px;
   color: white;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #f2f2f2;
-  background-image: -moz-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#f2f2f2));
-  background-image: -webkit-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: -o-linear-gradient(top, #f2f2f2, #f2f2f2);
-  background-image: linear-gradient(to bottom, #f2f2f2, #f2f2f2);
+  background-color: #ededed;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: -o-linear-gradient(top, #f2f2f2, #e6e6e6);
+  background-image: linear-gradient(to bottom, #f2f2f2, #e6e6e6);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF2F2F2', endColorstr='#FFF2F2F2', GradientType=0);
-  border-color: #f2f2f2 #f2f2f2 #cccccc;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFF2F2F2', endColorstr='#FFE6E6E6', GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #f2f2f2;
+  *background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
   filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.075);
@@ -4367,11 +4366,11 @@ input[type="submit"].btn {
   /* line 502, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
   .navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar .btn-navbar:active, .navbar .btn-navbar.active, .navbar .btn-navbar.disabled, .navbar .btn-navbar[disabled] {
     color: white;
-    background-color: #f2f2f2;
-    *background-color: #e6e6e6; }
+    background-color: #e6e6e6;
+    *background-color: #d9d9d9; }
   /* line 510, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
   .navbar .btn-navbar:active, .navbar .btn-navbar.active {
-    background-color: #d9d9d9 \9; }
+    background-color: #cccccc \9; }
 
 /* line 283, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .btn-navbar .icon-bar {
@@ -4441,8 +4440,8 @@ input[type="submit"].btn {
 
 /* line 355, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
-  border-top-color: #999999;
-  border-bottom-color: #999999; }
+  border-top-color: #777777;
+  border-bottom-color: #777777; }
 
 /* line 361, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navbar.scss */
 .navbar .nav li.dropdown.open > .dropdown-toggle .caret,
@@ -4607,7 +4606,7 @@ input[type="submit"].btn {
 /* line 6, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_breadcrumbs.scss */
 .breadcrumb {
   padding: 8px 15px;
-  margin: 0 0 18px;
+  margin: 0 0 20px;
   list-style: none;
   background-color: #f5f5f5;
   -webkit-border-radius: 4px;
@@ -4630,7 +4629,7 @@ input[type="submit"].btn {
 
 /* line 6, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_pagination.scss */
 .pagination {
-  margin: 18px 0; }
+  margin: 20px 0; }
 
 /* line 10, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_pagination.scss */
 .pagination ul {
@@ -4656,7 +4655,7 @@ input[type="submit"].btn {
 .pagination ul > li > span {
   float: left;
   padding: 4px 12px;
-  line-height: 18px;
+  line-height: 20px;
   text-decoration: none;
   background-color: white;
   border: 1px solid #dddddd;
@@ -4717,7 +4716,7 @@ input[type="submit"].btn {
 .pagination-large ul > li > a,
 .pagination-large ul > li > span {
   padding: 11px 19px;
-  font-size: 16.25px; }
+  font-size: 17.5px; }
 /* line 86, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_pagination.scss */
 .pagination-large ul > li:first-child > a,
 .pagination-large ul > li:first-child > span {
@@ -4764,17 +4763,17 @@ input[type="submit"].btn {
 .pagination-small ul > li > a,
 .pagination-small ul > li > span {
   padding: 2px 10px;
-  font-size: 11.05px; }
+  font-size: 11.9px; }
 
 /* line 119, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_pagination.scss */
 .pagination-mini ul > li > a,
 .pagination-mini ul > li > span {
   padding: 0px 6px;
-  font-size: 9.75px; }
+  font-size: 10.5px; }
 
 /* line 6, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_pager.scss */
 .pager {
-  margin: 18px 0;
+  margin: 20px 0;
   list-style: none;
   text-align: center;
   *zoom: 1; }
@@ -5169,14 +5168,14 @@ input[type="submit"].btn {
 /* line 20, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_thumbnails.scss */
 .thumbnails > li {
   float: left;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   margin-left: 20px; }
 
 /* line 27, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_thumbnails.scss */
 .thumbnail {
   display: block;
   padding: 4px;
-  line-height: 18px;
+  line-height: 20px;
   border: 1px solid #dddddd;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -5251,7 +5250,7 @@ a.thumbnail:focus {
 .badge {
   display: inline-block;
   padding: 2px 4px;
-  font-size: 10.998px;
+  font-size: 11.844px;
   font-weight: bold;
   line-height: 14px;
   color: white;
@@ -5424,8 +5423,8 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 /* line 45, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_progress-bars.scss */
 .progress {
   overflow: hidden;
-  height: 18px;
-  margin-bottom: 18px;
+  height: 20px;
+  margin-bottom: 20px;
   background-color: #f6f6f6;
   background-image: -moz-linear-gradient(top, whitesmoke, #f9f9f9);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(whitesmoke), to(#f9f9f9));
@@ -5578,7 +5577,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 
 /* line 7, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_accordion.scss */
 .accordion {
-  margin-bottom: 18px; }
+  margin-bottom: 20px; }
 
 /* line 12, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_accordion.scss */
 .accordion-group {
@@ -5609,7 +5608,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 /* line 6, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_carousel.scss */
 .carousel {
   position: relative;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   line-height: 1; }
 
 /* line 12, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_carousel.scss */
@@ -5730,7 +5729,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .carousel-caption h4,
 .carousel-caption p {
   color: white;
-  line-height: 18px; }
+  line-height: 20px; }
 
 /* line 153, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_carousel.scss */
 .carousel-caption h4 {
@@ -5746,7 +5745,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
-  line-height: 27px;
+  line-height: 30px;
   color: inherit;
   background-color: #eeeeee;
   -webkit-border-radius: 6px;
@@ -5761,7 +5760,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
     letter-spacing: -1px; }
   /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_hero-unit.scss */
   .hero-unit li {
-    line-height: 27px; }
+    line-height: 30px; }
 
 /* line 7, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_utilities.scss */
 .pull-right {
@@ -5811,1566 +5810,7 @@ a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {
 .input-block-level {
   display: block;
   width: 100%;
-  min-height: 28px;
+  min-height: 30px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box; }
-
-/*
- * Bootstrap Responsive v2.3.1
- *
- * Copyright 2012 Twitter, Inc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Designed and built with all the love in the world @twitter by @mdo and @fat.
- */
-@-ms-viewport {
-  width: device-width; }
-
-/* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.hidden {
-  display: none;
-  visibility: hidden; }
-
-/* line 23, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.visible-phone {
-  display: none !important; }
-
-/* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.visible-tablet {
-  display: none !important; }
-
-/* line 27, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.hidden-desktop {
-  display: none !important; }
-
-/* line 28, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.visible-desktop {
-  display: inherit !important; }
-
-@media (min-width: 768px) and (max-width: 979px) {
-  /* line 33, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .hidden-desktop {
-    display: inherit !important; }
-
-  /* line 34, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .visible-desktop {
-    display: none !important; }
-
-  /* line 36, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .visible-tablet {
-    display: inherit !important; }
-
-  /* line 38, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .hidden-tablet {
-    display: none !important; } }
-@media (max-width: 767px) {
-  /* line 44, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .hidden-desktop {
-    display: inherit !important; }
-
-  /* line 45, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .visible-desktop {
-    display: none !important; }
-
-  /* line 47, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .visible-phone {
-    display: inherit !important; }
-
-  /* line 49, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .hidden-phone {
-    display: none !important; } }
-/* line 53, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.visible-print {
-  display: none !important; }
-
-@media print {
-  /* line 57, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .visible-print {
-    display: inherit !important; }
-
-  /* line 58, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-  .hidden-print {
-    display: none !important; } }
-/* line 62, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.clearfix {
-  *zoom: 1; }
-  /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .clearfix:before, .clearfix:after {
-    display: table;
-    content: "";
-    line-height: 0; }
-  /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .clearfix:after {
-    clear: both; }
-
-/* line 67, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.hide-text {
-  font: 0/0 a;
-  color: transparent;
-  text-shadow: none;
-  background-color: transparent;
-  border: 0; }
-
-/* line 72, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-utilities.scss */
-.input-block-level {
-  display: block;
-  width: 100%;
-  min-height: 28px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-@media (min-width: 1200px) {
-  /* line 556, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .row {
-    margin-left: -30px;
-    *zoom: 1; }
-    /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row:before, .row:after {
-      display: table;
-      content: "";
-      line-height: 0; }
-    /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row:after {
-      clear: both; }
-
-  /* line 561, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  [class*="span"] {
-    float: left;
-    min-height: 1px;
-    margin-left: 30px; }
-
-  /* line 571, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .container,
-  .navbar-static-top .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    width: 1170px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span12 {
-    width: 1170px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span11 {
-    width: 1070px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span10 {
-    width: 970px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span9 {
-    width: 870px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span8 {
-    width: 770px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span7 {
-    width: 670px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span6 {
-    width: 570px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span5 {
-    width: 470px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span4 {
-    width: 370px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span3 {
-    width: 270px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span2 {
-    width: 170px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span1 {
-    width: 70px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset12 {
-    margin-left: 1230px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset11 {
-    margin-left: 1130px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset10 {
-    margin-left: 1030px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset9 {
-    margin-left: 930px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset8 {
-    margin-left: 830px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset7 {
-    margin-left: 730px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset6 {
-    margin-left: 630px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset5 {
-    margin-left: 530px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset4 {
-    margin-left: 430px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset3 {
-    margin-left: 330px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset2 {
-    margin-left: 230px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset1 {
-    margin-left: 130px; }
-
-  /* line 605, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .row-fluid {
-    width: 100%;
-    *zoom: 1; }
-    /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid:before, .row-fluid:after {
-      display: table;
-      content: "";
-      line-height: 0; }
-    /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid:after {
-      clear: both; }
-    /* line 608, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid [class*="span"] {
-      display: block;
-      width: 100%;
-      min-height: 28px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      float: left;
-      margin-left: 2.5641%;
-      *margin-left: 2.51091%; }
-    /* line 614, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid [class*="span"]:first-child {
-      margin-left: 0; }
-    /* line 619, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .controls-row [class*="span"] + [class*="span"] {
-      margin-left: 2.5641%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span12 {
-      width: 100%;
-      *width: 99.94681%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span11 {
-      width: 91.45299%;
-      *width: 91.3998%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span10 {
-      width: 82.90598%;
-      *width: 82.85279%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span9 {
-      width: 74.35897%;
-      *width: 74.30578%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span8 {
-      width: 65.81197%;
-      *width: 65.75877%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span7 {
-      width: 57.26496%;
-      *width: 57.21177%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span6 {
-      width: 48.71795%;
-      *width: 48.66476%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span5 {
-      width: 40.17094%;
-      *width: 40.11775%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span4 {
-      width: 31.62393%;
-      *width: 31.57074%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span3 {
-      width: 23.07692%;
-      *width: 23.02373%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span2 {
-      width: 14.52991%;
-      *width: 14.47672%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span1 {
-      width: 5.98291%;
-      *width: 5.92971%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset12 {
-      margin-left: 105.12821%;
-      *margin-left: 105.02182%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset12:first-child {
-      margin-left: 102.5641%;
-      *margin-left: 102.45772%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset11 {
-      margin-left: 96.5812%;
-      *margin-left: 96.47481%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset11:first-child {
-      margin-left: 94.01709%;
-      *margin-left: 93.91071%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset10 {
-      margin-left: 88.03419%;
-      *margin-left: 87.92781%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset10:first-child {
-      margin-left: 85.47009%;
-      *margin-left: 85.3637%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset9 {
-      margin-left: 79.48718%;
-      *margin-left: 79.3808%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset9:first-child {
-      margin-left: 76.92308%;
-      *margin-left: 76.81669%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset8 {
-      margin-left: 70.94017%;
-      *margin-left: 70.83379%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset8:first-child {
-      margin-left: 68.37607%;
-      *margin-left: 68.26969%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset7 {
-      margin-left: 62.39316%;
-      *margin-left: 62.28678%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset7:first-child {
-      margin-left: 59.82906%;
-      *margin-left: 59.72268%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset6 {
-      margin-left: 53.84615%;
-      *margin-left: 53.73977%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset6:first-child {
-      margin-left: 51.28205%;
-      *margin-left: 51.17567%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset5 {
-      margin-left: 45.29915%;
-      *margin-left: 45.19276%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset5:first-child {
-      margin-left: 42.73504%;
-      *margin-left: 42.62866%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset4 {
-      margin-left: 36.75214%;
-      *margin-left: 36.64575%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset4:first-child {
-      margin-left: 34.18803%;
-      *margin-left: 34.08165%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset3 {
-      margin-left: 28.20513%;
-      *margin-left: 28.09875%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset3:first-child {
-      margin-left: 25.64103%;
-      *margin-left: 25.53464%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset2 {
-      margin-left: 19.65812%;
-      *margin-left: 19.55174%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset2:first-child {
-      margin-left: 17.09402%;
-      *margin-left: 16.98763%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset1 {
-      margin-left: 11.11111%;
-      *margin-left: 11.00473%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset1:first-child {
-      margin-left: 8.54701%;
-      *margin-left: 8.44063%; }
-
-  /* line 664, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input,
-  textarea,
-  .uneditable-input {
-    margin-left: 0; }
-
-  /* line 669, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 30px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span12,
-  textarea.span12,
-  .uneditable-input.span12 {
-    width: 1156px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span11,
-  textarea.span11,
-  .uneditable-input.span11 {
-    width: 1056px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span10,
-  textarea.span10,
-  .uneditable-input.span10 {
-    width: 956px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span9,
-  textarea.span9,
-  .uneditable-input.span9 {
-    width: 856px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span8,
-  textarea.span8,
-  .uneditable-input.span8 {
-    width: 756px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span7,
-  textarea.span7,
-  .uneditable-input.span7 {
-    width: 656px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span6,
-  textarea.span6,
-  .uneditable-input.span6 {
-    width: 556px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span5,
-  textarea.span5,
-  .uneditable-input.span5 {
-    width: 456px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span4,
-  textarea.span4,
-  .uneditable-input.span4 {
-    width: 356px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span3,
-  textarea.span3,
-  .uneditable-input.span3 {
-    width: 256px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span2,
-  textarea.span2,
-  .uneditable-input.span2 {
-    width: 156px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span1,
-  textarea.span1,
-  .uneditable-input.span1 {
-    width: 56px; }
-
-  /* line 18, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-1200px-min.scss */
-  .thumbnails {
-    margin-left: -30px; }
-
-  /* line 21, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-1200px-min.scss */
-  .thumbnails > li {
-    margin-left: 30px; }
-
-  /* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-1200px-min.scss */
-  .row-fluid .thumbnails {
-    margin-left: 0; } }
-@media (min-width: 768px) and (max-width: 979px) {
-  /* line 556, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .row {
-    margin-left: -20px;
-    *zoom: 1; }
-    /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row:before, .row:after {
-      display: table;
-      content: "";
-      line-height: 0; }
-    /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row:after {
-      clear: both; }
-
-  /* line 561, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  [class*="span"] {
-    float: left;
-    min-height: 1px;
-    margin-left: 20px; }
-
-  /* line 571, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .container,
-  .navbar-static-top .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    width: 724px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span12 {
-    width: 724px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span11 {
-    width: 662px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span10 {
-    width: 600px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span9 {
-    width: 538px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span8 {
-    width: 476px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span7 {
-    width: 414px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span6 {
-    width: 352px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span5 {
-    width: 290px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span4 {
-    width: 228px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span3 {
-    width: 166px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span2 {
-    width: 104px; }
-
-  /* line 582, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .span1 {
-    width: 42px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset12 {
-    margin-left: 764px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset11 {
-    margin-left: 702px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset10 {
-    margin-left: 640px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset9 {
-    margin-left: 578px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset8 {
-    margin-left: 516px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset7 {
-    margin-left: 454px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset6 {
-    margin-left: 392px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset5 {
-    margin-left: 330px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset4 {
-    margin-left: 268px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset3 {
-    margin-left: 206px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset2 {
-    margin-left: 144px; }
-
-  /* line 589, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .offset1 {
-    margin-left: 82px; }
-
-  /* line 605, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .row-fluid {
-    width: 100%;
-    *zoom: 1; }
-    /* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid:before, .row-fluid:after {
-      display: table;
-      content: "";
-      line-height: 0; }
-    /* line 22, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid:after {
-      clear: both; }
-    /* line 608, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid [class*="span"] {
-      display: block;
-      width: 100%;
-      min-height: 28px;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      float: left;
-      margin-left: 2.76243%;
-      *margin-left: 2.70924%; }
-    /* line 614, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid [class*="span"]:first-child {
-      margin-left: 0; }
-    /* line 619, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .controls-row [class*="span"] + [class*="span"] {
-      margin-left: 2.76243%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span12 {
-      width: 100%;
-      *width: 99.94681%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span11 {
-      width: 91.43646%;
-      *width: 91.38327%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span10 {
-      width: 82.87293%;
-      *width: 82.81974%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span9 {
-      width: 74.30939%;
-      *width: 74.2562%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span8 {
-      width: 65.74586%;
-      *width: 65.69266%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span7 {
-      width: 57.18232%;
-      *width: 57.12913%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span6 {
-      width: 48.61878%;
-      *width: 48.56559%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span5 {
-      width: 40.05525%;
-      *width: 40.00206%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span4 {
-      width: 31.49171%;
-      *width: 31.43852%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span3 {
-      width: 22.92818%;
-      *width: 22.87499%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span2 {
-      width: 14.36464%;
-      *width: 14.31145%; }
-    /* line 631, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .span1 {
-      width: 5.8011%;
-      *width: 5.74791%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset12 {
-      margin-left: 105.52486%;
-      *margin-left: 105.41848%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset12:first-child {
-      margin-left: 102.76243%;
-      *margin-left: 102.65605%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset11 {
-      margin-left: 96.96133%;
-      *margin-left: 96.85494%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset11:first-child {
-      margin-left: 94.1989%;
-      *margin-left: 94.09251%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset10 {
-      margin-left: 88.39779%;
-      *margin-left: 88.29141%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset10:first-child {
-      margin-left: 85.63536%;
-      *margin-left: 85.52898%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset9 {
-      margin-left: 79.83425%;
-      *margin-left: 79.72787%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset9:first-child {
-      margin-left: 77.07182%;
-      *margin-left: 76.96544%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset8 {
-      margin-left: 71.27072%;
-      *margin-left: 71.16434%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset8:first-child {
-      margin-left: 68.50829%;
-      *margin-left: 68.4019%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset7 {
-      margin-left: 62.70718%;
-      *margin-left: 62.6008%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset7:first-child {
-      margin-left: 59.94475%;
-      *margin-left: 59.83837%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset6 {
-      margin-left: 54.14365%;
-      *margin-left: 54.03726%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset6:first-child {
-      margin-left: 51.38122%;
-      *margin-left: 51.27483%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset5 {
-      margin-left: 45.58011%;
-      *margin-left: 45.47373%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset5:first-child {
-      margin-left: 42.81768%;
-      *margin-left: 42.7113%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset4 {
-      margin-left: 37.01657%;
-      *margin-left: 36.91019%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset4:first-child {
-      margin-left: 34.25414%;
-      *margin-left: 34.14776%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset3 {
-      margin-left: 28.45304%;
-      *margin-left: 28.34666%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset3:first-child {
-      margin-left: 25.69061%;
-      *margin-left: 25.58422%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset2 {
-      margin-left: 19.8895%;
-      *margin-left: 19.78312%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset2:first-child {
-      margin-left: 17.12707%;
-      *margin-left: 17.02069%; }
-    /* line 638, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset1 {
-      margin-left: 11.32597%;
-      *margin-left: 11.21958%; }
-    /* line 639, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-    .row-fluid .offset1:first-child {
-      margin-left: 8.56354%;
-      *margin-left: 8.45715%; }
-
-  /* line 664, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input,
-  textarea,
-  .uneditable-input {
-    margin-left: 0; }
-
-  /* line 669, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 20px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span12,
-  textarea.span12,
-  .uneditable-input.span12 {
-    width: 710px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span11,
-  textarea.span11,
-  .uneditable-input.span11 {
-    width: 648px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span10,
-  textarea.span10,
-  .uneditable-input.span10 {
-    width: 586px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span9,
-  textarea.span9,
-  .uneditable-input.span9 {
-    width: 524px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span8,
-  textarea.span8,
-  .uneditable-input.span8 {
-    width: 462px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span7,
-  textarea.span7,
-  .uneditable-input.span7 {
-    width: 400px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span6,
-  textarea.span6,
-  .uneditable-input.span6 {
-    width: 338px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span5,
-  textarea.span5,
-  .uneditable-input.span5 {
-    width: 276px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span4,
-  textarea.span4,
-  .uneditable-input.span4 {
-    width: 214px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span3,
-  textarea.span3,
-  .uneditable-input.span3 {
-    width: 152px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span2,
-  textarea.span2,
-  .uneditable-input.span2 {
-    width: 90px; }
-
-  /* line 681, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_mixins.scss */
-  input.span1,
-  textarea.span1,
-  .uneditable-input.span1 {
-    width: 28px; } }
-@media (max-width: 767px) {
-  /* line 9, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  body {
-    padding-left: 20px;
-    padding-right: 20px; }
-
-  /* line 16, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .navbar-fixed-top,
-  .navbar-fixed-bottom,
-  .navbar-static-top {
-    margin-left: -20px;
-    margin-right: -20px; }
-
-  /* line 21, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .container-fluid {
-    padding: 0; }
-
-  /* line 29, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .dl-horizontal dt {
-    float: none;
-    clear: none;
-    width: auto;
-    text-align: left; }
-  /* line 35, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .dl-horizontal dd {
-    margin-left: 0; }
-
-  /* line 43, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .container {
-    width: auto; }
-
-  /* line 47, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .row-fluid {
-    width: 100%; }
-
-  /* line 52, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .row,
-  .thumbnails {
-    margin-left: 0; }
-
-  /* line 55, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .thumbnails > li {
-    float: none;
-    margin-left: 0; }
-
-  /* line 62, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  [class*="span"],
-  .uneditable-input[class*="span"],
-  .row-fluid [class*="span"] {
-    float: none;
-    display: block;
-    width: 100%;
-    margin-left: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
-  /* line 70, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .span12,
-  .row-fluid .span12 {
-    width: 100%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
-  /* line 74, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .row-fluid [class*="offset"]:first-child {
-    margin-left: 0; }
-
-  /* line 87, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .input-large,
-  .input-xlarge,
-  .input-xxlarge,
-  input[class*="span"],
-  select[class*="span"],
-  textarea[class*="span"],
-  .uneditable-input {
-    display: block;
-    width: 100%;
-    min-height: 28px;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box; }
-
-  /* line 94, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .input-prepend input,
-  .input-append input,
-  .input-prepend input[class*="span"],
-  .input-append input[class*="span"] {
-    display: inline-block;
-    width: auto; }
-
-  /* line 98, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .controls-row [class*="span"] + [class*="span"] {
-    margin-left: 0; }
-
-  /* line 103, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .modal {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    width: auto;
-    margin: 0; }
-    /* line 110, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-    .modal.fade {
-      top: -100px; }
-    /* line 111, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-    .modal.fade.in {
-      top: 20px; } }
-@media (max-width: 480px) {
-  /* line 124, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .nav-collapse {
-    -webkit-transform: translate3d(0, 0, 0); }
-
-  /* line 129, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .page-header h1 small {
-    display: block;
-    line-height: 18px; }
-
-  /* line 136, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  input[type="checkbox"],
-  input[type="radio"] {
-    border: 1px solid #cccccc; }
-
-  /* line 142, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .form-horizontal .control-label {
-    float: none;
-    width: auto;
-    padding-top: 0;
-    text-align: left; }
-  /* line 149, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .form-horizontal .controls {
-    margin-left: 0; }
-  /* line 153, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .form-horizontal .control-list {
-    padding-top: 0; }
-  /* line 157, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .form-horizontal .form-actions {
-    padding-left: 10px;
-    padding-right: 10px; }
-
-  /* line 166, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .media .pull-left,
-  .media .pull-right {
-    float: none;
-    display: block;
-    margin-bottom: 10px; }
-
-  /* line 172, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .media-object {
-    margin-right: 0;
-    margin-left: 0; }
-
-  /* line 178, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .modal {
-    top: 10px;
-    left: 10px;
-    right: 10px; }
-
-  /* line 183, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .modal-header .close {
-    padding: 10px;
-    margin: -10px; }
-
-  /* line 189, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-767px-max.scss */
-  .carousel-caption {
-    position: static; } }
-@media (max-width: 979px) {
-  /* line 13, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  body {
-    padding-top: 0; }
-
-  /* line 18, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-fixed-top,
-  .navbar-fixed-bottom {
-    position: static; }
-
-  /* line 21, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-fixed-top {
-    margin-bottom: 18px; }
-
-  /* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-fixed-bottom {
-    margin-top: 18px; }
-
-  /* line 28, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-fixed-top .navbar-inner,
-  .navbar-fixed-bottom .navbar-inner {
-    padding: 5px; }
-
-  /* line 31, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar .container {
-    width: auto;
-    padding: 0; }
-
-  /* line 36, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar .brand {
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 0 0 0 -5px; }
-
-  /* line 45, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse {
-    clear: both; }
-
-  /* line 49, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav {
-    float: none;
-    margin: 0 0 9px; }
-
-  /* line 53, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li {
-    float: none; }
-
-  /* line 56, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a {
-    margin-bottom: 2px; }
-
-  /* line 59, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > .divider-vertical {
-    display: none; }
-
-  /* line 62, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav .nav-header {
-    color: #777777;
-    text-shadow: none; }
-
-  /* line 68, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a,
-  .nav-collapse .dropdown-menu a {
-    padding: 9px 15px;
-    font-weight: bold;
-    color: #999999;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px; }
-
-  /* line 75, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .btn {
-    padding: 4px 10px 4px;
-    font-weight: normal;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px; }
-
-  /* line 80, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .dropdown-menu li + li a {
-    margin-bottom: 2px; }
-
-  /* line 86, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > a:hover,
-  .nav-collapse .nav > li > a:focus,
-  .nav-collapse .dropdown-menu a:hover,
-  .nav-collapse .dropdown-menu a:focus {
-    background-color: white; }
-
-  /* line 90, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-inverse .nav-collapse .nav > li > a,
-  .navbar-inverse .nav-collapse .dropdown-menu a {
-    color: #999999; }
-
-  /* line 96, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-inverse .nav-collapse .nav > li > a:hover,
-  .navbar-inverse .nav-collapse .nav > li > a:focus,
-  .navbar-inverse .nav-collapse .dropdown-menu a:hover,
-  .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-    background-color: #111111; }
-
-  /* line 100, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse.in .btn-group {
-    margin-top: 5px;
-    padding: 0; }
-
-  /* line 105, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .dropdown-menu {
-    position: static;
-    top: auto;
-    left: auto;
-    float: none;
-    display: none;
-    max-width: none;
-    margin: 0 15px;
-    padding: 0;
-    background-color: transparent;
-    border: none;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    border-radius: 0;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none; }
-
-  /* line 119, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .open > .dropdown-menu {
-    display: block; }
-
-  /* line 124, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .dropdown-menu:before,
-  .nav-collapse .dropdown-menu:after {
-    display: none; }
-
-  /* line 127, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .dropdown-menu .divider {
-    display: none; }
-
-  /* line 132, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .nav > li > .dropdown-menu:before, .nav-collapse .nav > li > .dropdown-menu:after {
-    display: none; }
-
-  /* line 138, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse .navbar-form,
-  .nav-collapse .navbar-search {
-    float: none;
-    padding: 9px 15px;
-    margin: 9px 0;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
-    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-    -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1); }
-
-  /* line 147, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-inverse .nav-collapse .navbar-form,
-  .navbar-inverse .nav-collapse .navbar-search {
-    border-top-color: #111111;
-    border-bottom-color: #111111; }
-
-  /* line 152, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar .nav-collapse .nav.pull-right {
-    float: none;
-    margin-left: 0; }
-
-  /* line 158, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse,
-  .nav-collapse.collapse {
-    overflow: hidden;
-    height: 0; }
-
-  /* line 163, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar .btn-navbar {
-    display: block; }
-
-  /* line 169, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .navbar-static .navbar-inner {
-    padding-left: 10px;
-    padding-right: 10px; } }
-@media (min-width: 980px) {
-  /* line 184, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_responsive-navbar.scss */
-  .nav-collapse.collapse {
-    height: auto !important;
-    overflow: visible !important; } }
-/* line 2, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_navbar.scss */
-.navbar .brand {
-  margin: 5px 0 0 10px;
-  padding: 8px 20px 12px 50px;
-  background: url("seattle.rb-logo.png") no-repeat left top;
-  letter-spacing: -.04em;
-  font-weight: bold;
-  font-size: 36.01px;
-  line-height: 0.8;
-  text-shadow: 0 0 0 transparent; }
-/* line 13, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_navbar.scss */
-.navbar .nav {
-  margin-top: 8px; }
-  /* line 16, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_navbar.scss */
-  .navbar .nav > li {
-    margin: 0 3px;
-    font-size: 15.99px; }
-    /* line 20, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_navbar.scss */
-    .navbar .nav > li > a {
-      padding: 9px 10px 11px;
-      -webkit-border-radius: 3px;
-      -moz-border-radius: 3px;
-      border-radius: 3px;
-      font-weight: bold;
-      line-height: 19px;
-      text-shaodw: 0 0 0 transparent; }
-      /* line 27, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_navbar.scss */
-      .navbar .nav > li > a:hover, .navbar .nav > li > a:active, .navbar .nav > li > a:focus {
-        text-shadow: 0 0 0 transparent; }
-
-/* partial hero-unit.scss */
-/* line 3, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_hero-unit.scss */
-.hero-unit {
-  margin-bottom: 10px;
-  padding: 30px;
-  padding-bottom: 10px;
-  background: #fff; }
-  /* line 9, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_hero-unit.scss */
-  .hero-unit h1 {
-    margin-top: 0; }
-  /* line 13, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_hero-unit.scss */
-  .hero-unit h2 {
-    margin: 0 0 20px 3px;
-    color: black;
-    font-weight: 200;
-    line-height: 0.8;
-    font-size: 20.02px; }
-  /* line 21, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_hero-unit.scss */
-  .hero-unit img {
-    text-align: center; }
-  /* line 25, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_hero-unit.scss */
-  .hero-unit p {
-    line-height: 1.4; }
-
-/* LAYOUT... */
-/* line 3, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.container {
-  margin-top: 60px; }
-
-/* line 7, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-form {
-  margin: 0; }
-
-@media (max-width: 979px) {
-  /* line 10, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  .container {
-    margin-top: 0px; } }
-/* line 15, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; }
-
-/* line 19, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-h1 {
-  font-size: 30px;
-  line-height: 36px; }
-
-/* line 24, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-h2 {
-  color: #b00800;
-  line-height: 1.2;
-  font-size: 200%; }
-
-/* line 30, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-h3 {
-  font-size: 18px;
-  line-height: 27px; }
-
-/* line 35, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-a {
-  color: #c70000; }
-
-/* line 39, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.row {
-  padding-right: 0; }
-
-/* line 43, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#monthly {
-  background-color: #C3D9FF;
-  background-image: -ms-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -moz-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -o-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c3d9ff), color-stop(1, #a9bbdd));
-  background-image: -webkit-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: linear-gradient(to bottom, #c3d9ff 0%, #a9bbdd 100%);
-  border: 1px solid #a9bbdd;
-  border-radius: 4px;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  min-height: 100px;
-  margin-bottom: 20px; }
-  /* line 57, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  #monthly h1, #monthly h2 {
-    padding: 10px; }
-  /* line 60, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  #monthly p.explanation {
-    padding-left: 10px; }
-  /* line 66, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  #monthly #first p,
-  #monthly #second p,
-  #monthly #third p {
-    width: 190px; }
-
-/* line 72, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-footer {
-  background-color: #C3D9FF;
-  padding: 7px 30px;
-  font-weight: 200;
-  font-size: 120%;
-  color: #8A9AB5;
-  margin-top: 10px;
-  text-align: center; }
-
-/* line 82, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-table tr td {
-  vertical-align: top; }
-
-/* line 86, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-address {
-  margin: 0; }
-
-/* line 88, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.view-all {
-  text-align: right; }
-
-/* line 91, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-input[type=checkbox] + label {
-  display: inline-block; }
-
-/* line 92, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-input[type=text], textarea, .uneditable-input {
-  width: 100%; }
-
-/* line 93, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.inline {
-  display: inline-block; }
-
-/* line 95, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
-  background-color: #c70000;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  color: white;
-  text-shadow: 0 0 0 transparent; }
-
-/*...LAYOUT*/
-/* HOME...*/
-/* line 105, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.proposed_talk {
-  padding: 1em; }
-
-/* line 109, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.proposed_talk .description {
-  padding: 0 1em; }
-
-/* line 113, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map {
-  color: #333;
-  border: 1px solid #a9bbdd;
-  padding: 0px;
-  padding-top: 10px;
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-bottom: 25px;
-  border-radius: 6px;
-  moz-border-radius: 6px;
-  webkit-border-radius: 6px;
-  background-color: #C3D9FF;
-  background-image: -ms-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -moz-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -o-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #c3d9ff), color-stop(1, #a9bbdd));
-  background-image: -webkit-linear-gradient(top, #c3d9ff 0%, #a9bbdd 100%);
-  background-image: linear-gradient(to bottom, #c3d9ff 0%, #a9bbdd 100%); }
-  /* line 131, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  #map .span8 {
-    margin-left: 0px; }
-  /* line 135, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  #map h3 {
-    font-size: 18px;
-    line-height: 1; }
-
-/* line 141, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.join-us #map {
-  background: white;
-  border: none;
-  margin-top: 0; }
-
-/* line 147, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.join-us #map iframe {
-  margin-top: 10px; }
-
-/* line 151, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map iframe {
-  border-radius: 6px;
-  moz-border-radius: 6px;
-  webkit-border-radius: 6px;
-  margin-bottom: 10px;
-  width: 90%; }
-
-/* line 159, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map h3 {
-  line-height: 1; }
-
-/* line 163, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map table {
-  margin: 10px 0 0 0px; }
-
-/* line 167, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map table tr:first-child td {
-  padding-bottom: 5px; }
-
-/* line 171, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#map #address {
-  margin-left: 10px;
-  margin-right: 5px; }
-
-/* line 176, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-abbr.amp {
-  font-weight: normal;
-  font-style: italic;
-  font-size: 120%;
-  font-family: Baskerville, Palatino, "Book Antiqua", serif;
-  border: none; }
-
-/*...HOME*/
-/* PEOPLE...*/
-/* line 187, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.profile {
-  padding: 10px 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 5px; }
-
-/* line 194, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.profile:nth-child(even) {
-  background-color: #E9FBFF; }
-
-/* line 198, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.profile .avatar {
-  /*  margin: 0 10px 0 0;*/ }
-
-/* line 202, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.profile img {
-  width: 73px;
-  border: 1px solid #cccccc; }
-
-/* line 207, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.profile .description h1 {
-  line-height: 0.7;
-  margin-bottom: 8px;
-  font-size: 300%; }
-
-/* line 212, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.links {
-  margin: 2px; }
-
-/* line 215, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.links li {
-  display: inline-block;
-  margin: 0 5px; }
-
-/* line 219, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.mini-profile {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-radius: 3px;
-  moz-border-radius: 3px;
-  webkit-border-radius: 3px;
-  background-color: #ddd; }
-
-/* line 228, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.mini-profile h2 {
-  font-size: 200%;
-  margin: 5px 10px 0px 10px;
-  line-height: 1; }
-
-/* line 234, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.mini-profile p {
-  margin: 0 12px;
-  height: 55px; }
-
-@media (max-width: 767px) {
-  /* line 240, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  .mini-profile {
-    min-height: 110px;
-    height: 100%; }
-
-  /* line 244, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-  .mini-profile p {
-    min-height: 50px;
-    height: 100%; } }
-/*...DUDES*/
-/* line 251, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.new {
-  text-align: right; }
-
-/* PROJECTS...*/
-/* line 257, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.project:first-child {
-  border: none; }
-
-/* line 260, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-.project {
-  border-top: 1px dotted #dddddd;
-  padding-top: 5px; }
-
-/* ...PROJECTS */
-/* JOIN US...*/
-/* line 268, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
-#newsletter input[type=text] {
-  margin-top: 5px; }
