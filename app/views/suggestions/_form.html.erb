@@ -19,6 +19,10 @@
     <%= f.label :your_name %><br />
     <%= f.text_field :suggester %>
   </div>
+  <p style="width: 1px; height: 1px; overflow: hidden;">
+    Please leave following field blank:
+    <%= f.text_area :comment %>
+  </p>
   <div class="actions">
     <%= f.submit %>
   </div>
