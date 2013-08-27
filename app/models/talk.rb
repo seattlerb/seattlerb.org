@@ -1,5 +1,6 @@
 class Talk < ActiveRecord::Base
   attr_accessor :spam # fake attribute for spam trapping
+  attr_accessor :special_talk_requests # fake attribute for spam trapping
   validates_length_of :spam, :maximum => 0
 
   TALK_KINDS = %w(beginner intermediate advanced lightning)
