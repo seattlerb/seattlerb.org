@@ -8,6 +8,9 @@ class TalksController < ApplicationController
   end
 
   def create
+    #spam catch to redirect - maybe the bots were ignoring the spam field
+    redirect_to talks_url and return if params['talk']['special_talk_requests'].present?
+    
     @talk = Talk.new(params[:talk])
 
     if @talk.save
