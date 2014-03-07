@@ -41,7 +41,7 @@ class Dude < ActiveRecord::Base
   end
 
   def get_twitter_info(twitter_name)
-    twitter_client.user_search(twitter_name).first.profile_image_url
+    twitter_client.user_search(twitter_name).first.profile_image_url.to_s
     # response = HTTParty.get("https://api.twitter.com/1.1/users/show.json?screen_name=#{self.twitter}")
     # if response.code == 200
     #   response.parsed_response
@@ -49,7 +49,8 @@ class Dude < ActiveRecord::Base
     #   false
     # end
   end
-
+  
+  private
   def twitter_client
     Twitter::REST::Client.new do |config|
       config.consumer_key = ENV["TWITTER_API_KEY"]
