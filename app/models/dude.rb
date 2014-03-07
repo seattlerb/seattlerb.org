@@ -41,6 +41,7 @@ class Dude < ActiveRecord::Base
   end
 
   def get_twitter_info(twitter_name)
+    # TODO: the following is a little hacky. Figure out better way to deal with search with twitter gem?
     twitter_client.user_search(twitter_name).first.profile_image_url.to_s
     # response = HTTParty.get("https://api.twitter.com/1.1/users/show.json?screen_name=#{self.twitter}")
     # if response.code == 200

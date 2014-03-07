@@ -2,6 +2,11 @@ class TalksController < ApplicationController
   before_filter :verify_password, :only => :create
   before_filter :set_title, :only => [:index, :create]
 
+  def new
+    @talk = Talk.new
+    render :form
+  end
+
   def index
     talks
     @talk  = Talk.new
@@ -14,6 +19,7 @@ class TalksController < ApplicationController
     @talk = Talk.new(params[:talk])
 
     if @talk.save
+      # TODO:   send email here
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
