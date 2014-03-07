@@ -4,7 +4,7 @@ class AboutController < ApplicationController
   end
 
   def people
-    @people = Dude.order('featured desc, name asc')
+    @people = Dude.order(featured: :desc, name: :asc)
   end
 
   def projects
