@@ -4,3 +4,6 @@ log
 db/*.sqlite3
 db/data.yml
 config/memcache.conf
+
+# Ignore application configuration
+/config/application.yml
