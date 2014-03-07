@@ -7,6 +7,10 @@ class TalksController < ApplicationController
     render :form
   end
 
+  def show
+    @talk = Talk.find(params[:id])
+  end
+
   def index
     talks
     @talk  = Talk.new
