@@ -24,6 +24,6 @@ group :development, :test do
   gem "heroku",                  "~> 2.19"
   gem "sqlite3",                 "~> 1.3.0"
   gem "minitest-rails",          "~> 0.3"
-  gem "ZenTest",                 "~> 4.8"
+  gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.1.2"
 end
