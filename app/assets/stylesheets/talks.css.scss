@@ -5,10 +5,6 @@
   border-radius: 10px;
 }
 
-.tabs{
-  width: 80%;
-}
-
 .tabs div{
   display: inline-block;
   height: 2em;
@@ -18,28 +14,6 @@
   text-align: center;
   border: 1px solid black;
 }
-/*#tabs {
-  display: block;
-  margin: auto;
-}
-
-#tabs ul { list-style: none; display:block; width:800px; height: 50px;  margin: 0 auto;}
-#tabs ul li { float: left; }
-#tabs ul li a {
-  display                          : block;
-  float                            : left;
-  padding                          : 8px 11px;
-  margin-right                     : 7px;
-  border                           : 1px solid #fff;
-  -webkit-border-radius            : 5px;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-radius               : 5px;
-  -moz-border-radius-bottomleft    : 0;
-  border-radius                    : 5px;
-  border-bottom-left-radius        : 0;
-  width                            :235px;
-  text-align                       : center;
-}*/
 
 .hidden {
   display: none;
