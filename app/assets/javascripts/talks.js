@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     $('#tabs a').removeClass('sel');
     $('#tabs a').each(function(){
-      $(this).parent().css('background-color', '#63BFD8')
+      $(this).parent().css('background-color', '#C3D9FF')
     });
     $(this).addClass('sel');
     tab.css('background-color', '#A9D0F5');
