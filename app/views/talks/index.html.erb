@@ -17,6 +17,9 @@
       <div class='span4' id='past-talks'>
         <a href="#past">Past Talks</a>
       </div>
+      <div class='span4' id='proposed-talks'>
+        <a href="#proposed">Proposed Talks</a>
+      </div>
     </div>
 
     <section id="upcoming">
@@ -36,6 +39,20 @@
     <section id="past" class="hidden">
       <div class="talk-box">
          <% @past_talks.each do |talk| %>
+          <div class="row-fluid">
+            <div class="talk span8">
+              <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
+              <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+              <p class="description"><%= talk.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <section id="proposed" class="hidden">
+      <div class="talk-box">
+         <% @proposed_talks.each do |talk| %>
           <div class="row-fluid">
             <div class="talk span8">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>

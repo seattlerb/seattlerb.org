@@ -12,8 +12,9 @@ class TalksController < ApplicationController
   end
 
   def index
-    available_talks
+    upcoming
     @past_talks = Talk.past
+    @proposed_talks = Talk.proposed
     @talk  = Talk.new
 
   end
@@ -28,7 +29,7 @@ class TalksController < ApplicationController
       # TODO:   send email here
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
-      talks
+      upcoming
       render action: "index", notice: 'There was a problem saving your talk.'
     end
   end
@@ -47,8 +48,8 @@ class TalksController < ApplicationController
     @title ||= "Talks"
   end
 
-  def available_talks
-    @talks ||= Talk.available
+  def upcoming
+    @talks ||= Talk.upcoming
   end
 
   def verify_password
