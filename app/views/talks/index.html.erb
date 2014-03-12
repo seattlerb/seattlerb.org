@@ -1,5 +1,5 @@
 <div class="row-fluid">
-  <div class="span4" id='come-talk'>
+  <div class="span3" id='come-talk'>
     <h1>Come talk with us!</h1>
     <hr>
     <p class="lead">
@@ -9,15 +9,15 @@
     </p>
   </div>
 
-  <div class="span8" id='content'>
-    <div class='span8' id='tabs'>
-      <div class='span4' id='upcoming-talks'>
+  <div class="span9" id='content'>
+    <div class='row-fluid' id='tabs'>
+      <div class='span3' id='upcoming-talks'>
         <a href="#upcoming" class='sel'>Upcoming Talks</a>
       </div>
-      <div class='span4' id='past-talks'>
+      <div class='span3' id='past-talks'>
         <a href="#past">Past Talks</a>
       </div>
-      <div class='span4' id='proposed-talks'>
+      <div class='span3' id='proposed-talks'>
         <a href="#proposed">Proposed Talks</a>
       </div>
     </div>
@@ -26,7 +26,7 @@
       <div class="talk-box">
         <% @talks.each do |talk| %>
           <div class="row-fluid">
-            <div class="talk span8">
+            <div class="talk span9">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
               <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
               <p class="description"><%= talk.description %></p>
@@ -40,7 +40,7 @@
       <div class="talk-box">
          <% @past_talks.each do |talk| %>
           <div class="row-fluid">
-            <div class="talk span8">
+            <div class="talk span9">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
               <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
               <p class="description"><%= talk.description %></p>
@@ -54,7 +54,7 @@
       <div class="talk-box">
          <% @proposed_talks.each do |talk| %>
           <div class="row-fluid">
-            <div class="talk span8">
+            <div class="talk span9">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
               <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
               <p class="description"><%= talk.description %></p>
