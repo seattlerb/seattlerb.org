@@ -22,7 +22,7 @@ class TalksController < ApplicationController
   end
 
   def show
-    #@disqus_shortname = "seattlerb"
+    @disqus_shortname = "seattlerb"
     @talk = Talk.find(params[:id])
   end
 
