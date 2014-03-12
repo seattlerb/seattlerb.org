@@ -1,11 +1,19 @@
-<div class='talk'>
-  <h1><%= @talk.title %>
-  <small> <%= @talk.presenter %></small></h1><hr>
-  <h3>When: <%= @talk.scheduled_date.to_time.strftime("%A, %B %d, %Y") %></h3>
-  <h4>Type: <%= @talk.kind %></h4>
-  <h3>Description:</h3>
-  <p>
-    <%= @talk.description %>
-  </p>
-
+<div class="row-fluid">
+  <div class="proposed_talk span8 offset2">
+    <h1><%= @talk.title %></h1>
+    <p class="lead"><%= indefinite_Articlerize @talk.kind %> talk proposed by <%= @talk.presenter %></p>
+    <p><%= @talk.description %></p>
+    <hr />
+    <p><i class="icon-arrow-left"></i><%= link_to "Back to talks", talks_path %></p>
+    <div id="disqus_thread"></div>
+  </div>
 </div>
+
+<% content_for :javascript_footer do %>
+  <% unless @disqus_shortname.blank? %>
+    <script type="text/javascript">
+      disqus_shortname = '<%= @disqus_shortname %>';
+    </script>
+    <script type="text/javascript" src="//<%= @disqus_shortname %>.disqus.com/embed.js" async></script>
+  <% end %>
+<% end %>

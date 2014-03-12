@@ -33,6 +33,11 @@ class TalksController < ApplicationController
     end
   end
 
+  def show
+    @disqus_shortname = "seattlerb"
+    @talk = Talk.find(params[:id])
+  end
+
   def checklist
   end
 

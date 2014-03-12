@@ -1,1 +1,19 @@
-License: don't care. do whatever you want with it.
+== Seattle.rb ==
+
+This is the website for Seattle.rb, which at the time of this writing is hosted at www.seattlerb.org.
+
+Seattle.rb was the first Ruby and Rails user group in North America and has met regularly for over a decade. We convene every Tuesday night to contribute to open source, work on personal projects, and to teach & learn from one another. Anyone interested in Ruby is welcome, regardless of skill level!
+
+== Contributing ==
+
+1. Create a fork
+2. Make your changes
+3. Make sure the tests are passing:
+
+    bundle exec rake test
+
+4. Submit a pull request
+
+== License ==
+
+Don't care. Do whatever you want with it.

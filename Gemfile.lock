@@ -222,7 +222,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest (~> 4.8)
+  ZenTest (~> 4.9)
   autotest-rails (~> 4.1.2)
   coffee-rails
   devise (~> 2.1.0)
