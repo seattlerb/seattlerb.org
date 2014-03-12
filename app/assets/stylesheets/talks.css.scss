@@ -5,12 +5,12 @@
   border-radius: 10px;
 }
 
-.tabs div{
+#tabs div{
   display: inline-block;
   height: 2em;
-  background: #a5c7cf;
+  background: #63BFD8;
   width: 30%;
-  padding-top: 10px;
+  padding: 5px;
   text-align: center;
   border: 1px solid black;
 }
@@ -21,4 +21,11 @@
 
 .tabs a {
   text-decoration: none;
+}
+
+#come-talk h1 {
+  font-size: 28px;
+}
+
+#come-talk {
 }
