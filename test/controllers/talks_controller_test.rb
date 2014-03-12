@@ -176,7 +176,6 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_disqus_shortname_assigned
-    skip("to plug in a disqus_shortname")
     get :show, :id => @talk.id
     assert_equal assigns[:disqus_shortname], "seattlerb"
   end
