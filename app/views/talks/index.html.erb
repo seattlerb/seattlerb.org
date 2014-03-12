@@ -12,16 +12,21 @@
 </div>
 
 <br />
-<div id='content'>
+<div class="span12" id='content'>
   <div class='tabs'>
-    <div id='upcoming-talks'><a href="#upcoming" class='sel'>Upcoming Talks</a></div>
-    <div id='proposed-talks'><a href= "#proposed">Proposed Talks</a></div>
-    <div id='past-talks'><a href="#past">Past Talks</a></div>
+    <div class='span4' id='upcoming-talks'>
+      <a href="#upcoming" class='sel'>Upcoming Talks</a>
+    </div>
+    <div class='span4' id='proposed-talks'>
+      <a href= "#proposed">Proposed Talks</a>
+    </div>
+    <div class='span4' id='past-talks'>
+      <a href="#past">Past Talks</a>
+    </div>
   </div>
 
   <section id="upcoming">
     <div class="talk-box">
-      <h2>UPCOMING TALKS</h2>
       <% @talks.each_slice(3).each do |row| %>
         <div class="row-fluid">
           <% row.each do |talk| %>
@@ -38,7 +43,6 @@
 
   <section id="proposed" class="hidden">
     <div class="talk-box">
-      <h2>PROPOSED TALKS</h2>
       <% @talks.each_slice(3).each do |row| %>
         <div class="row-fluid">
           <% row.each do |talk| %>
@@ -55,7 +59,6 @@
 
   <section id="past" class="hidden">
     <div class="talk-box">
-      <h2>PAST TALKS</h2>
       <% @talks.each_slice(3).each do |row| %>
         <div class="row-fluid">
           <% row.each do |talk| %>
