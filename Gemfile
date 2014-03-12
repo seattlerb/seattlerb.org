@@ -1,4 +1,3 @@
-# -*- ruby -*-
 
 source "http://rubygems.org"
 
