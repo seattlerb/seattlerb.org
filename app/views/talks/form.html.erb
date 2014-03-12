@@ -1,0 +1,42 @@
+<h1>Whatchoo talkin' 'bout, Willis?</h1>
+<div id="modal">
+  <%= form_for(@talk) do |f| %>
+    <% if @talk.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
+
+        <ul>
+        <% @talk.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.text_field :presenter,   :placeholder => "Name"                    %><br />
+      <%= f.text_field :email,       :placeholder => "Email (private!)"        %><br />
+      <%= f.text_field :title,       :placeholder => "Title"                   %><br />
+      <%= f.text_area  :description, :placeholder => "Description", :rows => 3 %><br />
+      <%= f.select :kind, talk_kinds %>
+
+      <%= hidden_field_tag :password, "" %>
+      <p style="width: 1px; height: 1px; overflow: hidden;">
+        Please leave following field blank:
+        <%= f.text_area :spam %>
+        <%= f.text_field :special_talk_requests %>
+      </p>
+      <%= f.submit "Submit!", class: 'btn btn-info'%>
+    </div>
+  <% end %>
+
+  <p>
+    <small>
+      This is nerd focused... Not marketing-focused. Not
+      sales-focused. Not recruitment-focused. If you want to talk
+      about your company, just make sure you talk
+      about <em>using</em> your product. Something we can share.
+    </small>
+  </p>
+  <%= link_to 'close', root_path, :rel => "modal:close" %>
+</div>

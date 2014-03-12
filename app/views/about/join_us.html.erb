@@ -6,7 +6,7 @@
 
       <p>
         We have a monthly social on the first Tuesday of every month.
-        Food, Beer, and Talks. <%= link_to "Sign up to give a talk", talks_path %>.
+        Food, Beer, and Talks. <%= link_to_modal 'Sign up to give a talk', new_talk_path %>.
         Contact us if you want to sponsor or help organize a monthly
         event.
       </p>
@@ -20,14 +20,14 @@
 
       <p>
         <a href="https://twitter.com/seattlerb" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @seattlerb</a>
-        
+
         <%= render "twitter" %>
       </p>
     </div>
   </div>
   <div id='newsletter' class='span4'>
     <h2>Join the Mailing Lists</h2>
-    
+
     <p> These are low-volume and spam-free.</p>
 
     <%= form_tag subscribe_path do %>

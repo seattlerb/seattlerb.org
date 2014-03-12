@@ -6,4 +6,6 @@
 //
 //= require jquery
 //= require bootstrap.min
+//= require jquery.ui.all
+//= require jquery.modal
 //= require_tree .

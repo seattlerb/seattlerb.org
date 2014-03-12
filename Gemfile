@@ -1,23 +1,28 @@
-# -*- ruby -*-
 
 source "http://rubygems.org"
 
 gem "rake",                      "~> 0.9.0"
-gem "rails",                     "~> 3.1.0"
+gem "rails",                     "~> 3.2.0" # can i update this to 4?
 gem "jquery-rails",              "~> 1.0.0"
 gem "httparty",                  "~> 0.8.0"
 gem "rails_admin",               "~> 0.0.5"
 gem "devise",                    "~> 2.1.0"
+gem "twitter"
+gem "figaro"
+gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :production do
   gem "pg",                      "~> 0.12.0"
 end
 
 group :assets do
-  gem "sass-rails",              "~> 3.1.5"
-  gem "coffee-rails",            "~> 3.1.1"
-  gem "uglifier",                "~> 1.2.0"
-  gem "twitter-bootstrap-rails", "~> 2.0.0"
+  gem "sass-rails"
+  gem "coffee-rails"
+  gem "uglifier"
+  gem "twitter-bootstrap-rails"
+  gem 'jquery-ui-rails'
+  gem 'jquery-modal-rails'
 end
 
 group :development, :test do
