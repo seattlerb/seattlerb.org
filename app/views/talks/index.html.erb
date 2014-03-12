@@ -53,7 +53,7 @@
 
     <section id="past" class="hidden">
       <div class="talk-box">
-         <% @talks.each do |talk| %>
+         <% @past_talks.each do |talk| %>
           <div class="row-fluid">
             <div class="upcoming_talk span9">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>

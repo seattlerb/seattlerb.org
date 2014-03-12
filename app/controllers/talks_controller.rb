@@ -12,8 +12,8 @@ class TalksController < ApplicationController
   end
 
   def index
-    talks
-    # class method for setting past talks
+    available_talks
+    @past_talks = Talk.past
     @talk  = Talk.new
 
   end
@@ -47,7 +47,7 @@ class TalksController < ApplicationController
     @title ||= "Talks"
   end
 
-  def talks
+  def available_talks
     @talks ||= Talk.available
   end
 
