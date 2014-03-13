@@ -23,7 +23,7 @@ class Talk < ActiveRecord::Base
   end
 
   def self.past
-    by_kind.where("completed = ? and (scheduled_date is NULL or scheduled_date < ?)",
+    by_kind.where("completed = ? and (scheduled_date < ?)",
                   true,
                   Date.today)
   end
