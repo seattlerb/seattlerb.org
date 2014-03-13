@@ -1,6 +1,6 @@
 <div class="row-fluid">
-  <div class="span4">
-    <h1>Come talk with us!</h1>
+  <div class="span3">
+    <h1 id='talkheader'>Come talk with us!</h1>
 
     <br/>
 
@@ -12,23 +12,7 @@
     <%= link_to 'Suggest a Topic For a Talk', suggestions_path, {:style => 'font-size 16px; font-weight: bold'} -%>
 
   </div>
-  <div class="span8">
-    <%= render 'form' %>
-
-    <p>
-      <small>
-        This is nerd focused... Not marketing-focused. Not
-        sales-focused. Not recruitment-focused. If you want to talk
-        about your company, just make sure you talk
-        about <u>using</u> your product. Something we can share.
-      </small>
-    </p>
-  </div>
-</div>
-
-<br />
-
-<div class="span9" id='content'>
+  <div class="span9" id='content'>
     <div class='row-fluid' id='tabs'>
       <div class='span3' id='upcoming-talks'>
         <a href="#upcoming" class='sel'>Upcoming Talks</a>
@@ -84,4 +68,20 @@
     </section>
   </div>
 
+</div>
 
+<hr>
+<div class="row-fluid">
+  <div class="span8">
+    <%= render 'form' %>
+
+    <p>
+      <small>
+        This is nerd focused... Not marketing-focused. Not
+        sales-focused. Not recruitment-focused. If you want to talk
+        about your company, just make sure you talk
+        about <u>using</u> your product. Something we can share.
+      </small>
+    </p>
+  </div>
+</div>
