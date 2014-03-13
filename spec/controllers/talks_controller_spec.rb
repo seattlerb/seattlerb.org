@@ -61,14 +61,39 @@ describe TalksController do
       lit_two.completed = true
       lit_two.scheduled_date = 7.days.ago
 
-      [adv_two, beg_two, int_two, lit_two].map(&:save!)
+      adv_one.completed = false
+      adv_one.scheduled_date = 8.days.from_now
+
+      beg_one.completed = false
+      beg_one.scheduled_date = 10.days.from_now
+
+      int_one.completed = false
+      int_one.scheduled_date = nil
+
+      lit_one.completed = false
+      lit_one.scheduled_date = nil
+
+      [adv_two, adv_one, beg_two, beg_one, int_two, int_one, lit_two, lit_one].map(&:save!)
     end
 
     let(:past_talks){ [beg_two, int_two, adv_two, lit_two].map(&:title) }
+    let(:upcoming_talks){ [adv_one, beg_one].map(&:title) }
+    let(:proposed_talks){ [int_one, lit_one].map(&:title) }
 
-    it "assigns past talks" do
+
+    it "orders past talks" do
       get :index
       expect(assigns(:past_talks).map(&:title)).to eq past_talks
+    end
+
+    it "orders upcoming talks" do
+      get :index
+      expect(assigns(:talks).map(&:title)).to eq upcoming_talks
+    end
+
+    it "orders proposed talks" do
+      get :index
+      expect(assigns(:proposed_talks).map(&:title)).to eq proposed_talks
     end
 
 
