@@ -80,7 +80,6 @@ describe TalksController do
     let(:upcoming_talks){ [adv_one, beg_one].map(&:title) }
     let(:proposed_talks){ [int_one, lit_one].map(&:title) }
 
-
     it "orders past talks" do
       get :index
       expect(assigns(:past_talks).map(&:title)).to eq past_talks
@@ -95,8 +94,5 @@ describe TalksController do
       get :index
       expect(assigns(:proposed_talks).map(&:title)).to eq proposed_talks
     end
-
-
   end
-
 end
