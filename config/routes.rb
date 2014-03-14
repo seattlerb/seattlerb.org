@@ -10,6 +10,7 @@ SeattlerbOrg::Application.routes.draw do
   get "talks/checklist" => "talks#checklist"
 
   resources :talks
+  resources :past_talks
 
   post "/newsletter" => "newsletter#subscribe", as: :subscribe
 

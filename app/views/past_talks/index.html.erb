@@ -1,0 +1,27 @@
+<div class="row-fluid">
+  <div class="span4">
+    <h1>Past Talks!</h1>
+
+    <br/>
+
+    <p class="lead">
+      Here are the past talks!
+    </p>
+  </div>
+</div>
+
+<br />
+
+<h1>Past Talks</h1>
+
+<% @talks.each_slice(3).each do |row| %>
+  <div class="row-fluid">
+    <% row.each do |talk| %>
+      <div class="proposed_talk span4">
+        <h4><%= link_to talk.title, talk %></h4>
+        <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+        <p class="description"><%= talk.description %></p>
+      </div>
+    <% end %>
+  </div>
+<% end %>

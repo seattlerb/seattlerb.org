@@ -21,6 +21,12 @@ class Talk < ActiveRecord::Base
                   28.days.from_now)
   end
 
+  def self.older
+    by_kind.where("completed = ? and scheduled_date < ?",
+                  true,
+                  28.days.ago)
+  end
+
   validates(:kind,
             :inclusion => {
                            :in => TALK_KINDS,
