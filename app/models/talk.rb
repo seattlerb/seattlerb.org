@@ -24,7 +24,7 @@ class Talk < ActiveRecord::Base
   def self.older
     by_kind.where("completed = ? and scheduled_date < ?",
                   true,
-                  28.days.ago)
+                  Date.today.at_beginning_of_month)
   end
 
   validates(:kind,
