@@ -2,10 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/*.hidden {
-  display: none;
-}*/
-
 .talk {
   padding-top: 10px;
 }
@@ -23,16 +19,15 @@
   text-decoration: none;
 }
 
-#talkheader {
-  font-size: 28px;
+.active-tab {
+  font-weight: bold;
 }
 
-.active-tab {
-  font-weight: bold ;
+#talkheader {
+  font-size: 28px;
 }
 
 .suggestion-link{
   font-size: 16px;
   font-weight: bold;
 }
-/*#A9D0F5*/

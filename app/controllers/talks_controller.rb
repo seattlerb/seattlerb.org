@@ -16,7 +16,6 @@ class TalksController < ApplicationController
     @past_talks = Talk.past
     @proposed_talks = Talk.proposed
     @talk  = Talk.new
-
   end
 
   def create
@@ -26,7 +25,6 @@ class TalksController < ApplicationController
     @talk = Talk.new(params[:talk])
 
     if @talk.save
-      # TODO:   send email here
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       upcoming

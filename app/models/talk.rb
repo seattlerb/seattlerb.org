@@ -15,7 +15,6 @@ class Talk < ActiveRecord::Base
                              presenter,
                              title"
 
-
   def self.upcoming
     by_kind.where("completed = ? and (scheduled_date < ?)",
                   false,
