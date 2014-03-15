@@ -13,8 +13,8 @@ class TalksController < ApplicationController
 
   def index
     upcoming
-    @past_talks = Talk.past
-    @proposed_talks = Talk.proposed
+    past
+    proposed
     @talk  = Talk.new
   end
 
@@ -47,7 +47,15 @@ class TalksController < ApplicationController
   end
 
   def upcoming
-    @talks ||= Talk.upcoming
+    @upcoming_talks ||= Talk.upcoming
+  end
+
+  def past
+    @past_talks ||= Talk.past
+  end
+
+  def proposed
+    @proposed_talks ||= Talk.proposed
   end
 
   def verify_password

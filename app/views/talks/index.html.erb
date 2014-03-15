@@ -26,7 +26,7 @@
 
     <section id="upcoming">
       <div class="talk-box span9">
-        <% @talks.each do |talk| %>
+        <% @upcoming_talks.each do |talk| %>
           <div class="row-fluid">
             <div class="talk span9">
               <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
