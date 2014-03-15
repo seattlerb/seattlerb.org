@@ -1,6 +1,7 @@
 <div class="row-fluid">
   <div class="proposed_talk span8 offset2">
     <h1><%= @talk.title %></h1>
+    <h3><small><%= @talk.scheduled_date.to_time.strftime("%A, %B %d, %Y") if @talk.scheduled_date %></small></h3>
     <p class="lead"><%= indefinite_Articlerize @talk.kind %> talk proposed by <%= @talk.presenter %></p>
     <p><%= @talk.description %></p>
     <hr />
