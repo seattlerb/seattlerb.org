@@ -2,9 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.hidden {
+/*.hidden {
   display: none;
-}
+}*/
 
 .talk {
   padding-top: 10px;
@@ -21,4 +21,12 @@
 
 #talkheader {
   font-size: 28px;
+}
+
+.active {
+  background: #A9D0F5;
+}
+
+.sel {
+  background: red;
 }
