@@ -87,7 +87,7 @@ describe TalksController do
 
     it "orders upcoming talks" do
       get :index
-      expect(assigns(:talks).map(&:title)).to eq upcoming_talks
+      expect(assigns(:upcoming_talks).map(&:title)).to eq upcoming_talks
     end
 
     it "orders proposed talks" do
