@@ -28,7 +28,7 @@ class Talk < ActiveRecord::Base
   end
 
   def self.proposed
-    by_kind.where("scheduled_date is NULL")
+    by_kind.where("completed = ? and (scheduled_date is NULL)", false)
   end
 
   validates(:kind,
