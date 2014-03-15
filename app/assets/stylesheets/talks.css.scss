@@ -19,12 +19,16 @@
   border: 1px solid black;
 }
 
+#tabs a:hover {
+  text-decoration: none;
+}
+
 #talkheader {
   font-size: 28px;
 }
 
-.active {
-  background: red ;
+.active-tab {
+  font-weight: bold ;
 }
 
 .suggestion-link{
