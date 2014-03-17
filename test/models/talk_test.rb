@@ -110,4 +110,10 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
     assert subject.valid?
   end
 
+  def test_proposed_date_friendly
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    subject.proposed_date = Talk.proposable_dates.first
+    assert_equal subject.proposed_date.strftime("%B %e, %Y"), subject.proposed_date.to_s(:friendly_talk_date)
+  end
+
 end

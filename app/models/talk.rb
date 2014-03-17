@@ -24,7 +24,7 @@ class Talk < ActiveRecord::Base
 
   def self.proposable_dates
     1.upto(12).map do |increment| 
-      future_month = Date.today >> increment
+      future_month = Date.today + increment.months
       option = Date.new(future_month.year, future_month.month, 1)
       option += 1 until option.tuesday?
       option
@@ -37,14 +37,7 @@ class Talk < ActiveRecord::Base
                            :message => "%{value} is not a valid talk kind"
                           })
   validates :title, :presenter, :email, :presence => true
-  validate :proposed_date_valid?
-
-  def proposed_date_valid?
-    return if proposed_date.blank?
-    if self.class.proposable_dates.exclude? proposed_date
-      errors.add(:proposed_date, "isn't one of the event dates")
-    end
-  end
+  validate :validate_proposed_date
 
   def scheduled?
     self.scheduled_date
@@ -52,6 +45,15 @@ class Talk < ActiveRecord::Base
 
   def kind_enum
     TALK_KINDS
+  end
+
+  private
+
+  def validate_proposed_date
+    return if proposed_date.blank?
+    if self.class.proposable_dates.exclude? proposed_date
+      errors.add(:proposed_date, "isn't one of the event dates")
+    end
   end
 
 end
