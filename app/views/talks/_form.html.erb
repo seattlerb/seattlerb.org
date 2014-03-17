@@ -19,8 +19,8 @@
 
     <%= f.select :kind, talk_kinds %>
 
-    <%= f.label :proposed_month, "Requested month" %> 
-    <%= select_month 1.month.from_now, prefix: "talk", field_name: "proposed_month" %>
+    <%= f.label :proposed_date, "Requested date" %>
+    <%= f.select :proposed_date, proposable_dates %>
 
     <%= hidden_field_tag :password, "" %>
     <p style="width: 1px; height: 1px; overflow: hidden;">
