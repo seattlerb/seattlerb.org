@@ -1,4 +1,5 @@
 class Talk < ActiveRecord::Base
+  attr_accessor :proposed_month
   attr_accessor :spam # fake attribute for spam trapping
   attr_accessor :special_talk_requests # fake attribute for spam trapping
   validates_length_of :spam, :maximum => 0
@@ -28,6 +29,19 @@ class Talk < ActiveRecord::Base
                           })
   validates :title, :presenter, :email, :presence => true
 
+  validates :proposed_month, allow_blank: true, numericality: { 
+    greater_than: 0,
+    less_than_or_equal_to: 12
+  }
+
+  def proposed_month= month
+    @proposed_month = month.to_i unless month.nil?
+    valid?
+    if proposed_month && errors[:proposed_month].blank?
+      self.proposed_date = first_tuesday @proposed_month
+    end
+  end
+
   def scheduled?
     self.scheduled_date
   end
@@ -35,4 +49,12 @@ class Talk < ActiveRecord::Base
   def kind_enum
     TALK_KINDS
   end
+
+  private
+  def first_tuesday month
+    found = Date.new(Date.today.year, month, 1)
+    found += 1 until found.tuesday?
+    found
+  end
+
 end

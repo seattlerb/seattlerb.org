@@ -77,4 +77,39 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
 
     assert talk.scheduled?
   end
+
+  def test_invalid_with_proposed_month_less_than_january
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    assert subject.valid?
+    subject.proposed_month = 0
+    refute subject.valid?
+  end
+
+  def test_invalid_with_proposed_month_greater_than_december
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    assert subject.valid?
+    subject.proposed_month = 13
+    refute subject.valid?
+  end
+
+  def test_proposed_month_not_required
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    subject.proposed_month = nil
+    assert subject.valid?
+  end
+
+  def test_no_proposed_month_means_no_proposed_date
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    subject.proposed_month = nil
+    assert_nil subject.proposed_date
+  end
+
+  def test_proposed_date_is_first_tuesday_of_proposed_month_of_current_year
+    Date.stub :today, Date.new(2014) do
+      subject = Talk.new
+      subject.proposed_month = 5
+      assert_equal Date.new(2014, 5, 6), subject.proposed_date
+    end
+  end
+
 end

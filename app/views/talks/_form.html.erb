@@ -1,6 +1,6 @@
 <%= form_for(@talk) do |f| %>
   <% if @talk.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-error">
       <h2><%= pluralize(@talk.errors.count, "error") %> prohibited this talk from being saved:</h2>
 
       <ul>
@@ -12,11 +12,15 @@
   <% end %>
 
   <div class="actions">
-    <%= f.text_field :presenter,   :placeholder => "Name"                    %><br />
-    <%= f.text_field :email,       :placeholder => "Email (private!)"        %><br />
-    <%= f.text_field :title,       :placeholder => "Title"                   %><br />
-    <%= f.text_area  :description, :placeholder => "Description", :rows => 3 %><br />
+    <%= f.text_field :presenter,   :placeholder => "Name"                    %>
+    <%= f.text_field :email,       :placeholder => "Email (private!)"        %>
+    <%= f.text_field :title,       :placeholder => "Title"                   %>
+    <%= f.text_area  :description, :placeholder => "Description", :rows => 3 %>
+
     <%= f.select :kind, talk_kinds %>
+
+    <%= f.label :proposed_month, "Requested month" %> 
+    <%= select_month 1.month.from_now, prefix: "talk", field_name: "proposed_month" %>
 
     <%= hidden_field_tag :password, "" %>
     <p style="width: 1px; height: 1px; overflow: hidden;">
@@ -24,6 +28,8 @@
       <%= f.text_area :spam %>
       <%= f.text_field :special_talk_requests %>
     </p>
-    <%= f.submit %>
+    <div class="form-actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
