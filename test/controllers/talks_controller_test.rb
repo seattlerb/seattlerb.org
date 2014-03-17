@@ -222,6 +222,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
 
     assert_equal expected, assigns[:upcoming_talks].map(&:title)
   end
+
   def test_proposed_talks_sorted_on_kind
     setup_talks
 
@@ -237,7 +238,6 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     @lit_one.save
     @lit_one.save
     @lit_two.save
-
 
     get :index
     expected = [@beg_two, @beg_one, @talk, @int_one, @int_two].map(&:title)
