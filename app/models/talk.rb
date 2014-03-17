@@ -28,7 +28,9 @@ class Talk < ActiveRecord::Base
   end
 
   def self.proposed
-    by_kind.where("completed = ? and (scheduled_date is NULL)", false)
+    by_kind.where("completed = ? and (scheduled_date > ? or scheduled_date is NULL)",
+                  false,
+                  28.days.from_now)
   end
 
   validates(:kind,

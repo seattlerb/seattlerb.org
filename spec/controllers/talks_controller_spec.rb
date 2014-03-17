@@ -1,48 +1,48 @@
 require 'spec_helper'
 
 describe TalksController do
-  let(:talk){ Talk.create!(:title       => "My Test Talk",
+  let(:talk){ Talk.new(:title       => "My Test Talk",
                            :description => "Description",
                            :kind        => "beginner",
                            :email       => "a@example.com",
                            :presenter   => "Me")
             }
-  let(:int_one){ Talk.create!(:title     => "Int 1",
+  let(:int_one){ Talk.new(:title     => "Int 1",
                               :kind      => "intermediate",
                               :email     => "a@example.com",
                               :presenter => "Me")
                 }
-  let(:int_two){ Talk.create!(:title     => "Int 2",
+  let(:int_two){ Talk.new(:title     => "Int 2",
                               :kind      => "intermediate",
                               :email     => "a@example.com",
                               :presenter => "Me")
                 }
-  let(:beg_one) { Talk.create!(:title     => "Beg 1",
+  let(:beg_one) { Talk.new(:title     => "Beg 1",
                                :kind      => "beginner",
                                :email     => "a@example.com",
                                :presenter => "Me")
                 }
-  let(:beg_two) { Talk.create!(:title     => "Beg 2",
+  let(:beg_two) { Talk.new(:title     => "Beg 2",
                                :kind      => "beginner",
                                :email     => "a@example.com",
                                :presenter => "Me")
                 }
-  let(:adv_one){ Talk.create!(:title     => "Adv 1",
+  let(:adv_one){ Talk.new(:title     => "Adv 1",
                               :kind      => "advanced",
                               :email     => "a@example.com",
                               :presenter => "Me")
                 }
-  let(:adv_two) { Talk.create!(:title     => "Adv 2",
+  let(:adv_two) { Talk.new(:title     => "Adv 2",
                                :kind      => "advanced",
                                :email     => "a@example.com",
                                :presenter => "Me")
                 }
-  let(:lit_one) { Talk.create!(:title     => "Lit 1",
+  let(:lit_one) { Talk.new(:title     => "Lit 1",
                                :kind      => "lightning",
                                :email     => "a@example.com",
                                :presenter => "Me")
                 }
-  let(:lit_two) { Talk.create!(:title     => "Lit 2",
+  let(:lit_two) { Talk.new(:title     => "Lit 2",
                                :kind      => "lightning",
                                :email     => "a@example.com",
                                :presenter => "Me")
