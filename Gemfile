@@ -26,5 +26,4 @@ group :development, :test do
   gem "minitest-rails",          "~> 0.3"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.1.2"
-  gem "rspec-rails"
 end
