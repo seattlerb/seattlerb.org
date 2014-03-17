@@ -1,6 +1,5 @@
 class Dude < ActiveRecord::Base
-  has_many :projects, through: :affiliations
-  has_many :affiliations
+  habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name
   # our migrations are so stupid. If we nuke the data, this conditional can go

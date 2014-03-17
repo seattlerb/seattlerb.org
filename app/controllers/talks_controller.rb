@@ -2,15 +2,6 @@ class TalksController < ApplicationController
   before_filter :verify_password, :only => :create
   before_filter :set_title, :only => [:index, :create]
 
-  def new
-    @talk = Talk.new
-    render :form
-  end
-
-  def show
-    @talk = Talk.find(params[:id])
-  end
-
   def index
     upcoming
     past
