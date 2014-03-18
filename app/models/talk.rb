@@ -22,9 +22,9 @@ class Talk < ActiveRecord::Base
                   28.days.from_now)
   end
 
-  def self.proposable_dates
+  def self.proposable_dates start_date=Date.today
     1.upto(12).map do |increment| 
-      future_month = Date.today + increment.months
+      future_month = start_date + increment.months
       option = Date.new(future_month.year, future_month.month, 1)
       option += 1 until option.tuesday?
       option

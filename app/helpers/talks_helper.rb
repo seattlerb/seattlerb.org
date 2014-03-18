@@ -7,7 +7,7 @@ module TalksHelper
     [["Talk Type", ""]] + Talk::TALK_KINDS.map { |k| [k.capitalize, k] }
   end
 
-  def proposable_dates
-    Talk.proposable_dates.map { |d| [d.strftime("%B %e, %Y"), d] } 
+  def proposable_dates *args
+    Talk.proposable_dates(*args).map { |d| [d.strftime("%B %e, %Y"), d] }
   end
 end

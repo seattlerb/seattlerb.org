@@ -20,7 +20,7 @@
     <%= f.select :kind, talk_kinds %>
 
     <%= f.label :proposed_date, "Requested date" %>
-    <%= f.select :proposed_date, proposable_dates %>
+    <%= f.select :proposed_date, proposable_dates(Date.today) %>
 
     <%= hidden_field_tag :password, "" %>
     <p style="width: 1px; height: 1px; overflow: hidden;">

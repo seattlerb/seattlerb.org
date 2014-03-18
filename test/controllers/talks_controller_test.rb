@@ -2,11 +2,12 @@ require "minitest_helper"
 
 class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   def setup
-    @talk = Talk.create!(:title       => "My Test Talk",
-                         :description => "Description",
-                         :kind        => "beginner",
-                         :email       => "a@example.com",
-                         :presenter   => "Me")
+    @talk = Talk.create!(:title         => "My Test Talk",
+                         :description   => "Description",
+                         :kind          => "beginner",
+                         :email         => "a@example.com",
+                         :presenter     => "Me",
+                         :proposed_date => Talk.proposable_dates.first)
   end
 
   def setup_talks
@@ -107,51 +108,44 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_create
-    talk_attributes = {
-                       :title       => "Title",
-                       :presenter   => "The Dude",
-                       :kind        => "beginner",
-                       :email       => "a@example.com",
-                       :description => "My description"
-                      }
-
     assert_difference 'Talk.count', 1 do
-      post :create, :talk => talk_attributes, :password => ""
+      post :create, :talk => @talk.attributes, :password => ""
       assert_redirected_to talks_path
     end
 
     get :index
     assert_response :success
 
-    talk = Talk.find_by_title("Title")
+    talk = Talk.find_by_title(@talk.title)
 
     refute_nil talk
-    assert_equal "Title",          talk.title
-    assert_equal "My description", talk.description
-    assert_equal "beginner",       talk.kind
-    assert_equal "The Dude",       talk.presenter
+    assert_equal @talk.title,          talk.title
+    assert_equal @talk.description,    talk.description
+    assert_equal @talk.kind,           talk.kind
+    assert_equal @talk.presenter,      talk.presenter
+    assert_equal @talk.proposed_date,  talk.proposed_date
 
-    assert_match @talk.title,       @response.body
-    assert_match @talk.presenter,   @response.body
-    assert_match @talk.description, @response.body
-    assert_match @talk.kind,        @response.body
+    assert_match talk.title,       @response.body
+    assert_match talk.presenter,   @response.body
+    assert_match talk.description, @response.body
+    assert_match talk.kind,        @response.body
   end
 
   def test_create_fails_without_spam_blocker
-    talk_attributes = {
-                       :title       => "Title",
-                       :presenter   => "The Dude",
-                       :kind        => "beginner",
-                       :email       => "a@example.com",
-                       :description => "My description",
-                      }
-
-
     assert_difference 'Talk.count', 0 do
-      post :create, :talk => talk_attributes, :password => "spammer"
+      post :create, :talk => @talk.attributes, :password => "spammer"
     end
 
     assert_redirected_to root_path
+  end
+
+  def test_create_fails_with_invalid_proposed_date
+    @talk.proposed_date = Date.new(2014).next_week(:friday)
+    assert_difference 'Talk.count', 0 do
+      post :create, :talk => @talk.attributes, :password => ""
+    end
+
+    assert_template :index
   end
 
   def test_unknown_talk_404s
