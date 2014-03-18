@@ -180,4 +180,69 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal assigns[:disqus_shortname], "seattlerb"
   end
 
+  # tests for showing past talks
+  def test_past_talks_sorted_on_scheduled_date
+    setup_talks
+
+    @beg_two.scheduled_date = 27.days.ago
+    @int_two.scheduled_date = 2.month.ago
+    @beg_one.scheduled_date = 16.days.ago
+
+    @beg_two.completed = true
+    @beg_one.completed = true
+    @int_two.completed = true
+
+    @beg_two.save
+    @int_two.save
+    @beg_one.save
+
+    get :index
+
+    expected = [@int_two, @beg_two, @beg_one].map(&:title)
+
+    assert_equal expected, assigns[:past_talks].map(&:title)
+  end
+
+  def test_upcoming_talks_sorted_on_scheduled_date
+    setup_talks
+
+    @beg_two.scheduled_date = 21.days.from_now
+    @int_two.scheduled_date = 27.days.from_now
+    @beg_one.scheduled_date = 16.days.from_now
+    @int_one.scheduled_date = 2.month.from_now
+
+    @int_one.save
+    @beg_two.save
+    @int_two.save
+    @beg_one.save
+
+    get :index
+
+    expected = [@beg_one, @beg_two, @int_two].map(&:title)
+
+    assert_equal expected, assigns[:upcoming_talks].map(&:title)
+  end
+
+  def test_proposed_talks_sorted_on_kind
+    setup_talks
+
+    @beg_two.scheduled_date = 2.month.from_now
+    @adv_one.scheduled_date = 20.days.from_now
+    @adv_two.scheduled_date = 10.days.from_now
+    @lit_one.scheduled_date = 1.month.ago
+    @lit_two.scheduled_date = 20.days.ago
+
+    @beg_two.save
+    @adv_one.save
+    @adv_two.save
+    @lit_one.save
+    @lit_one.save
+    @lit_two.save
+
+    get :index
+    expected = [@beg_two, @beg_one, @talk, @int_one, @int_two].map(&:title)
+
+    assert_equal expected, assigns[:proposed_talks].map(&:title)
+  end
+
 end

@@ -3,21 +3,23 @@ class TalksController < ApplicationController
   before_filter :set_title, :only => [:index, :create]
 
   def index
-    talks
+    upcoming
+    past
+    proposed
     @talk  = Talk.new
   end
 
   def create
     #spam catch to redirect - maybe the bots were ignoring the spam field
     redirect_to talks_url and return if params['talk']['special_talk_requests'].present?
-    
+
     @talk = Talk.new(params[:talk])
 
     if @talk.save
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
-      talks
-      render action: "index"
+      upcoming
+      render action: "index", notice: 'There was a problem saving your talk.'
     end
   end
 
@@ -35,8 +37,16 @@ class TalksController < ApplicationController
     @title ||= "Talks"
   end
 
-  def talks
-    @talks ||= Talk.available
+  def upcoming
+    @upcoming_talks ||= Talk.upcoming
+  end
+
+  def past
+    @past_talks ||= Talk.past
+  end
+
+  def proposed
+    @proposed_talks ||= Talk.proposed
   end
 
   def verify_password

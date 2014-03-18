@@ -15,8 +15,20 @@ class Talk < ActiveRecord::Base
                              presenter,
                              title"
 
-  def self.available
-    by_kind.where("completed = ? and (scheduled_date is NULL or scheduled_date < ?)",
+  def self.upcoming
+    by_kind.where("completed = ? and (scheduled_date < ?)",
+                  false,
+                  28.days.from_now)
+  end
+
+  def self.past
+    by_kind.where("completed = ? and (scheduled_date < ?)",
+                  true,
+                  Date.today)
+  end
+
+  def self.proposed
+    by_kind.where("completed = ? and (scheduled_date > ? or scheduled_date is NULL)",
                   false,
                   28.days.from_now)
   end

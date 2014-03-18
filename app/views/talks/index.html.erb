@@ -1,18 +1,78 @@
 <div class="row-fluid">
-  <div class="span4">
-    <h1>Come talk with us!</h1>
-
+  <div class="span3">
+    <h1 id='talkheader'>Come talk with us!</h1>
     <br/>
-
     <p class="lead">
       If there is anything we love, it is learning and creating. We would
       really love it if you shared your knowledge and/or your experiences
       with us.
     </p>
+    <%= link_to 'Suggest a Topic For a Talk', suggestions_path, class: 'suggestion-link' %>
   </div>
+
+  <div class="span9" id='content'>
+
+    <div class='row-fluid' id='tabs'>
+      <div class='span3 active-tab' id='upcoming-talks'>
+        <a href="#upcoming">Upcoming Talks</a>
+      </div>
+      <div class='span3' id='past-talks'>
+        <a href="#past">Past Talks</a>
+      </div>
+      <div class='span3' id='proposed-talks'>
+        <a href="#proposed">Proposed Talks</a>
+      </div>
+    </div>
+
+    <section id="upcoming">
+      <div class="talk-box span9">
+        <% @upcoming_talks.each do |talk| %>
+          <div class="row-fluid">
+            <div class="talk span9">
+              <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
+              <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+              <p class="description"><%= talk.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <section id="past" class='hide'>
+      <div class="talk-box span9">
+         <% @past_talks.each do |talk| %>
+          <div class="row-fluid">
+            <div class="talk span9">
+              <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
+              <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+              <p class="description"><%= talk.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+
+    <section id="proposed" class='hide'>
+      <div class="talk-box span9">
+         <% @proposed_talks.each do |talk| %>
+          <div class="row-fluid">
+            <div class="talk span9">
+              <h4><%= link_to "#{talk.title}", talk_path(talk) %></h4>
+              <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+              <p class="description"><%= talk.description %></p>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<hr>
+<div class="row-fluid">
   <div class="span8">
     <%= render 'form' %>
-
     <p>
       <small>
         This is nerd focused... Not marketing-focused. Not
@@ -23,21 +83,3 @@
     </p>
   </div>
 </div>
-
-<br />
-
-<h1>Proposed Talks</h1>
-
-<% @talks.each_slice(3).each do |row| %>
-  <div class="row-fluid">
-    <% row.each do |talk| %>
-      <div class="proposed_talk span4">
-        <h4><%= link_to talk.title, talk %></h4>
-        <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
-        <p class="description"><%= talk.description %></p>
-      </div>
-    <% end %>
-  </div>
-<% end %>
-
-<%= link_to 'Suggest a Topic For a Talk', suggestions_path, {:style => 'font-size 16px; font-weight: bold'} -%>
