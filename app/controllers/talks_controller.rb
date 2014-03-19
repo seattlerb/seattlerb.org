@@ -29,6 +29,10 @@ class TalksController < ApplicationController
   def checklist
   end
 
+  def past
+    @talks ||= Talk.older
+  end
+
   private
 
   def set_title
