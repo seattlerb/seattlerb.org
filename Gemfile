@@ -1,7 +1,11 @@
 # -*- ruby -*-
 
 source "https://rubygems.org"
-ruby "1.9.2"
+
+# heroku uses bundler 1.0.7 so this isn't supported, but it is the
+# version we need to use:
+#
+# ruby "1.9.2"
 
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.1.0"
