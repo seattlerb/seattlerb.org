@@ -2,6 +2,9 @@
   <div class="proposed_talk span8 offset2">
     <h1><%= @talk.title %></h1>
     <p class="lead"><%= indefinite_Articlerize @talk.kind %> talk proposed by <%= @talk.presenter %></p>
+    <% unless @talk.proposed_date.blank? %>
+      <p class="muted">Proposed for <%= @talk.proposed_date.to_s(:friendly_talk_date) %></p>
+    <% end %>
     <p><%= @talk.description %></p>
     <hr />
     <p><i class="icon-arrow-left"></i><%= link_to "Back to talks", talks_path %></p>

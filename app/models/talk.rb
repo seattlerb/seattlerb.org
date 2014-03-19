@@ -1,4 +1,5 @@
 class Talk < ActiveRecord::Base
+
   attr_accessor :spam # fake attribute for spam trapping
   attr_accessor :special_talk_requests # fake attribute for spam trapping
   validates_length_of :spam, :maximum => 0
@@ -21,12 +22,22 @@ class Talk < ActiveRecord::Base
                   28.days.from_now)
   end
 
+  def self.proposable_dates start_date=Date.today
+    1.upto(12).map do |increment| 
+      future_month = start_date + increment.months
+      option = Date.new(future_month.year, future_month.month, 1)
+      option += 1 until option.tuesday?
+      option
+    end
+  end
+
   validates(:kind,
             :inclusion => {
                            :in => TALK_KINDS,
                            :message => "%{value} is not a valid talk kind"
                           })
   validates :title, :presenter, :email, :presence => true
+  validate :validate_proposed_date
 
   def scheduled?
     self.scheduled_date
@@ -35,4 +46,14 @@ class Talk < ActiveRecord::Base
   def kind_enum
     TALK_KINDS
   end
+
+  private
+
+  def validate_proposed_date
+    return if proposed_date.blank?
+    if self.class.proposable_dates.exclude? proposed_date
+      errors.add(:proposed_date, "isn't one of the event dates")
+    end
+  end
+
 end

@@ -77,4 +77,41 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
 
     assert talk.scheduled?
   end
+  
+  def test_proposable_dates_are_first_tuesdays_extending_year_from_now
+    assert_equal [
+      Date.new(2014, 4, 1),
+      Date.new(2014, 5, 6),
+      Date.new(2014, 6, 3),
+      Date.new(2014, 7, 1),
+      Date.new(2014, 8, 5),
+      Date.new(2014, 9, 2),
+      Date.new(2014, 10, 7),
+      Date.new(2014, 11, 4),
+      Date.new(2014, 12, 2),
+      Date.new(2015, 1, 6),
+      Date.new(2015, 2, 3),
+      Date.new(2015, 3, 3)
+    ], Talk.proposable_dates(Date.new(2014, 3))
+  end
+
+  def test_proposed_date_must_be_proposable
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    assert subject.valid?
+    subject.proposed_date = "2099-11-30"
+    refute subject.valid?
+  end
+
+  def test_proposed_date_not_required
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    subject.proposed_date = nil
+    assert subject.valid?
+  end
+
+  def test_proposed_date_friendly
+    subject = Talk.new(kind: "beginner", title: "foo", presenter: "derp", email: "beep")
+    subject.proposed_date = Talk.proposable_dates.first
+    assert_equal subject.proposed_date.strftime("%B %e, %Y"), subject.proposed_date.to_s(:friendly_talk_date)
+  end
+
 end
