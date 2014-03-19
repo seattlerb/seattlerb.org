@@ -8,6 +8,7 @@ gem "jquery-rails",              "~> 1.0.0"
 gem "httparty",                  "~> 0.8.0"
 gem "rails_admin",               "~> 0.0.5"
 gem "devise",                    "~> 2.1.0"
+gem "strong_parameters",         "~> 0.2.3"
 
 group :production do
   gem "pg",                      "~> 0.12.0"

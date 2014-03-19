@@ -19,7 +19,7 @@ class SuggestionsController < ApplicationController
 
   # POST /suggestions
   def create
-    @suggestion = Suggestion.new(params[:suggestion])
+    @suggestion = Suggestion.new(suggestion_params)
 
     respond_to do |format|
       if @suggestion.save
@@ -28,5 +28,11 @@ class SuggestionsController < ApplicationController
         format.html { render action: "new" }
       end
     end
+  end
+
+  private
+
+  def suggestion_params
+    params.require(:suggestion).permit(:title, :comment)
   end
 end

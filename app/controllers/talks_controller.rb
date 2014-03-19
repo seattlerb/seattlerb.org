@@ -9,7 +9,7 @@ class TalksController < ApplicationController
 
   def create
     #spam catch to redirect - maybe the bots were ignoring the spam field
-    redirect_to talks_url and return if params['talk']['special_talk_requests'].present?
+    redirect_to talks_url and return if talk_params[:special_talk_requests].present?
     
     @talk = Talk.new(params[:talk])
 
@@ -23,7 +23,7 @@ class TalksController < ApplicationController
 
   def show
     @disqus_shortname = "seattlerb"
-    @talk = Talk.find(params[:id])
+    @talk = Talk.find(id_param)
   end
 
   def checklist
@@ -40,9 +40,21 @@ class TalksController < ApplicationController
   end
 
   def verify_password
-    unless params[:password] == "" then
+    unless password_param.blank? then
       sleep rand(10) unless Rails.env.test?
       redirect_to root_path
     end
+  end
+
+  def id_param
+    params.permit(:id).fetch(:id)
+  end
+
+  def password_param
+    params.permit(:password).fetch(:password)
+  end
+
+  def talk_params
+    params.require(:talk).permit(:title, :description, :presenter, :kind, :email, :spam, :special_talk_requests)
   end
 end
