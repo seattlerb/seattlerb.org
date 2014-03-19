@@ -42,6 +42,12 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                             :kind      => "lightning",
                             :email     => "a@example.com",
                             :presenter => "Me")
+    @past_one = Talk.create!(:title     => "Past 1",
+                            :kind      => "lightning",
+                            :email     => "a@example.com",
+                            :presenter => "Me",
+                            :description => "Description",
+                            :completed => true)
   end
 
   def test_index
@@ -54,6 +60,21 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_match @talk.presenter,   @response.body
     assert_match @talk.description, @response.body
     assert_match @talk.kind,        @response.body
+  end
+
+  def test_past
+    setup_talks
+
+    get :past
+    assert_response :success
+
+    assert_equal [@past_one], assigns[:talks]
+
+    assert_match @past_one.title,       @response.body
+    assert_match @past_one.presenter,   @response.body
+    assert_match @past_one.description, @response.body
+    assert_match @past_one.kind,        @response.body
+
   end
 
   def test_talks_sorted_on_scheduled_date_kind_and_title
