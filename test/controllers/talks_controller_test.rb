@@ -175,6 +175,24 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_redirected_to root_path
   end
 
+  def test_create_fails_with_special_requests_spam_trap
+    talk_attributes = {
+                       :title       => "Title",
+                       :presenter   => "The Dude",
+                       :kind        => "beginner",
+                       :email       => "a@example.com",
+                       :description => "My description",
+                       :special_talk_requests => "My special request"
+                      }
+
+
+    assert_difference 'Talk.count', 0 do
+      post :create, :talk => talk_attributes, :password => ""
+    end
+
+    assert_redirected_to talks_path
+  end
+
   def test_unknown_talk_404s
     assert_raises(ActiveRecord::RecordNotFound) do
       get :show, :id => "derp"
