@@ -1,7 +1,6 @@
 class NewsletterController < ApplicationController
   def subscribe
     ZenspiderSubscriber.subscribe!(subscribe_params)
-
     redirect_to join_us_path
   end
 
