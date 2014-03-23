@@ -24,8 +24,8 @@ class PhilProjects < ActiveRecord::Migration
     Affiliation.create!(:dude => phil, :project => gitjour)
 
     # In production there are two clips to my name, but I can't repro in dev.
-    clips = Project.find_by_name('clip').affiliations.select{ |a| a.dude == phil }
-    clips[1].destroy if clips[1]
+    #clips = Project.find_by_name('clip').affiliations.select{ |a| a.dude == phil }
+    #clips[1].destroy if clips[1]
   end
 
   def self.down
