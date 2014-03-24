@@ -9,9 +9,9 @@ source "https://rubygems.org"
 
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.1.0"
-gem "jquery-rails",              "~> 1.0.0"
+gem "jquery-rails",              "~> 3.1.0"
 gem "httparty",                  "~> 0.8.0"
-gem "rails_admin",               "~> 0.0.5"
+gem "rails_admin",               "~> 0.4.9"
 gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
 
