@@ -49,8 +49,11 @@ module SeattlerbOrg
     # carryforwad from v 2.3.3
     config.time_zone = 'UTC'
 
+    config.active_record.whitelist_attributes = false
   end
 end
+
+ActiveRecord::Base.send(:include, ActiveModel::ForbiddenAttributesProtection)
 
 class ActiveRecord::Base
   class << self
