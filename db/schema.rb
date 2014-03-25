@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408194405) do
+ActiveRecord::Schema.define(:version => 20140324041152) do
 
   create_table "affiliations", :force => true do |t|
     t.integer  "dude_id"
@@ -32,6 +32,12 @@ ActiveRecord::Schema.define(:version => 20130408194405) do
     t.string   "twitter"
     t.string   "github"
     t.string   "image_url"
+  end
+
+  create_table "events", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "projects", :force => true do |t|
