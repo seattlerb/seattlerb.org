@@ -55,6 +55,12 @@ ActiveRecord::Schema.define(:version => 20140403033350) do
     t.boolean  "verified"
   end
 
+  create_table "events", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "url"
