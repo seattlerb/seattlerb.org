@@ -4,8 +4,7 @@ source "https://rubygems.org"
 
 # heroku uses bundler 1.0.7 so this isn't supported, but it is the
 # version we need to use:
-#
-ruby "1.9.2"
+# ruby "1.9.2"
 
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.2.17"
