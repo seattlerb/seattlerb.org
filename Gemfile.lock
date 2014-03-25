@@ -55,7 +55,8 @@ GEM
     font-awesome-sass-rails (2.0.0.0)
       railties (>= 3.1.1)
       sass-rails (>= 3.1.1)
-    haml (3.1.8)
+    haml (3.2.0.rc.4)
+      tilt
     heroku (2.19.1)
       launchy (>= 0.3.2)
       rest-client (~> 1.6.1)
@@ -178,6 +179,7 @@ DEPENDENCIES
   ZenTest (~> 4.9)
   autotest-rails (~> 4.1.2)
   devise (~> 2.1.0)
+  haml (~> 3.2.0.rc.4)
   heroku (~> 2.19)
   httparty (~> 0.8.0)
   jquery-rails (~> 2.0.0)
