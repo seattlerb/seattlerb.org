@@ -8,7 +8,7 @@ source "https://rubygems.org"
 ruby "1.9.2"
 
 gem "rake",                      "~> 0.9.0"
-gem "rails",                     "~> 3.1.0"
+gem "rails",                     "~> 3.2.17"
 gem "jquery-rails",              "~> 1.0.0"
 gem "httparty",                  "~> 0.8.0"
 gem "rails_admin",               "~> 0.0.5"
