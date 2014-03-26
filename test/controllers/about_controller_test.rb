@@ -2,7 +2,6 @@ require "minitest_helper"
 
 class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
   def test_index
-    Event.create!(:date => Date.today)
     get :index
     assert_response :success
     assert_equal("Home", assigns(:title))
@@ -28,7 +27,6 @@ class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_join_us
-    Event.create!(:date => Date.today)
     get :join_us
     assert_response :success
 
