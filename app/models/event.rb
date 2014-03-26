@@ -7,12 +7,14 @@ class Event < ActiveRecord::Base
   end
 
   def self.first_tues_next_month
-    mo = Date.today.month+1
-    yr = Date.today.year
+    first_tues_month(Date.today + 1.month)
+  end
+
+  def self.first_tues_month(date)
     day = 1
-    until Date.new(yr,mo,day).wday == 2 do
+    until Date.new(date.year,date.month,day).tuesday? do
       day += 1
     end
-    Date.new(yr,mo,day)
+    Date.new(date.year,date.month,day)
   end
 end
