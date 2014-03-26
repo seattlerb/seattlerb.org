@@ -8,12 +8,11 @@ source "https://rubygems.org"
 
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.2.17"
-gem "jquery-rails",              "~> 2.0.0"
+gem "jquery-rails",              "~> 3.1.0"
 gem "httparty",                  "~> 0.8.0"
-gem "rails_admin",               "~> 0.1.0"
+gem "rails_admin",               "~> 0.4.9"
 gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
-gem "haml",					     "~> 3.2.0.rc.4"
 
 group :production do
   gem "pg",                      "~> 0.12.0"
