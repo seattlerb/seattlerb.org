@@ -11,16 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408194405) do
+ActiveRecord::Schema.define(:version => 20140326022009) do
 
   create_table "affiliations", :force => true do |t|
-    t.integer  "dude_id"
+    t.integer  "member_id"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "dudes", :force => true do |t|
+  create_table "members", :force => true do |t|
     t.string   "name"
     t.string   "email"
     t.text     "bio",          :limit => 255

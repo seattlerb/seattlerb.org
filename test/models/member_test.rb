@@ -1,17 +1,17 @@
 require "minitest_helper"
 
-class DudeTest < MiniTest::Rails::ActiveSupport::TestCase
+class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
   def test_valid
-    dude = Dude.new(:name         => "Dude",
-                    :ruby_gems_id => "Dude")
-    assert dude.valid?
+    member = Member.new(:name         => "Member",
+                    :ruby_gems_id => "Member")
+    assert member.valid?
   end
 
   def test_bio
-    with_bio    = Dude.create!( :name         => "with_bio",
+    with_bio    = Member.create!( :name         => "with_bio",
                                 :ruby_gems_id => "x",
                                 :bio          => "Bio")
-    without_bio = Dude.create!( :name         => "without_bio",
+    without_bio = Member.create!( :name         => "without_bio",
                                 :ruby_gems_id => "x")
 
     assert_equal "Bio", with_bio.bio
@@ -19,24 +19,24 @@ class DudeTest < MiniTest::Rails::ActiveSupport::TestCase
   end
 
   def test_featured_and_regular
-    featured = Dude.create!( :name         => "featured",
+    featured = Member.create!( :name         => "featured",
                              :ruby_gems_id => "x",
                              :featured     => true)
-    regular  = Dude.create!( :name         => "regular",
+    regular  = Member.create!( :name         => "regular",
                              :ruby_gems_id => "x",
                              :featured     => false)
 
-    assert_equal [featured], Dude.featured
-    assert_equal [regular], Dude.regular
+    assert_equal [featured], Member.featured
+    assert_equal [regular], Member.regular
   end
 
   def test_missing_image
-    no_img      = Dude.create!( :name         => "no_img",
+    no_img      = Member.create!( :name         => "no_img",
                                 :ruby_gems_id => "x")
-    missing_img = Dude.create!( :name         => "missing_img",
+    missing_img = Member.create!( :name         => "missing_img",
                                 :ruby_gems_id => "x",
                                 :image_url    => "missing_image.png")
-    regular     = Dude.create!( :name         => "regular",
+    regular     = Member.create!( :name         => "regular",
                                 :ruby_gems_id => "x",
                                 :image_url    => "test.png")
 
