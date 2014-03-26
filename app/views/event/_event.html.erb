@@ -20,7 +20,9 @@
       </table>
 
       <h2> Scheduled Speakers </h2>
-      <%= render partial: 'talks/talk', :collection => @event.talks %>
+      <% @event.talks.each do |talk| %>
+        <li><%= link_to talk.title, talk %></li>
+      <% end %>
 
       <% if @event.talks.size < 3 %>
         <p><%= link_to "Please sign up to give a talk", talks_path %>.<p>
