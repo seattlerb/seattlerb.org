@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140324041152) do
+ActiveRecord::Schema.define(:version => 20140326063626) do
 
   create_table "affiliations", :force => true do |t|
     t.integer  "dude_id"
@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20140324041152) do
     t.string  "email",          :default => "",    :null => false
     t.boolean "completed",      :default => false
     t.date    "scheduled_date"
+    t.integer "event_id"
   end
 
   create_table "users", :force => true do |t|
