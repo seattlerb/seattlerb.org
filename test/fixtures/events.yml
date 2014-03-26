@@ -2,7 +2,7 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  date: 2014-03-23
+  date: 2013-03-04
 
 two:
-  date: 2014-03-23
+  date: 2014-02-04
