@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20140403033350) do
     t.string  "email",          :default => "",    :null => false
     t.boolean "completed",      :default => false
     t.date    "scheduled_date"
+    t.integer "event_id"
   end
 
 end

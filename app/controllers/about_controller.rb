@@ -1,4 +1,5 @@
 class AboutController < ApplicationController
+  before_filter :get_event, only: [:index, :join_us]
   def index
     @title = "Home"
   end
@@ -9,5 +10,14 @@ class AboutController < ApplicationController
 
   def projects
     @projects = Project.find(:all).sort_by { |p| p.name.downcase }
+  end
+
+  def join_us
+  end
+
+  private
+
+  def get_event
+    @event = Event.next
   end
 end
