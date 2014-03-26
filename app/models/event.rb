@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   has_many :talks
 
   def self.next(num=1)
-    Event.where(date: Date.today ... Date.today + num.month).limit(num).first || Event.create!(date: Event.first_tues_next_month)
+    Event.where(date: Date.today ... Date.today + num.month).limit(num).first || Event.create!(date: first_tues_next_month)
   end
 
   def self.first_tues_next_month
