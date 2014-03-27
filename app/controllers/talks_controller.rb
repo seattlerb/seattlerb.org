@@ -11,7 +11,7 @@ class TalksController < ApplicationController
     #spam catch to redirect - maybe the bots were ignoring the spam field
     redirect_to talks_url and return if talk_params[:special_talk_requests].present?
     
-    @talk = Talk.new(params[:talk])
+    @talk = Talk.new talk_params
 
     if @talk.save
       AdminMailer.admin_notification(@talk).deliver
@@ -24,7 +24,7 @@ class TalksController < ApplicationController
 
   def show
     @disqus_shortname = "seattlerb"
-    @talk = Talk.find(id_param)
+    @talk = Talk.find params[:id]
   end
 
   def checklist
@@ -49,10 +49,6 @@ class TalksController < ApplicationController
       sleep rand(10) unless Rails.env.test?
       redirect_to root_path
     end
-  end
-
-  def id_param
-    params.permit(:id).fetch(:id)
   end
 
   def password_param
