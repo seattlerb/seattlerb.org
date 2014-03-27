@@ -14,6 +14,7 @@ class TalksController < ApplicationController
     @talk = Talk.new(params[:talk])
 
     if @talk.save
+      AdminMailer.admin_notification(@talk).deliver
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
