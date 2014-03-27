@@ -15,7 +15,7 @@ task :update_gems => :environment do
 
   users = {}
 
-  Dude.find(:all).map(&:ruby_gems_id).sort.each do |user|
+  Member.find(:all).map(&:ruby_gems_id).sort.each do |user|
     warn "Fetching #{user}"
     json = URI.parse("http://rubygems.org/api/v1/owners/#{user}/gems.json").read
     gems = JSON.parse json
@@ -35,7 +35,7 @@ task :update_gems => :environment do
   usernames      = users.keys.sort
   gemnames       = rubygems.keys.sort
   known_projects = Hash[Project.all.map { |p| [p.name, p] }]
-  known_users    = Hash[Dude.all.map { |u| [u.ruby_gems_id, u] }]
+  known_users    = Hash[Member.all.map { |u| [u.ruby_gems_id, u] }]
 
   add = (gemnames - known_projects.keys)
   del = (known_projects.keys - gemnames)
@@ -68,7 +68,7 @@ task :update_gems => :environment do
 
     users.each do |user|
       warn "  Adding user #{user}"
-      proj.dudes << known_users[user]
+      proj.members << known_users[user]
     end
   end
 end
