@@ -14,7 +14,10 @@ class TalksController < ApplicationController
     @talk = Talk.new talk_params
 
     if @talk.save
-      AdminMailer.admin_notification(@talk).deliver
+      admins = User.find_all_by_talk_notification(true).map(&:email)
+      if !admins.empty? then
+        AdminMailer.admin_notification(admins,@talk).deliver
+      end
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks

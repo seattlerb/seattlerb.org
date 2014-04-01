@@ -12,8 +12,8 @@ class AdminMailerTest < MiniTest::Rails::ActionMailer::TestCase
     admin_optin    =  User.create!(:email             => "rubyadmin@gmail.com",
                                    :password          => "password123",
                                    :talk_notification => true)
-
-    mail = AdminMailer.admin_notification(talk)
+ 
+    mail = AdminMailer.admin_notification(admin_optin.email,talk)
 
     assert_match /beginner/, mail.encoded
     assert_match /Rails Security Vulnerabilities/, mail.encoded
@@ -35,14 +35,17 @@ class AdminMailerTest < MiniTest::Rails::ActionMailer::TestCase
     admin_optout   =  User.create!(:email             => "rubyadmin_optout@gmail.com",
                                    :password          => "password123")
 
-    mail = AdminMailer.admin_notification(talk)
+    admins = User.find_all_by_talk_notification(true).map(&:email)
+    if !admins.empty? then
+      AdminMailer.admin_notification(admins,talk).deliver
+    end    
 
     admins_all = User.all.map(&:email)
     admins_talk_true = User.find_all_by_talk_notification(true).map(&:email)
 
     assert_match /rubyadmin_optout@gmail.com/, admins_all.last
     assert admins_talk_true.empty?
-    assert mail.to.last.nil?
+    assert admins.empty?
   end
 
 end
