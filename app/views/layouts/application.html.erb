@@ -10,6 +10,7 @@
   <meta name="description" content="">
 
   <meta name="viewport" content="width=device-width">
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
   <%= stylesheet_link_tag "application", :media => "all" %>
 </head>
 <body>
@@ -46,6 +47,7 @@
   Seattle Ruby Brigade: Growing the Ruby Community
 </footer>
 <%= javascript_include_tag 'application' %>
+<%= javascript_include_tag '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js' %>
 <%= yield :javascript_footer %>
 </body>
 </html>
