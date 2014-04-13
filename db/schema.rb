@@ -90,5 +90,4 @@ ActiveRecord::Schema.define(:version => 20140402025519) do
     t.boolean "completed",      :default => false
     t.date    "scheduled_date"
   end
-
 end

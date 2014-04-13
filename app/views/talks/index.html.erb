@@ -38,7 +38,10 @@
       <div class="proposed_talk span4">
         <h4><%= link_to talk.title, talk %></h4>
         <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
-        <p class="description"><%= talk.description %></p>
+        <p class="description">
+          <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
+          <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
+        </p>
       </div>
     <% end %>
   </div>
