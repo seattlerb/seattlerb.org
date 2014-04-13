@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140402025519) do
+ActiveRecord::Schema.define(:version => 20140403033350) do
 
   create_table "admins", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
+    t.string   "email",                  :default => "",    :null => false
+    t.string   "encrypted_password",     :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20140402025519) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.boolean  "talk_notification",      :default => false
   end
 
   add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20140402025519) do
     t.string   "twitter"
     t.string   "github"
     t.string   "image_url"
+    t.boolean  "verified"
   end
 
   create_table "projects", :force => true do |t|
@@ -90,4 +92,5 @@ ActiveRecord::Schema.define(:version => 20140402025519) do
     t.boolean "completed",      :default => false
     t.date    "scheduled_date"
   end
+
 end
