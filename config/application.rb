@@ -50,6 +50,9 @@ module SeattlerbOrg
     config.time_zone = 'UTC'
 
     config.active_record.whitelist_attributes = false
+
+    config.i18n.enforce_available_locales = true
+    config.i18n.available_locales = [:en]
   end
 end
 
