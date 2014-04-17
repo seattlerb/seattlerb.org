@@ -23,26 +23,26 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
   end
 
   def test_rubygems_link
-    person = Dude.new(:name => "Frank", :ruby_gems_id => "rgid")
+    person = Member.new(:name => "Frank", :ruby_gems_id => "rgid")
 
     expected = "<li><i class='icon-heart'></i><a href=\"http://rubygems.org/profiles/rgid\">Ruby Gems</a></li>"
     assert_equal expected, rubygems_link(person)
   end
 
   def test_website_link
-    person = Dude.new(:name => "Frank", :ruby_gems_id => "rgid", :website => "http://www.example.com")
+    person = Member.new(:name => "Frank", :ruby_gems_id => "rgid", :website => "http://www.example.com")
 
     assert_equal "<li><i class='icon-user'></i><a href=\"http://www.example.com\">Website</a></li>", website_link(person)
   end
 
   def test_email_link
-    person = Dude.new(:name => "Frank", :ruby_gems_id => "rgid", :email => "test@example.com")
+    person = Member.new(:name => "Frank", :ruby_gems_id => "rgid", :email => "test@example.com")
 
-    assert_equal "<li><i class='icon-leaf'></i><a href=\"http://twitter.com/@test\">@@test</a></li>", email_link(person)
+    assert_equal "<li><i class='icon-envelope'></i><a href=\"mailto:test@example.com\">Email</a></li>", email_link(person)
   end
 
-  def test_email_link
-    person = Dude.new(:name => "Frank", :ruby_gems_id => "rgid", :twitter => "@test")
+  def test_twitter_link
+    person = Member.new(:name => "Frank", :ruby_gems_id => "rgid", :twitter => "@test")
 
     assert_equal "<li><i class='icon-leaf'></i><a href=\"http://twitter.com/@test\">@@test</a></li>", twitter_link(person)
   end

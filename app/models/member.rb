@@ -1,4 +1,4 @@
-class Dude < ActiveRecord::Base
+class Member < ActiveRecord::Base
   habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name

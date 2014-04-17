@@ -136,15 +136,15 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                        :description => "My description"
                       }
 
-    admin_optin1    =  User.create!(:email             => "rubyadmin1@gmail.com",
+    admin_optin1    =  Admin.create!(:email             => "rubyadmin1@gmail.com",
                                     :password          => "password123",
                                     :talk_notification => true)
 
-    admin_optin2    =  User.create!(:email             => "rubyadmin2@gmail.com",
+    admin_optin2    =  Admin.create!(:email             => "rubyadmin2@gmail.com",
                                     :password          => "password123",
                                     :talk_notification => true)
 
-    admin_optout    =  User.create!(:email             => "rubyadmin_optout@gmail.com",
+    admin_optout    =  Admin.create!(:email             => "rubyadmin_optout@gmail.com",
                                     :password          => "password123")
 
     assert_difference 'ActionMailer::Base.deliveries.size', +1 do

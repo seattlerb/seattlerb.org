@@ -1,5 +1,5 @@
 <p class="lead">
-  <%= @projects.size %> projects from just <%= Dude.count %> people...
+  <%= @projects.size %> projects from just <%= Member.count %> people...
   <%= ["Not bad!", "How prolific!", "I've seen better..."].sample %>
 </p>
 
@@ -10,8 +10,8 @@
       <%= project.description %>
       <h3>Authors</h3>
       <ul class='links'>
-        <% project.dudes.each do |dude| %>
-          <li><%= link_to dude.name, "/people##{dude.name.parameterize}" %></li>
+        <% project.members.each do |member| %>
+          <li><%= link_to member.name, "/people##{member.name.parameterize}" %></li>
         <% end %>
       </ul>
     </div>

@@ -5,7 +5,7 @@ SeattlerbOrg::Application.routes.draw do
 
   mount RailsAdmin::Engine => '/adminsrb', :as => 'rails_admin'
 
-  devise_for :users
+  devise_for :admins
 
   get "talks/checklist" => "talks#checklist"
 
