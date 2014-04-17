@@ -11,10 +11,8 @@ class Event < ActiveRecord::Base
   end
 
   def self.first_tues_month(date)
-    day = 1
-    until Date.new(date.year,date.month,day).tuesday? do
-      day += 1
-    end
-    Date.new(date.year,date.month,day)
+    d = Date.new(date.year, date.month, 1)
+    d += 1 until d.tuesday?
+    d
   end
 end
