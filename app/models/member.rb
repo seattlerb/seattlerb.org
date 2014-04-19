@@ -25,9 +25,9 @@ class Member < ActiveRecord::Base
 
   def set_avatar
     if missing_image?
-      twitter_response = get_twitter_info if twitter
+      twitter_response = get_twitter_image_url if twitter
       image_url = if twitter_response
-        twitter_response["profile_image_url"].gsub(/normal/i, "bigger")
+        twitter_response.to_s
       else
         "missing_image.png"
       end
@@ -36,15 +36,17 @@ class Member < ActiveRecord::Base
   end
 
   def missing_image?
-    image_url.blank? || image_url == "missing_image.png"
+    image_url.blank? || image_url == "missing_image.png" || HTTParty.get(self.image_url).code != 200
   end
 
-  def get_twitter_info
-    response = HTTParty.get("https://api.twitter.com/1/users/show.json?screen_name=#{self.twitter}")
-    if response.code == 200
-      response.parsed_response
-    else
-      false
+  def get_twitter_image_url
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key = ENV['TWITTER_CONSUMER_KEY']
+      config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']
+      config.access_token = ENV['TWITTER_ACCESS_TOKEN']
+      config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
+
+    client.user(self.twitter).profile_image_uri_https(:bigger).to_s
   end
 end

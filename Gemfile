@@ -13,6 +13,8 @@ gem "httparty",                  "~> 0.8.0"
 gem "rails_admin",               "~> 0.4.9"
 gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
+gem "twitter",                   "~> 5.0.0"
+gem "dotenv-rails"
 
 group :production do
   gem "pg",                      "~> 0.12.0"
