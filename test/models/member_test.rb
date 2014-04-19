@@ -38,7 +38,7 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
                                 :image_url    => "missing_image.png")
     regular     = Member.create!( :name         => "regular",
                                 :ruby_gems_id => "x",
-                                :image_url    => "test.png")
+                                :image_url    => "http://placekitten.com/50/50")
 
     assert no_img.missing_image?
     assert missing_img.missing_image?
