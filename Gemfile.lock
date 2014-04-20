@@ -52,9 +52,6 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
-    dotenv (0.10.0)
-    dotenv-rails (0.10.0)
-      dotenv (= 0.10.0)
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -207,7 +204,6 @@ DEPENDENCIES
   ZenTest (~> 4.9)
   autotest-rails (~> 4.1.2)
   devise (~> 2.1.0)
-  dotenv-rails
   heroku (~> 2.19)
   httparty (~> 0.8.0)
   jquery-rails (~> 3.1.0)
