@@ -3,8 +3,7 @@
 # Do not hesitate to tweak this to your needs
 
 Admin.create!([
-  { :id => 1, :email => "admin@mailinator.com", :encrypted_password => "$2a$10$D7fvF5WG5mHN5BmPKEvYT.DLIjCkyd6LZtP81vpPrfF9zXC9wwJfG", :reset_password_token => nil, :reset_password_sent_at => nil, :remember_created_at => nil, :sign_in_count => 0, :current_sign_in_at => nil, :last_sign_in_at => nil, :current_sign_in_ip => nil, :last_sign_in_ip => nil, :confirmation_token => nil, :confirmed_at => nil, :confirmation_sent_at => nil, :talk_notification => false }
-], :without_protection => true )
+  { :id => 1, :email => "admin@mailinator.com", :password => "asdfasdf", :password_confirmation => "asdfasdf"}])
 
 
 
