@@ -4,4 +4,3 @@ log
 db/*.sqlite3
 db/data.yml
 config/memcache.conf
-.env
