@@ -3,6 +3,8 @@ class Talk < ActiveRecord::Base
   attr_accessor :special_talk_requests # fake attribute for spam trapping
   validates_length_of :spam, :maximum => 0
 
+  belongs_to :event
+
   TALK_KINDS = %w(beginner intermediate advanced lightning)
 
   scope :by_kind, :order => "scheduled_date IS NULL,

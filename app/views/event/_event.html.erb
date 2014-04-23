@@ -1,0 +1,37 @@
+<div class='row'>
+  <div id="map" class='span12'>
+    <div id="address" class='span4'>
+      <h1>Monthly Social</h1>
+      <table>
+        <tr>
+          <td><i class='icon-time'></i></td>
+          <td><h3><time>7:00p</time> to <time>9:00p</time> <%= l @event.date.to_datetime, :format => :default %></h3></td>
+        </tr>
+        <tr>
+          <td><i class='icon-map-marker'></i></td>
+          <td>
+            <address>
+              <h3>Substantial Offices</h3>
+              900 E Pine St<br />
+              Seattle, WA 98102
+            </address>
+          </td>
+        </tr>
+      </table>
+
+      <h2> Scheduled Speakers </h2>
+      <% @event.talks.each do |talk| %>
+        <li><%= link_to talk.title, talk %></li>
+      <% end %>
+
+      <% if @event.talks.size < 3 %>
+        <p><%= link_to "Please sign up to give a talk", talks_path %>.<p>
+      <% end %>
+
+    </div>
+
+    <div class='span8'>
+      <iframe height="200" frameborder="" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=900+East+Pine+Street,+Seattle,+WA&f=q&source=s_q&hl=en&t=m&z=16&ll=47.615505,-122.320383&iwloc=near&output=embed"></iframe>
+    </div>
+  </div>
+</div>

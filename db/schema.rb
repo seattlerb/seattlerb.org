@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(:version => 20140403033350) do
     t.integer "project_id"
   end
 
+  create_table "events", :force => true do |t|
+    t.date     "date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "members", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -91,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20140403033350) do
     t.string  "email",          :default => "",    :null => false
     t.boolean "completed",      :default => false
     t.date    "scheduled_date"
+    t.integer "event_id"
   end
 
 end
