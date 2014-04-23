@@ -13,6 +13,7 @@ gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
 gem "unicorn",                   "~> 4.8.2"
 gem "twitter",                   "~> 5.0.0"
+gem "unicorn",                   "~> 4.8.2"
 
 group :production do
   gem "pg",                      "~> 0.12.0"
