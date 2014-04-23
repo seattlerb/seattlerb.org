@@ -2,10 +2,8 @@ class Event < ActiveRecord::Base
   validates :date, :presence => true
   has_many :talks
 
-  def self.next(num = 1)
-    e = Event.where(date: Date.today ... Date.today + num.month).order('date ASC').first(num)
-    e = Event.create!(date: first_tues_next_month) if e.blank?
-    e
+  def self.next
+    Event.where(date: Date.today ... Date.today + 1.month).first || Event.create!(date: first_tues_next_month)
   end
 
   def self.first_tues_next_month

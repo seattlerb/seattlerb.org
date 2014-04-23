@@ -11,9 +11,17 @@ class EventTest < MiniTest::Rails::ActiveSupport::TestCase
     refute event.valid?
   end
 
-  def test_next
-    event = Event.next
-    assert event.kind_of? Event
+  def test_next_event_present
+    e1 = Event.create!(:date => Date.today + 1.week)
+    e2 = Event.next
+    assert_equal e1, e2
+  end
+
+  def test_next_create
+    assert_difference 'Event.count', 1 do
+      e = Event.next
+      assert_equal e.date, Event.first_tues_next_month
+    end
   end
 
   def test_first_tues_month
