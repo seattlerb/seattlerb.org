@@ -11,6 +11,7 @@ gem "httparty",                  "~> 0.8.0"
 gem "rails_admin",               "~> 0.4.9"
 gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
+gem "unicorn",                   "~> 4.8.2"
 
 group :production do
   gem "pg",                      "~> 0.12.0"
