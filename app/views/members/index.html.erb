@@ -1,0 +1,30 @@
+<%= link_to 'Become a Seattle.rb member!', new_member_path, {:id => 'new_member_button'} %>
+</br></br></br>
+<% @members.each do |member| %>
+  <div class='featured profile row'>
+    <div class='span1'>
+      <%= image_tag member.image_url %>
+    </div>
+    <div class="span10 description">
+      <h1 id="<%= member.name.parameterize %>"><%= member.name %></h1>
+      <p class='bio'><%= member.bio %></p>
+
+      <ul class='links'>
+        <%= raw rubygems_link member %>
+        <%= raw github_link   member %>
+        <%= raw twitter_link  member %>
+        <%= raw website_link  member %>
+        <%= raw email_link    member %>
+      </ul>
+
+      <%#
+         projs = member.projects.sort_by { |p| p.name.downcase }.map { |p|
+           link_to p.name, p.url
+         }
+       %>
+
+      <%# raw projs.join ", " %>
+
+    </div>
+  </div>
+<% end %>

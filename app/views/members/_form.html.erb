@@ -1,0 +1,47 @@
+<%= form_for(@member) do |f| %>
+  <% if @member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+      <% @member.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter %>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :github %>
+    <%= f.text_field :github %>
+  </div>
+  <div class="field">
+    <%= f.label :ruby_gems_id, 'RubyGems' %>
+    <%= f.text_field :ruby_gems_id %>
+  </div>
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', :class => "btn" %>
+  </div>
+  </br>
+  We will verify your submission to prevent spam
+<% end %>
