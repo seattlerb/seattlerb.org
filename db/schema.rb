@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(:version => 20140510090335) do
     t.string   "twitter"
     t.string   "github"
     t.string   "image_url"
-    t.boolean  "verified"
+    t.boolean  "verified",                    :default => false
   end
 
   create_table "projects", :force => true do |t|
