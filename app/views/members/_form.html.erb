@@ -20,11 +20,11 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :twitter %>
+    <%= f.label :twitter, 'Twitter handle' %>
     <%= f.text_field :twitter %>
   </div>
   <div class="field">
-    <%= f.label :github %>
+    <%= f.label :github, 'Github username' %>
     <%= f.text_field :github %>
   </div>
   <div class="field">
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :website %>
-    <%= f.text_field :website, :placeholder => 'http://' %>
+    <%= f.text_field :website, :placeholder => 'http://www.example.com' %>
   </div>
   <div class="field">
     <%= f.label :bio %>

@@ -9,6 +9,8 @@ class Member < ActiveRecord::Base
 
   validates :website, url: true, :allow_blank => true  
 
+  validates :github, github: true, :allow_blank => true
+
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
 
@@ -16,9 +18,17 @@ class Member < ActiveRecord::Base
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
 
+  before_save :set_github
+
+  def set_github
+    github_username = self['github']
+    unless github_username.empty?
+      self['github'] = HTTParty.get("https://api.github.com/users/#{github}", :headers => {"User-Agent" => "seattle.rb"})["html_url"]
+    end
+  end
+
   def bio
     bio = self['bio']
-
     bio.present? ? bio : "..."
   end
 
