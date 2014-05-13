@@ -7,6 +7,8 @@ class Member < ActiveRecord::Base
 
   validates :email, email: true, :allow_blank => true
 
+  validates :website, url: true, :allow_blank => true  
+
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
 
