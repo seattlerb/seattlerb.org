@@ -5,6 +5,8 @@ class Member < ActiveRecord::Base
   # our migrations are so stupid. If we nuke the data, this conditional can go
   #validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
+  validates :email, email: true, :allow_blank => true
+
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
 
