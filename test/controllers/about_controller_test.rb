@@ -11,7 +11,7 @@ class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   def test_people
-    people = (1..3).map{ |x| Dude.create!(:name => x, :ruby_gems_id => "#{x}_id")}
+    people = (1..3).map{ |x| Member.create!(:name => x, :ruby_gems_id => "#{x}_id")}
 
     get :people
     assert_response :success

@@ -136,10 +136,36 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
                        :description => "My description"
                       }
 
-    assert_difference 'Talk.count', 1 do
-      post :create, :talk => talk_attributes, :password => ""
-      assert_redirected_to talks_path
+    admin_optin1    =  Admin.create!(:email             => "rubyadmin1@gmail.com",
+                                    :password          => "password123",
+                                    :talk_notification => true)
+
+    admin_optin2    =  Admin.create!(:email             => "rubyadmin2@gmail.com",
+                                    :password          => "password123",
+                                    :talk_notification => true)
+
+    admin_optout    =  Admin.create!(:email             => "rubyadmin_optout@gmail.com",
+                                    :password          => "password123")
+
+    assert_difference 'ActionMailer::Base.deliveries.size', +1 do
+      assert_difference 'Talk.count', 1 do
+        post :create, :talk => talk_attributes, :password => ""
+        assert_redirected_to talks_path
+      end
     end
+
+    mail = ActionMailer::Base.deliveries.last
+
+    assert_match /noreply@seattlerb.org/, mail.from.first
+    assert_match /Seattle.rb Talk Notification/, mail.subject
+    assert mail.to.include?("rubyadmin1@gmail.com")
+    assert mail.to.include?("rubyadmin2@gmail.com")
+    assert !mail.to.include?("rubyadmin_optout@gmail.com")
+    assert_match /beginner/, mail.encoded
+    assert_match /Title/, mail.encoded
+    assert_match /a@example.com/, mail.encoded
+    assert_match /The Dude/, mail.encoded
+    assert_match /My description/, mail.encoded
 
     get :index
     assert_response :success

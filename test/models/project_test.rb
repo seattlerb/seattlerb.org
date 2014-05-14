@@ -11,15 +11,15 @@ class ProjectTest < MiniTest::Rails::ActiveSupport::TestCase
     refute p.valid?
   end
 
-  def test_dudes_association
+  def test_members_association
     p = Project.create!(:name => "My Test Project")
-    d = Dude.create!(:name => "John", :ruby_gems_id => "rgid")
+    d = Member.create!(:name => "John", :ruby_gems_id => "rgid")
 
     d.projects << p
 
     p.reload
     d.reload
 
-    assert p.dudes.include? d
+    assert p.members.include? d
   end
 end
