@@ -2,7 +2,6 @@
   <% if @member.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@member.errors.count, "error") %> prohibited this member from being saved:</h2>
-
       <ul>
       <% @member.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -28,7 +27,7 @@
     <%= f.text_field :github %>
   </div>
   <div class="field">
-    <%= f.label :ruby_gems_id, 'RubyGems' %>
+    <%= f.label :ruby_gems_id, 'RubyGems username' %>
     <%= f.text_field :ruby_gems_id %>
   </div>
   <div class="field">

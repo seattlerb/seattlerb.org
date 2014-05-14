@@ -1,11 +1,13 @@
 class Member < ActiveRecord::Base
   habtm :projects, :join_table => :affiliations
 
-  validates_presence_of :name
+  validates_presence_of :name, :ruby_gems_id
   # our migrations are so stupid. If we nuke the data, this conditional can go
   #validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
-  validates :email, email: true, :allow_blank => true
+  validates :ruby_gems_id, rubygems: true
+
+  validates :email, email: true
 
   validates :website, url: true, :allow_blank => true  
 
@@ -19,6 +21,14 @@ class Member < ActiveRecord::Base
   }
 
   before_save :set_github
+  before_save :set_rubygems
+
+  def set_rubygems
+    rubygems_username = self['ruby_gems_id']
+    unless rubygems_username.empty?
+      self['ruby_gems_id'] = "http://rubygems.org/profiles/#{rubygems_username}"
+    end
+  end
 
   def set_github
     github_username = self['github']
