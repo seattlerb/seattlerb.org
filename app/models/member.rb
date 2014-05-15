@@ -1,22 +1,20 @@
 class Member < ActiveRecord::Base
   habtm :projects, :join_table => :affiliations
 
-  validates_presence_of :name, :ruby_gems_id
+  validates_presence_of :name, :email
   # our migrations are so stupid. If we nuke the data, this conditional can go
-  #validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
+  validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
-  validates :ruby_gems_id, rubygems: true
-
-  validates :email, email: true
-
-  validates :website, url: true, :allow_blank => true  
-
+  validates :email, email: true, :uniqueness => true, :allow_blank => true
   validates :github, github: true, :allow_blank => true
+  validates :ruby_gems_id, rubygems: true, :allow_blank => true
+  validates :website, url: true, :allow_blank => true
 
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)
 
   before_save :set_avatar, if: Proc.new { |user|
+#user.respond_to?(:twitter_changed?) and user.twitter_changed? unless user.twitter.empty?
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
 
@@ -33,7 +31,7 @@ class Member < ActiveRecord::Base
   def set_github
     github_username = self['github']
     unless github_username.empty?
-      self['github'] = HTTParty.get("https://api.github.com/users/#{github}", :headers => {"User-Agent" => "seattle.rb"})["html_url"]
+      self['github'] = "https://github.com/#{github_username}"
     end
   end
 
@@ -48,7 +46,7 @@ class Member < ActiveRecord::Base
   end
 
   def set_avatar
-    if missing_image?
+    if missing_image? && !self.image_url.nil?
       twitter_response = get_twitter_image_url if twitter
       image_url = if twitter_response
         twitter_response.to_s
@@ -56,6 +54,8 @@ class Member < ActiveRecord::Base
         "missing_image.png"
       end
       self.image_url = image_url
+    else
+      self.image_url = "missing_image.png"
     end
   end
 
