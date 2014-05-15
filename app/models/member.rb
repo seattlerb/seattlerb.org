@@ -45,7 +45,7 @@ class Member < ActiveRecord::Base
   end
 
   def set_avatar
-    if missing_image? && !self.image_url.nil?
+    if missing_image?
       twitter_response = get_twitter_image_url if twitter
       image_url = if twitter_response
         twitter_response.to_s
@@ -53,8 +53,6 @@ class Member < ActiveRecord::Base
         "missing_image.png"
       end
       self.image_url = image_url
-    else
-      self.image_url = "missing_image.png"
     end
   end
 
@@ -69,7 +67,10 @@ class Member < ActiveRecord::Base
       config.access_token = ENV['TWITTER_ACCESS_TOKEN']
       config.access_token_secret = ENV['TWITTER_ACCESS_TOKEN_SECRET']
     end
-
-    client.user(self.twitter).profile_image_uri_https(:bigger).to_s
+    begin
+      client.user(self.twitter).profile_image_uri_https(:bigger).to_s
+    rescue Exception => e
+      self.image_url = "missing_image.png"
+    end
   end
 end
