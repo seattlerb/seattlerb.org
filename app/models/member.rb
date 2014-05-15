@@ -14,7 +14,6 @@ class Member < ActiveRecord::Base
   scope :regular, where(featured: false)
 
   before_save :set_avatar, if: Proc.new { |user|
-#user.respond_to?(:twitter_changed?) and user.twitter_changed? unless user.twitter.empty?
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
 
