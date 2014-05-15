@@ -23,7 +23,7 @@ class Member < ActiveRecord::Base
   def set_rubygems
     rubygems_username = self['ruby_gems_id']
     unless rubygems_username.empty?
-      self['ruby_gems_id'] = "http://rubygems.org/profiles/#{rubygems_username}"
+      self['ruby_gems_id'] = "#{rubygems_username}"
     end
   end
 
