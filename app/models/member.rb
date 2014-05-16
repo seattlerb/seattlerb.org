@@ -6,8 +6,9 @@ class Member < ActiveRecord::Base
   validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
   validates :email, email: true, :uniqueness => true, :allow_blank => true
-  validates :github, github: true, :allow_blank => true
-  validates :ruby_gems_id, rubygems: true, :allow_blank => true
+  validates :twitter, twitter: true, :uniqueness => true, :allow_blank => true
+  validates :github, github: true, :uniqueness => true, :allow_blank => true
+  validates :ruby_gems_id, rubygems: true, :uniqueness => true, :allow_blank => true
   validates :website, url: true, :allow_blank => true
 
   scope :featured, where(featured: true)
