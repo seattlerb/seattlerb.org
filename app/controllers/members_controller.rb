@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   # GET /members
   def index
     @members = Member.find_all_by_verified(true)
+    @title = "Members"
 
     respond_to do |format|
       format.html # index.html.erb

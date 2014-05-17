@@ -5,6 +5,7 @@ class TalksController < ApplicationController
   def index
     talks
     @talk  = Talk.new
+    @title = "Talks"
   end
 
   def create

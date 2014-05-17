@@ -5,10 +5,10 @@ class Member < ActiveRecord::Base
   # our migrations are so stupid. If we nuke the data, this conditional can go
   validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
-  validates :email, email: true, :uniqueness => true, :allow_blank => true
-  validates :twitter, twitter: true, :uniqueness => true, :allow_blank => true
-  validates :github, github: true, :uniqueness => true, :allow_blank => true
-  validates :ruby_gems_id, rubygems: true, :uniqueness => true, :allow_blank => true
+  validates :email, email: true, :allow_blank => true
+  validates :twitter, twitter: true, :allow_blank => true
+  validates :github, github: true, :allow_blank => true
+  validates :ruby_gems_id, rubygems: true, :allow_blank => true
   validates :website, url: true, :allow_blank => true
 
   scope :featured, where(featured: true)
@@ -19,19 +19,10 @@ class Member < ActiveRecord::Base
   }
 
   before_save :set_github
-  before_save :set_rubygems
-
-  def set_rubygems
-    rubygems_username = self['ruby_gems_id']
-    unless rubygems_username.empty?
-      self['ruby_gems_id'] = "#{rubygems_username}"
-    end
-  end
 
   def set_github
-    github_username = self['github']
-    unless github_username.empty?
-      self['github'] = "https://github.com/#{github_username}"
+    unless self['github'].blank?
+      self['github'] = "https://github.com/#{self['github']}"
     end
   end
 

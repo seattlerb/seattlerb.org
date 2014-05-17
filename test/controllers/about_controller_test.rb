@@ -10,14 +10,6 @@ class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_template :partial => '_twitter'
   end
 
-  def test_people
-    people = (1..3).map{ |x| Member.create!(:name => x, :ruby_gems_id => "#{x}_id")}
-
-    get :people
-    assert_response :success
-    assert_equal people.sort, assigns(:people).sort
-  end
-
   def test_projects
     projects = (1..3).map { |x| Project.create!(:name => x)}
 
