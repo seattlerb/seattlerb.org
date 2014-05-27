@@ -8,7 +8,7 @@ class TwitterValidator < ActiveModel::EachValidator
     end
     begin
       client.user(value)
-    rescue Exception => e
+    rescue Twitter::Error::NotFound
       record.errors[attribute] << (options[:message] || "user isn't found" )
     end
   end

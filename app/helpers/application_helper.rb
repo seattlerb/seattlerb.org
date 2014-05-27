@@ -10,12 +10,11 @@ module ApplicationHelper
   end
 
   def rubygems_link person
-    icon_link("icon-heart", "Ruby Gems",
-              person.ruby_gems_id, "http://rubygems.org/profiles/")
+    icon_link("icon-heart", "Ruby Gems", person.ruby_gems_id, "http://rubygems.org/profiles/")
   end
 
   def github_link person
-    icon_link "icon-glass", "Github", person.github
+    icon_link "icon-glass", "Github", person.github, "https://github.com/"
   end
 
   def website_link person

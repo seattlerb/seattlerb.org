@@ -4,10 +4,6 @@ class AboutController < ApplicationController
     @title = "Home"
   end
 
-  def people
-    @people = Member.order('featured desc, name asc')
-  end
-
   def projects
     @projects = Project.find(:all).sort_by { |p| p.name.downcase }
   end

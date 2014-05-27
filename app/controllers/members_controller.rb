@@ -1,24 +1,13 @@
 class MembersController < ApplicationController
-  # GET /members
   def index
-    @members = Member.find_all_by_verified(true)
+    @members = Member.verified.all
     @title = "Members"
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
-  # GET /Members/new
   def new
     @member = Member.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-    end
   end
 
-  # POST /Members
   def create
     @member = Member.new(member_params)
 
