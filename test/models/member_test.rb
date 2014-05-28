@@ -6,10 +6,21 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
     assert member.valid?
   end
 
+  def test_invalid
+    member = Member.new()
+    refute member.valid?
+  end
+
   def test_valid_email
     member = Member.new(:name                  => "Member",
                         :email                 => "test@test.com")
     assert member.valid?
+  end
+
+  def test_invalid_email
+    member = Member.new(:name                  => "Member",
+                        :email                 => "test!test.com")
+    refute member.valid?
   end
 
   def test_valid_github
@@ -18,10 +29,22 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
     assert member.valid?
   end
 
+  def test_invalid_github
+    member = Member.new(:name                  => "Member",
+                        :github                => "not_a_user234890")
+    refute member.valid?
+  end
+
   def test_valid_rubygems
     member = Member.new(:name                  => "Member",
                         :ruby_gems_id          => "qrush")
     assert member.valid?
+  end
+
+  def test_invalid_rubygems
+    member = Member.new(:name                  => "Member",
+                        :ruby_gems_id          => "not_a_user234890")
+    refute member.valid?
   end
 
   def test_valid_twitter
@@ -30,10 +53,22 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
     assert member.valid?
   end
 
-  def test_valid_twitter
+  def test_invalid_twitter
+    member = Member.new(:name                  => "Member",
+                        :twitter               => "not_a_user234890")
+    refute member.valid?
+  end
+
+  def test_valid_url
     member = Member.new(:name                  => "Member",
                         :website               => "http://www.google.com")
     assert member.valid?
+  end
+
+  def test_invalid_url
+    member = Member.new(:name                  => "Member",
+                        :website               => "ftp://www.notawebsite")
+    refute member.valid?
   end
 
   def test_bio
