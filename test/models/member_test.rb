@@ -13,7 +13,7 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
 
   def test_valid_email
     member = Member.new(:name                  => "Member",
-                        :email                 => "test@test.com")
+                        :email                 => "test1@test.com")
     assert member.valid?
   end
 
@@ -73,8 +73,8 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
 
   def test_bio
     with_bio    = Member.create!(:name         => "with_bio",
-                                 :ruby_gems_id => "qrush",
-                                 :email        => "test@test.com",
+                                 :ruby_gems_id => "aaronp",
+                                 :email        => "test1@test.com",
                                  :bio          => "Bio")
     without_bio = Member.create!(:name         => "without_bio",
                                  :ruby_gems_id => "qrush",
@@ -86,7 +86,7 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
 
   def test_featured_and_regular
     featured = Member.create!(:name            => "featured",
-                              :email           => "test@test.com",
+                              :email           => "test2@test.com",
                               :featured        => true)
     regular  = Member.create!(:name            => "regular",
                               :email           => "test@test.com",
@@ -98,12 +98,12 @@ class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
 
   def test_missing_image
     no_img      = Member.create!(:name         => "no_img",
-                                 :email        => "test@test.com")
+                                 :email        => "test3@test.com")
     missing_img = Member.create!(:name         => "missing_img",
-                                 :email        => "test@test.com",
+                                 :email        => "test@4test.com",
                                  :image_url    => "missing_image.png")
     regular     = Member.create!(:name         => "regular",
-                                 :email        => "test@test.com",
+                                 :email        => "test5@test.com",
                                  :image_url    => "http://placekitten.com/50/50")
 
     assert no_img.missing_image?

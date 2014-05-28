@@ -38,6 +38,12 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
+
+  <p style="width: 1px; height: 1px; overflow: hidden;">
+    Please leave following field blank:
+    <%= f.text_area :username %>
+  </p>
+
   <div class="actions">
     <%= f.submit 'Submit', :class => "btn" %>
   </div>

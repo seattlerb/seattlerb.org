@@ -35,4 +35,16 @@ class MembersControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_response :success
     assert_match @member.name,        @response.body
   end
+
+  def test_create_fails_with_spam_trap
+    member_attributes = {:name        => "Test Name",
+                         :username    => "spam"}
+
+
+    assert_difference 'Member.count', 0 do
+      post :create, :member => member_attributes, :username => ""
+    end
+
+    assert_redirected_to members_path
+  end
 end

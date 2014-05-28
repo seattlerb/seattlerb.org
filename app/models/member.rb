@@ -1,13 +1,16 @@
 class Member < ActiveRecord::Base
+  attr_accessor :username # fake attribute for spam trapping
+  validates_length_of :username, :maximum => 0
+
   habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name
 
-  validates :email,        :email => true,    :allow_blank => true
-  validates :twitter,      :twitter => true,  :allow_blank => true
-  validates :github,       :github => true,   :allow_blank => true
-  validates :ruby_gems_id, :rubygems => true, :allow_blank => true
-  validates :website,      :url => true,      :allow_blank => true
+  validates :email,        :email => true,    :allow_blank => true, uniqueness: true
+  validates :twitter,      :twitter => true,  :allow_blank => true, uniqueness: true
+  validates :github,       :github => true,   :allow_blank => true, uniqueness: true
+  validates :ruby_gems_id, :rubygems => true, :allow_blank => true, uniqueness: true
+  validates :website,      :url => true,      :allow_blank => true, uniqueness: true
 
   scope :featured, where(featured: true)
   scope :regular, where(featured: false)

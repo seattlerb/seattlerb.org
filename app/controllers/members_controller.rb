@@ -9,6 +9,8 @@ class MembersController < ApplicationController
   end
 
   def create
+    #spam catch to redirect - maybe the bots were ignoring the spam field
+    redirect_to members_url and return if member_params[:username].present?
     @member = Member.new(member_params)
 
     respond_to do |format|
@@ -23,6 +25,6 @@ class MembersController < ApplicationController
   private
 
   def member_params
-    params.require(:member).permit(:name, :email, :twitter, :github, :ruby_gems_id, :website, :bio)
+    params.require(:member).permit(:name, :email, :twitter, :github, :ruby_gems_id, :website, :bio, :username)
   end
 end
