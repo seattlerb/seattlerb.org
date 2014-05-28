@@ -2,8 +2,6 @@ class Member < ActiveRecord::Base
   habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name
-  # our migrations are so stupid. If we nuke the data, this conditional can go
-  #validates_presence_of :ruby_gems_id, :if => proc { |u| u.respond_to? :ruby_gems_id }
 
   validates :email,        :email => true,    :allow_blank => true
   validates :twitter,      :twitter => true,  :allow_blank => true
@@ -18,14 +16,6 @@ class Member < ActiveRecord::Base
   before_save :set_avatar, if: Proc.new { |user|
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
-
-  #before_save :set_github
-
-  def set_github
-    unless self['github'].blank?
-      self['github'] = "https://github.com/#{self['github']}"
-    end
-  end
 
   def bio
     bio = self['bio']
