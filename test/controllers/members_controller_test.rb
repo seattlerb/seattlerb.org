@@ -27,7 +27,9 @@ class MembersControllerTest < MiniTest::Rails::ActionController::TestCase
                                  :verified    => true)
 
     assert_difference('Member.count', 1) do
-      post :create, member: {:name => "test", :email => "test@test.com", :ruby_gems_id => "qrush"}
+      post :create, member:     {:name => "test",
+                                 :email => "test@test.com",
+                                 :ruby_gems_id => "qrush"}
     end
     
     assert_redirected_to members_path
