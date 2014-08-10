@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "1.9.2"
+ruby "1.9.3"
 
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.2.17"
