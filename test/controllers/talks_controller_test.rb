@@ -217,6 +217,32 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_redirected_to talks_path
   end
 
+  # https://github.com/seattlerb/seattlerb.org/issues/80
+  def test_create_does_not_create_when_email_fails
+    talk_attributes =               {:title       => "Title",
+                                     :presenter   => "The Dude",
+                                     :kind        => "beginner",
+                                     :email       => "a@example.com",
+                                     :description => "My description"}
+
+    admin_optin1    =  Admin.create!(:email             => "rubyadmin1@gmail.com",
+                                     :password          => "password123",
+                                     :talk_notification => true)
+
+    # https://gist.github.com/phiggins/3a8d7ecedbd2b60fe88e
+    smtp_error_raiser = Proc.new do
+      raise Net::SMTPAuthenticationError.new("(535 Authentication failed: Bad username / password)")
+    end
+
+    assert_difference 'Talk.count', 0 do
+      AdminMailer.stub :admin_notification, smtp_error_raiser do
+        post :create, :talk => talk_attributes, :password => ""
+      end
+    end
+
+    assert_redirected_to talks_path
+  end
+
   def test_unknown_talk_404s
     assert_raises(ActiveRecord::RecordNotFound) do
       get :show, :id => "derp"

@@ -13,13 +13,13 @@ class TalksController < ApplicationController
 
     @talk = Talk.new talk_params
 
-    if @talk.save
-      admins = Admin.find_all_by_talk_notification(true).map(&:email)
-      AdminMailer.admin_notification(admins,@talk).deliver unless admins.empty?
+    create_talk
+
+    if @talk.persisted?
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
-      render action: "index"
+      render action: "index", alert: "Something went wrong."
     end
   end
 
@@ -36,6 +36,19 @@ class TalksController < ApplicationController
   end
 
   private
+
+  def create_talk
+    Talk.transaction do
+      return false unless @talk.save
+
+      admins = Admin.find_all_by_talk_notification(true).map(&:email)
+      AdminMailer.admin_notification(admins, @talk).deliver unless admins.empty?
+    end
+
+    true
+  rescue
+    false
+  end
 
   def set_title
     @title ||= "Talks"
