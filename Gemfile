@@ -23,7 +23,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem "heroku",                  "~> 2.19"
+  gem "heroku",                  "~> 3.9.6"
   gem "sqlite3",                 "~> 1.3.0"
   gem "minitest-rails",          "~> 0.3"
   gem "ZenTest",                 "~> 4.9"
