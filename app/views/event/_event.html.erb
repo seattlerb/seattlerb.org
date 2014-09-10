@@ -20,14 +20,14 @@
       </table>
 
       <h2> Scheduled Speakers </h2>
-      <% @event.talks.each do |talk| %>
-        <li><%= link_to talk.title, talk %></li>
-      <% end %>
-
+        <ul>
+        <% @event.talks.each do |talk| %>
+          <li><%= link_to talk.title, talk %></li>
+        <% end %>
+        </ul>
       <% if @event.talks.size < 3 %>
         <p><%= link_to "Please sign up to give a talk", talks_path %>.<p>
       <% end %>
-
     </div>
 
     <div class='span8'>
