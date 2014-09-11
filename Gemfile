@@ -2,8 +2,6 @@
 
 source "https://rubygems.org"
 
-ruby "1.9.2"
-
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.2.17"
 gem "jquery-rails",              "~> 3.1.0"
@@ -13,7 +11,6 @@ gem "devise",                    "~> 2.1.0"
 gem "strong_parameters",         "~> 0.2.3"
 gem "unicorn",                   "~> 4.8.2"
 gem "twitter",                   "~> 5.0.0"
-gem "unicorn",                   "~> 4.8.2"
 
 group :production do
   gem "pg",                      "~> 0.12.0"
