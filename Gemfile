@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+ruby "~> 2.0.0"
+
 gem "rake",                      "~> 0.9.0"
 gem "rails",                     "~> 3.2.17"
 gem "jquery-rails",              "~> 3.1.0"
