@@ -35,7 +35,7 @@ class Talk < ActiveRecord::Base
   validates :title, :presenter, :email, :presence => true
 
   def scheduled?
-    self.scheduled_date
+    !!self.scheduled_date
   end
 
   def kind_enum
