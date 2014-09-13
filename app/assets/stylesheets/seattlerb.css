@@ -7216,6 +7216,10 @@ input[type=text], textarea, .uneditable-input {
 /* line 109, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
 .proposed_talk .description {
   padding: 0 1em; }
+  
+.proposed_talk .scheduled-status {
+  padding: 0 1em 0 0;
+  color: #b00800; }
 
 /* line 113, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
 #map {
