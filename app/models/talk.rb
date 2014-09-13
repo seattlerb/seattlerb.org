@@ -16,6 +16,7 @@ class Talk < ActiveRecord::Base
                              END,
                              presenter,
                              title"
+  delegate :date, to: :event, allow_nil: true
 
   def self.available
     by_kind.where("completed = ? and (scheduled_date is NULL or scheduled_date < ?)",
@@ -35,7 +36,7 @@ class Talk < ActiveRecord::Base
   validates :title, :presenter, :email, :presence => true
 
   def scheduled?
-    self.scheduled_date
+    date
   end
 
   def kind_enum
