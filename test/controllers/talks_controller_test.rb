@@ -77,11 +77,11 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
 
   end
 
-  def test_talks_sorted_on_scheduled_date_kind_and_title
+  def test_talks_sorted_on_event_date_kind_and_title
     setup_talks
 
-    @beg_two.scheduled_date = 2.month.from_now
-    @int_two.scheduled_date = 27.days.from_now
+    @beg_two.event = Event.create date: 2.month.from_now
+    @int_two.event = Event.create date: 27.days.from_now
     @beg_two.save
     @int_two.save
 
@@ -96,7 +96,7 @@ class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_equal expected, assigns[:talks].map(&:title)
   end
 
-  def test_talks_sorted_on_index_and_date
+  def test_talks_sorted_on_index_and_event_date
     setup_talks
 
     get :index

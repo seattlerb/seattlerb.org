@@ -68,12 +68,14 @@ class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
     refute_includes Talk.available, talk
   end
 
-  def test_talk_scheduled_date
-    talk = Talk.create!(:title          => "Test Talk",
-                        :presenter      => "Dude Number 1",
-                        :email          => "a@example.com",
-                        :kind           => "beginner",
-                        :scheduled_date => 3.months.from_now)
+  def test_talk_scheduled?
+    event = Event.next
+
+    talk = Talk.create!(:title     => "Test Talk",
+                        :presenter => "Dude Number 1",
+                        :email     => "a@example.com",
+                        :kind      => "beginner",
+                        :event     => event)
 
     assert talk.scheduled?
   end
