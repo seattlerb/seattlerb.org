@@ -17,4 +17,23 @@ class TalksHelperTest < MiniTest::Rails::ActionView::TestCase
 
     assert_equal expected.sort, talk_kinds.sort
   end
+
+  def test_scheduled_date
+    event = Event.create(date: Date.new(2014, 1, 1))
+    scheduled_talk    = Talk.create!(:title     => "Test Talk",
+                                     :presenter => "Dude Number 1",
+                                     :email     => "a@example.com",
+                                     :kind      => "beginner",
+                                     :event     => event)
+
+    unscheduled_talk  = Talk.create!(:title     => "Test Talk Two",
+                                     :presenter => "Dude Number 1",
+                                     :email     => "a@example.com",
+                                     :kind      => "beginner")
+
+    assert_equal "Scheduled for January 1st, 2014.",
+      scheduled_date(scheduled_talk)
+    assert_equal "This talk has not been scheduled.",
+    scheduled_date(unscheduled_talk)
+  end
 end
