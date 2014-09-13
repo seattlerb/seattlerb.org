@@ -1,11 +1,17 @@
 class Talk < ActiveRecord::Base
   attr_accessor :spam # fake attribute for spam trapping
   attr_accessor :special_talk_requests # fake attribute for spam trapping
-  validates_length_of :spam, :maximum => 0
 
   belongs_to :event
 
   TALK_KINDS = %w(beginner intermediate advanced lightning)
+
+  validates_length_of :spam, :maximum => 0
+  validates :title, :presenter, :email, :presence => true
+  validates :kind, inclusion: {
+    in: TALK_KINDS,
+    message: "%{value} is not a valid talk kind"
+  }
 
   delegate :date, to: :event, allow_nil: true
 
@@ -34,13 +40,6 @@ class Talk < ActiveRecord::Base
   def self.older
     by_kind.where("completed = ?", true)
   end
-
-  validates(:kind,
-            :inclusion => {
-                           :in => TALK_KINDS,
-                           :message => "%{value} is not a valid talk kind"
-                          })
-  validates :title, :presenter, :email, :presence => true
 
   def scheduled?
     date
