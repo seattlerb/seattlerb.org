@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class MemberTest < MiniTest::Rails::ActiveSupport::TestCase
+class MemberTest < ActiveSupport::TestCase
   def test_valid
     member = Member.new(:name => "Member")
     assert member.valid?

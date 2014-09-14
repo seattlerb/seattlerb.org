@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class AdminMailerTest < MiniTest::Rails::ActionMailer::TestCase
+class AdminMailerTest < ActionMailer::TestCase
 
   def test_talk_notification_mail_fields
     talk = Talk.new(:kind              => "beginner",

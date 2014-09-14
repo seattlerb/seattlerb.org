@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class EventTest < MiniTest::Rails::ActiveSupport::TestCase
+class EventTest < ActiveSupport::TestCase
   def test_valid
     e = Event.new(:date => '2014-03-26')
     assert e.valid?

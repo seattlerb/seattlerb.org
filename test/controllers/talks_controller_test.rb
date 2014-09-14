@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class TalksControllerTest < MiniTest::Rails::ActionController::TestCase
+class TalksControllerTest < ActionController::TestCase
   def setup
     @talk = Talk.create!(:title       => "My Test Talk",
                          :description => "Description",

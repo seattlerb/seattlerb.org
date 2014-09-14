@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class TalkTest < MiniTest::Rails::ActiveSupport::TestCase
+class TalkTest < ActiveSupport::TestCase
   def test_talks_restricted_to_specific_types
     beginner     = Talk.new(:kind      => "beginner",
                             :title     => "A",

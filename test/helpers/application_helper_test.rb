@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
+class ApplicationHelperTest < ActionView::TestCase
   def test_twitter_image
     handle = "test"
     expected = "https://api.twitter.com/1/users/profile_image?screen_name=#{handle}&size=bigger"

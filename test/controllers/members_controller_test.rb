@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class MembersControllerTest < MiniTest::Rails::ActionController::TestCase
+class MembersControllerTest < ActionController::TestCase
   def setup
     @member = Member.create!(:name        => "Test Name",
                              :verified    => true)

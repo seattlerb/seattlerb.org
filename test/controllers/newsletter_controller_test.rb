@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class NewsletterControllerTest < MiniTest::Rails::ActionController::TestCase
+class NewsletterControllerTest < ActionController::TestCase
   def test_subscribe_to_discussion
     mock = MiniTest::Mock.new
     mock.expect :call, nil, [{'email' => 'a@email.com'}]

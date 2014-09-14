@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 
 require "minitest/autorun"
+require "rails/test_help"
 require "minitest/rails"
 require "minitest/pride"
 
@@ -11,7 +12,7 @@ require "minitest/pride"
 # Uncomment if you want awesome colorful output
 # require "minitest/pride"
 
-class MiniTest::Rails::ActiveSupport::TestCase
+class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   fixtures :all
 

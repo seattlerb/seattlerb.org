@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class AboutControllerTest < MiniTest::Rails::ActionController::TestCase
+class AboutControllerTest < ActionController::TestCase
   def test_index
     get :index
     assert_response :success

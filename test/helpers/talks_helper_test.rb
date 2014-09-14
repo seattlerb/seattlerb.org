@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class TalksHelperTest < MiniTest::Rails::ActionView::TestCase
+class TalksHelperTest < ActionView::TestCase
   def test_indefinite_Articlerize
     assert_equal "A beginner", indefinite_Articlerize("beginner")
     assert_equal "An intermediate", indefinite_Articlerize("intermediate")

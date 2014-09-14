@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class SuggestionsControllerTest < MiniTest::Rails::ActionController::TestCase
+class SuggestionsControllerTest < ActionController::TestCase
 
   before do
     @suggestion = suggestions(:one)

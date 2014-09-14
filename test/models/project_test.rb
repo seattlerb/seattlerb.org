@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class ProjectTest < MiniTest::Rails::ActiveSupport::TestCase
+class ProjectTest < ActiveSupport::TestCase
   def test_valid
     p = Project.new(:name => "Test Project")
     assert p.valid?
