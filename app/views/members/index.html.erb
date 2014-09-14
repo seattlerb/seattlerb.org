@@ -3,7 +3,7 @@
 <% @members.each do |member| %>
   <div class='featured profile row'>
     <div class='span1'>
-      <%= image_tag member.image_url %>
+      <%= image_tag member.image_url unless member.missing_image? %>
     </div>
     <div class="span10 description">
       <h1 id="<%= member.name.parameterize %>"><%= member.name %></h1>
