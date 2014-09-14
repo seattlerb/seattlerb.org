@@ -11,7 +11,7 @@
       <h3>Authors</h3>
       <ul class='links'>
         <% project.members.each do |member| %>
-          <li><%= link_to member.name, "/people##{member.name.parameterize}" %></li>
+          <li><%= link_to member.name, "/members##{member.name.parameterize}" %></li>
         <% end %>
       </ul>
     </div>
