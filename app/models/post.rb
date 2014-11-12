@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   validates :body,   :presence => true
   validates :member, :presence => true
 
-  scope :published, where(:published => true)
+  scope :published, where(:published => true).order('published_at desc')
 
   before_save :update_published_at
 
