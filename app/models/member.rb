@@ -5,6 +5,7 @@ class Member < ActiveRecord::Base
   validates_length_of :username, :maximum => 0
 
   habtm :projects, :join_table => :affiliations
+  has_many :posts
 
   validates_presence_of :name
 
