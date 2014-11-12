@@ -4,8 +4,8 @@ class Member < ActiveRecord::Base
   attr_accessor :username # fake attribute for spam trapping
   validates_length_of :username, :maximum => 0
 
-  habtm :projects, :join_table => :affiliations
   has_many :posts
+  habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name
 

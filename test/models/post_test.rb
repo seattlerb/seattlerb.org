@@ -1,6 +1,14 @@
 require "minitest_helper"
 
 class PostTest < ActiveSupport::TestCase
+  def setup
+    Member.create!(:name => "Big Bird")
+  end
+
+  def tear_down
+    Member.destroy_all
+  end
+
   def test_valid_post_has_title_body_and_member
     post = Post.new()
     post.member = Member.first
