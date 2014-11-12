@@ -42,4 +42,26 @@ class PostTest < ActiveSupport::TestCase
     post = Post.new(:title => "Title", :body => "Body", :member => Member.first)
     post.valid?
   end
+
+  def test_published_at_set_before_save
+    post = Post.new(:member => Member.first,
+                    :title  => "My Title",
+                    :body   => "body")
+
+    post.save!
+    post.reload
+
+    assert_nil post.published_at
+
+    post.published = true
+    post.save!
+
+    assert_in_delta Time.now, post.published_at, 0.01
+    t1 = post.published_at
+
+    post.title = "My Title 2"
+    post.save!
+
+    assert_equal t1, post.published_at
+  end
 end
