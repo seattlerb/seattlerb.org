@@ -1,0 +1,13 @@
+<h1>Seattle.rb Blog</h1>
+
+<% @posts.each do |post| %>
+  <h2><%= link_to post.title, post %></h2>
+  <h5><%= post.member.name %></h5>
+  <p/>
+  <p>
+    <%= post.body.truncate(255) %>
+  </p>
+  <hr/>
+<% end %>
+
+<br />

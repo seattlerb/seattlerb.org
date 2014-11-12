@@ -31,7 +31,7 @@ class MembersControllerTest < ActionController::TestCase
                                  :email => "test@test.com",
                                  :ruby_gems_id => "qrush"}
     end
-    
+
     assert_redirected_to members_path
     get :index
     assert_response :success
