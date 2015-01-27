@@ -10,7 +10,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def test_valid_post_has_title_body_and_member
-    post = Post.new()
+    post = Post.new
     post.member = Member.first
     post.body = "My Long Body"
     post.title = "My test post"
@@ -18,7 +18,7 @@ class PostTest < ActiveSupport::TestCase
   end
 
   def test_invalid_posts
-    post = Post.new()
+    post = Post.new
     refute post.valid?
 
     post = Post.new(:member => Member.first)

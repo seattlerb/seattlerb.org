@@ -7,7 +7,7 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_invalid
-    member = Member.new()
+    member = Member.new
     refute member.valid?
   end
 
