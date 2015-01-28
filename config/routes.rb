@@ -5,6 +5,8 @@ SeattlerbOrg::Application.routes.draw do
 
   resources :helps
 
+  resources :posts, :only => [:index, :show]
+
   mount RailsAdmin::Engine => '/adminsrb', :as => 'rails_admin'
 
   devise_for :admins

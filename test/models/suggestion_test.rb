@@ -7,7 +7,7 @@ class SuggestionTest < ActiveSupport::TestCase
   end
 
   def test_invalid
-    suggestion = Suggestion.new()
+    suggestion = Suggestion.new
     refute suggestion.valid?
   end
 end
