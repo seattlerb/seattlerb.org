@@ -37,6 +37,10 @@
     <% row.each do |talk| %>
       <div class="proposed_talk span4">
         <h4><%= link_to talk.title, talk %></h4>
+        <% if talk.event %>
+          <h5>Scheduled <%= talk.event.date %></h5>
+        <% end %>
+
         <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
         <p class="description">
           <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
