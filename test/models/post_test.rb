@@ -56,7 +56,7 @@ class PostTest < ActiveSupport::TestCase
     post.published = true
     post.save!
 
-    assert_in_delta Time.now, post.published_at, 0.01
+    assert_in_delta Time.now, post.published_at, 1
     t1 = post.published_at
 
     post.title = "My Title 2"
