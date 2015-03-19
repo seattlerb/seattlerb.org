@@ -28,9 +28,6 @@ class TalksController < ApplicationController
     @talk = Talk.find params[:id]
   end
 
-  def checklist
-  end
-
   def past
     @talks ||= Talk.older
   end
