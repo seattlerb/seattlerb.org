@@ -4,28 +4,25 @@ source "https://rubygems.org"
 
 ruby "2.0.0"
 
-gem "rake",                      "~> 0.9.0"
-gem "rails",                     "~> 3.2.17"
-gem "jquery-rails",              "~> 3.1.0"
-gem "httparty",                  "~> 0.8.0"
-gem "rails_admin",               "~> 0.4.9"
-gem "devise",                    "~> 2.1.0"
-gem "strong_parameters",         "~> 0.2.3"
-gem "unicorn",                   "~> 4.8.2"
-gem "twitter",                   "~> 5.0.0"
+gem "rake",                      "~> 10.4.2"
+gem "rails",                     "~> 4.2.1"
+gem "jquery-rails",              "~> 4.0.3"
+gem "httparty",                  "~> 0.13.3"
+gem "rails_admin",               "~> 0.6.7"
+gem "devise",                    "~> 3.4.1"
+gem "unicorn",                   "~> 4.8.3"
+gem "twitter",                   "~> 5.14.0"
 
 group :production do
-  gem "pg",                      "~> 0.12.0"
+  gem "pg",                      "~> 0.18.1"
 end
 
-group :assets do
-  gem "uglifier",                "~> 1.2.0"
-end
+gem "uglifier",                  "~> 2.7.1"
 
 group :development, :test do
-  gem "heroku",                  "~> 3.9.6"
+  gem "heroku",                  "~> 3.30.3"
   gem "sqlite3",                 "~> 1.3.0"
-  gem "minitest-rails",          "~> 0.3"
+  gem "minitest-rails",          "~> 2.1.1"
   gem "ZenTest",                 "~> 4.9"
-  gem "autotest-rails",          "~> 4.1.2"
+  gem "autotest-rails",          "~> 4.2.1"
 end

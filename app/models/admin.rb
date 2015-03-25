@@ -6,6 +6,4 @@ class Admin < ActiveRecord::Base
          :rememberable,
          :trackable,
          :validatable)
-
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :talk_notification
 end

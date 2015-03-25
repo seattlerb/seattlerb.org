@@ -13,4 +13,6 @@ Devise.setup do |config|
 
   # rememberable
   config.remember_for = 12.weeks
+
+  config.secret_key = '966d17ce12454589478a70cffa56b8407e59acae8cc8aed66e1bb05b96527c38ccf2fd87e8337ad7430d9bd5fcbcf618f4cefb26b56f0d142398855084323483'
 end
