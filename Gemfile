@@ -20,7 +20,6 @@ end
 gem "uglifier",                  "~> 2.7.1"
 
 group :development, :test do
-  gem "heroku",                  "~> 3.30.3"
   gem "sqlite3",                 "~> 1.3.0"
   gem "minitest-rails",          "~> 2.1.1"
   gem "ZenTest",                 "~> 4.9"
