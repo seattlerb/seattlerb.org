@@ -14,5 +14,9 @@ Devise.setup do |config|
   # rememberable
   config.remember_for = 12.weeks
 
-  config.secret_key = ENV["SECRET_KEY"]
+  config.secret_key = if Rails.env.production?
+    ENV.fetch("SECRET_KEY")
+  else
+    ENV.fetch("SECRET_KEY", "dc2d7e3da039a322d8028134c256f97eb18e8c1f24829be0238a11e95ce82f771a94124997d9d11341a3bd62717e7a4239ae0e7f0e014f2ed5e95c586fadf723")
+  end
 end
