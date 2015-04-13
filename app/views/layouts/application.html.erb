@@ -12,6 +12,7 @@
   <meta name="viewport" content="width=device-width">
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
   <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= csrf_meta_tag %>
 </head>
 <body>
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
@@ -28,6 +29,7 @@
       <div class="nav-collapse collapse">
         <ul class="nav">
           <%= nav_item_link "Members", members_path %>
+          <%= nav_item_link "Lending Library", books_path %>
           <%= nav_item_link "Projects", projects_path %>
           <%= nav_item_link "Join Us", join_us_path %>
           <%= nav_item_link "Talks", talks_path %>

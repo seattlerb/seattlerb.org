@@ -9,6 +9,7 @@ class Member < ActiveRecord::Base
   validates_length_of :username, :maximum => 0
 
   has_many :posts
+  has_many :books
   habtm :projects, :join_table => :affiliations
 
   validates_presence_of :name

@@ -1,0 +1,22 @@
+<%= link_to 'List your book', new_book_path, :class => 'new_button' %>
+</br></br></br>
+<table class="table">
+	<thead>
+		<th>Title</th>
+		<th>Author</th>
+		<th>Lender</th>
+		<th>Email</th>
+		<th>Comments</th>
+	</thead>
+	<tbody>
+  	<% @books.each do |book| %>
+	  	<tr>
+	  		<td><%= book.title %></td>
+	  		<td><%= book.author %></td>
+	  		<td><%= book.member.name %></td>
+	  		<td><%= book.member.email %></td>
+	  		<td><%= book.comment %></td>
+	  	</tr>
+	  <% end %>
+	</tbody>
+</table>
