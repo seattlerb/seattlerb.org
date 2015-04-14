@@ -1,0 +1,33 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this study group from being saved:</h2>
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :book %>
+    <%= f.text_field :book, :placeholder => 'The Elements of Computing Systems by Noam Nisan and Shimon Schocken' %>
+  </div>
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.select :active, [['Active', true], ['Inactive', false]] %>
+  </div>
+  <div class="field">
+    <%= f.label :github, 'github url' %>
+    <%= f.text_field :github, :placeholder => 'https://github.com/SeaRbSg/nand2tetris' %>
+  </div>
+  <p style="width: 1px; height: 1px; overflow: hidden;">
+    Please leave following field blank:
+    <%= f.text_field :username %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit 'Submit', :class => "btn" %>
+  </div>
+<% end %>

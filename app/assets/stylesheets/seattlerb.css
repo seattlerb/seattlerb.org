@@ -7380,6 +7380,29 @@ abbr.amp {
   background-color: #FF6600;
 }
 
+.new_button{
+  position: relative;
+  background-color: #c70000;
+  text-align: center;
+  color: white;
+  width: 200px;
+  height: 30px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 15.99px;
+  padding: 10px;
+  top: 20px;
+  text-decoration: none;
+}
+
+.new_button:hover{
+  background-color: #FF6600;
+  text-decoration: none;
+  color: white;
+}
+
 /* PROJECTS...*/
 /* line 257, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
 .project:first-child {

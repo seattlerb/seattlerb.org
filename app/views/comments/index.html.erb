@@ -1,0 +1,19 @@
+<%= link_to 'Add a Study Group Comment', new_comment_path(:group_id => params[:group_id]), :class => 'new_button' %>
+</br></br></br>
+<h3>Comments for <%= @group.book %></h3>
+<table class="table">
+  <thead>
+    <th>Comment</th>
+    <th class="span2">Member</th>
+    <th class="span1">Date</th>
+  </thead>
+  <tbody>
+    <% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+        <td><%= comment.member %></td>
+        <td><%= comment.created_at.strftime("%m/%d/%y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
