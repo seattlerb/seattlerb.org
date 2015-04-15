@@ -7,7 +7,7 @@ class Talk < ActiveRecord::Base
 
   TALK_KINDS = %w(beginner intermediate advanced lightning)
 
-  scope :by_kind, :order => "scheduled_date IS NULL,
+  scope :by_kind, -> { order("scheduled_date IS NULL,
                              scheduled_date,
                              CASE kind WHEN 'beginner'     THEN 1
                                        WHEN 'intermediate' THEN 2
@@ -15,7 +15,7 @@ class Talk < ActiveRecord::Base
                                        WHEN 'lightning'    THEN 4
                              END,
                              presenter,
-                             title"
+                             title") }
 
   def self.available
     by_kind.where("completed = ? and (scheduled_date is NULL or scheduled_date < ?)",

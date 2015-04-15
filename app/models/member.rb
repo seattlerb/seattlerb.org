@@ -15,9 +15,9 @@ class Member < ActiveRecord::Base
   validates :ruby_gems_id, :rubygems => true, :allow_blank => true, uniqueness: true
   validates :website,      :url => true,      :allow_blank => true, uniqueness: true
 
-  scope :featured, where(featured: true)
-  scope :regular, where(featured: false)
-  scope :verified, where(verified: true)
+  scope :featured, lambda { where(featured: true) }
+  scope :regular, lambda { where(featured: false) }
+  scope :verified, lambda { where(verified: true) }
 
   before_save :set_avatar, if: Proc.new { |user|
     user.respond_to?(:twitter_changed?) and user.twitter_changed?

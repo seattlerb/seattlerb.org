@@ -29,7 +29,7 @@ class SuggestionsControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference('Suggestion.count', 1) do
-      post :create, suggestion: {:title => "My title", :suggester => "Barney Rubble" }
+      post :create, suggestion: {:title => "My title", :suggester => "Barney Rubble", :comment => "" }
     end
     assert_redirected_to suggestions_path
   end

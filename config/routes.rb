@@ -17,8 +17,8 @@ SeattlerbOrg::Application.routes.draw do
 
   post "/newsletter" => "newsletter#subscribe", as: :subscribe
 
-  match "/projects" => "about#projects", as: :projects
-  match "/join-us"  => "about#join_us",  as: :join_us
+  get "/projects" => "about#projects", as: :projects
+  get "/join-us"  => "about#join_us",  as: :join_us
 
   root :to => "about#index"
 end
