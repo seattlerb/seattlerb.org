@@ -1,0 +1,18 @@
+<h1><%= @group.book %></h1>
+
+<table class="table">
+  <thead>
+    <th>Book</th>
+    <th>Active?</th>
+    <th>github</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @group.book %></td>
+      <td><%= @group.active %></td>
+      <td><%= @group.github %></td>
+    </tr>
+  </tbody>
+</table>
+
+<%= render 'comments' %>

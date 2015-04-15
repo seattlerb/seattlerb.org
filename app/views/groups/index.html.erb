@@ -6,15 +6,13 @@
     <th>Book</th>
     <th>Active?</th>
     <th>github</th>
-    <th>Comments</th>
   </thead>
   <tbody>
     <% @groups.each do |group| %>
       <tr>
-        <td><%= group.book %></td>
+        <td><%= link_to group.book, group_path(group) %></td>
         <td><%= group.active %></td>
         <td><%= group.github %></td>
-        <td><%= link_to "View #{group.comments.count} Comments", comments_path(:group_id => group.id) %></td>
       </tr>
     <% end %>
   </tbody>

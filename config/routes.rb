@@ -3,9 +3,7 @@ SeattlerbOrg::Application.routes.draw do
 
   resources :members, :only => [:index, :new, :create]
 
-  resources :groups, :only => [:index, :new, :create]
-
-  resources :comments, :only => [:index, :new, :create]
+  resources :groups, :only => [:index, :new, :create, :show]
 
   resources :helps
 
