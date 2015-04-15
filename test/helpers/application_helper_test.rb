@@ -1,13 +1,6 @@
 require "minitest_helper"
 
 class ApplicationHelperTest < ActionView::TestCase
-  def test_twitter_image
-    handle = "test"
-    expected = "https://api.twitter.com/1/users/profile_image?screen_name=#{handle}&size=bigger"
-
-    assert_equal expected, twitter_image(handle)
-  end
-
   def test_icon_link_blank_uri
     assert_nil icon_link("icon", "text", "")
   end

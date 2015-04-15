@@ -15,8 +15,6 @@ SeattlerbOrg::Application.routes.draw do
 
   devise_for :admins
 
-  get "talks/checklist" => "talks#checklist"
-
   get "/talks/past" => "talks#past"
 
   resources :talks

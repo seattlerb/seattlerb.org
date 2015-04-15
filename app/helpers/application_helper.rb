@@ -1,8 +1,4 @@
 module ApplicationHelper
-  def twitter_image(twitter_handle)
-    "https://api.twitter.com/1/users/profile_image?screen_name=#{twitter_handle}&size=bigger"
-  end
-
   def icon_link icon, text, uri, uri_prefix=nil
     return if uri.blank?
 
