@@ -1,0 +1,58 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :twitter, 'Twitter handle' %>
+    <%= f.text_field :twitter %>
+  </div>
+  <div class="field">
+    <%= f.label :github, 'Github username' %>
+    <%= f.text_field :github %>
+  </div>
+  <div class="field">
+    <%= f.label :ruby_gems_id, 'RubyGems username' %>
+    <%= f.text_field :ruby_gems_id %>
+  </div>
+  <div class="field">
+    <%= f.label :website %>
+    <%= f.text_field :website, :placeholder => 'http://www.example.com' %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %>
+    <%= f.text_area :bio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @validatable %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <p style="width: 1px; height: 1px; overflow: hidden;">
+    Please leave following field blank:
+    <%= f.text_area :username %>
+  </p>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "members/shared/links" %>

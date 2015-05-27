@@ -9,14 +9,13 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, autofocus: true %>
   </div>
   <div class="field">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
     <%= f.label :twitter, 'Twitter handle' %>
@@ -38,11 +37,6 @@
     <%= f.label :bio %>
     <%= f.text_area :bio %>
   </div>
-
-  <p style="width: 1px; height: 1px; overflow: hidden;">
-    Please leave following field blank:
-    <%= f.text_area :username %>
-  </p>
 
   <div class="actions">
     <%= f.submit 'Submit', :class => "btn" %>
