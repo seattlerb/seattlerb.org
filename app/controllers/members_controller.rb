@@ -4,27 +4,26 @@ class MembersController < ApplicationController
     @title = "Members"
   end
 
-  def new
-    @member = Member.new
+  def edit
+    @member = Member.find params[:id]
   end
 
-  def create
-    #spam catch to redirect - maybe the bots were ignoring the spam field
-    redirect_to members_url and return if member_params[:username].present?
-    @member = Member.new(member_params)
-
-    respond_to do |format|
-      if @member.save
-        format.html { redirect_to members_path, notice: 'Thank you for submitting, we will validate your request.' }
-      else
-        format.html { render action: "new" }
-      end
+  def update
+    @member = current_member
+    if @member.update(member_params)
+      redirect_to member_path, notice: 'Updated successfully'
+    else
+      render action: "edit"
     end
+  end
+
+  def show
+    @member = Member.find params[:id]
   end
 
   private
 
   def member_params
-    params.require(:member).permit(:name, :email, :twitter, :github, :ruby_gems_id, :website, :bio, :username)
+    params.require(:member).permit(:name, :email, :twitter, :github, :ruby_gems_id, :website, :bio)
   end
 end
