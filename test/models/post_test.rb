@@ -2,7 +2,7 @@ require "minitest_helper"
 
 class PostTest < ActiveSupport::TestCase
   def setup
-    Member.create!(:name => "Big Bird")
+    Member.create!(:name => "Big Bird", :email => "t@t.com", :password => "p1234")
   end
 
   def tear_down
