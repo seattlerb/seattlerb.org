@@ -25,3 +25,7 @@ end
 # B) Require this file's code in test_helper.rb
 
 # MiniTest::Rails.override_testunit!
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end

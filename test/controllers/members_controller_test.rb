@@ -3,7 +3,9 @@ require "minitest_helper"
 class MembersControllerTest < ActionController::TestCase
   def setup
     @member = Member.create!(:name        => "Test Name",
-                             :verified    => true)
+                             :verified    => true,
+                             :email       => "test@test.com",
+                             :password    => "password1234")
   end
 
   def test_index
@@ -24,12 +26,15 @@ class MembersControllerTest < ActionController::TestCase
 
   def test_create
     @testmember = Member.create!(:name        => "Test Name",
-                                 :verified    => true)
+                                 :verified    => true,
+                                 :email       => "test2@test.com",
+                                 :password    => "password1234")
 
     assert_difference('Member.count', 1) do
       post :create, member:     {:name => "test",
-                                 :email => "test@test.com",
-                                 :ruby_gems_id => "qrush"}
+                                 :email => "test3@test.com",
+                                 :ruby_gems_id => "qrush",
+                                 :password => "password1234"}
     end
 
     assert_redirected_to members_path
