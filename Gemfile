@@ -25,4 +25,5 @@ group :development, :test do
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1"
   gem "letter_opener"
+  gem "pry"
 end
