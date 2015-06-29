@@ -3,4 +3,4 @@ rvm:
   - 2.0.0
 cache: bundler
 script:
-  - bundle exec rake db:migrate test
+  - bundle exec rake db:migrate db:test:prepare test
