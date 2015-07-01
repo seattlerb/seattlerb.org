@@ -1,0 +1,12 @@
+<h1>Your Profile</h1>
+<ul style="list-style: none;">
+  <li>Name: <%= @member.name %></li>
+  <li>Email: <%= @member.email %></li>
+  <li>Twitter: <%= @member.twitter %></li>
+  <li>Github: <%= @member.github %></li>
+  <li>Ruby Gems: <%= @member.ruby_gems_id %></li>
+  <li>Website: <%= @member.website %></li>
+  <li>Bio: <%= @member.bio %></li>
+</ul>
+<%= link_to "Edit", edit_member_path %></br>
+<%= link_to "Change Password", edit_member_registration_path %>
