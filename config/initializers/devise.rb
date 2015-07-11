@@ -1,4 +1,6 @@
 Devise.setup do |config|
+  config.scoped_views = true
+
   config.mailer_sender = "noreply@seattlerb.org"
 
   require 'devise/orm/active_record'
@@ -13,6 +15,8 @@ Devise.setup do |config|
 
   # rememberable
   config.remember_for = 12.weeks
+
+  config.password_length = 4..128
 
   config.secret_key = if Rails.env.production?
     ENV.fetch("SECRET_KEY")

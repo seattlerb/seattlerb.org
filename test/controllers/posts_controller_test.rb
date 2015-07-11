@@ -3,7 +3,7 @@ require "minitest_helper"
 class PostsControllerTest < ActionController::TestCase
 
   def setup
-    Member.create!(:name => "Big Bird")
+    Member.create!(:name => "Big Bird", :email => "t@t.com", :password => "p1234")
     Post.all.each { |p| p.update_attribute(:member, Member.first) }
     @post = posts(:one)
   end

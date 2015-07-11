@@ -1,15 +1,18 @@
 SeattlerbOrg::Application.routes.draw do
+  devise_for :admins
+  devise_for :members, controllers: {
+    registrations: 'members/registrations'
+  }
+
   resources :suggestions, :only => [:index, :new, :create]
 
-  resources :members, :only => [:index, :new, :create]
+  resources :members, :only => [:index, :show, :edit, :update]
 
   resources :helps
 
   resources :posts, :only => [:index, :show]
 
   mount RailsAdmin::Engine => '/adminsrb', :as => 'rails_admin'
-
-  devise_for :admins
 
   get "/talks/past" => "talks#past"
 

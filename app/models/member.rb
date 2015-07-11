@@ -1,4 +1,8 @@
 class Member < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
   NONE = "missing_image.png"
 
   attr_accessor :username # fake attribute for spam trapping

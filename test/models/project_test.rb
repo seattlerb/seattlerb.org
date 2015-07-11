@@ -13,7 +13,10 @@ class ProjectTest < ActiveSupport::TestCase
 
   def test_members_association
     p = Project.create!(:name => "My Test Project")
-    d = Member.create!(:name => "John", :email => "test@test.com", :ruby_gems_id => "qrush")
+    d = Member.create!(:name => "John",
+                       :email => "test@test.com",
+                       :ruby_gems_id => "qrush",
+                       :password => "password1234")
 
     d.projects << p
 
