@@ -3,5 +3,5 @@ rvm:
   - 2.0.0
 cache: bundler
 sudo: false
-script:
-  - bundle exec rake db:migrate test
+before_script:
+  bundle exec rake db:create db:migrate
