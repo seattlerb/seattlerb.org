@@ -50,11 +50,16 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_invalid_github
+    puts
+    puts
+    puts "=" * 30
     member = Member.new(:name   => "Member",
                         :email => "pete@gmail.com",
                         :password => "password1234",
                         :github => "not_a_user234890")
     refute member.valid?
+    puts "=" * 30
+    puts
   end
 
   def test_valid_rubygems
