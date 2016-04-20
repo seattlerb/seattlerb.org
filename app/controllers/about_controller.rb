@@ -5,7 +5,7 @@ class AboutController < ApplicationController
   end
 
   def projects
-    @projects = Project.all.sort_by { |p| p.name.downcase }
+    @projects = Project.includes(:members).all.sort_by { |p| p.name.downcase }
   end
 
   def join_us
