@@ -3680,11 +3680,6 @@ input[type="submit"].btn {
   margin-bottom: 18px;
   list-style: none; }
 
-.profile_nav {
-  list-style: inline;
-  list-style-type: none;
-}
-
 /* line 16, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navs.scss */
 .nav > li > a {
   display: block; }
