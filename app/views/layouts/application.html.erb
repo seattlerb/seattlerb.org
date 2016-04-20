@@ -33,7 +33,7 @@
           <%= nav_item_link "Talks", talks_path %>
           <%= nav_item_link "Blog", posts_path %>
         </ul>
-        <ul class="nav profile_nav pull-right">
+        <ul class="nav pull-right">
           <% if signed_in? %>
             <%= nav_item_link current_member.name, member_path(current_member) %>
             <%= nav_item_link "Log out", destroy_member_session_path, method: :delete %>
