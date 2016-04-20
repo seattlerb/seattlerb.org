@@ -15,6 +15,7 @@ gem "twitter",                   "~> 5.14.0"
 
 group :production do
   gem "pg",                      "~> 0.18.1"
+  gem "rails_12factor"
 end
 
 gem "uglifier",                  "~> 2.7.1"
