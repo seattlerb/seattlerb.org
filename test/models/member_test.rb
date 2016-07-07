@@ -105,6 +105,14 @@ class MemberTest < ActiveSupport::TestCase
     refute member.valid?
   end
 
+  def test_crap_in_url
+    member = Member.new(:name    => "Member",
+                        :website => "http://www.google.com (lulz not rly)",
+                        :email => "pete@gmail.com",
+                        :password => "password1234")
+    refute member.valid?
+  end
+
   def test_bio
     with_bio    = Member.create!(:name         => "with_bio",
                                  :ruby_gems_id => "aaronp",
