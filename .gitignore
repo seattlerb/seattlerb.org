@@ -5,3 +5,4 @@ db/*.sqlite3
 db/schema.rb
 db/data.yml
 config/memcache.conf
+.ruby-gemset
