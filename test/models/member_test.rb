@@ -115,12 +115,10 @@ class MemberTest < ActiveSupport::TestCase
 
   def test_bio
     with_bio    = Member.create!(:name         => "with_bio",
-                                 :ruby_gems_id => "aaronp",
                                  :email        => "test1@test.com",
                                  :bio          => "Bio",
                                  :password     => "password1234")
     without_bio = Member.create!(:name         => "without_bio",
-                                 :ruby_gems_id => "qrush",
                                  :email        => "test@test.com",
                                  :password     => "password82")
 
