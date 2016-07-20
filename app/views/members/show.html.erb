@@ -1,5 +1,5 @@
-<h1>Your Profile</h1>
-<ul style="list-style: none;">
+<h1 class="profile_header">Profile</h1>
+<ul class="profile_list">
   <li>Name: <%= @member.name %></li>
   <li>Email: <%= @member.email %></li>
   <li>Twitter: <%= @member.twitter %></li>
@@ -8,5 +8,18 @@
   <li>Website: <%= @member.website %></li>
   <li>Bio: <%= @member.bio %></li>
 </ul>
-<%= link_to "Edit", edit_member_path %></br>
-<%= link_to "Change Password", edit_member_registration_path %>
+<%= link_to "Edit Profile", edit_member_path, :class => "btn" %>
+<%= link_to "Change Password", edit_member_registration_path, :class => "btn" %>
+
+<% if @books.any? %>
+  <h1 class="profile_header">Listed Books</h1>
+  <ul class="book_list">
+    <% @books.each do |book| %>
+      <li>
+        <%= book.title %> by <%= book.author %>
+        <%= link_to "Edit", edit_book_path(book), :class => "btn" %>
+        <%= link_to "Delete", book, :class => "btn btn-danger", :method => :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
