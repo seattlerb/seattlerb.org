@@ -126,20 +126,6 @@ class MemberTest < ActiveSupport::TestCase
     assert_equal "...", without_bio.bio
   end
 
-  def test_featured_and_regular
-    featured = Member.create!(:name     => "featured",
-                              :email    => "test2@test.com",
-                              :featured => true,
-                              :password => "password1234")
-    regular  = Member.create!(:name     => "regular",
-                              :email    => "test@test.com",
-                              :featured => false,
-                              :password => "password1234")
-
-    assert_equal [featured], Member.featured
-    assert_equal [regular], Member.regular
-  end
-
   def test_missing_image
     no_img      = Member.create!(:name      => "no_img",
                                  :email     => "test3@test.com",
