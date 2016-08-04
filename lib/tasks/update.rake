@@ -16,5 +16,12 @@ namespace :twitter do
       Member.where(name: name).first.update_attributes(twitter: handle)
     end
   end
+
+  desc "Announce the talks"
+  task :announce_talks => :environment do
+    bot = TwitterBot.new
+    tweets = bot.announce_event Event.next
+    puts tweets
+  end
 end
 
