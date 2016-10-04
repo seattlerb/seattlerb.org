@@ -11,6 +11,9 @@ class AboutController < ApplicationController
   def join_us
   end
 
+  def values
+  end
+
   private
 
   def get_event
