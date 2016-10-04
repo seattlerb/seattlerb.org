@@ -9,13 +9,14 @@ SeattlerbOrg::Application.load_tasks
 
 $-w = false # asshat, don't mess with my warn.
 
+desc "update members and projects"
 task :update_gems => :environment do
   require "open-uri"
   require "json"
 
   users = {}
 
-  Member.find(:all).map(&:ruby_gems_id).sort.each do |user|
+  Member.all.map(&:ruby_gems_id).sort.each do |user|
     warn "Fetching #{user}"
     json = URI.parse("http://rubygems.org/api/v1/owners/#{user}/gems.json").read
     gems = JSON.parse json
