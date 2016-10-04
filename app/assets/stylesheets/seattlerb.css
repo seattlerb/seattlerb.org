@@ -7398,8 +7398,13 @@ abbr.amp {
 
 /* hack by zenspider to shove this document in */
 
+@media only screen and (min-width: 400px) {
+  .values {
+      margin: 0 8em;
+  }
+}
+
 .values {
-    margin: 0 8em;
     font-size: 150%;
     line-height: 150%;
 }
