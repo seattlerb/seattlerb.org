@@ -7398,7 +7398,7 @@ abbr.amp {
 
 /* hack by zenspider to shove this document in */
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 600px) {
   .values {
       margin: 0 8em;
   }
