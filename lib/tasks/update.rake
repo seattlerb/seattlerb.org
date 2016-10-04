@@ -1,7 +1,8 @@
 namespace :twitter do
+  desc "update twitter avatars"
   task :update_avatars do
     Rake::Task[:environment].invoke
-    people = Member.scoped
+    people = Member.verified
     people.each do |person|
       puts "Updating #{person.name}..."
       person.update_avatar!
