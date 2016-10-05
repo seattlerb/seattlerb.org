@@ -19,8 +19,14 @@ task :update_gems => :environment do
   users = {}
 
   Member.all.map(&:ruby_gems_id).sort.each do |user|
+    next if user.empty?
     warn "Fetching #{user}"
-    json = URI.parse("https://rubygems.org/api/v1/owners/#{user}/gems.json").read
+    url  = "https://rubygems.org/api/v1/owners/#{user}/gems.json"
+    json = URI.parse(url).read rescue nil
+    unless json then
+      warn "  bad: #{url}"
+      next
+    end
     gems = JSON.parse json
     users[user] = gems
   end
