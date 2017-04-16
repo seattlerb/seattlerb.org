@@ -16,7 +16,9 @@
     <%= f.text_field :email,       :placeholder => "Email (private!)"        %><br />
     <%= f.text_field :title,       :placeholder => "Title"                   %><br />
     <%= f.text_area  :description, :placeholder => "Description", :rows => 3 %><br />
-    <%= f.select :kind, talk_kinds %>
+    <%= f.select :kind, talk_kinds %><br />
+    <%= f.label :event_id, "Proposed Date" %>
+    <%= f.collection_select :event_id, Event.where("date > ?", Date.current), :id, :date, include_blank: :true %>
 
     <%= hidden_field_tag :password, "" %>
     <p style="width: 1px; height: 1px; overflow: hidden;">
