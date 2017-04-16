@@ -46,6 +46,9 @@
           <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
           <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
         </p>
+        <% if talk.scheduled? %>
+          <p>Scheduled for <%= talk.scheduled_date %></p>
+        <% end %>
       </div>
     <% end %>
   </div>
