@@ -105,33 +105,25 @@ class MemberTest < ActiveSupport::TestCase
     refute member.valid?
   end
 
+  def test_crap_in_url
+    member = Member.new(:name    => "Member",
+                        :website => "http://www.google.com (lulz not rly)",
+                        :email => "pete@gmail.com",
+                        :password => "password1234")
+    refute member.valid?
+  end
+
   def test_bio
     with_bio    = Member.create!(:name         => "with_bio",
-                                 :ruby_gems_id => "aaronp",
                                  :email        => "test1@test.com",
                                  :bio          => "Bio",
                                  :password     => "password1234")
     without_bio = Member.create!(:name         => "without_bio",
-                                 :ruby_gems_id => "qrush",
                                  :email        => "test@test.com",
                                  :password     => "password82")
 
     assert_equal "Bio", with_bio.bio
     assert_equal "...", without_bio.bio
-  end
-
-  def test_featured_and_regular
-    featured = Member.create!(:name     => "featured",
-                              :email    => "test2@test.com",
-                              :featured => true,
-                              :password => "password1234")
-    regular  = Member.create!(:name     => "regular",
-                              :email    => "test@test.com",
-                              :featured => false,
-                              :password => "password1234")
-
-    assert_equal [featured], Member.featured
-    assert_equal [regular], Member.regular
   end
 
   def test_missing_image

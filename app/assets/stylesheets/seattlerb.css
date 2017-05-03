@@ -3680,10 +3680,6 @@ input[type="submit"].btn {
   margin-bottom: 18px;
   list-style: none; }
 
-.profile_nav {
-  list-style: inline;
-}
-
 /* line 16, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/twitter/bootstrap/_navs.scss */
 .nav > li > a {
   display: block; }
@@ -7399,3 +7395,46 @@ abbr.amp {
 /* line 268, /Users/mike/Projects/oss/seattlerb-style.org/vendor/assets/stylesheets/_old_seattlerb_styles.scss */
 #newsletter input[type=text] {
   margin-top: 5px; }
+
+/* hack by zenspider to shove this document in */
+
+@media only screen and (min-width: 600px) {
+  .values {
+      margin: 0 8em;
+  }
+}
+
+.values {
+    font-size: 150%;
+    line-height: 150%;
+}
+
+.values .toc {
+    margin: 0 1em;
+}
+
+.values .toc li {
+    list-style-type: none;
+}
+
+.values h2 {
+    margin: 1em 0;
+    font-size: 150%;
+    line-height: 150%;
+}
+
+.values h3 {
+    margin: 1em 0;
+    font-size: 125%;
+    line-height: 125%;
+}
+
+.values ul li {
+    line-height: 150%;
+}
+
+.values mark {
+    background: none;
+    color: #66f;
+    font-weight: bold;
+}
