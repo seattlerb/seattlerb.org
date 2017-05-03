@@ -23,6 +23,8 @@ class AboutControllerTest < ActionController::TestCase
     assert_response :success
 
     assert_template :partial => '_maps'
-    assert_template :partial => '_twitter'
+    assert_template :partial => '_monthly'
+    assert_template :partial => '_slack'
+    assert_template :partial => '_mailing_list'
   end
 end
