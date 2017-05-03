@@ -1,56 +1,8 @@
-<div class='join-us row'>
-  <div class='span8'>
-    <div id='map'>
-      <h2>When & Where?</h2>
-      <p>Come join us!
-
-      <p>
-        We have a monthly social on the first Tuesday of every month.
-        Food, Beer, and Talks. <%= link_to "Sign up to give a talk", talks_path %>.
-        Contact us if you want to sponsor or help organize a monthly
-        event.
-      </p>
-
-      <p>
-        We have a free-form hack night at Vivace Café every Tuesday
-        (except the first) from 7-9 p.m. Bring whatever you’re working
-        on, grab a cup of coffee, and meet other Rubyists. Everyone is
-        welcome!
-      </p>
-
-      <p>
-        We have a Slack organization where you can ask questions and discuss programming topics. <%= link_to "Click here to join", "https://seattlerbslack.herokuapp.com" %>.
-      </p>
-
-      <p>
-        <a href="https://twitter.com/seattlerb" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @seattlerb</a>
-
-        <%= render "twitter" %>
-      </p>
-    </div>
-  </div>
-  <div id='newsletter' class='span4'>
-    <h2>Join the Mailing Lists</h2>
-
-    <p> These are low-volume and spam-free.</p>
-
-    <%= form_tag subscribe_path do %>
-      <div class="control-group">
-        <%= label_tag 'subscribe[person][email]', "Email", class: "inline" %>
-        <%= text_field_tag 'subscribe[person][email]', "", placeholder: "joe@example.com" %>
-      </div>
-      <div class="control-group">
-        <%= check_box_tag "subscribe[subscribe_to_discussion]", 1, true %>
-        <%= label_tag "subscribe[subscribe_to_discussion]", "Subscribe to Ruby Discussion" %>
-        <br />
-        <%= check_box_tag "subscribe[subscribe_to_jobs]", 1, true %>
-        <%= label_tag "subscribe[subscribe_to_jobs]", "Subscribe to Ruby Jobs" %>
-      </div>
-      <%= submit_tag "Subscribe", class: 'btn' %>
-    <% end %>
-  </div>
-</div>
+<%= render :partial => "about/mailing_list" %>
 
 <%= render :partial => "about/maps" %>
 
 <%= render :partial => "about/monthly" %>
+
+<%= render :partial => "about/slack" %>
+
