@@ -2,6 +2,8 @@
 
 source "https://rubygems.org"
 
+ruby "2.3.3"
+
 gem "rails",                     "~> 4.2.1"
 
 gem "devise",                    "~> 3.4.1"
