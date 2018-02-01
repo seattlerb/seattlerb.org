@@ -5,6 +5,15 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   NONE = "missing_image.png"
 
+  rails_admin do
+    configure :set_password
+
+    edit do
+      exclude_fields :password, :password_confirmation
+      include_fields :set_password
+    end
+  end
+
   attr_accessor :username # fake attribute for spam trapping
   validates_length_of :username, :maximum => 0
 
@@ -24,6 +33,14 @@ class Member < ActiveRecord::Base
   before_save :set_avatar, if: Proc.new { |user|
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
+
+   def set_password; nil; end
+
+   def set_password=(value)
+     return nil if value.blank?
+     self.password = value
+     self.password_confirmation = value
+   end
 
   def bio
     bio = self['bio']
