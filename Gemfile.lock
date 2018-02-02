@@ -239,9 +239,3 @@ DEPENDENCIES
   twitter (~> 5.14.0)
   uglifier (~> 2.7.1)
   unicorn (~> 4.8.3)
-
-RUBY VERSION
-   ruby 2.3.3p222
-
-BUNDLED WITH
-   1.16.1
