@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "2.3.3"
 
-gem "rails",                     "~> 4.2.1"
+gem "rails",                     "~> 4.2.10"
 
 gem "devise",                    "~> 3.4.1"
 gem "httparty",                  "~> 0.13.3"
