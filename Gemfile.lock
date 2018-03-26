@@ -45,6 +45,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
+    airbrake (7.2.1)
+      airbrake-ruby (~> 2.5)
+    airbrake-ruby (2.8.3)
     arel (9.0.0)
     autotest-rails (4.2.1)
       ZenTest (~> 4.5)
@@ -285,6 +288,7 @@ PLATFORMS
 
 DEPENDENCIES
   ZenTest (~> 4.9)
+  airbrake (~> 7.2)
   autotest-rails (~> 4.2.1)
   bootsnap (~> 1.11)
   devise (~> 4.8)

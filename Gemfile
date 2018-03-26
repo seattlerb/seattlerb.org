@@ -14,6 +14,7 @@ gem "rake",                      "~> 13.0"
 gem "twitter",                   "~> 5.14"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.9.0"
+gem "airbrake",                  "~> 7.2"
 
 group :production do
   gem "pg",                      "~> 1.0"
