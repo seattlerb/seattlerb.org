@@ -11,7 +11,7 @@ gem "httparty",                  "~> 0.13.3"
 gem "jquery-rails",              "~> 4.0.3"
 gem "rails_admin",               "~> 1.0"
 gem "rake",                      "~> 10.4.2"
-gem "twitter",                   "~> 5.14.0"
+gem "twitter",                   "~> 5.14"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.8.3"
 
