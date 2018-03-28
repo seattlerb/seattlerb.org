@@ -4,8 +4,6 @@ SeattlerbOrg::Application.routes.draw do
     registrations: 'members/registrations'
   }
 
-  resources :suggestions, :only => [:index, :new, :create]
-
   resources :members, :only => [:index, :show, :edit, :update]
 
   resources :helps
