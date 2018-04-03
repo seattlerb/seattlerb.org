@@ -1,32 +1,5 @@
 <div class="row-fluid">
-  <div class="span4">
-    <h1>Come talk with us!</h1>
-
-    <br/>
-
-    <p class="lead">
-      If there is anything we love, it is learning and creating. We would
-      really love it if you shared your knowledge and/or your experiences
-      with us.
-    </p>
-
-  </div>
   <div class="span8">
-    <%= render 'form' %>
-
-    <p>
-      <small>
-        This is nerd focused... Not marketing-focused. Not
-        sales-focused. Not recruitment-focused. If you want to talk
-        about your company, just make sure you talk
-        about <u>using</u> your product. Something we can share.
-      </small>
-    </p>
-
-  </div>
-</div>
-
-<div class="row-fluid">
   <h2>Recent Talks</h2>
 
   <% @recent_talks.each_slice(3).each do |row| %>
@@ -45,27 +18,18 @@
   <% end %>
 
   <%= link_to 'More Talks', talks_past_path, {:style => 'font-size 16px; font-weight: bold'} -%>
-</div>
+  </div>
+  <div class="span4">
+    <h1>Come talk with us!</h1>
 
-<div class="row-fluid">
-  <h2>Proposed Talks</h2>
+    <br/>
 
-  <% @talks.each_slice(3).each do |row| %>
-    <div class="row-fluid">
-      <% row.each do |talk| %>
-        <div class="proposed_talk span4">
-          <h4><%= link_to talk.title, talk %></h4>
-          <% if talk.event %>
-            <h5>Scheduled <%= talk.event.date %></h5>
-          <% end %>
+    <p class="lead">
+      If there is anything we love, it is learning and creating. We would
+      really love it if you shared your knowledge and/or your experiences
+      with us.
+    </p>
 
-          <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
-          <p class="description">
-            <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
-            <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
-          </p>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
+    <%= link_to "Propose a talk", new_talk_path, :class => "btn" %>
+  </div>
 </div>
