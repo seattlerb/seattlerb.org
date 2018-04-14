@@ -3,7 +3,7 @@ class TalksController < ApplicationController
   before_filter :set_title, :only => [:index, :create]
 
   def index
-    recently_given
+    recent_talks
   end
 
   def new
@@ -46,7 +46,7 @@ class TalksController < ApplicationController
     @talks ||= Talk.available
   end
 
-  def recently_given
+  def recent_talks
     @recent_talks ||= Talk.recently_given
   end
 
