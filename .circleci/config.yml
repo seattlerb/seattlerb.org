@@ -32,11 +32,11 @@ jobs:
 
       - run:
           name: Database setup
-          command: rake db:schema:load --trace
+          command: bundle exec rake db:create db:migrate --trace
 
       - run:
           name: Run tests
-          command: rake test
+          command: bundle exec rake test
 
       # Save test results for timing analysis
       - store_test_results:
