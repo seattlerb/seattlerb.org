@@ -5,6 +5,7 @@ source "https://rubygems.org"
 ruby "2.3.5"
 
 gem "rails",                     "~> 4.2.10"
+gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
 
 gem "devise",                    "~> 3.4.1"
 gem "httparty",                  "~> 0.13.3"
