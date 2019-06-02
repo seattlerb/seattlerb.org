@@ -7,7 +7,7 @@ ruby "2.3.5"
 gem "rails",                     "~> 4.2.11"
 gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
 
-gem "devise",                    "~> 3.4.1"
+gem "devise",                    "~> 4.6.0"
 gem "httparty",                  "~> 0.13.3"
 gem "jquery-rails",              "~> 4.0.3"
 gem "rails_admin",               "~> 1.0"
