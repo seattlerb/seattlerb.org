@@ -238,9 +238,4 @@ class TalksControllerTest < ActionController::TestCase
     assert_match @talk.kind,        @response.body
   end
 
-  def test_disqus_shortname_assigned
-    get :show, :id => @talk.id
-    assert_equal assigns[:disqus_shortname], "seattlerb"
-  end
-
 end

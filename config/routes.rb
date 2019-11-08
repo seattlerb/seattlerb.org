@@ -8,6 +8,8 @@ SeattlerbOrg::Application.routes.draw do
 
   resources :members, :only => [:index, :show, :edit, :update]
 
+  resources :groups, :only => [:index, :new, :create, :show]
+
   resources :helps
 
   resources :posts, :only => [:index, :show]

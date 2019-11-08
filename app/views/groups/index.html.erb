@@ -1,0 +1,19 @@
+<%= link_to 'Add a Study Group', new_group_path, :class => 'new_button' %>
+</br></br></br>
+<h2>Study Groups</h2>
+<table class="table">
+  <thead>
+    <th>Book</th>
+    <th>Active?</th>
+    <th>github</th>
+  </thead>
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= link_to group.book, group_path(group) %></td>
+        <td><%= group.active %></td>
+        <td><%= group.github %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -5,15 +5,7 @@
     <p><%= @talk.description %></p>
     <hr />
     <p><i class="icon-arrow-left"></i><%= link_to "Back to talks", talks_path %></p>
-    <div id="disqus_thread"></div>
+
+    <%= render 'comments' %>
   </div>
 </div>
-
-<% content_for :javascript_footer do %>
-  <% unless @disqus_shortname.blank? %>
-    <script type="text/javascript">
-      disqus_shortname = '<%= @disqus_shortname %>';
-    </script>
-    <script type="text/javascript" src="//<%= @disqus_shortname %>.disqus.com/embed.js" async></script>
-  <% end %>
-<% end %>
