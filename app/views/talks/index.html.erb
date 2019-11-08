@@ -10,8 +10,6 @@
       with us.
     </p>
 
-    <h2><%= link_to 'Past Talks Page', talks_past_path %></h2>
-
   </div>
   <div class="span8">
     <%= render 'form' %>
@@ -28,27 +26,48 @@
   </div>
 </div>
 
-<br />
+<div class="row-fluid">
+  <h2>Recent Talks</h2>
 
-<h1>Proposed Talks</h1>
+  <% @recent_talks.each_slice(3).each do |row| %>
+    <div class="row-fluid">
+      <% row.each do |talk| %>
+        <div class="proposed_talk span4">
+          <h4><%= link_to talk.title, talk %></h4> <%= talk.scheduled_date %>
+          <div><%= indefinite_Articlerize talk.kind %> talk given by <%= talk.presenter %></div>
+          <p class="description">
+            <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
+            <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-<% @talks.each_slice(3).each do |row| %>
-  <div class="row-fluid">
-    <% row.each do |talk| %>
-      <div class="proposed_talk span4">
-        <h4><%= link_to talk.title, talk %></h4>
-        <% if talk.event %>
-          <h5>Scheduled <%= talk.event.date %></h5>
-        <% end %>
+  <%= link_to 'More Talks', talks_past_path, {:style => 'font-size 16px; font-weight: bold'} -%>
+</div>
 
-        <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
-        <p class="description">
-          <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
-          <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
-        </p>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<div class="row-fluid">
+  <h2>Proposed Talks</h2>
 
-<%= link_to 'Suggest a Topic For a Talk', suggestions_path, {:style => 'font-size 16px; font-weight: bold'} -%>
+  <% @talks.each_slice(3).each do |row| %>
+    <div class="row-fluid">
+      <% row.each do |talk| %>
+        <div class="proposed_talk span4">
+          <h4><%= link_to talk.title, talk %></h4>
+          <% if talk.event %>
+            <h5>Scheduled <%= talk.event.date %></h5>
+          <% end %>
+
+          <div><%= indefinite_Articlerize talk.kind %> talk proposed by <%= talk.presenter %></div>
+          <p class="description">
+            <%= talk.description.truncate(200, separator: ' ', omission: "...") unless talk.description.nil? %>
+            <%= if talk.description.length > 200 then link_to("read more", talk) end unless talk.description.nil? %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  
+  <%= link_to 'Suggest a Topic For a Talk', suggestions_path, {:style => 'font-size 16px; font-weight: bold'} -%>
+</div>

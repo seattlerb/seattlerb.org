@@ -4,6 +4,7 @@ class TalksController < ApplicationController
 
   def index
     talks
+    recently_given
     @talk  = Talk.new
   end
 
@@ -19,6 +20,7 @@ class TalksController < ApplicationController
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
+      recently_given
       render action: "index"
     end
   end
@@ -40,6 +42,10 @@ class TalksController < ApplicationController
 
   def talks
     @talks ||= Talk.available
+  end
+
+  def recently_given
+    @recent_talks ||= Talk.recently_given
   end
 
   def verify_password
