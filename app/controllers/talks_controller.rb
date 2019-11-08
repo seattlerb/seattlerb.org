@@ -3,8 +3,11 @@ class TalksController < ApplicationController
   before_filter :set_title, :only => [:index, :create]
 
   def index
-    talks
-    @talk  = Talk.new
+    recent_talks
+  end
+
+  def new
+    @talk = Talk.new
   end
 
   def create
@@ -16,9 +19,10 @@ class TalksController < ApplicationController
     if @talk.save
       admins = Admin.where(talk_notification: true).map(&:email)
       AdminMailer.admin_notification(admins,@talk).deliver_later unless admins.empty?
-      redirect_to talks_url, notice: 'Talk was successfully created.'
+      redirect_to talks_url, notice: 'Talk was submitted for review.'
     else
       talks
+      recently_given
       render action: "index"
     end
   end
@@ -40,6 +44,10 @@ class TalksController < ApplicationController
 
   def talks
     @talks ||= Talk.available
+  end
+
+  def recent_talks
+    @recent_talks ||= Talk.recently_given
   end
 
   def verify_password

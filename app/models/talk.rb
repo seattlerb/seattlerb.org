@@ -23,6 +23,10 @@ class Talk < ActiveRecord::Base
                   28.days.from_now)
   end
 
+  def self.recently_given
+    older.limit(6)
+  end
+
   def self.older
     by_kind.where("completed = ?", true)
   end

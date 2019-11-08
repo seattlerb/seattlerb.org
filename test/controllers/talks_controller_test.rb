@@ -6,42 +6,51 @@ class TalksControllerTest < ActionController::TestCase
                          :description => "Description",
                          :kind        => "beginner",
                          :email       => "a@example.com",
-                         :presenter   => "Me")
+                         :presenter   => "Me",
+                         :completed   => true)
   end
 
   def setup_talks
     @int_one = Talk.create!(:title     => "Int 1",
                             :kind      => "intermediate",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @int_two = Talk.create!(:title     => "Int 2",
                             :kind      => "intermediate",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @beg_one = Talk.create!(:title     => "Beg 1",
                             :kind      => "beginner",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @beg_two = Talk.create!(:title     => "Beg 2",
                             :kind      => "beginner",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @adv_one = Talk.create!(:title     => "Adv 1",
                             :kind      => "advanced",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @adv_two = Talk.create!(:title     => "Adv 2",
                             :kind      => "advanced",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @lit_one = Talk.create!(:title     => "Lit 1",
                             :kind      => "lightning",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @lit_two = Talk.create!(:title     => "Lit 2",
                             :kind      => "lightning",
                             :email     => "a@example.com",
-                            :presenter => "Me")
+                            :presenter => "Me",
+                            :completed => true)
     @past_one = Talk.create!(:title     => "Past 1",
                             :kind      => "lightning",
                             :email     => "a@example.com",
@@ -54,27 +63,30 @@ class TalksControllerTest < ActionController::TestCase
     get :index
     assert_response :success
 
-    assert assigns[:talks].include?(@talk)
-
-    assert_match @talk.title,       @response.body
-    assert_match @talk.presenter,   @response.body
-    assert_match @talk.description, @response.body
-    assert_match @talk.kind,        @response.body
+    expected = [@talk.title]
+    assert_equal expected, assigns[:recent_talks].map(&:title)
   end
 
-  def test_past
+  def test_past_shows_all_talks
     setup_talks
 
     get :past
     assert_response :success
 
-    assert_equal [@past_one], assigns[:talks]
+    expected = [
+      @beg_one,
+      @beg_two,
+      @talk,
+      @int_one,
+      @int_two,
+      @adv_one,
+      @adv_two,
+      @lit_one,
+      @lit_two,
+      @past_one
+    ].map(&:title)
 
-    assert_match @past_one.title,       @response.body
-    assert_match @past_one.presenter,   @response.body
-    assert_match @past_one.description, @response.body
-    assert_match @past_one.kind,        @response.body
-
+    assert_equal expected, assigns[:talks].map(&:title)
   end
 
   def test_talks_sorted_on_scheduled_date_kind_and_title
@@ -88,12 +100,13 @@ class TalksControllerTest < ActionController::TestCase
     get :index
 
     expected = [@int_two,
-                @beg_one, @talk,
+                @beg_two,
+                @beg_one,
+                @talk,
                 @int_one,
-                @adv_one, @adv_two,
-                @lit_one, @lit_two].map(&:title)
+                @adv_one].map(&:title)
 
-    assert_equal expected, assigns[:talks].map(&:title)
+    assert_equal expected, assigns[:recent_talks].map(&:title)
   end
 
   def test_talks_sorted_on_index_and_date
@@ -101,30 +114,33 @@ class TalksControllerTest < ActionController::TestCase
 
     get :index
 
-    expected = [@beg_one, @beg_two, @talk,
-                @int_one, @int_two,
-                @adv_one, @adv_two,
-                @lit_one, @lit_two].map(&:title)
+    expected = [@beg_one,
+                @beg_two,
+                @talk,
+                @int_one,
+                @int_two,
+                @adv_one
+              ].map(&:title)
 
-    assert_equal expected, assigns[:talks].map(&:title)
+    assert_equal expected, assigns[:recent_talks].map(&:title)
   end
 
-  def test_talks_only_available
+  def test_talks_only_complete
     setup_talks
-
-    @adv_two.completed = true
-    @beg_two.completed = true
-    @int_two.completed = true
-    @lit_two.completed = true
-    @talk.completed    = true
-
-    [@adv_two, @beg_two, @int_two, @lit_two, @talk].map(&:save!)
 
     get :index
 
-    expected = [@beg_one, @int_one, @adv_one, @lit_one].map(&:title)
+    assert assigns[:recent_talks].all?(&:completed)
+  end
 
-    assert_equal expected, assigns[:talks].map(&:title)
+  def test_new
+    get :new
+    assert_response :success
+
+    talk = assigns[:talk]
+
+    assert_kind_of Talk, talk
+    assert talk.new_record?
   end
 
   def test_create
@@ -176,10 +192,7 @@ class TalksControllerTest < ActionController::TestCase
     assert_equal "beginner",       talk.kind
     assert_equal "The Dude",       talk.presenter
 
-    assert_match @talk.title,       @response.body
-    assert_match @talk.presenter,   @response.body
-    assert_match @talk.description, @response.body
-    assert_match @talk.kind,        @response.body
+    assert_equal "Talk was submitted for review.", flash[:notice]
   end
 
   def test_create_fails_without_spam_blocker
