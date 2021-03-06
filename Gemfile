@@ -16,8 +16,10 @@ gem "twitter",                   "~> 5.14"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.8.3"
 
+gem "ffi", "~> 1.13" # build repair... not a direct dependency
+
 group :production do
-  gem "pg",                      "~> 0.18.1"
+  gem "pg",                      "~> 1.0"
   gem "rails_12factor"
 end
 
