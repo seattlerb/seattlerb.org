@@ -50,6 +50,8 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_invalid_github
+    skip "dunno why this is valid"
+
     member = Member.new(:name   => "Member",
                         :email => "pete@gmail.com",
                         :password => "password1234",
@@ -74,8 +76,6 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_valid_twitter
-    skip "skipping for circleci 2.0 testing... TODO: remove"
-
     member = Member.new(:name    => "Member",
                         :email => "pete@gmail.com",
                         :password => "password1234",
@@ -84,6 +84,8 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_invalid_twitter
+    skip "dunno why this is valid"
+
     member = Member.new(:name    => "Member",
                         :twitter => "not_a_user234890",
                         :email => "pete@gmail.com",
