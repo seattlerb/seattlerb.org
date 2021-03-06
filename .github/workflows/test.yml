@@ -1,0 +1,23 @@
+name: test
+on: push
+
+jobs:
+  test:
+    name: test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: code
+        uses: actions/checkout@v2
+
+      - name: ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+          bundler-cache: true
+
+      - name: db
+        run: bundle exec rake db:create db:migrate --trace
+
+      - name: results
+        run: bundle exec rake test
