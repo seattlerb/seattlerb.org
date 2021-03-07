@@ -15,6 +15,7 @@ gem "rake",                      "~> 10.4.2"
 gem "twitter",                   "~> 5.14"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.8.3"
+gem "airbrake",                  "~> 7.2"
 
 gem "ffi", "~> 1.13" # build repair... not a direct dependency
 
