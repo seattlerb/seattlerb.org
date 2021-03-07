@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.3.5"
+ruby "2.4.9"
 
 gem "rails",                     "~> 4.2.11"
 gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
