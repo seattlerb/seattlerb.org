@@ -135,7 +135,7 @@ GEM
     nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
-    pg (0.18.2)
+    pg (0.21.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -259,7 +259,7 @@ DEPENDENCIES
   jquery-rails (~> 4.0.3)
   letter_opener
   minitest-rails (~> 2.1.1)
-  pg (~> 0.18.1)
+  pg (~> 0.18)
   pry
   rails (~> 4.2.11)
   rails_12factor
