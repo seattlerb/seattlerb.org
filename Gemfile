@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-ruby "2.4.9"
+ruby "2.5.8"
 
 gem "rails",                     "~> 4.2.11"
 gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
@@ -28,4 +28,6 @@ group :development, :test do
   gem "autotest-rails",          "~> 4.2.1"
   gem "letter_opener"
   gem "pry"
+
+  gem "therubyracer", "> 0" # required for assets only?
 end
