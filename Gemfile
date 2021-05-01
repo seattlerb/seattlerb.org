@@ -29,5 +29,5 @@ group :development, :test do
   gem "letter_opener"
   gem "pry"
 
-  gem "therubyracer", "> 0" # required for assets only?
+  gem "therubyracer",            "~> 0.12" # required for local assets only?
 end
