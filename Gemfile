@@ -22,7 +22,7 @@ group :production do
 end
 
 group :development, :test do
-  gem "sqlite3",                 "~> 1.3.0"
+  gem "sqlite3",                 "= 1.3.11"
   gem "minitest-rails",          "~> 2.1.1"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1"
