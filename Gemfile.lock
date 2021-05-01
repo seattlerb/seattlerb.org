@@ -269,7 +269,7 @@ DEPENDENCIES
   pg (~> 0.18)
   pry (~> 0.10.0)
   rails (~> 4.2.11)
-  rails_12factor
+  rails_12factor (~> 0.0.3)
   rails_admin (~> 1.0)
   rake (~> 12.3.3)
   sprockets (~> 3.7.2)
