@@ -26,8 +26,8 @@ group :development, :test do
   gem "minitest-rails",          "~> 2.1.1"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1"
-  gem "letter_opener"
-  gem "pry"
+  gem "letter_opener",           "~> 1.4.0"
+  gem "pry",                     "~> 0.10.0"
 
   gem "therubyracer",            "~> 0.12" # required for local assets only?
 end
