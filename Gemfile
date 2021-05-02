@@ -10,7 +10,7 @@ gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
 gem "devise",                    "~> 4.8"
 gem "httparty",                  "~> 0.13.3"
 gem "rails_admin",               "~> 1.0"
-gem "rake",                      "~> 12.3.3"
+gem "rake",                      "~> 13.0"
 gem "twitter",                   "~> 5.14"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.8.3"
