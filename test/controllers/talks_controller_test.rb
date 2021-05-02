@@ -147,7 +147,7 @@ class TalksControllerTest < ActionController::TestCase
 
     assert_difference 'ActionMailer::Base.deliveries.size', +1 do
       assert_difference 'Talk.count', 1 do
-        post :create, :talk => talk_attributes, :password => ""
+        post :create, params: { :talk => talk_attributes, :password => "" }
         assert_redirected_to talks_path
       end
     end
@@ -193,7 +193,7 @@ class TalksControllerTest < ActionController::TestCase
 
 
     assert_difference 'Talk.count', 0 do
-      post :create, :talk => talk_attributes, :password => "spammer"
+      post :create, params: { :talk => talk_attributes, :password => "spammer" }
     end
 
     assert_redirected_to root_path
@@ -211,7 +211,7 @@ class TalksControllerTest < ActionController::TestCase
 
 
     assert_difference 'Talk.count', 0 do
-      post :create, :talk => talk_attributes, :password => ""
+      post :create, params: { :talk => talk_attributes, :password => "" }
     end
 
     assert_redirected_to talks_path

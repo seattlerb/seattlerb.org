@@ -25,7 +25,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   def test_show
-    get :show, id: @post
+    get :show, params: { id: @post }
     assert_response :success
     assert_match @post.title, @response.body
     assert_match @post.body, @response.body

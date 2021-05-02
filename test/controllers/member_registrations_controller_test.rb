@@ -19,10 +19,11 @@ class Members::RegistrationsControllerTest < ActionController::TestCase
 
     assert_difference('Member.count', 1) do
       @request.env["devise.mapping"] = Devise.mappings[:member]
-      post :create, member:     {:name => "test",
-                                 :email => "test3@test.com",
-                                 :ruby_gems_id => "qrush",
-                                 :password => "password1234"}
+      post :create, params: {
+        member: {:name => "test",
+                 :email => "test3@test.com",
+                 :ruby_gems_id => "qrush",
+                 :password => "password1234"} }
     end
 
     assert_redirected_to members_path
@@ -35,7 +36,7 @@ class Members::RegistrationsControllerTest < ActionController::TestCase
 
     assert_difference 'Member.count', 0 do
       @request.env["devise.mapping"] = Devise.mappings[:member]
-      post :create, :member => member_attributes
+      post :create, params: { :member => member_attributes }
     end
 
     assert_redirected_to members_path
