@@ -150,9 +150,13 @@ class TalksControllerTest < ActionController::TestCase
         post :create, params: { :talk => talk_attributes, :password => "" }
         assert_redirected_to talks_path
       end
+
+      refute_empty ActionMailer::Base.deliveries, "mail not delivered"
     end
 
     mail = ActionMailer::Base.deliveries.last
+
+    refute_nil mail
 
     assert_match /noreply@seattlerb.org/, mail.from.first
     assert_match /Seattle.rb Talk Notification/, mail.subject

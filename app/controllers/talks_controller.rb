@@ -15,7 +15,7 @@ class TalksController < ApplicationController
 
     if @talk.save
       admins = Admin.where(talk_notification: true).map(&:email)
-      AdminMailer.admin_notification(admins,@talk).deliver_later unless admins.empty?
+      AdminMailer.admin_notification(admins,@talk).deliver_now unless admins.empty?
       redirect_to talks_url, notice: 'Talk was successfully created.'
     else
       talks
