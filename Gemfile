@@ -25,7 +25,7 @@ group :development, :test do
   gem "minitest",                "~> 5.10.0"
   gem "minitest-rails",          "~> 5.0.0"
   gem "ZenTest",                 "~> 4.9"
-  gem "autotest-rails",          "~> 4.2.1"
+  gem "autotest-rails",          "~> 4.2.1", require: false
   gem "letter_opener",           "~> 1.4.0"
   gem "pry",                     "~> 0.10.0"
   gem "pry-byebug",              "~> 3.8"
