@@ -34,8 +34,15 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
-  # Print deprecation notices to the stderr.
-  config.active_support.deprecation = :stderr
+  config.active_support.deprecation = ->(msg, bt) {
+    case msg
+    when /New keyword style:\nget :show/
+      # ignore me... bad keyword handling in rails 5.0
+    else
+      # require "pry"; binding.pry
+      warn msg
+    end
+  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
