@@ -4,12 +4,11 @@ source "https://rubygems.org"
 
 ruby "2.5.8"
 
-gem "rails",                     "~> 4.2.11"
+gem "rails",                     "~> 5.0.7"
 gem "sprockets",                 "~> 3.7.2" # TODO: temporary for security
 
 gem "devise",                    "~> 4.8"
 gem "httparty",                  "~> 0.13.3"
-gem "jquery-rails",              "~> 4.0.3"
 gem "rails_admin",               "~> 1.0"
 gem "rake",                      "~> 12.3.3"
 gem "twitter",                   "~> 5.14"
@@ -22,12 +21,15 @@ group :production do
 end
 
 group :development, :test do
-  gem "sqlite3",                 "= 1.3.11"
-  gem "minitest-rails",          "~> 2.1.1"
+  gem "sqlite3",                 "= 1.3.11" # temporary -- won't build on arm64?
+  gem "minitest",                "~> 5.10.0"
+  gem "minitest-rails",          "~> 5.0.0"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1"
   gem "letter_opener",           "~> 1.4.0"
   gem "pry",                     "~> 0.10.0"
+  gem "pry-byebug",              "~> 3.8"
+  gem "rails-controller-testing", "~> 1.0"
 
   gem "therubyracer",            "~> 0.12" # required for local assets only?
 end

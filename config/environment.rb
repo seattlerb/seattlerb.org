@@ -1,9 +1,7 @@
-# Load the rails application
-require File.expand_path('../application', __FILE__)
+# Load the Rails application.
+require_relative 'application'
 
-# Initialize the rails application
-SeattlerbOrg::Application.initialize!
-
+# TODO: move to initializers
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV["SENDGRID_USERNAME"],
   :password => ENV["SENDGRID_PASSWORD"],
@@ -13,3 +11,6 @@ ActionMailer::Base.smtp_settings = {
   :authentication => :plain,
   :enable_starttls_auto => true
 }
+
+# Initialize the Rails application.
+Rails.application.initialize!
