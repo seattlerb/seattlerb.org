@@ -1,6 +1,6 @@
 class TalksController < ApplicationController
-  before_filter :verify_password, :only => :create
-  before_filter :set_title, :only => [:index, :create]
+  before_action :verify_password, :only => :create
+  before_action :set_title, :only => [:index, :create]
 
   def index
     talks

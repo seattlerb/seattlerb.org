@@ -1,7 +1,7 @@
 class Members::RegistrationsController < Devise::RegistrationsController
-# before_filter :configure_sign_up_params, only: [:create]
-# before_filter :configure_account_update_params, only: [:update]
-  before_filter :spam_trap, only: :create
+# before_action :configure_sign_up_params, only: [:create]
+# before_action :configure_account_update_params, only: [:update]
+  before_action :spam_trap, only: :create
 
   def spam_trap
     redirect_to members_url and return if sign_up_params[:username].present?

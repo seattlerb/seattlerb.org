@@ -1,5 +1,6 @@
 class AboutController < ApplicationController
-  before_filter :get_event, only: [:index, :join_us]
+  before_action :get_event, only: [:index, :join_us]
+
   def index
     @title = "Home"
   end
