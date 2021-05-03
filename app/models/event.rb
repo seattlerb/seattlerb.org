@@ -1,4 +1,4 @@
-class Event < ActiveRecord::Base
+class Event < ApplicationRecord
   validates :date, :presence => true
   has_many :talks
 

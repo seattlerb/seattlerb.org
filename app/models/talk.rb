@@ -1,4 +1,4 @@
-class Talk < ActiveRecord::Base
+class Talk < ApplicationRecord
   attr_accessor :spam # fake attribute for spam trapping
   attr_accessor :special_talk_requests # fake attribute for spam trapping
   validates_length_of :spam, :maximum => 0

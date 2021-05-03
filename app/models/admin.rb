@@ -1,4 +1,4 @@
-class Admin < ActiveRecord::Base
+class Admin < ApplicationRecord
   devise(:database_authenticatable,
          :recoverable,
          # :confirmable,  # TODO: figure out email on heroku
