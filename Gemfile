@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "~> 2.7"
 
-gem "rails",                     "~> 5.0.7"
+gem "rails",                     "~> 5.1.0"
 
 gem "devise",                    "~> 4.8"
 gem "httparty",                  "~> 0.13.3"
@@ -21,8 +21,8 @@ end
 
 group :development, :test do
   gem "sqlite3",                 "= 1.3.11" # temporary -- won't build on arm64?
-  gem "minitest",                "~> 5.10.0"
-  gem "minitest-rails",          "~> 5.0.0"
+  gem "minitest",                "~> 5.14"
+  gem "minitest-rails",          "~> 5.1"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1", require: false
   gem "letter_opener",           "~> 1.4.0"
