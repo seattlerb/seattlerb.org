@@ -223,18 +223,18 @@ class TalksControllerTest < ActionController::TestCase
 
   def test_unknown_talk_404s
     assert_raises(ActiveRecord::RecordNotFound) do
-      get :show, :id => "derp"
+      get :show, params: { :id => "derp" }
     end
   end
 
   def test_talk_accessible_at_linkable_page
-    get :show, :id => @talk.id
+    get :show, params: { :id => @talk.id }
     assert_response :success
     assert_equal assigns[:talk], @talk
   end
 
   def test_talk_components_in_view
-    get :show, :id => @talk.id
+    get :show, params: { :id => @talk.id }
 
     assert_match @talk.title,       @response.body
     assert_match @talk.presenter,   @response.body
@@ -243,7 +243,7 @@ class TalksControllerTest < ActionController::TestCase
   end
 
   def test_disqus_shortname_assigned
-    get :show, :id => @talk.id
+    get :show, params: { :id => @talk.id }
     assert_equal assigns[:disqus_shortname], "seattlerb"
   end
 
