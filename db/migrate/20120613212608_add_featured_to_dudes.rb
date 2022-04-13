@@ -1,4 +1,4 @@
-class AddFeaturedToDudes < ActiveRecord::Migration
+class AddFeaturedToDudes < ActiveRecord::Migration[4.2]
   def up
     add_column :dudes, :featured, :boolean, default: false
     add_column :dudes, :twitter, :string

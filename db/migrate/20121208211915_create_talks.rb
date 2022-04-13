@@ -1,4 +1,4 @@
-class CreateTalks < ActiveRecord::Migration
+class CreateTalks < ActiveRecord::Migration[4.2]
   def up
     create_table :talks do |t|
       t.string :title

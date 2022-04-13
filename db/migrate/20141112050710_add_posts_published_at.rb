@@ -1,4 +1,4 @@
-class AddPostsPublishedAt < ActiveRecord::Migration
+class AddPostsPublishedAt < ActiveRecord::Migration[4.2]
   def up
     add_column :posts, :published_at, :datetime
   end
