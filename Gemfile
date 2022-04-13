@@ -21,6 +21,7 @@ group :production do
 end
 
 group :development, :test do
+  gem "listen",                  "~> 3.0"
   gem "sqlite3",                 "~> 1.4"
   gem "minitest",                "~> 5.14"
   gem "minitest-rails",          "~> 5.2"
