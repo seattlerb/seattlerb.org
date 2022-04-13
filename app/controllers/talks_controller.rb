@@ -8,6 +8,8 @@ class TalksController < ApplicationController
   end
 
   def create
+    redirect_to talks_url and return # our bot detector sucks. disable
+
     #spam catch to redirect - maybe the bots were ignoring the spam field
     redirect_to talks_url and return if talk_params[:special_talk_requests].present?
 
