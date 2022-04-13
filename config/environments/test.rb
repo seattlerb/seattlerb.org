@@ -15,7 +15,7 @@ Rails.application.configure do
   # Configure public file server for tests with Cache-Control for performance.
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
-    'Cache-Control' => 'public, max-age=3600'
+    'Cache-Control' => "public, max-age=#{1.hour.seconds.to_i}"
   }
 
   # Show full error reports and disable caching.
@@ -34,15 +34,20 @@ Rails.application.configure do
   # ActionMailer::Base.deliveries array.
   config.action_mailer.delivery_method = :test
 
-  config.active_support.deprecation = ->(msg, bt) {
-    case msg
-    when /New keyword style:\nget :show/
-      # ignore me... bad keyword handling in rails 5.0
-    else
-      # require "pry"; binding.pry
-      warn msg
-    end
-  }
+  # Print deprecation notices to the stderr.
+  config.active_support.deprecation = :stderr
+
+  # TODO?:
+  # config.active_support.deprecation = ->(msg, bt) {
+  #   case msg
+  #   when /New keyword style:\nget :show/
+  #     # ignore me... bad keyword handling in rails 5.0
+  #   else
+  #     # require "pry"; binding.pry
+  #     warn msg
+  #   end
+  # }
+
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
