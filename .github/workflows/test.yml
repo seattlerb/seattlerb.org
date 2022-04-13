@@ -13,7 +13,7 @@ jobs:
       - name: ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7.3
+          ruby-version: 2.7
           bundler-cache: true
 
       - name: db
