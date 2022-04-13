@@ -15,12 +15,12 @@ gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.9.0"
 
 group :production do
-  gem "pg",                      "~> 0.21"
+  gem "pg",                      "~> 1.0"
   gem "rails_12factor",          "~> 0.0.3"
 end
 
 group :development, :test do
-  gem "sqlite3",                 "= 1.3.11" # temporary -- won't build on arm64?
+  gem "sqlite3",                 "~> 1.4"
   gem "minitest",                "~> 5.14"
   gem "minitest-rails",          "~> 5.1"
   gem "ZenTest",                 "~> 4.9"
