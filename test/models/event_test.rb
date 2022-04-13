@@ -6,6 +6,21 @@ class EventTest < ActiveSupport::TestCase
     assert e.valid?
   end
 
+  def test_unique
+    date = Event.first_tues_next_month
+
+    # bullshit a race condition
+    e1 = Event.new date: date # unsaved
+    e2 = Event.next           # saved
+
+    assert_predicate e2, :valid?
+    refute_predicate e1, :valid?
+
+    exp = {:date=>["has already been taken"]}
+
+    assert_equal exp, e1.errors.messages
+  end
+
   def test_valid_no_date
     event = Event.new
     refute event.valid?

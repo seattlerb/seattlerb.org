@@ -18,6 +18,6 @@ class AboutController < ApplicationController
   private
 
   def get_event
-    @event = Event.next
+    @event = Event.next rescue Event.next # in case of race conditions
   end
 end

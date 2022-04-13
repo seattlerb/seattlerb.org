@@ -1,5 +1,7 @@
 class Event < ApplicationRecord
   validates :date, :presence => true
+  validates_uniqueness_of :date
+
   has_many :talks
 
   def self.next
