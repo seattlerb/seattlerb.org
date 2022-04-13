@@ -7,7 +7,8 @@ class Talk < ApplicationRecord
 
   TALK_KINDS = %w(beginner intermediate advanced lightning)
 
-  scope :by_kind, -> { order("scheduled_date IS NULL,
+  # TODO: remove Arel.sql if possible... CASE will be hard
+  scope :by_kind, -> { order(Arel.sql "scheduled_date IS NULL,
                              scheduled_date,
                              CASE kind WHEN 'beginner'     THEN 1
                                        WHEN 'intermediate' THEN 2
