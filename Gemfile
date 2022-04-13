@@ -8,7 +8,7 @@ gem "rails",                     "~> 5.2.0"
 
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
-gem "httparty",                  "~> 0.13.3"
+gem "httparty",                  "~> 0.18"
 gem "rails_admin",               "~> 1.0"
 gem "rake",                      "~> 13.0"
 gem "twitter",                   "~> 5.14"
