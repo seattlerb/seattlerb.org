@@ -1,7 +1,7 @@
 class UrlValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
     return true if valid_url?(value)
-    record.errors[attribute] << options.fetch(:message, 'is an invalid URL')
+    record.errors.add attribute, options.fetch(:message, 'is an invalid URL')
   end
 
   private

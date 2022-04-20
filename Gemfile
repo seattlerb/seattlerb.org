@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "~> 2.7"
 
-gem "rails",                     "~> 6.0.0"
+gem "rails",                     "~> 6.1.0"
 
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
@@ -25,7 +25,7 @@ group :development, :test do
   gem "listen",                  "~> 3.0"
   gem "sqlite3",                 "~> 1.4"
   gem "minitest",                "~> 5.14"
-  gem "minitest-rails",          "~> 6.0.0"
+  gem "minitest-rails",          "~> 6.1.0"
   gem "ZenTest",                 "~> 4.9"
   gem "autotest-rails",          "~> 4.2.1", require: false
   gem "letter_opener",           "~> 1.8"

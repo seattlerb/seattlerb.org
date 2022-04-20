@@ -6,7 +6,7 @@ class RubygemsValidator < ActiveModel::EachValidator
     uri = URI("https://rubygems.org/api/v1/owners/#{value}/gems.json")
 
     unless Net::HTTPSuccess === Net::HTTP.get_response(uri) then
-      record.errors[attribute] << (options[:message] || "user isn't found" )
+      record.errors.add attribute, options.fetch(:message, "user isn't found")
     end
   end
 end
