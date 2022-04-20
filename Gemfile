@@ -13,7 +13,7 @@ gem "rails_admin",               "~> 2.0"
 gem "rake",                      "~> 13.0"
 gem "twitter",                   "~> 6.0"
 gem "uglifier",                  "~> 3.0"
-gem "unicorn",                   "~> 4.9.0"
+gem "unicorn",                   "~> 6.0"
 
 group :production do
   gem "pg",                      "~> 1.0"
