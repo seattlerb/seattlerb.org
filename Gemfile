@@ -11,7 +11,7 @@ gem "devise",                    "~> 4.8"
 gem "httparty",                  "~> 0.18"
 gem "rails_admin",               "~> 2.0"
 gem "rake",                      "~> 13.0"
-gem "twitter",                   "~> 5.14"
+gem "twitter",                   "~> 6.0"
 gem "uglifier",                  "~> 2.7.1"
 gem "unicorn",                   "~> 4.9.0"
 
