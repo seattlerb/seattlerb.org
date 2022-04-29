@@ -60,7 +60,7 @@ class Member < ApplicationRecord
   end
 
   def missing_image?
-    image_url.blank? || image_url == NONE || HTTParty.get(image_url).code != 200
+    image_url.blank? || image_url == NONE || Net::HTTP.get_response(URI(image_url)).code != "200"
   end
 
   def get_twitter_image_url

@@ -8,7 +8,6 @@ gem "rails",                     "~> 6.1.0"
 
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
-gem "httparty",                  "~> 0.18"
 gem "rails_admin",               "~> 3.0"
 gem "rake",                      "~> 13.0"
 gem "sassc-rails",               "~> 2.1" # for rails_admin?

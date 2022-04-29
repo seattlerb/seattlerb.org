@@ -1,7 +1,10 @@
 class GithubValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-    if HTTParty.get("https://api.github.com/users/#{value}", :headers => {"User-Agent" => "seattle.rb"}).headers["status"] == "404 Not Found"
-      record.errors[attribute] << (options[:message] || "username not found")
+    uri = URI("https://api.github.com/users/#{value}")
+    res = Net::HTTP.get_response(uri)
+
+    if res.code != "200" then
+      record.errors.add attribute, (options[:message] || "username not found")
     end
   end
 end

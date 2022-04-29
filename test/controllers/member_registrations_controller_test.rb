@@ -12,21 +12,23 @@ class Members::RegistrationsControllerTest < ActionController::TestCase
   end
 
   def test_create
-    @testmember = Member.create!(:name        => "Test Name",
-                                 :verified    => true,
-                                 :email       => "test2@test.com",
-                                 :password    => "password1234")
+    good_net_response do
+      @testmember = Member.create!(:name        => "Test Name",
+                                   :verified    => true,
+                                   :email       => "test2@test.com",
+                                   :password    => "password1234")
 
-    assert_difference('Member.count', 1) do
-      @request.env["devise.mapping"] = Devise.mappings[:member]
-      post :create, params: {
-        member: {:name => "test",
-                 :email => "test3@test.com",
-                 :ruby_gems_id => "qrush",
-                 :password => "password1234"} }
+      assert_difference('Member.count', 1) do
+        @request.env["devise.mapping"] = Devise.mappings[:member]
+        post :create, params: {
+          member: {:name => "test",
+                   :email => "test3@test.com",
+                   :ruby_gems_id => "qrush",
+                   :password => "password1234"} }
+      end
+
+      assert_redirected_to members_path
     end
-
-    assert_redirected_to members_path
   end
 
   def test_create_fails_with_spam_trap

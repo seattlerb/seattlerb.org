@@ -1,6 +1,8 @@
 require "minitest_helper"
 
 class MemberTest < ActiveSupport::TestCase
+  include FakeNetwork
+
   def test_valid
     member = Member.new(:name => "Member",
                         :email => "test@test.org",
@@ -42,45 +44,55 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_valid_github
-    member = Member.new(:name   => "Member",
-                        :github => "phiggins",
-                        :email => "pete@gmail.com",
-                        :password => "password1234")
-    assert member.valid?
+    good_net_response do
+      member = Member.new(:name     => "Member",
+                          :github   => "phiggins",
+                          :email    => "pete@gmail.com",
+                          :password => "password1234")
+      assert member.valid?
+    end
   end
 
   def test_invalid_github
     skip "dunno why this is valid"
 
-    member = Member.new(:name   => "Member",
-                        :email => "pete@gmail.com",
+    member = Member.new(:name     => "Member",
+                        :email    => "pete@gmail.com",
                         :password => "password1234",
-                        :github => "not_a_user234890")
+                        :github   => "not_a_user234890")
     refute member.valid?
   end
 
   def test_valid_rubygems
-    member = Member.new(:name         => "Member",
-                        :email => "pete@gmail.com",
-                        :password => "password1234",
-                        :ruby_gems_id => "qrush")
-    assert member.valid?
+    good_net_response do
+      member = Member.new(:name         => "Member",
+                          :email        => "pete@gmail.com",
+                          :password     => "password1234",
+                          :ruby_gems_id => "qrush")
+
+      assert_predicate member, :valid?
+    end
   end
 
   def test_invalid_rubygems
-    member = Member.new(:name         => "Member",
-                        :email        => "pete@gmail.com",
-                        :password     => "password1234",
-                        :ruby_gems_id => "not_a_user234890")
-    refute member.valid?
+    bad_net_response do
+      member = Member.new(:name         => "Member",
+                          :email        => "pete@gmail.com",
+                          :password     => "password1234",
+                          :ruby_gems_id => "not_a_user234890")
+
+      refute_predicate member, :valid?
+    end
   end
 
   def test_valid_twitter
-    member = Member.new(:name    => "Member",
-                        :email => "pete@gmail.com",
-                        :password => "password1234",
-                        :twitter => "tlynam")
-    assert member.valid?
+    good_net_response do
+      member = Member.new(:name    => "Member",
+                          :email => "pete@gmail.com",
+                          :password => "password1234",
+                          :twitter => "tlynam")
+      assert member.valid?
+    end
   end
 
   def test_invalid_twitter
@@ -143,8 +155,13 @@ class MemberTest < ActiveSupport::TestCase
                                  :image_url => "http://placekitten.com/50/50",
                                  :password => "password1234")
 
-    assert no_img.missing_image?
-    assert missing_img.missing_image?
-    refute regular.missing_image?
+    bad_net_response do
+      assert_predicate no_img,      :missing_image?
+      assert_predicate missing_img, :missing_image?
+    end
+
+    good_net_response do
+      refute_predicate regular,     :missing_image?
+    end
   end
 end
