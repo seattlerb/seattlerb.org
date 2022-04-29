@@ -25,6 +25,5 @@ class AboutControllerTest < ActionController::TestCase
     assert_template :partial => '_maps'
     # TODO: assert_template :partial => '_monthly'
     assert_template :partial => '_slack'
-    assert_template :partial => '_mailing_list'
   end
 end
