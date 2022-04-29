@@ -1,6 +1,7 @@
 require "minitest_helper"
 
 class PostsControllerTest < ActionController::TestCase
+  fixtures :posts
 
   def setup
     Member.create!(:name => "Big Bird", :email => "t@t.com", :password => "p1234")
