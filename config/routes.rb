@@ -18,8 +18,6 @@ Rails.application.routes.draw do
 
   resources :talks
 
-  post "/newsletter" => "newsletter#subscribe", as: :subscribe
-
   get "/projects" => "about#projects", as: :projects
   get "/join-us"  => "about#join_us",  as: :join_us
   get "/values"   => "about#values",   as: :values
