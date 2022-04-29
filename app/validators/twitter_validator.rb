@@ -1,7 +1,10 @@
 class TwitterValidator < ActiveModel::EachValidator
   def validate_each(record, attribute, value)
-      if HTTParty.get("https://www.twitter.com/#{value}").code == 404 then
-      record.errors[attribute] << (options[:message] || "user isn't found" )
+    uri = URI("https://www.twitter.com/#{value}")
+    res = Net::HTTP.get_response(uri)
+
+    if res.code != "200" then
+      record.errors.add attribute, (options[:message] || "user isn't found" )
     end
   end
 end
