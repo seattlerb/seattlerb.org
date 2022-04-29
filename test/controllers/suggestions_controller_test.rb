@@ -1,6 +1,7 @@
 require "minitest_helper"
 
 class SuggestionsControllerTest < ActionController::TestCase
+  fixtures :suggestions
 
   before do
     @suggestion = suggestions(:one)
