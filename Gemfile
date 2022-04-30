@@ -12,12 +12,10 @@ gem "rails_admin",               "~> 3.0"
 gem "rake",                      "~> 13.0"
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "twitter",                   "~> 7.0"
-gem "uglifier",                  "~> 3.0"
 gem "unicorn",                   "~> 6.0"
 
 group :production do
   gem "pg",                      "~> 1.0"
-  gem "rails_12factor",          "~> 0.0.3"
 end
 
 group :development, :test do
@@ -31,6 +29,4 @@ group :development, :test do
   gem "pry",                     "~> 0.13.0"
   gem "pry-byebug",              "~> 3.9"
   gem "rails-controller-testing", "~> 1.0"
-
-  gem "mini_racer",              "~> 0.4" # required for local assets only?
 end
