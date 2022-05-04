@@ -1,8 +1,14 @@
 require "minitest_helper"
 
 class TalksControllerTest < ActionController::TestCase
+  def talk_create! attribs
+    @event.talks.create! attribs
+  end
+
   def setup
-    @talk = Talk.create!(:title       => "My Test Talk",
+    @event = Event.create! date: Date.today
+
+    @talk = talk_create!(:title       => "My Test Talk",
                          :description => "Description",
                          :kind        => "beginner",
                          :email       => "a@example.com",
@@ -10,39 +16,39 @@ class TalksControllerTest < ActionController::TestCase
   end
 
   def setup_talks
-    @int_one = Talk.create!(:title     => "Int 1",
+    @int_one = talk_create!(:title     => "Int 1",
                             :kind      => "intermediate",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @int_two = Talk.create!(:title     => "Int 2",
+    @int_two = talk_create!(:title     => "Int 2",
                             :kind      => "intermediate",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @beg_one = Talk.create!(:title     => "Beg 1",
+    @beg_one = talk_create!(:title     => "Beg 1",
                             :kind      => "beginner",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @beg_two = Talk.create!(:title     => "Beg 2",
+    @beg_two = talk_create!(:title     => "Beg 2",
                             :kind      => "beginner",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @adv_one = Talk.create!(:title     => "Adv 1",
+    @adv_one = talk_create!(:title     => "Adv 1",
                             :kind      => "advanced",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @adv_two = Talk.create!(:title     => "Adv 2",
+    @adv_two = talk_create!(:title     => "Adv 2",
                             :kind      => "advanced",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @lit_one = Talk.create!(:title     => "Lit 1",
+    @lit_one = talk_create!(:title     => "Lit 1",
                             :kind      => "lightning",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @lit_two = Talk.create!(:title     => "Lit 2",
+    @lit_two = talk_create!(:title     => "Lit 2",
                             :kind      => "lightning",
                             :email     => "a@example.com",
                             :presenter => "Me")
-    @past_one = Talk.create!(:title     => "Past 1",
+    @past_one = talk_create!(:title     => "Past 1",
                             :kind      => "lightning",
                             :email     => "a@example.com",
                             :presenter => "Me",
@@ -54,7 +60,7 @@ class TalksControllerTest < ActionController::TestCase
     get :index
     assert_response :success
 
-    assert assigns[:talks].include?(@talk)
+    assert_includes assigns[:talks], @talk
 
     assert_match @talk.title,       @response.body
     assert_match @talk.presenter,   @response.body
