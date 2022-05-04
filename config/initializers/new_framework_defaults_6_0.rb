@@ -1,9 +1,0 @@
-Rails.application.config.action_view.default_enforce_utf8 = false
-Rails.application.config.action_dispatch.use_cookies_with_metadata = true
-Rails.application.config.action_dispatch.return_only_media_type_on_content_type = false
-Rails.application.config.active_job.return_false_on_aborted_enqueue = true
-Rails.application.config.active_storage.queues.analysis = :active_storage_analysis
-Rails.application.config.active_storage.queues.purge    = :active_storage_purge
-Rails.application.config.active_storage.replace_on_assign_to_many = true
-Rails.application.config.action_mailer.delivery_job = "ActionMailer::MailDeliveryJob"
-Rails.application.config.active_record.collection_cache_versioning = true
