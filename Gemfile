@@ -22,7 +22,7 @@ group :development, :test do
   gem "sqlite3",                 "~> 1.4"
   gem "minitest",                "~> 5.14"
   gem "minitest-rails",          "~> 7.0.0"
-  gem "ZenTest",                 "~> 4.9"
+  gem "ZenTest",                 "~> 4.9", require: false
   gem "autotest-rails",          "~> 4.2.1", require: false
   gem "pry",                     "~> 0.13.0", require: false
   gem "pry-byebug",              "~> 3.9", require: false
