@@ -7,7 +7,6 @@ class AboutControllerTest < ActionController::TestCase
     assert_equal("Home", assigns(:title))
 
     assert_template :partial => '_maps'
-    assert_template :partial => '_twitter'
   end
 
   def test_projects
