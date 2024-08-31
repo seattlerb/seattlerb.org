@@ -18,9 +18,10 @@ Rails.application.routes.draw do
 
   resources :talks
 
-  get "/projects" => "about#projects", as: :projects
-  get "/join-us"  => "about#join_us",  as: :join_us
-  get "/values"   => "about#values",   as: :values
+  get "/projects"   => "about#projects", as: :projects
+  get "/join-us"    => "about#join_us",  as: :join_us
+  get "/values"     => "about#values",   as: :values
+  get "/events.ics" => "events#index",   as: :events
 
   root :to => "about#index"
 end

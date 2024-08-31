@@ -13,6 +13,7 @@ gem "rake",                      "~> 13.0"
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "twitter",                   "~> 7.0"
 gem "unicorn",                   "~> 6.0"
+gem "icalendar",                 "~> 2.10"
 
 group :production do
   gem "pg",                      "~> 1.0"
