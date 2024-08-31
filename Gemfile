@@ -16,6 +16,7 @@ gem "sprockets",                 "~> 4.0"
 # noise dependencies:
 
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
+gem "icalendar",                 "~> 2.10"
 
 group :production do
   gem "pg",                      "~> 1.0"
