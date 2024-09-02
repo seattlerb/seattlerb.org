@@ -96,6 +96,7 @@ GEM
     concurrent-ruby (1.1.10)
     connection_pool (2.4.1)
     crass (1.0.6)
+    csv (3.2.8)
     date (3.3.4)
     devise (4.8.1)
       bcrypt (~> 3.0)
@@ -317,6 +318,7 @@ DEPENDENCIES
   ZenTest (~> 4.9)
   autotest-rails (~> 4.2.1)
   bootsnap (~> 1.11)
+  csv
   devise (~> 4.8)
   minitest (~> 5.14)
   minitest-rails (~> 7.1.0)

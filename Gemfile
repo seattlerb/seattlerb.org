@@ -9,6 +9,7 @@ gem "rails",                     "~> 7.1.0"
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
 gem "rails_admin",               "~> 3.0"
+gem "csv"                                 # for rails_admin
 gem "rake",                      "~> 13.0"
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "twitter",                   "~> 7.0"
