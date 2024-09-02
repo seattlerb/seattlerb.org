@@ -330,6 +330,7 @@ DEPENDENCIES
   rails_admin (~> 3.0)
   rake (~> 13.0)
   sassc-rails (~> 2.1)
+  sprockets (~> 3.7)
   sqlite3 (~> 1.4)
   twitter (~> 7.0)
   unicorn (~> 6.0)
