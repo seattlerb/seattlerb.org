@@ -30,10 +30,6 @@ class Member < ApplicationRecord
 
   scope :verified, -> { where(verified: true) }
 
-  before_save :set_avatar, if: Proc.new { |user|
-    user.respond_to?(:twitter_changed?) and user.twitter_changed?
-  }
-
   def set_password; nil; end
 
   def set_password=(value)
@@ -47,20 +43,8 @@ class Member < ApplicationRecord
     bio.present? ? bio : "..."
   end
 
-  def update_avatar!
-    set_avatar
-    save
-  end
-
-  def set_avatar
-    if missing_image?
-      twitter_response = get_twitter_image_url if twitter
-      self.image_url = twitter_response
-    end
-  end
-
   def missing_image?
-    image_url.blank? || image_url == NONE || Net::HTTP.get_response(URI(image_url)).code != "200"
+    image_url.blank? || image_url == NONE || (image_url !~ /twimg.com/ && Net::HTTP.get_response(URI(image_url)).code != "200")
   end
 
   def get_twitter_image_url

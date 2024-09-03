@@ -10,7 +10,6 @@ gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
 gem "rails_admin",               "~> 3.0"
 gem "rake",                      "~> 13.0"
-gem "twitter",                   "~> 7.0"
 gem "unicorn",                   "~> 6.0"
 gem "sprockets",                 "~> 3.7"
 
