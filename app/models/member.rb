@@ -34,13 +34,13 @@ class Member < ApplicationRecord
     user.respond_to?(:twitter_changed?) and user.twitter_changed?
   }
 
-   def set_password; nil; end
+  def set_password; nil; end
 
-   def set_password=(value)
-     return nil if value.blank?
-     self.password = value
-     self.password_confirmation = value
-   end
+  def set_password=(value)
+    return nil if value.blank?
+    self.password = value
+    self.password_confirmation = value
+  end
 
   def bio
     bio = self['bio']
