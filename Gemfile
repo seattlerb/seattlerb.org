@@ -9,12 +9,18 @@ gem "rails",                     "~> 7.1.0"
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
 gem "rails_admin",               "~> 3.0"
-gem "csv"                                 # for rails_admin
 gem "rake",                      "~> 13.0"
-gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "twitter",                   "~> 7.0"
 gem "unicorn",                   "~> 6.0"
 gem "sprockets",                 "~> 3.7"
+
+# noise dependencies:
+
+gem "csv"                                 # for rails_admin
+gem "logger"                              # for activesupport, le sigh
+gem "ostruct"                             # for json, le sigh
+gem "sassc-rails",               "~> 2.1" # for rails_admin?
+gem "fiddle"                              # for pry-byebug, loaded in dev env
 
 group :production do
   gem "pg",                      "~> 1.0"
