@@ -14,6 +14,9 @@ class Member < ApplicationRecord
     end
   end
 
+  def password_required? = false
+  def email_required?    = false
+
   attr_accessor :username # fake attribute for spam trapping
   validates_length_of :username, :maximum => 0
 
@@ -22,7 +25,7 @@ class Member < ApplicationRecord
 
   validates_presence_of :name
 
-  validates :email,        email:    true, allow_blank: true, uniqueness: true
+  validates :email,        email:    true, allow_blank: true, uniqueness: true, allow_nil: true
   validates :twitter,      twitter:  true, allow_blank: true, uniqueness: true
   validates :github,       github:   true, allow_blank: true, uniqueness: true
   validates :ruby_gems_id, rubygems: true, allow_blank: true, uniqueness: true

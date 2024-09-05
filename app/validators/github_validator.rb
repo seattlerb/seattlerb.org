@@ -4,7 +4,7 @@ class GithubValidator < ActiveModel::EachValidator
     res = Net::HTTP.get_response(uri)
 
     if res.code != "200" then
-      record.errors.add attribute, (options[:message] || "username not found")
+      record.errors.add attribute, (options[:message] || "username %p not found (%p)" % [value, res.code])
     end
   end
 end

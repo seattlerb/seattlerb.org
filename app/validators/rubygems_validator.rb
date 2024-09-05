@@ -7,7 +7,7 @@ class RubygemsValidator < ActiveModel::EachValidator
     res = Net::HTTP.get_response(uri)
 
     if res.code != "200" then
-      record.errors.add attribute, options.fetch(:message, "user isn't found")
+      record.errors.add attribute, options.fetch(:message, "user %p isn't found" % [value])
     end
   end
 end
