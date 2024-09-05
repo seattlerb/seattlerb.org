@@ -22,11 +22,11 @@ class Member < ApplicationRecord
 
   validates_presence_of :name
 
-  validates :email,        :email => true,    :allow_blank => true, uniqueness: true
-  validates :twitter,      :twitter => true,  :allow_blank => true, uniqueness: true
-  validates :github,       :github => true,   :allow_blank => true, uniqueness: true
-  validates :ruby_gems_id, :rubygems => true, :allow_blank => true, uniqueness: true
-  validates :website,      :url => true,      :allow_blank => true, uniqueness: true
+  validates :email,        email:    true, allow_blank: true, uniqueness: true
+  validates :twitter,      twitter:  true, allow_blank: true, uniqueness: true
+  validates :github,       github:   true, allow_blank: true, uniqueness: true
+  validates :ruby_gems_id, rubygems: true, allow_blank: true, uniqueness: true
+  validates :website,      url:      true, allow_blank: true, uniqueness: true
 
   scope :verified, -> { where(verified: true) }
 
