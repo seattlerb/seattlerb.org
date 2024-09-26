@@ -11,3 +11,5 @@ lib/minitest/*.rb
 /public/assets/*
 log
 tmp
+*-shm
+*-wal
