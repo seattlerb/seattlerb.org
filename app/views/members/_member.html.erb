@@ -1,0 +1,17 @@
+<div class='profile row'>
+  <div class='span1'>
+    <%= image_tag member.image_url unless member.missing_image? %>
+  </div>
+  <div class="span10 description">
+    <h1 id="<%= member.name.parameterize %>"><%= member.name %></h1>
+    <p class='bio'><%= member.bio %></p>
+
+    <ul class='links'>
+      <%= raw rubygems_link member %>
+      <%= raw github_link   member %>
+      <%= raw twitter_link  member %>
+      <%= raw website_link  member %>
+      <%= raw email_link    member %>
+    </ul>
+  </div>
+</div>
