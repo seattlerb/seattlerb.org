@@ -26,7 +26,7 @@ group :production do
 end
 
 group :development, :test do
-  gem "sqlite3",                 "~> 1.4"
+  gem "sqlite3",                 "~> 2.0"
   gem "minitest",                "~> 5.14"
   gem "minitest-rails",          "~> 7.1.0"
   gem "ZenTest",                 "~> 4.9", require: false
