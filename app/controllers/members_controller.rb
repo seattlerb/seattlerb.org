@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def index
-    @members = Member.verified.all
+    @members = Member.verified.all.sort_by { |m| m.name.split.rotate(1) }
     @title = "Members"
   end
 
