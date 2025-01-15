@@ -18,7 +18,6 @@ gem "sprockets",                 "~> 4.0"
 gem "csv"                                 # for rails_admin
 gem "logger"                              # for activesupport, le sigh
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
-gem "fiddle"                              # for pry-byebug, loaded in dev env
 
 group :production do
   gem "pg",                      "~> 1.0"
@@ -31,6 +30,8 @@ group :development, :test do
   gem "ZenTest",                 "~> 4.9", require: false
   gem "autotest-rails",          "~> 4.2.1", require: false
   gem "pry",                     "~> 0.13", require: false
-  gem "pry-byebug",              "~> 3.9", require: false
+  # this hasn't been updated in a while and is blocking newer versions of pry
+  # gem "pry-byebug",              "~> 3.9", require: false
+  # gem "fiddle"                              # for pry-byebug, loaded in dev env
   gem "rails-controller-testing", "~> 1.0"
 end
