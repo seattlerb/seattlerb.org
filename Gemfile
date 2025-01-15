@@ -15,8 +15,6 @@ gem "sprockets",                 "~> 4.0"
 
 # noise dependencies:
 
-gem "csv"                                 # for rails_admin
-gem "logger"                              # for activesupport, le sigh
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 
 group :production do

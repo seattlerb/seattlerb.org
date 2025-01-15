@@ -273,9 +273,7 @@ DEPENDENCIES
   ZenTest (~> 4.9)
   autotest-rails (~> 4.2.1)
   bootsnap (~> 1.11)
-  csv
   devise (~> 4.8)
-  logger
   minitest (~> 5.14)
   minitest-rails (~> 7.1.0)
   pg (~> 1.0)
