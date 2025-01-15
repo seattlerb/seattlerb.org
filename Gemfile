@@ -17,7 +17,6 @@ gem "sprockets",                 "~> 4.0"
 
 gem "csv"                                 # for rails_admin
 gem "logger"                              # for activesupport, le sigh
-gem "ostruct"                             # for json, le sigh
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "fiddle"                              # for pry-byebug, loaded in dev env
 
