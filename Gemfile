@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby "~> 3.3"
 
-gem "rails",                     "~> 7.2.0"
+gem "rails",                     "~> 8.0.0"
 
 gem "bootsnap",                  "~> 1.11"
 gem "devise",                    "~> 4.8"
@@ -24,7 +24,7 @@ end
 group :development, :test do
   gem "sqlite3",                 "~> 2.0"
   gem "minitest",                "~> 5.14"
-  gem "minitest-rails",          "~> 7.1.0"
+  gem "minitest-rails",          "~> 8.0.0"
   gem "ZenTest",                 "~> 4.9", require: false
   gem "autotest-rails",          "~> 4.2.1", require: false
   gem "pry",                     "~> 0.13", require: false
