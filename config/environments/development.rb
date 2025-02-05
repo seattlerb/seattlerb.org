@@ -65,6 +65,6 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   require "pry"
-  require "pry-byebug"
+  # require "pry-byebug" # currently broken against latest pry
   config.console = Pry
 end
