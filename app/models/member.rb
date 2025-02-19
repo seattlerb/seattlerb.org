@@ -48,6 +48,8 @@ class Member < ApplicationRecord
 
   def missing_image?
     image_url.blank? || image_url == NONE || (image_url !~ /twimg.com/ && Net::HTTP.get_response(URI(image_url)).code != "200")
+  rescue
+    true
   end
 
   def get_twitter_image_url
