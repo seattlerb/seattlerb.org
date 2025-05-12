@@ -164,6 +164,7 @@ GEM
     nokogiri (1.18.8-x86_64-linux-gnu)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    ostruct (0.6.1)
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
@@ -285,6 +286,7 @@ DEPENDENCIES
   icalendar (~> 2.10)
   minitest (~> 5.14)
   minitest-rails (~> 8.0.0)
+  ostruct (~> 0.6)
   pg (~> 1.0)
   pry (~> 0.13)
   puma (~> 6.6)

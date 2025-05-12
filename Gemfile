@@ -17,6 +17,7 @@ gem "sprockets",                 "~> 4.0"
 
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
 gem "icalendar",                 "~> 2.10"
+gem "ostruct",                   "~> 0.6" # for icalendar
 
 group :production do
   gem "pg",                      "~> 1.0"
