@@ -5,6 +5,7 @@ require "minitest/autorun"
 require "rails/test_help"
 require "minitest/rails"
 require "minitest/pride"
+require "net/http"
 
 class ActiveSupport::TestCase
 end
