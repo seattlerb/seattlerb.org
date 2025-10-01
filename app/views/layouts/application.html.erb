@@ -1,65 +1,59 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Seattle.rb | <%= title_or_action %></title>
-  <meta name="description" content="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Seattle.rb | <%= title_or_action %></title>
+    <meta name="description" content="">
 
-  <meta name="viewport" content="width=device-width">
-  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
-  <%= stylesheet_link_tag "application", :media => "all" %>
-</head>
-<body>
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
+    <%= stylesheet_link_tag "application", :media => "all" %>
+  </head>
+  <body>
+    <nav class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <%= link_to "Seattle.rb", root_path, class: 'brand' %>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <%= nav_item_link "Members", members_path %>
+              <%= nav_item_link "Projects", projects_path %>
+              <%= nav_item_link "Join Us", join_us_path %>
+              <%= nav_item_link "Talks", talks_path %>
+              <%= nav_item_link "Blog", posts_path %>
+              <%= nav_item_link "Values", values_path %>
+            </ul>
+            <ul class="nav pull-right">
+              <% if signed_in? %>
+                <%= nav_item_link current_member.name, member_path(current_member) %>
+                <%= nav_item_link "Log out", destroy_member_session_path, method: :delete %>
+              <% else %>
+                <%= nav_item_link "Log in", new_member_session_path %>
+              <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </nav>
 
-<nav class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <%= link_to "Seattle.rb", root_path, class: 'brand' %>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <%= nav_item_link "Members", members_path %>
-          <%= nav_item_link "Projects", projects_path %>
-          <%= nav_item_link "Join Us", join_us_path %>
-          <%= nav_item_link "Talks", talks_path %>
-          <%= nav_item_link "Blog", posts_path %>
-          <%= nav_item_link "Values", values_path %>
-        </ul>
-        <ul class="nav pull-right">
-          <% if signed_in? %>
-            <%= nav_item_link current_member.name, member_path(current_member) %>
-            <%= nav_item_link "Log out", destroy_member_session_path, method: :delete %>
-          <% else %>
-            <%= nav_item_link "Log in", new_member_session_path %>
-          <% end %>
-        </ul>
-      </div><!--/.nav-collapse -->
+    <div role="main" class='container'>
+      <% if notice then %><p class="text-warning notice"><%= notice %></p><% end %>
+      <% if alert then %><p class="text-error alert"><%= alert %></p><% end %>
+
+      <%= yield %>
     </div>
-  </div>
-</nav>
-
-<div role="main" class='container'>
-  <% if notice then %><p class="text-warning notice"><%= notice %></p><% end %>
-  <% if alert then %><p class="text-error alert"><%= alert %></p><% end %>
-
-  <%= yield %>
-</div>
-<footer>
-  Seattle Ruby Brigade: Growing the Ruby Community
-  <small> &nbsp; <a class="muted" href="https://github.com/seattlerb/seattlerb.org">(source code)</a></small>
-</footer>
-<%= javascript_include_tag 'application' %>
-<%= javascript_include_tag '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js' %>
-<%= yield :javascript_footer %>
-</body>
+    <footer>
+      Seattle Ruby Brigade: Growing the Ruby Community
+      <small> &nbsp; <a class="muted" href="https://github.com/seattlerb/seattlerb.org">(source code)</a></small>
+    </footer>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js' %>
+    <%= yield :javascript_footer %>
+  </body>
 </html>
