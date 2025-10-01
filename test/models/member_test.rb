@@ -54,13 +54,13 @@ class MemberTest < ActiveSupport::TestCase
   end
 
   def test_invalid_github
-    skip "dunno why this is valid"
-
-    member = Member.new(:name     => "Member",
-                        :email    => "pete@gmail.com",
-                        :password => "password1234",
-                        :github   => "not_a_user234890")
-    refute member.valid?
+    bad_net_response do
+      member = Member.new(:name     => "Member",
+                          :email    => "pete@gmail.com",
+                          :password => "password1234",
+                          :github   => "not_a_user234890")
+      refute_predicate member, :valid?
+    end
   end
 
   def test_valid_rubygems
@@ -93,16 +93,6 @@ class MemberTest < ActiveSupport::TestCase
                           :twitter => "tlynam")
       assert member.valid?
     end
-  end
-
-  def test_invalid_twitter
-    skip "dunno why this is valid"
-
-    member = Member.new(:name    => "Member",
-                        :twitter => "not_a_user234890",
-                        :email => "pete@gmail.com",
-                        :password => "password1234")
-    refute member.valid?
   end
 
   def test_valid_url
