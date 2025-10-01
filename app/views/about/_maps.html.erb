@@ -1,5 +1,5 @@
 <%
-lindas = false # otherwise belmont
+location = (ENV["LOCATION"] || "belmont").to_sym
 %>
 <div class='row'>
   <div id="map" class='span12'>
@@ -15,14 +15,18 @@ lindas = false # otherwise belmont
           <td><i class='icon-map-marker'></i></td>
           <td>
             <address>
-              <% if lindas then %>
+              <% case location %>
+              <% when :lindas then %>
                 <h3>Linda's Tavern</h3>
                 707 E Pine St<br />
                 Seattle, WA 98122
-              <% else %>
+              <% when :belmont %>
                 <h3>The Belmont</h3>
                 518 E Pike St<br />
                 Seattle, WA 98122
+              <% else %>
+                <h3>Who Knows?</h3>
+                Ask in slack
               <% end %>
             </address>
           </td>
@@ -30,10 +34,13 @@ lindas = false # otherwise belmont
       </table>
     </div>
     <div class='span8'>
-      <% if lindas then %>
+      <% case location %>
+      <% when :lindas then %>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.567218681796!2d-122.32562802206787!3d47.615104371190725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906acc316cf6ab%3A0x11ac8a8fcbd074d3!2sLinda&#39;s%20Tavern!5e0!3m2!1sen!2sus!4v1750811432248!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      <% else %>
+      <% when :belmont then %>
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2689.610753021918!2d-122.32733792360659!3d47.61425797119056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54906b8595ae2d47%3A0x9aa8b272d971b6!2sBelmont!5e0!3m2!1sen!2sus!4v1741746654382!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <% else %>
+        TBD
       <% end %>
     </div>
   </div>
