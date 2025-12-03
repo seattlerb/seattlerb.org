@@ -7,6 +7,8 @@
     <meta name="description" content="">
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= javascript_importmap_tags %>
     <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" %>
     <%= stylesheet_link_tag "application", :media => "all" %>
   </head>
@@ -32,7 +34,7 @@
             <ul class="nav pull-right">
               <% if signed_in? %>
                 <%= nav_item_link current_member.name, member_path(current_member) %>
-                <%= nav_item_link "Log out", destroy_member_session_path, method: :delete %>
+                <%= nav_item_link "Log out", destroy_member_session_path, data: { turbo_method: :delete } %>
               <% else %>
                 <%= nav_item_link "Log in", new_member_session_path %>
               <% end %>
@@ -52,7 +54,6 @@
       Seattle Ruby Brigade: Growing the Ruby Community
       <small> &nbsp; <a class="muted" href="https://github.com/seattlerb/seattlerb.org">(source code)</a></small>
     </footer>
-    <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag '//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js' %>
     <%= yield :javascript_footer %>
   </body>
