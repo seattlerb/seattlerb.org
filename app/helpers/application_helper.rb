@@ -26,8 +26,9 @@ module ApplicationHelper
     icon_link "icon-leaf", "@#{v}", v, "http://twitter.com/"
   end
 
-  def nav_item_link link_label, link_path, method=nil
-    content_tag :li, link_to(link_label, link_path, method), :class => ('active' if current_page?(link_path))
+  def nav_item_link link_label, link_path, options={}
+    link_options = options.is_a?(Hash) ? options : (options ? { method: options } : {})
+    content_tag :li, link_to(link_label, link_path, link_options), :class => ('active' if current_page?(link_path))
   end
 
   def title_or_action

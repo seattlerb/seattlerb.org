@@ -101,6 +101,7 @@ GEM
     drb (2.2.1)
     erubi (1.13.1)
     ffi (1.17.1)
+    ffi (1.17.1-aarch64-linux-gnu)
     ffi (1.17.1-arm64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
     globalid (1.2.1)
@@ -110,6 +111,10 @@ GEM
     icalendar (2.10.2)
       ice_cube (~> 0.16)
     ice_cube (0.17.0)
+    importmap-rails (2.2.2)
+      actionpack (>= 6.0.0)
+      activesupport (>= 6.0.0)
+      railties (>= 6.0.0)
     io-console (0.8.0)
     irb (1.15.0)
       pp (>= 0.6.0)
@@ -139,7 +144,6 @@ GEM
     marcel (1.0.4)
     method_source (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.8)
     minitest (5.26.2)
     minitest-rails (8.0.0)
       minitest (~> 5.20)
@@ -156,8 +160,7 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.9)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.9-arm64-darwin)
       racc (~> 1.4)
@@ -251,8 +254,7 @@ GEM
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
-    sqlite3 (2.5.0)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (2.5.0-aarch64-linux-gnu)
     sqlite3 (2.5.0-arm64-darwin)
     sqlite3 (2.5.0-x86_64-linux-gnu)
     stringio (3.1.2)
@@ -276,8 +278,8 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
+  aarch64-linux
   arm64-darwin
-  ruby
   x86_64-linux
 
 DEPENDENCIES
@@ -286,6 +288,7 @@ DEPENDENCIES
   bootsnap (~> 1.11)
   devise (~> 4.8)
   icalendar (~> 2.10)
+  importmap-rails
   minitest (~> 5.14)
   minitest-rails (~> 8.0.0)
   ostruct (~> 0.6)
@@ -299,9 +302,10 @@ DEPENDENCIES
   sassc-rails (~> 2.1)
   sprockets (~> 4.0)
   sqlite3 (~> 2.0)
+  turbo-rails
 
 RUBY VERSION
    ruby 3.4.7p58
 
 BUNDLED WITH
-   2.7.2
+   2.6.9
