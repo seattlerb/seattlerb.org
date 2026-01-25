@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" color-mode="user"> <%# TODO: https://ryanfeigenbaum.com/dark-mode/ %>
   <head>
-    <title><%= content_for(:title) || "Seattlerb Org" %></title>
+    <title><%= content_for(:title) || "Seattle.rb" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Seattlerb Org">
+    <meta name="application-name" content="Seattle.rb">
     <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Seattle.rb!'s website. The first and oldest ruby brigade in the world!">
+    <meta name="keywords" content="Seattle.rb, Ruby, Seattle">
+    <meta name="author" content="ryan davis">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,10 +23,83 @@
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+    <link rel="stylesheet" href="https://unpkg.com/mvp.css" />
+
+    <style>
+     :root {
+         --seattle:                #b00800;
+         --color-secondary:        #228B22;
+         --color-secondary-accent: #228B2222;
+     }
+
+     footer, header, main { padding: 1rem 1rem; }
+     nav { margin-bottom: 0; }
+     mark { background: var(--color-secondary-accent); }
+     h1, h2, h3, h4, h5, h6 { color: var(--seattle); }
+
+     header nav img {
+         margin: 0;
+         vertical-align: middle;
+     }
+
+     section#blurbs aside {
+         margin: 0.5rem;
+     }
+
+     section#map aside {
+         border: none;
+         /* border: 1px solid red; */
+         box-shadow: none;
+         padding: 1rem;
+         margin: 0;
+         width: auto;
+     }
+
+     li { margin-bottom: 1rem; }
+    </style>
+
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <style>
+      <%= content_for :style %>
+    </style>
+
+    <header>
+      <nav>
+        <ul>
+          <%= content_tag :li, link_to(image_tag('seattle.rb_logo.png', size:"45x40") + " Seattle.rb", root_path, id: "seattlerblogo") %>
+        </ul>
+        <ul>
+        <%= nav_item_link "People", users_path %>
+        <%= nav_item_link "Projects", projects_path %>
+        <%= nav_item_link "Join Us", join_us_path %>
+        <%#= nav_item_link "Talks", talks_path %>
+        <%#= nav_item_link "Blog", posts_path %>
+        <%= nav_item_link "Values", values_path %>
+        </ul>
+        <ul>
+        <span style="float:right">
+          <% if authenticated? %>
+            <%= nav_item_link "Log out", session_path, class:"button", data: { turbo_method: :delete } %>
+          <% else %>
+            <%= nav_item_link "Log in", new_session_path %>
+          <% end %>
+        </span>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <%= yield %>
+    </main>
+
+    <footer>
+      <hr>
+      Seattle Ruby Brigade: Growing the Ruby Community
+      <small> &nbsp; <a href="https://github.com/seattlerb/new.seattlerb.org">(source code)</a></small>
+    </footer>
+    <%= yield :javascript_footer %>
   </body>
 </html>

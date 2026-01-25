@@ -27,7 +27,7 @@ class SessionsControllerTest < ActionDispatch::IntegrationTest
 
     delete session_path
 
-    assert_redirected_to new_session_path
+    assert_redirected_to root_path
     assert_empty cookies[:session_id]
   end
 end
