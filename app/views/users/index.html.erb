@@ -1,0 +1,35 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :style do %>
+  :root {
+  --justify-important: left;
+  }
+<% end %>
+
+<% content_for :title, "Users" %>
+
+<h1>People (<%= @users.size %><%= " All" if @admin %>)</h1>
+
+<table id="users">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th># gems</th>
+      <th>Webpage</th>
+      <th>Rubygems</th>
+      <th>Github</th>
+      <% if @admin then %>
+        <th>Verified</th>
+      <% end %>
+      <th>Bio</th>
+    </tr>
+  </thead>
+
+  <% @users.each do |user| %>
+    <%= render "users/user_row", user: user %>
+  <% end %>
+</table>
+
+<% if @admin then %>
+  <%= link_to "New user", new_user_path %>
+<% end %>

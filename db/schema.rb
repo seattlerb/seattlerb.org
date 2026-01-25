@@ -142,10 +142,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_17_223049) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.boolean "admin", default: false, null: false
+    t.integer "affiliations_count", default: 0, null: false
+    t.text "bio"
     t.datetime "created_at", null: false
     t.string "email_address"
+    t.string "github_name"
+    t.string "name", null: false
     t.string "password_digest", default: "*", null: false
+    t.string "rubygems_name"
     t.datetime "updated_at", null: false
+    t.boolean "verified", default: false, null: false
+    t.string "website"
     t.index ["email_address"], name: "index_users_on_email_address"
   end
 

@@ -1,0 +1,34 @@
+<div id="<%= dom_id user %>">
+  <div>
+    <strong>Name:</strong>
+    <%= link_to_unless_current user.name, user_path(user) %>
+  </div>
+
+  <div>
+    <strong>Bio:</strong>
+    <%= user.bio %>
+  </div>
+
+  <div>
+    <strong># of projects:</strong>
+    <%= user.affiliations_count %>
+  </div>
+
+  <div>
+    <% if user.website.present? then %>
+      <%= link_to "Webpage", user.website.html_safe %>
+      &nbsp;&nbsp;&nbsp;
+    <% end %>
+    <% if user.rubygems_name.present? then %>
+      <%= link_to "Rubygems", user.rubygems_url.html_safe %>
+      &nbsp;&nbsp;&nbsp;
+    <% end %>
+    <% if user.github_name.present? then %>
+      <%= link_to "Github", user.github_url.html_safe %>
+      &nbsp;&nbsp;&nbsp;
+    <% end %>
+    <% if @admin then %>
+      <%= user.verified ? "✅ Verified" : "❌ Unverified" %>
+    <% end %>
+  </div>
+</div>

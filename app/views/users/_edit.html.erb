@@ -1,0 +1,13 @@
+<article>
+  <br />
+  <aside>
+    <%= link_to content_tag(:em, "Edit"), edit_user_path(@user) %>
+    <%= link_to content_tag(:b, "Delete"), @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+    &nbsp;&nbsp;
+    <% Rails.application.eager_load! %>
+    <% job_types = ApplicationJob.descendants.map(&:name).grep(/User/).sort %>
+    <% job_types.each do |klass_name| %>
+      <%= button_to content_tag(:b, klass_name), user_run_path, params: { name: klass_name, id: @user.id } %>
+    <% end %>
+  </aside>
+</article>

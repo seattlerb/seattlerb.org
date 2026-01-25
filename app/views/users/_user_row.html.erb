@@ -1,0 +1,11 @@
+<tr>
+  <td><%= link_to_unless_current user.name, user_path(user) %></td>
+  <td><%= user.affiliations_count %></td>
+  <td><%= link_to "Webpage", user.website if user.website.present? %></td>
+  <td><%= link_to "Rubygems", user.rubygems_url if user.rubygems_name.present? %></td>
+  <td><%= link_to "Github", user.github_url if user.github_name.present? %></td>
+  <% if @admin then %>
+    <td><%= user.verified ? "✅" : "❌" %></td>
+  <% end %>
+  <td><%= user.bio.truncate_words 10 if user.bio.present? %></td>
+</tr>

@@ -1,0 +1,29 @@
+<% content_for :style do %>
+  form {
+  display: inline-block;
+  min-width: 0;
+  padding: 0;
+  }
+  ul li { padding: 0; margin: 0; }
+<% end %>
+
+<p style="color: green"><%= notice %></p>
+
+<%= render @user %>
+<%= @admin and render partial: "edit" %>
+
+<div>
+  <%= link_to "Edit this user", edit_user_path(@user) %> |
+  <%= link_to "Back to users", users_path %>
+
+  <%= button_to "Destroy this user", @user, method: :delete %>
+</div>
+
+<h2> Projects: </h2>
+
+  <ul>
+    <% @user.projects.order("lower(name)").each do |project| %>
+      <li><%= link_to project.name, project_path(project) %></li>
+    <% end %>
+  </ul>
+<% end %>

@@ -1,9 +1,25 @@
 <% password_digest = BCrypt::Password.create("password") %>
 
 one:
+  name: MyString
   email_address: one@example.com
   password_digest: <%= password_digest %>
+  bio: MyText
+  # zenspider currently forwards to https://zenspider.com/
+  website: http://www.zenspider.com/
+  # currently has profile but 0 gems!
+  rubygems_name: fake
+  # currently has profile but 0 repos!
+  github_name: fake
+  verified: true
+  admin: true
 
 two:
+  name: MyString
   email_address: two@example.com
   password_digest: <%= password_digest %>
+  bio: MyText
+  website: MyString
+  rubygems_name: MyString
+  github_name: MyString
+  verified: false

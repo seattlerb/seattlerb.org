@@ -1,0 +1,68 @@
+<%= form_with(model: user) do |form| %>
+  <% content_for :style do %>
+    form { display: block; padding: 1.5rem; } /* HACK */
+  <% end %>
+
+  <% if user.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% user.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :email_address %>
+    <%= form.text_field :email_address %>
+  </div>
+
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <%= form.label :bio %>
+    <%= form.textarea :bio %>
+  </div>
+
+  <div>
+    <%= form.label :website %>
+    <%= form.text_field :website %>
+  </div>
+
+  <div>
+    <%= form.label :rubygems_name %>
+    <%= form.text_field :rubygems_name %>
+  </div>
+
+  <div>
+    <%= form.label :github_name %>
+    <%= form.text_field :github_name %>
+  </div>
+
+  <% if authenticated? && Current.user.admin? then %>
+    <div>
+      <%= form.label :verified %>
+      <%= form.checkbox :verified %>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
