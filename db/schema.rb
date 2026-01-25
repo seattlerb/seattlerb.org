@@ -11,6 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[8.1].define(version: 2026_01_17_223049) do
+  create_table "affiliations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.integer "project_id", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["project_id"], name: "index_affiliations_on_project_id"
+    t.index ["user_id"], name: "index_affiliations_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer "affiliations_count", default: 0, null: false
     t.datetime "created_at", null: false
@@ -166,6 +175,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_17_223049) do
     t.index ["email_address"], name: "index_users_on_email_address"
   end
 
+  add_foreign_key "affiliations", "projects"
+  add_foreign_key "affiliations", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "solid_queue_blocked_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
   add_foreign_key "solid_queue_claimed_executions", "solid_queue_jobs", column: "job_id", on_delete: :cascade
