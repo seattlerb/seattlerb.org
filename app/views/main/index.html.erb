@@ -1,0 +1,42 @@
+<article id="about">
+  <%= image_tag 'seattle_rb_logo_big.png', size:"190x171", style:"float:left" %>
+  <hgroup>
+  <h1>Seattle.rb</h1>
+  <h3>Seattle Ruby Brigade</h3>
+  </hgroup>
+  <p>
+    Seattle.rb was the first Ruby (and subsequently Ruby on Rails) user group in the world and has met regularly for well over two decades. We convene every Tuesday night to contribute to open source, work on personal projects, and teach and learn from one another. All skill levels are welcome!
+  </p>
+</article>
+
+<%= render "open_group" %>
+
+<section id="blurbs">
+  <aside id="why">
+    <h2>Why Seattle.rb?</h2>
+    <p>
+      The Ruby and Rails worlds are known for their collaboration, and Seattle.rb takes an active role. We focus on fun and collaborate to solve problems. We provide each other support as we take on new challenges in Ruby. We're proud to be the home of some of the <%= link_to "best Ruby developers around", users_path %>.
+    </p>
+  </aside>
+
+  <aside id="participate">
+    <h2>How Can I Participate?</h2>
+    <p>
+      The Tuesday "Nerd Party" is informal - drop in and code with us as you please. We host larger, formal events on a monthly basis. We're also on
+      <%= link_to "Slack here", "https://join.slack.com/t/seattlerb/shared_invite/zt-n9ut2ybq-uTabTrrGbYbzIcbXvIxH0g" %>.
+      We encourage everyone, from Ruby novice to expert, to join us to learn and contribute. We're excited to grow and support the Ruby and Rails communities.
+    </p>
+    <p>
+      So <%= link_to "join us", join_us_path %>!
+    </p>
+  </aside>
+
+  <aside id="help">
+    <h2>Where Can I Get Help?</h2>
+    <p>
+      The nicest thing about our members is the number of projects and resources we've helped grow. View our <%= link_to "projects", projects_path %>.
+    </p>
+  </aside>
+</section>
+
+<%= render "maps" %>
