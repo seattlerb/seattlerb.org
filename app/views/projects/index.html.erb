@@ -1,0 +1,21 @@
+<% content_for :style do %>
+  :root {
+    --justify-important: left;
+  }
+<% end %>
+
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Projects" %>
+
+<h1>Projects</h1>
+
+<p>
+  <%= @projects.size %> projects from just <%= User.count %> people...
+</p>
+
+<%= render "projects/project_table", projects: @projects %>
+
+<% if @admin then %>
+  <%= link_to "New project", new_project_path %>
+<% end %>

@@ -1,0 +1,4 @@
+<tr>
+  <td><%= link_to project.name, project %></td>
+  <td><%= sanitize from_rdoc(project.description.truncate_words(20)), tags: [] %></td>
+</tr>

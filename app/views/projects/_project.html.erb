@@ -1,0 +1,31 @@
+<div id="<%= dom_id project %>">
+  <div>
+    <strong>Name:</strong>
+    <%= link_to_unless_current project.name, project_path(project) %>
+  </div>
+
+  <div>
+    <strong>Project URL:</strong>
+    <%= link_to project.url, project.url.html_safe %>
+  </div>
+
+  <div>
+    <strong>Rubygems URL:</strong>
+    <%= link_to project.name, project.rubygems_url.html_safe %>
+  </div>
+
+  <div>
+    <strong>Seattle.rb Contributors:</strong>
+    <%= project.affiliations_count %>
+  </div>
+
+  <div>
+    <strong>Description:</strong>
+    <%= sanitize from_rdoc(project.description), tags: %w(p br ul li pre) %>
+  </div>
+
+  <div>
+    <strong>Last Update:</strong>
+    <%= project.updated_at %>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<article>
+  <br />
+  <aside>
+    <%= link_to content_tag(:em, "Edit"), edit_project_path(@project) %>
+    <%= link_to content_tag(:b, "Delete"), @project, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  </aside>
+</article>

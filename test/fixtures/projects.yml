@@ -1,0 +1,12 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+fake1:
+  name: fake1
+  description: this is a description
+  # will be redirected to https://zenspider.com
+  url: http://www.zenspider.com/projects/minitest.html
+
+fake2:
+  name: fake2
+  description: this is also a description
+  url: https://github/fake/fake

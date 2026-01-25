@@ -1,0 +1,12 @@
+<table id="projects">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Desc</th>
+    </tr>
+  </thead>
+
+  <% projects.each do |project| %>
+    <%= render "projects/project_row", project: project %>
+  <% end %>
+</table>
