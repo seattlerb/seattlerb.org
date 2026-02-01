@@ -22,3 +22,12 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+# sabotage open-uri for testing
+module OpenURI
+  module OpenRead
+    def read options = {}
+      raise "NO! %p : %p" % [self, options]
+    end
+  end
+end

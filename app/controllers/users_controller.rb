@@ -62,6 +62,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def run
+    klass = check_job_name params.expect(:name)
+
+    Rails.logger.info "Running job named %s for user #%d" % [klass, @user.id]
+
+    klass.perform_later @user
+
+    redirect_to @user, notice: "Job started"
+  end
+
   private
 
   # Use callbacks to share common setup or constraints between actions.
