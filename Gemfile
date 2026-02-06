@@ -33,3 +33,5 @@ end
 
 group :test do
 end
+
+gem "mission_control-jobs", "~> 1.1"
