@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "values",  to: "main#values"
   get "join_us", to: "main#join_us"
 
+  resources :locations
   resources :projects
   resources :users
   resource :session,                     only: %i[new create destroy]

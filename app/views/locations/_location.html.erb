@@ -1,0 +1,19 @@
+<div id="<%= dom_id location %>">
+  <div>
+    <strong>Name:</strong>
+    <%= location.name %>
+    <% if location.current? then %>
+      (current)
+    <% end %>
+  </div>
+
+  <div>
+    <strong>Address:</strong>
+    <%= location.address %>
+  </div>
+
+  <div>
+    <strong>Map:</strong>
+    <%= location.map.truncate 50 %>
+  </div>
+</div>
