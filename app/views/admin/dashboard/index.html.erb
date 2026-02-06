@@ -1,0 +1,114 @@
+<% content_for :title, "Dashboards" %>
+
+<% content_for :style, <<~STYLE.html_safe
+     table thead th,
+     table tr td { text-align: var(--justify-normal); }
+     table { display: block; }
+     form { display: inline; padding: 0 }
+     button, input[type="submit"] { margin: 0.5rem 0; padding: 0.5rem; }
+   STYLE
+%>
+
+
+<p style="color: green"><%= notice %></p>
+
+<% has_jobs = SolidQueue::Job.where(finished_at: nil).count > 0 %>
+
+<details <%= has_jobs and "open=\"true\"" %>>
+  <summary>Job Management</summary>
+
+  <% Rails.application.eager_load! %>
+
+  <% job_types = [ApplicationJob, *ApplicationJob.descendants.sort_by(&:name)] %>
+  <% job_states = %w[Scheduled Ready Claimed Blocked Failed ] %>
+
+  <% if defined? MissionControl::Jobs then %>
+    <%= link_to "Jobs Dashboard", "/admin/jobs" %>
+  <% end %>
+  <% if has_jobs then %>
+  <table>
+    <thead>
+      <td>Queue</td>
+      <td>Action</td>
+    </thead>
+    <% SolidQueue::Queue.all.each do |queue| %>
+      <tr>
+        <td><%= queue.name %></td>
+        <td>
+          <% if queue.paused? then %>
+            <%= button_to "Resume", admin_resume_path, params: { name: queue.name  } %>
+          <% else %>
+            <%= button_to "Pause", admin_pause_path, params: { name: queue.name  } %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <% end %>
+
+  <table>
+    <thead>
+      <td>Job</td>
+      <td>Scheduled</td>
+      <td>Failed</td>
+      <td>Finished</td>
+      <td>Total</td>
+      <td>Action</td>
+    </thead>
+
+    <%
+    counts = %w[itself scheduled failed finished]
+    .to_h { |k|
+        nk = k == "itself" ? "all" : k
+        [nk, SolidQueue::Job.send(k).group(:class_name).count]
+    }
+    rows = ApplicationJob.descendants.map(&:name).sort
+    cols = %w[scheduled failed finished all]
+    %>
+    <%
+    rows.each do |klass_name|
+    %>
+    <tr>
+      <td><%= klass_name %></td>
+      <% cols.each do |col_name| %>
+        <td><%= counts[col_name][klass_name] %></td>
+      <% end %>
+      <td>
+        <%= button_to "Run",    admin_run_path,    params: { name: klass_name  } %>
+        <%= button_to "Cancel", admin_cancel_path, params: { name: klass_name  } %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</details>
+
+<% unless @reviews.empty? then %>
+  <h1>Review (<%= @reviews.count %>):</h1>
+
+  <table>
+    <thead> <tr><td>Review</td><td>Field</td><th>Error</th></tr> </thead>
+    <% @reviews.each do |review| %>
+      <tr>
+        <td><%= link_to review.name, review.reference %></td>
+        <td><%= review.field %></td>
+        <td><%= review.message %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+
+<details>
+  <summary>Location Management</summary>
+  <h1>Locations:</h1>
+
+  <% setting = Setting.first %>
+  <% Location.all.each do |location| %>
+    <p>
+      <%= render location %>
+
+      <% unless location.current? then %>
+        <%= button_to "Switch", admin_switch_path, params: { location_id: location.id  } %>
+      <% end %>
+    </p>
+  <% end %>
+</details>

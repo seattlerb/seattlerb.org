@@ -79,13 +79,14 @@
         <%= nav_item_link "Values", values_path %>
         </ul>
         <ul>
-        <span style="float:right">
+          <% if authenticated? && Current.user.admin? then %>
+            <%= nav_item_link "Admin", "/admin" %>
+          <% end %>
           <% if authenticated? %>
             <%= nav_item_link "Log out", session_path, class:"button", data: { turbo_method: :delete } %>
           <% else %>
             <%= nav_item_link "Log in", new_session_path %>
           <% end %>
-        </span>
         </ul>
       </nav>
     </header>
