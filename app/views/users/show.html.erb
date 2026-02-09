@@ -12,14 +12,12 @@
 <%= render @user %>
 <%= @admin and render partial: "edit" %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+<% if @user.reviews.present? then %>
+  <%= render partial: "reviews/reviews", object: @user.reviews %>
+<% end %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
-</div>
-
-<h2> Projects: </h2>
+<% if @user.projects.present? then %>
+  <h2> Projects (<%= @user.projects.count %>): </h2>
 
   <ul>
     <% @user.projects.order("lower(name)").each do |project| %>

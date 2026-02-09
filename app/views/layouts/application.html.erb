@@ -80,7 +80,9 @@
         </ul>
         <ul>
           <% if authenticated? && Current.user.admin? then %>
-            <%= nav_item_link "Admin", "/admin" %>
+            <% reviews = Review.count %>
+            <% label = reviews > 0 ? "Admin (%d)" % [reviews] : "Admin" %>
+            <%= nav_item_link label, "/admin" %>
           <% end %>
           <% if authenticated? %>
             <%= nav_item_link "Log out", session_path, class:"button", data: { turbo_method: :delete } %>

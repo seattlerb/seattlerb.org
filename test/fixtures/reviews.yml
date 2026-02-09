@@ -1,13 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  klass: MyString
-  ref_id: 1
+  referrable: one
+  referrable_type: User
+  field: MyString
   url: MyString
   message: MyString
 
 two:
-  klass: MyString
-  ref_id: 1
+  referrable: two
+  referrable_type: Project
+  field: MyString
   url: MyString
   message: MyString

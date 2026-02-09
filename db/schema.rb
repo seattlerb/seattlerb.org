@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_04_034547) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_08_220605) do
   create_table "affiliations", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.integer "project_id", null: false
@@ -40,11 +40,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_04_034547) do
   create_table "reviews", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "field"
-    t.string "klass"
     t.string "message"
-    t.integer "ref_id"
+    t.integer "referrable_id"
+    t.string "referrable_type"
     t.datetime "updated_at", null: false
     t.string "url"
+    t.index ["referrable_type", "referrable_id"], name: "index_reviews_on_referrable"
+    t.index ["referrable_type", "referrable_id"], name: "index_reviews_on_referrable_type_and_referrable_id"
   end
 
   create_table "sessions", force: :cascade do |t|

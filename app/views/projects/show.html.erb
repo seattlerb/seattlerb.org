@@ -4,6 +4,10 @@
 
 <%= @admin and render partial: "edit" %>
 
+<% unless @project.reviews.empty? then %>
+  <%= render partial: "reviews/reviews", object: @project.reviews %>
+<% end %>
+
 <h2> Contributors: </h2>
 
 <ul>

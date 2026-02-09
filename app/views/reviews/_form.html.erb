@@ -1,0 +1,42 @@
+<%= form_with(model: review) do |form| %>
+  <% if review.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+        <% review.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :referrable_id, style: "display: block" %>
+    <%= form.text_field :referrable_id %>
+  </div>
+
+  <div>
+    <%= form.label :referrable_type, style: "display: block" %>
+    <%= form.text_field :referrable_type %>
+  </div>
+
+  <div>
+    <%= form.label :field, style: "display: block" %>
+    <%= form.text_field :field %>
+  </div>
+
+  <div>
+    <%= form.label :url, style: "display: block" %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div>
+    <%= form.label :message, style: "display: block" %>
+    <%= form.text_field :message %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

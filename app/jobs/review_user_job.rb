@@ -1,5 +1,5 @@
 class ReviewUserJob < ApplicationJob
-  queue_as :default
+  def self.queue_all(us=User.all) = super us.map { |u| new u }
 
   def perform user
     user.reviews.where(field: [:website, :rubygems, :github]).destroy_all
@@ -9,6 +9,14 @@ class ReviewUserJob < ApplicationJob
     check_url user, :github,   github_url(user)   if user.github_name.present?
     # TODO: email_address?
     user
+  end
+
+  def check_url user, field, url
+    super
+  rescue => e
+    user.reviews.create!(field: field,
+                         url: url,
+                         message: e.message)
   end
 
   def rubygems_url(u) = "https://rubygems.org/api/v1/profiles/#{u.rubygems_name}"

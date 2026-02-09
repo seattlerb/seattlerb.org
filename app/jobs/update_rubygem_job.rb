@@ -4,8 +4,9 @@ class UpdateRubygemJob < ApplicationJob
   def perform gem, info=nil
     Rails.logger.info "Updating project #%d %s" % [gem.id || -1, gem.name]
 
-    url  = rubygems_url gem
-    info ||= JSON.parse URI.parse(url).read
+    gem.reviews.where(field: :rubygem_info).destroy_all
+
+    info ||= JSON.parse URI.parse(rubygems_url gem).read
     key  = %w[ homepage_uri project_uri source_code_uri ].find { |key|
       url = info[key]
       next unless url.present?
@@ -26,11 +27,9 @@ class UpdateRubygemJob < ApplicationJob
 
     gem
   rescue => e
-    Review.create!(klass: gem.class.name,
-                   ref_id: gem.id,
-                   field: :rubygem_info,
-                   url: url,
-                   message: e.message)
+    gem.reviews.create!(field: :rubygem_info,
+                        url: url || "Unknown",
+                        message: e.message)
   end
 
   def rubygems_url(gem) = "https://rubygems.org/api/v1/gems/#{gem.name}.json"

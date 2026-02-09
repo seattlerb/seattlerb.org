@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :locations
   resources :projects
+  resources :reviews
   resources :users
   resource :session,                     only: %i[new create destroy]
   resources :passwords, param: :token, except: %i[index show destroy]

@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Reviews" %>
+
+<h1>Reviews</h1>
+
+<div id="reviews">
+  <% @reviews.each do |review| %>
+    <%= render review %>
+    <p>
+      <%= link_to "Show this review", review %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New review", new_review_path %>

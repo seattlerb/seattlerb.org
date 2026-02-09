@@ -1,0 +1,13 @@
+<h1>Review (<%= reviews.size %>):</h1>
+
+<table>
+  <thead> <tr><td>Review</td><td>Field</td><th>URL</th><th>Error</th></tr> </thead>
+  <% reviews.each do |review| %>
+    <tr>
+      <td><%= link_to review.name, review.reference %></td>
+      <td><%= review.field %></td>
+      <td><%= review.url %></td>
+      <td><%= review.message %></td>
+    </tr>
+  <% end %>
+</table>
