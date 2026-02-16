@@ -1,193 +1,140 @@
 # https://www.robotstxt.org
 # https://developers.google.com/search/docs/crawling-indexing/robots/intro
 # https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
-
-# all bots
-User-agent: *
-Crawl-delay: 10
-
-# fuck facebook
-User-agent: meta-externalagent*
-User-agent: meta-externalfetcher*
-User-agent: meta-externalagent*
-User-agent: facebookexternalhit*
-User-agent: facebookcatalog*
-Disallow: /
-
-# dunno but fuck em too
-User-agent: SemrushBot
-User-agent: PetalBot
-User-agent: MJ12bot
-User-agent: Turnitin
-User-agent: ias-va
-Disallow: /
+# https://tamethebots.com/tools/robotstxt-checker
+#
+# $ rg user-agent robots.txt | occur -o -I | sort -f
 
 # fuck M$
-User-agent: Bingbot*
-User-agent: AdIdxBot*
-User-agent: MicrosoftPreview*
+User-agent: Bing
+User-agent: AdIdxBot
+User-agent: Microsoft
+# dunno but fuck em too
+User-agent: ias-va
+User-agent: MJ12bot
+User-agent: Sogou
+# fuck amazon
+User-agent: Amzn-SearchBot
 Disallow: /
 
-## BEGIN DARKVISITORS LIST
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/ai2bot
-
+## BEGIN robotstxt.com ai list
+# Block all known AI crawlers and assistants
+# from using content for training AI models.
+# Source: https://robotstxt.com/ai -- duplicates removed
 User-agent: AI2Bot
-Disallow: /
-
-# AI Search Crawler
-# https://darkvisitors.com/agents/amazonbot
-
+User-agent: aiHitBot
+User-agent: AwarioBot
+User-agent: AwarioRssBot
+User-agent: AwarioSmartBot
+User-agent: DataForSeoBot
+User-agent: Factset_spyderbot
+User-agent: FirecrawlAgent
+User-agent: ImagesiftBot
+User-agent: img2dataset
+User-agent: Meltwater
+User-agent: Omgilibot
+User-agent: peer39_crawler
+User-agent: Scrapy
+User-agent: Seekr
+User-agent: SemrushBot
+User-agent: Sentibot
+User-agent: TikTokSpider
+User-agent: TurnitinBot
+#
+# ...continue into darkvisitors list, instructions at end:
+## BEGIN DARKVISITORS LIST
+# https://darkvisitors.com/
+# edit/run _robots.rb
+#
+User-agent: AddSearchBot
+User-agent: AI2Bot-DeepResearchEval
+User-agent: Ai2Bot-Dolma
 User-agent: Amazonbot
-Disallow: /
-
-# Undocumented AI Agent
-# https://darkvisitors.com/agents/anthropic-ai
-
+User-agent: Anomura
 User-agent: anthropic-ai
-Disallow: /
-
-# AI Search Crawler
-# https://darkvisitors.com/agents/applebot
-
 User-agent: Applebot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/applebot-extended
-
 User-agent: Applebot-Extended
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/bytespider
-
+User-agent: atlassian-bot
+User-agent: bigsur.ai
+User-agent: Bravebot
 User-agent: Bytespider
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/ccbot
-
 User-agent: CCBot
-Disallow: /
-
-# AI Assistant
-# https://darkvisitors.com/agents/chatgpt-user
-
+User-agent: Channel3Bot
+User-agent: ChatGLM-Spider
 User-agent: ChatGPT-User
-Disallow: /
-
-# Undocumented AI Agent
-# https://darkvisitors.com/agents/claude-web
-
+User-agent: Claude-SearchBot
+User-agent: Claude-User
 User-agent: Claude-Web
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/claudebot
-
 User-agent: ClaudeBot
-Disallow: /
-
-# Undocumented AI Agent
-# https://darkvisitors.com/agents/cohere-ai
-
+User-agent: Cloudflare-AutoRAG
+User-agent: CloudVertexBot
 User-agent: cohere-ai
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/cohere-training-data-crawler
-
 User-agent: cohere-training-data-crawler
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/diffbot
-
+User-agent: Cotoyogi
+User-agent: Crawl4AI
+User-agent: Datenbank Crawler
+User-agent: DeepSeekBot
+User-agent: Devin
 User-agent: Diffbot
-Disallow: /
-
-# AI Assistant
-# https://darkvisitors.com/agents/duckassistbot
-
 User-agent: DuckAssistBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/facebookbot
-
 User-agent: FacebookBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/google-extended
-
+User-agent: Gemini-Deep-Research
+User-agent: Google-CloudVertexBot
 User-agent: Google-Extended
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/gptbot
-
+User-agent: Google-NotebookLM
+User-agent: GoogleOther
 User-agent: GPTBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/kangaroo-bot
-
+User-agent: iAskBot
+User-agent: iaskspider
+User-agent: ICC-Crawler
+User-agent: imageSpider
 User-agent: Kangaroo Bot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/meta-externalagent
-
-User-agent: Meta-ExternalAgent
-Disallow: /
-
-# AI Assistant
-# https://darkvisitors.com/agents/meta-externalfetcher
-
-User-agent: Meta-ExternalFetcher
-Disallow: /
-
-# AI Search Crawler
-# https://darkvisitors.com/agents/oai-searchbot
-
+User-agent: KlaviyoAIBot
+User-agent: KunatoCrawler
+User-agent: laion-huggingface-processor
+User-agent: LCC
+User-agent: LinerBot
+User-agent: LinkupBot
+User-agent: meta
+User-agent: MistralAI-User
+User-agent: netEstate Imprint Crawler
 User-agent: OAI-SearchBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/omgili
-
 User-agent: omgili
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/pangubot
-
 User-agent: PanguBot
-Disallow: /
-
-# AI Search Crawler
-# https://darkvisitors.com/agents/perplexitybot
-
+User-agent: Perplexity-User
 User-agent: PerplexityBot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/timpibot
-
+User-agent: PetalBot
+User-agent: PhindBot
+User-agent: Poggio-Citations
+User-agent: QualifiedBot
+User-agent: SBIntuitionsBot
+User-agent: Spider
+User-agent: TavilyBot
 User-agent: Timpibot
-Disallow: /
-
-# AI Data Scraper
-# https://darkvisitors.com/agents/webzio-extended
-
-User-agent: Webzio-Extended
-Disallow: /
-
-# AI Search Crawler
-# https://darkvisitors.com/agents/youbot
-
+User-agent: VelenPublicWebCrawler
+User-agent: webzio-extended
+User-agent: WRTNBot
 User-agent: YouBot
+User-agent: ZanistaBot
 Disallow: /
+# DisallowAITraining: /
+#
+## END
+
+## Continue robotstxt.com ai list
+# Source: https://robotstxt.com/ai
+#
+# Block any non-specified AI crawlers (e.g., new
+# or unknown bots) from using content for training
+# AI models, while allowing the website to be
+# indexed and accessed by bots.  These directives
+# are still experimental and may not be supported
+# by all AI crawlers.
+User-agent: *
+Allow: /
+Disallow: /admin
+Sitemap: https://zenspider.com/sitemap.xml
+# Content-Usage: ai=n
+# DisallowAITraining: /
+Crawl-delay: 10
+## END
