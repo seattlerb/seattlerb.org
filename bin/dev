@@ -1,2 +1,5 @@
 #!/usr/bin/env ruby
+
+system "curl -sLm 0.1 -o app/assets/stylesheets/mvp.css https://unpkg.com/mvp.css"
+
 exec "./bin/rails", "server", *ARGV
