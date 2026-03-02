@@ -14,6 +14,18 @@ Seattle.rb was the first Ruby (and Rails) user group in the world and has met re
 
 4. Submit a pull request
 
+== Docker == 
+
+Start the app:
+```bash
+docker compose up
+```
+
+Get into bash:
+```bash
+docker compose exec web bash
+```
+
 == License ==
 
 Don't care. Do whatever you want with it.
