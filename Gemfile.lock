@@ -326,6 +326,7 @@ DEPENDENCIES
   propshaft
   puma (>= 5.0)
   rails (~> 8.1.2)
+  rdoc (~> 7.1)
   solid_cable
   solid_cache
   solid_queue
