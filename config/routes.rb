@@ -4,16 +4,18 @@ Rails.application.routes.draw do
   get "main",    to: "main#index"
   get "values",  to: "main#values"
   get "join_us", to: "main#join_us"
+  get "up" => "rails/health#show", as: :rails_health_check
 
+  resource :session,                     only: %i[new create destroy]
+  resource :setting
 
   resources :locations
+  resources :passwords, param: :token, except: %i[index show destroy]
   resources :projects
   resources :reviews
   resources :users
-  resource :session,                     only: %i[new create destroy]
-  resources :passwords, param: :token, except: %i[index show destroy]
 
-  get "up" => "rails/health#show", as: :rails_health_check
+  post "users/run", to: "users#run", as: :user_run
 
   namespace :admin do
     root to: "dashboard#index"
