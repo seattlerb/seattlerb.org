@@ -4,3 +4,9 @@
 require_relative "config/application"
 
 Rails.application.load_tasks
+
+desc "test with coverage"
+task "test:cov" do
+  ENV["COV"] = "1"
+  Rake::Task[:test].invoke
+end

@@ -32,6 +32,7 @@ group :development do
 end
 
 group :test do
+  gem "simplecov", "~> 0.22"
 end
 
 gem "mission_control-jobs", "~> 1.1"
