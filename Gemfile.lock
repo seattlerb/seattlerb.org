@@ -107,8 +107,11 @@ GEM
       activesupport (>= 6.1)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
-    icalendar (2.10.2)
+    icalendar (2.12.2)
+      base64
       ice_cube (~> 0.16)
+      logger
+      ostruct
     ice_cube (0.17.0)
     io-console (0.8.0)
     irb (1.15.0)
@@ -285,7 +288,7 @@ DEPENDENCIES
   autotest-rails (~> 4.2.1)
   bootsnap (~> 1.11)
   devise (~> 4.8)
-  icalendar (~> 2.10)
+  icalendar (~> 2.12)
   minitest (~> 5.14)
   minitest-rails (~> 8.0.0)
   ostruct (~> 0.6)

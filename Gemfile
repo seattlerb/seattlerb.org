@@ -14,7 +14,7 @@ gem "sprockets",                 "~> 4.0"
 # noise dependencies:
 
 gem "sassc-rails",               "~> 2.1" # for rails_admin?
-gem "icalendar",                 "~> 2.10"
+gem "icalendar",                 "~> 2.12"
 gem "ostruct",                   "~> 0.6" # for icalendar
 
 group :production do
