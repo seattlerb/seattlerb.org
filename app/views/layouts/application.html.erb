@@ -32,12 +32,15 @@
      }
 
      footer, header, main { padding: 1rem 1rem; }
-     nav { margin-bottom: 0; }
+     nav  {
+       margin-bottom: 0;
+       & ul { display: flex; };
+     }
      mark { background: var(--color-secondary-accent); }
      h1, h2, h3, h4, h5, h6 { color: var(--seattle); }
 
      header nav img {
-         margin: 0;
+         margin: 0 0.5em 0 0;
          vertical-align: middle;
      }
 
@@ -68,12 +71,12 @@
     <header>
       <nav>
         <ul>
-          <%= content_tag :li, link_to(image_tag('seattle.rb_logo.png', size:"45x40") + " Seattle.rb", root_path, id: "seattlerblogo") %>
+          <%= content_tag :li, link_to(image_tag('seattle.rb_logo.png', size:"45x40") + "Seattle.rb", root_path, id: "seattlerblogo") %>
         </ul>
         <ul>
         <%= nav_item_link "People", users_path %>
         <%= nav_item_link "Projects", projects_path %>
-        <%= nav_item_link "Join Us", join_us_path %>
+        <%= nav_item_link "Join&nbsp;Us".html_safe, join_us_path %>
         <%#= nav_item_link "Talks", talks_path %>
         <%#= nav_item_link "Blog", posts_path %>
         <%= nav_item_link "Values", values_path %>
