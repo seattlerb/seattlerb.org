@@ -1,1 +1,171 @@
 # See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+
+# https://www.robotstxt.org
+# https://developers.google.com/search/docs/crawling-indexing/robots/intro
+# https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
+# https://tamethebots.com/tools/robotstxt-checker
+#
+# $ rg user-agent robots.txt | occur -o -I | sort -f
+
+# fuck M$
+User-agent: Bing
+User-agent: AdIdxBot
+User-agent: Microsoft
+# dunno but fuck em too
+User-agent: ias-va
+User-agent: MJ12bot
+User-agent: Sogou
+Disallow: /
+
+## BEGIN robotstxt.com ai list
+# Block all known AI crawlers and assistants
+# from using content for training AI models.
+# Source: https://robotstxt.com/ai -- duplicates removed
+User-agent: AI2Bot
+User-agent: aiHitBot
+User-agent: AwarioBot
+User-agent: AwarioRssBot
+User-agent: AwarioSmartBot
+User-agent: DataForSeoBot
+User-agent: Factset_spyderbot
+User-agent: ImagesiftBot
+User-agent: img2dataset
+User-agent: Meltwater
+User-agent: Omgilibot
+User-agent: peer39_crawler
+User-agent: Scrapy
+User-agent: Seekr
+User-agent: SemrushBot
+User-agent: Sentibot
+User-agent: TikTokSpider
+User-agent: TurnitinBot
+#
+# ...continue into darkvisitors list, instructions at end:
+## BEGIN DARKVISITORS LIST
+# https://darkvisitors.com/
+# edit/run _robots.rb
+#
+User-agent: AddSearchBot
+User-agent: AI2Bot-DeepResearchEval
+User-agent: Ai2Bot-Dolma
+User-agent: Amazon Bedrock AgentCore Browser
+User-agent: Amazonbot
+User-agent: AmazonBuyForMe
+User-agent: Amzn-SearchBot
+User-agent: Amzn-User
+User-agent: Anchor Browser
+User-agent: Anomura
+User-agent: anthropic-ai
+User-agent: ApifyBot
+User-agent: ApifyWebsiteContentCrawler
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Aranet-SearchBot
+User-agent: atlassian-bot
+User-agent: AzureAI-SearchBot
+User-agent: bigsur.ai
+User-agent: Bravebot
+User-agent: Brightbot
+User-agent: Browserbase
+User-agent: Bytespider
+User-agent: CCBot
+User-agent: Channel3Bot
+User-agent: ChatGLM-Spider
+User-agent: ChatGPT Agent
+User-agent: ChatGPT-User
+User-agent: Claude-Code
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Claude-Web
+User-agent: ClaudeBot
+User-agent: Cloudflare Browser Rendering
+User-agent: Cloudflare-AutoRAG
+User-agent: CloudVertexBot
+User-agent: Code
+User-agent: cohere-ai
+User-agent: cohere-training-data-crawler
+User-agent: Cotoyogi
+User-agent: Crawl4AI
+User-agent: Datenbank Crawler
+User-agent: DeepSeekBot
+User-agent: Devin
+User-agent: Diffbot
+User-agent: DuckAssistBot
+User-agent: ExaBot
+User-agent: FacebookBot
+User-agent: FirecrawlAgent
+User-agent: Gemini-Deep-Research
+User-agent: Google-Agent
+User-agent: Google-CloudVertexBot
+User-agent: Google-Extended
+User-agent: Google-Gemini-CLI
+User-agent: Google-NotebookLM
+User-agent: GoogleAgent-Mariner
+User-agent: GoogleOther
+User-agent: GPTBot
+User-agent: HeadlessChrome
+User-agent: iAskBot
+User-agent: iaskspider
+User-agent: ICC-Crawler
+User-agent: imageSpider
+User-agent: kagi-fetcher
+User-agent: Kangaroo Bot
+User-agent: KlaviyoAIBot
+User-agent: Known Agents Browser
+User-agent: KunatoCrawler
+User-agent: laion-huggingface-processor
+User-agent: LCC
+User-agent: LinerBot
+User-agent: LinkupBot
+User-agent: Manus-User
+User-agent: meta-externalagent
+User-agent: meta-externalfetcher
+User-agent: meta-webindexer
+User-agent: MistralAI-User
+User-agent: netEstate Imprint Crawler
+User-agent: NovaAct
+User-agent: OAI-SearchBot
+User-agent: omgili
+User-agent: opencode
+User-agent: PanguBot
+User-agent: Perplexity-User
+User-agent: PerplexityBot
+User-agent: PetalBot
+User-agent: PhindBot
+User-agent: Poggio-Citations
+User-agent: QualifiedBot
+User-agent: SBIntuitionsBot
+User-agent: ShapBot
+User-agent: Spider
+User-agent: TavilyBot
+User-agent: TerraCotta
+User-agent: Timpibot
+User-agent: Trae
+User-agent: TwinAgent
+User-agent: VelenPublicWebCrawler
+User-agent: webzio-extended
+User-agent: WRTNBot
+User-agent: YouBot
+User-agent: ZanistaBot
+Disallow: /
+# DisallowAITraining: /
+#
+## END
+
+## Continue robotstxt.com ai list
+# Source: https://robotstxt.com/ai
+#
+# Block any non-specified AI crawlers (e.g., new
+# or unknown bots) from using content for training
+# AI models, while allowing the website to be
+# indexed and accessed by bots.  These directives
+# are still experimental and may not be supported
+# by all AI crawlers.
+User-agent: *
+Allow: /
+Disallow: /admin
+Sitemap: https://zenspider.com/sitemap.xml
+# Content-Usage: ai=n
+# DisallowAITraining: /
+Crawl-delay: 10
+## END
