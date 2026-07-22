@@ -37,4 +37,4 @@ end
 
 gem "mission_control-jobs", "~> 1.1"
 
-gem "rdoc", "~> 7.1"
+gem "rdoc", "~> 7.0.0" # keep this matching ruby's shipped version
